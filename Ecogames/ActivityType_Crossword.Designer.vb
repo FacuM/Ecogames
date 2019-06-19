@@ -157,7 +157,6 @@ Partial Class ActivityType_Crossword
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ActivityType_Crossword"
-        Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
         Me.Text = "ActivityType_Crossword"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

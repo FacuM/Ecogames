@@ -209,25 +209,22 @@ Public Class ActivityType_Crossword
         Close()
     End Sub
 
-    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
-        ' Check if current row has content
-        Dim RowHasContent As Boolean = False
-        For Each Row As DataGridViewRow In DataGridView1.Rows
-            For Each Cell As DataGridViewCell In Row.Cells
-                If Cell.Value IsNot Nothing Then
-                    If Not String.IsNullOrEmpty(Cell.Value) Then
-                        LogD(Me, "Cell at " & Cell.ColumnIndex & " in row index " & e.RowIndex & " is not null, processing...")
-                        SaveActivity.Enabled = True
-                        Exit For
-                    End If
-                Else
-                    LogD(Me, "Cell at " & Cell.ColumnIndex & " in row index " & e.RowIndex & " is null, skipped.")
-                End If
-            Next
-        Next
-    End Sub
-
     Private Sub ActivityType_Crossword_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Settings.UpdateActivities()
+    End Sub
+
+    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
+        ' Check if previous row has content
+        For Each Cell As DataGridViewCell In DataGridView1.Rows(e.RowIndex).Cells
+            If Cell.Value IsNot Nothing Then
+                If Not String.IsNullOrEmpty(Cell.Value) Then
+                    LogD(Me, "Cell at " & Cell.ColumnIndex & " in row index " & e.RowIndex & " is not null, processing...")
+                    SaveActivity.Enabled = True
+                    Exit For
+                End If
+            Else
+                LogD(Me, "Cell at " & Cell.ColumnIndex & " in row index " & e.RowIndex & " is null, skipped.")
+            End If
+        Next
     End Sub
 End Class
