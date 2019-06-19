@@ -231,13 +231,41 @@ Public Class Settings
     End Sub
 
     Private Sub DeleteActivity_Click(sender As Object, e As EventArgs) Handles DeleteActivity.Click
-        Dim PreviousIndex As Integer = ActivityListBox.SelectedIndex
-        My.Settings.Activities.RemoveAt(PreviousIndex)
-        UpdateActivities()
-        If ActivityListBox.Items.Count > 1 And PreviousIndex > 0 Then
-            ActivityListBox.SelectedIndex = PreviousIndex - 1
+        If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.AltKeyDown And ActivityListBox.Items.Count > 1 Then
+            If MsgBox(My.Resources.Settings_General_DeleteAllWarn, MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, My.Resources.Settings_General_Warn_Title) = MsgBoxResult.Yes Then
+                For i = My.Settings.Activities.Count - 1 To 0 Step -1
+                    My.Settings.Activities.RemoveAt(i)
+                Next
+                UpdateActivities()
+            End If
+
+            DeleteActivity.Text = My.Resources.Settings_General_DeleteText
+            If ActivityListBox.SelectedIndex > ActivityListBox.Items.Count - 2 Or ActivityListBox.SelectedIndex < 0 Then
+                DeleteActivity.Visible = False
+            End If
         Else
-            ActivityListBox.SelectedIndex = ActivityListBox.Items.Count - 1
+            Dim PreviousIndex As Integer = ActivityListBox.SelectedIndex
+            My.Settings.Activities.RemoveAt(PreviousIndex)
+            UpdateActivities()
+            If ActivityListBox.Items.Count > 1 And PreviousIndex > 0 Then
+                ActivityListBox.SelectedIndex = PreviousIndex - 1
+            Else
+                ActivityListBox.SelectedIndex = ActivityListBox.Items.Count - 1
+            End If
+        End If
+    End Sub
+
+    Private Sub Settings_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.AltKeyDown And ActivityListBox.Items.Count > 1 Then
+            DeleteActivity.Text = My.Resources.Settings_General_DeleteAllText
+            DeleteActivity.Visible = True
+        End If
+    End Sub
+
+    Private Sub Settings_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
+        If Not My.Computer.Keyboard.CtrlKeyDown Or Not My.Computer.Keyboard.AltKeyDown And ActivityListBox.Items.Count > 1 Then
+            DeleteActivity.Text = My.Resources.Settings_General_DeleteText
+            DeleteActivity.Visible = False
         End If
     End Sub
 End Class

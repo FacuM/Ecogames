@@ -210,4 +210,13 @@ Cuando termines, hacé clic en "Guardar".</value>
   <data name="Question_Opts_NextAnswerHelp" xml:space="preserve">
     <value>Para agregar una opción, hacé clic en "Agregar".</value>
   </data>
+  <data name="Settings_General_DeleteAllText" xml:space="preserve">
+    <value>Eliminar todo</value>
+  </data>
+  <data name="Settings_General_DeleteAllWarn" xml:space="preserve">
+    <value>¡Alto ahí! Vas a borrar todo, ¿estás seguro?</value>
+  </data>
+  <data name="Settings_General_DeleteText" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
 </root>

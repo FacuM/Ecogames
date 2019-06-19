@@ -271,6 +271,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Eliminar todo.
+        '''</summary>
+        Friend ReadOnly Property Settings_General_DeleteAllText() As String
+            Get
+                Return ResourceManager.GetString("Settings_General_DeleteAllText", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Alto ahí! Vas a borrar todo, ¿estás seguro?.
+        '''</summary>
+        Friend ReadOnly Property Settings_General_DeleteAllWarn() As String
+            Get
+                Return ResourceManager.GetString("Settings_General_DeleteAllWarn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Eliminar.
+        '''</summary>
+        Friend ReadOnly Property Settings_General_DeleteText() As String
+            Get
+                Return ResourceManager.GetString("Settings_General_DeleteText", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Ocurrió un error interno..
         '''</summary>
         Friend ReadOnly Property Settings_General_Err() As String

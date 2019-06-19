@@ -80,18 +80,18 @@ Partial Class Settings
         '
         'DeleteActivity
         '
-        Me.DeleteActivity.Location = New System.Drawing.Point(179, 278)
+        Me.DeleteActivity.Location = New System.Drawing.Point(137, 278)
         Me.DeleteActivity.Name = "DeleteActivity"
-        Me.DeleteActivity.Size = New System.Drawing.Size(75, 23)
+        Me.DeleteActivity.Size = New System.Drawing.Size(96, 23)
         Me.DeleteActivity.TabIndex = 26
         Me.DeleteActivity.Text = "Eliminar"
         Me.DeleteActivity.Visible = False
         '
         'ModifyActivity
         '
-        Me.ModifyActivity.Location = New System.Drawing.Point(260, 278)
+        Me.ModifyActivity.Location = New System.Drawing.Point(239, 278)
         Me.ModifyActivity.Name = "ModifyActivity"
-        Me.ModifyActivity.Size = New System.Drawing.Size(75, 23)
+        Me.ModifyActivity.Size = New System.Drawing.Size(96, 23)
         Me.ModifyActivity.TabIndex = 25
         Me.ModifyActivity.Text = "Modificar"
         Me.ModifyActivity.Visible = False
@@ -99,9 +99,9 @@ Partial Class Settings
         'AddActivity
         '
         Me.AddActivity.Enabled = False
-        Me.AddActivity.Location = New System.Drawing.Point(260, 278)
+        Me.AddActivity.Location = New System.Drawing.Point(239, 278)
         Me.AddActivity.Name = "AddActivity"
-        Me.AddActivity.Size = New System.Drawing.Size(75, 23)
+        Me.AddActivity.Size = New System.Drawing.Size(96, 23)
         Me.AddActivity.TabIndex = 24
         Me.AddActivity.Text = "Añadir"
         '
@@ -356,6 +356,7 @@ Partial Class Settings
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "Settings"
         Me.Resizable = False
