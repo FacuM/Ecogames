@@ -34,15 +34,8 @@ Public Class Settings
         UpdateActivities()
 
         'My.Settings.Activities = String and contains ID, Name, Description, Activity Type (in order).
-        My.Settings.Activities.Clear()
-        My.Settings.Activities.Add("0;Nombre;Descripcion;0")
-        My.Settings.Activities.Add("1;Nombre;Descripcion;1")
-        My.Settings.Activities.Add("2;Nombre;Descripcion;2")
-        My.Settings.Activities.Add("3;Nombre;Descripcion;3")
 
         UpdateActivities()
-
-        'WindowState = My.Settings.LastWindowState
 
         LogD(Me, "Done.")
 
