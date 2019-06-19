@@ -4,7 +4,7 @@
     ' ====================
 
     ' Global
-    Public Const MaximumCrosswordXIndex As Integer = 50
+    Public Const MaximumCrosswordXIndex As Long = Long.MaxValue
     Public Const SemicolonAlternativeString As String = "[sc]"
     Public RowSplitter As String() = New String() {"[rs]"}
     Public Const CrosswordDefaultColumns As Integer = 13

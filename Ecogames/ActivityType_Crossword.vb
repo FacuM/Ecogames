@@ -46,8 +46,8 @@ Public Class ActivityType_Crossword
     Public Sub PrepareModification()
         UseWaitCursor = True
 
-        CrosswordDGVStatusLabel.Visible = True
-        DataGridView1.Visible = False
+        DataGridView1.ReadOnly = True
+        DataGridView1.Enabled = False
 
         IsModifying = True
         WipeDatagridView() ' Try to wipe it.
@@ -117,20 +117,27 @@ Public Class ActivityType_Crossword
             CurIdx += 1
         Next
 
-        CrosswordDGVStatusLabel.Visible = False
-        DataGridView1.Visible = True
+        DataGridView1.Enabled = True
+        DataGridView1.ReadOnly = False
 
         UseWaitCursor = False
     End Sub
 
     Private Sub AddColumn_Click(sender As Object, e As EventArgs) Handles AddColumn.Click
+        AddColumn.Enabled = False
+        DataGridView1.ReadOnly = True
+        DataGridView1.Enabled = False
+
         Dim ColumnCount As Integer = DataGridView1.Columns.GetColumnCount(0)
         LogD(Me, "Column count: " & ColumnCount)
 
         If ColumnCount < MaximumCrosswordXIndex Then
-            Dim NewColumn As New DataGridViewColumn
-            Dim CellTemplate As New DataGridViewTextBoxCell
-            NewColumn.CellTemplate = CellTemplate
+            Dim CellTemplate As New DataGridViewTextBoxCell With {
+                .MaxInputLength = 1
+            }
+            Dim NewColumn As New DataGridViewColumn With {
+                .CellTemplate = CellTemplate
+            }
 
             If ColumnCount > 1 Then
                 DataGridView1.Columns.Insert(ColumnCount - 2, NewColumn)
@@ -138,13 +145,41 @@ Public Class ActivityType_Crossword
                 DataGridView1.Columns.Insert(0, NewColumn)
             End If
 
-            AddColumn.Enabled = True
+            For Each Column As DataGridViewColumn In DataGridView1.Columns
+
+                Dim TempCellTemplate As New DataGridViewTextBoxCell With {
+                    .MaxInputLength = 1
+                }
+
+                If Column.DisplayIndex > ColumnCount - 1 Then
+                    Dim ReferenceTextCellTemplate As New DataGridViewTextBoxCell
+
+                    Dim ReferenceTextColumn As DataGridViewColumn = DataGridView1.Columns(Column.DisplayIndex)
+                    ReferenceTextColumn.CellTemplate = ReferenceTextCellTemplate
+                    ReferenceTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    ReferenceTextColumn.HeaderText = My.Resources.Crossword_ColumnHeader_ReferenceText
+                Else
+                    Column.CellTemplate = TempCellTemplate
+                End If
+            Next
+
             RemoveColumn.Enabled = True
-        Else
-            AddColumn.Enabled = False
         End If
 
-        LogD(Me, "Column count: " & DataGridView1.Columns.GetColumnCount(0))
+        If ColumnCount + 1 >= MaximumCrosswordXIndex Then
+            AddColumn.Enabled = False
+        Else
+            AddColumn.Enabled = True
+        End If
+
+        DataGridView1.Enabled = True
+        DataGridView1.Visible = True
+        DataGridView1.ReadOnly = False
+
+        ColumnCount = DataGridView1.Columns.GetColumnCount(0)
+        Label12.Text = ColumnCount
+
+        LogD(Me, "Column count: " & ColumnCount)
     End Sub
 
     Private Sub RemoveColumn_Click(sender As Object, e As EventArgs) Handles RemoveColumn.Click
@@ -158,14 +193,11 @@ Public Class ActivityType_Crossword
         Else
             DataGridView1.Columns.RemoveAt(ColumnCount - 2)
         End If
-    End Sub
 
-    Private Sub DataGridView1_ColumnAdded(sender As Object, e As DataGridViewColumnEventArgs) Handles DataGridView1.ColumnAdded
-        Label12.Text = DataGridView1.Columns.GetColumnCount(0)
-    End Sub
+        ColumnCount = DataGridView1.Columns.GetColumnCount(0)
+        Label12.Text = ColumnCount
 
-    Private Sub DataGridView1_ColumnRemoved(sender As Object, e As DataGridViewColumnEventArgs) Handles DataGridView1.ColumnRemoved
-        Label12.Text = DataGridView1.Columns.GetColumnCount(0)
+        LogD(Me, "Column count: " & ColumnCount)
     End Sub
 
     Private Sub SaveActivity_Click(sender As Object, e As EventArgs) Handles SaveActivity.Click

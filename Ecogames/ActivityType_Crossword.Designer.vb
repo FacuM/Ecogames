@@ -1,4 +1,4 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ActivityType_Crossword
     Inherits MetroFramework.Forms.MetroForm
 
@@ -32,7 +32,6 @@ Partial Class ActivityType_Crossword
         Me.AddColumn = New MetroFramework.Controls.MetroButton()
         Me.SaveActivity = New MetroFramework.Controls.MetroButton()
         Me.RemoveColumn = New MetroFramework.Controls.MetroButton()
-        Me.CrosswordDGVStatusLabel = New MetroFramework.Controls.MetroLabel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -41,7 +40,6 @@ Partial Class ActivityType_Crossword
         '
         'DataGridView1
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(20, 60)
         Me.DataGridView1.Name = "DataGridView1"
@@ -136,23 +134,11 @@ Partial Class ActivityType_Crossword
         Me.RemoveColumn.TabIndex = 22
         Me.RemoveColumn.Text = "Remover columna"
         '
-        'CrosswordDGVStatusLabel
-        '
-        Me.CrosswordDGVStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrosswordDGVStatusLabel.Location = New System.Drawing.Point(20, 60)
-        Me.CrosswordDGVStatusLabel.Name = "CrosswordDGVStatusLabel"
-        Me.CrosswordDGVStatusLabel.Size = New System.Drawing.Size(639, 315)
-        Me.CrosswordDGVStatusLabel.TabIndex = 16
-        Me.CrosswordDGVStatusLabel.Text = "N/A"
-        Me.CrosswordDGVStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CrosswordDGVStatusLabel.Visible = False
-        '
         'ActivityType_Crossword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(679, 450)
-        Me.Controls.Add(Me.CrosswordDGVStatusLabel)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -173,7 +159,6 @@ Partial Class ActivityType_Crossword
     Friend WithEvents SaveActivity As MetroFramework.Controls.MetroButton
     Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents RemoveColumn As MetroFramework.Controls.MetroButton
-    Friend WithEvents CrosswordDGVStatusLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents Panel1 As MetroFramework.Controls.MetroPanel
     Friend WithEvents Panel2 As MetroFramework.Controls.MetroPanel
 End Class
