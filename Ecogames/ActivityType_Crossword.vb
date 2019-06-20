@@ -51,6 +51,7 @@ Public Class ActivityType_Crossword
 
         IsModifying = True
         WipeDatagridView() ' Try to wipe it.
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 3
