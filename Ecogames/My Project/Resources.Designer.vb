@@ -152,6 +152,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to La contraseña que ingresaste es incorrecta, por favor intentálo otra vez..
+        '''</summary>
+        Friend ReadOnly Property Login_WrongPassword() As String
+            Get
+                Return ResourceManager.GetString("Login_WrongPassword", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to La evaluación automática no es totalmente precisa y puede dar resultados erróneos..
         '''</summary>
         Friend ReadOnly Property Question_Open_AutoEvalWarn() As String

@@ -219,4 +219,7 @@ Cuando termines, hacé clic en "Guardar".</value>
   <data name="Settings_General_DeleteText" xml:space="preserve">
     <value>Eliminar</value>
   </data>
+  <data name="Login_WrongPassword" xml:space="preserve">
+    <value>La contraseña que ingresaste es incorrecta, por favor intentálo otra vez.</value>
+  </data>
 </root>

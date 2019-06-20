@@ -6,7 +6,7 @@
         If My.Settings.FirstRun Then
             FirstRun.Show()
         Else
-            Settings.Show()
+            Login.Show()
         End If
         UseWaitCursor = False
         Close()
