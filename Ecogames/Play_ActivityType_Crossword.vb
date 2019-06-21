@@ -32,11 +32,15 @@ Public Class Play_ActivityType_Crossword
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 3
             ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(";") + 1)
+#If DEBUG Then
             LogD(Me, ActivityPre)
+#End If
         Next
 
         Dim FirstPass As Boolean = True
+#If DEBUG Then
         LogD(Me, "Parsing activity...")
+#End If
         Dim Y As Integer = 0
         For Each Row As String In ActivityPre.Split(RowSplitter, options:=StringSplitOptions.None)
             Dim CurrentRow As String() = Row.Split(";")
@@ -91,9 +95,11 @@ Public Class Play_ActivityType_Crossword
                     End If
                 Next
 
+#If DEBUG Then
                 If Not String.IsNullOrEmpty(DebugRowStr) Then
                     LogD(Me, DebugRowStr)
                 End If
+#End If
 
                 For Each CurrentCell As DataGridViewCell In ActivityCells
                     ActivityRow.Cells.Add(CurrentCell)
@@ -156,7 +162,9 @@ Public Class Play_ActivityType_Crossword
         StatusLabel.Text = String.Empty
 
         If Not String.IsNullOrEmpty(Out) And Not String.IsNullOrEmpty(DataGridView1.CurrentCell.Value) Then
+#If DEBUG Then
             LogD(Me, "Validating value...")
+#End If
             If DataGridView1.CurrentCell.Value = Out Then
                 DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk
                 Score += DefaultScoreMultiplier
@@ -165,7 +173,9 @@ Public Class Play_ActivityType_Crossword
 
                 StatusLabel.Text = My.Resources.Play_General_RightAnswer
 
+#If DEBUG Then
                 LogD(Me, "Done, the answer is right!")
+#End If
             Else
                 If DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk Then
                     Score -= DefaultScoreMultiplier
@@ -177,7 +187,9 @@ Public Class Play_ActivityType_Crossword
 
                 StatusLabel.Text = My.Resources.Play_General_WrongAnswer
 
+#If DEBUG Then
                 LogD(Me, "Done, wrong answer.")
+#End If
             End If
         End If
 
@@ -222,7 +234,9 @@ Public Class Play_ActivityType_Crossword
 
     Private Sub DataGridView1_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles DataGridView1.CellBeginEdit
         If e.ColumnIndex = ColumnMaxIndex Or DataGridView1.CurrentCell.Style.BackColor = Color.LightGray Then
+#If DEBUG Then
             LogD(Me, "Prevented editing of invalid cell.")
+#End If
             e.Cancel = True
         End If
     End Sub

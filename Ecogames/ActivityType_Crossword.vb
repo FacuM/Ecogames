@@ -54,11 +54,15 @@ Public Class ActivityType_Crossword
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 3
             ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(";") + 1)
+#If DEBUG Then
             LogD(Me, ActivityPre)
+#End If
         Next
 
         Dim FirstPass As Boolean = True
+#If DEBUG Then
         LogD(Me, "Parsing activity...")
+#End If
         For Each Row As String In ActivityPre.Split(RowSplitter, options:=StringSplitOptions.None)
             Dim CurrentRow As String() = Row.Split(";")
 
@@ -87,9 +91,11 @@ Public Class ActivityType_Crossword
                     End If
                 Next
 
+#If DEBUG Then
                 If Not String.IsNullOrEmpty(DebugRowStr) Then
                     LogD(Me, DebugRowStr)
                 End If
+#End If
 
                 For Each CurrentCell As DataGridViewCell In ActivityCells
                     ActivityRow.Cells.Add(CurrentCell)
@@ -128,7 +134,9 @@ Public Class ActivityType_Crossword
         DataGridView1.Enabled = False
 
         Dim ColumnCount As Integer = DataGridView1.Columns.GetColumnCount(0)
+#If DEBUG Then
         LogD(Me, "Column count: " & ColumnCount)
+#End If
 
         If ColumnCount < MaximumCrosswordXIndex Then
             Dim CellTemplate As New DataGridViewTextBoxCell With {
@@ -178,7 +186,9 @@ Public Class ActivityType_Crossword
         ColumnCount = DataGridView1.Columns.GetColumnCount(0)
         Label12.Text = ColumnCount
 
+#If DEBUG Then
         LogD(Me, "Column count: " & ColumnCount)
+#End If
     End Sub
 
     Private Sub RemoveColumn_Click(sender As Object, e As EventArgs) Handles RemoveColumn.Click
@@ -196,7 +206,9 @@ Public Class ActivityType_Crossword
         ColumnCount = DataGridView1.Columns.GetColumnCount(0)
         Label12.Text = ColumnCount
 
+#If DEBUG Then
         LogD(Me, "Column count: " & ColumnCount)
+#End If
     End Sub
 
     Private Sub SaveActivity_Click(sender As Object, e As EventArgs) Handles SaveActivity.Click
@@ -216,7 +228,9 @@ Public Class ActivityType_Crossword
             Next
             Cell = Row.Cells(ColumnBoundaries)
             ActivityString &= RowSplitter(0)
+#If DEBUG Then
             LogD(Me, ActivityString)
+#End If
             Try
                 If Cell.Value IsNot Nothing Then
                     If Cell.Value.ToString.Contains(RowSplitter(0)) Then
@@ -226,15 +240,21 @@ Public Class ActivityType_Crossword
             Catch ex As Exception
                 ' Do nothing.
             End Try
+#If DEBUG Then
             LogD(Me, ActivityString)
+#End If
         Next
         If IsModifying Then
             My.Settings.Activities(CurrentActivityIndex) = Settings.ActivityListBox.SelectedIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString
+#If DEBUG Then
             LogD(Me, CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString)
+#End If
         Else
             Dim NewActivityID As Integer = GetNewID()
             My.Settings.Activities.Add(NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString)
+#If DEBUG Then
             LogD(Me, GetNewID() & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString)
+#End If
         End If
         SettingsSaver()
         Close()
@@ -249,12 +269,16 @@ Public Class ActivityType_Crossword
         For Each Cell As DataGridViewCell In DataGridView1.Rows(e.RowIndex).Cells
             If Cell.Value IsNot Nothing Then
                 If Not String.IsNullOrEmpty(Cell.Value) Then
+#If DEBUG Then
                     LogD(Me, "Cell at " & Cell.ColumnIndex & " in row index " & e.RowIndex & " is not null, processing...")
+#End If
                     SaveActivity.Enabled = True
                     Exit For
                 End If
+#If DEBUG Then
             Else
                 LogD(Me, "Cell at " & Cell.ColumnIndex & " in row index " & e.RowIndex & " is null, skipped.")
+#End If
             End If
         Next
     End Sub

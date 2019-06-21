@@ -17,11 +17,15 @@ Public Class ActivityType_Question_Open
 
         Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(";")
 
+#If DEBUG Then
         LogD(Me, "Parsing activity...")
+#End If
         QuestionTextBox.Text = Activity(4)
         AnswerTextBox.Text = Activity(5)
         AutomaticEvaluationCheckBox.Checked = Boolean.Parse(Activity(6))
+#If DEBUG Then
         LogD(Me, "Done.")
+#End If
 
         Saved = True
 
@@ -38,11 +42,15 @@ Public Class ActivityType_Question_Open
     Private Sub SaveActivityButton_Click(sender As Object, e As EventArgs) Handles SaveActivityButton.Click
         If IsModifying Then
             My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString
+#If DEBUG Then
             LogD(Me, CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString)
+#End If
         Else
             Dim NewActivityID As Integer = GetNewID()
             My.Settings.Activities.Add(NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString)
+#If DEBUG Then
             LogD(Me, NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString)
+#End If
             CurrentActivityIndex = NewActivityID
         End If
         SettingsSaver()

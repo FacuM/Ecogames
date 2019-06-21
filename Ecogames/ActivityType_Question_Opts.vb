@@ -51,17 +51,23 @@ Public Class ActivityType_Question_Opts
         AnswersStatuses.Clear()
         Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(";")
 
+#If DEBUG Then
         LogD(Me, "Parsing activity...")
+#End If
         QuestionTextBox.Text = Activity(4)
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 4
             ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(";") + 1)
+#If DEBUG Then
             LogD(Me, ActivityPre)
+#End If
         Next
 
         For Each AnswerPair As String In ActivityPre.Split(RowSplitter, options:=StringSplitOptions.None)
+#If DEBUG Then
             LogD(Me, AnswerPair)
+#End If
             Dim Answer As String() = AnswerPair.Split(";")
 
             If Answer.Length > 1 Then
@@ -72,7 +78,9 @@ Public Class ActivityType_Question_Opts
 
         UpdateAnswers()
 
+#If DEBUG Then
         LogD(Me, "Done.")
+#End If
 
         Saved = True
 
@@ -86,14 +94,20 @@ Public Class ActivityType_Question_Opts
         Next
         If IsModifying Then
             My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString
+#If DEBUG Then
             LogD(Me, CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString)
+#End If
         Else
             Dim NewActivityID As Integer = GetNewID()
             My.Settings.Activities.Add(NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString)
+#If DEBUG Then
             LogD(Me, NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString)
+#End If
             CurrentActivityIndex = NewActivityID
         End If
+#If DEBUG Then
         LogD(Me, ActivityString)
+#End If
         SettingsSaver()
         Settings.UpdateActivities()
         Settings.ActivityListBox.SelectedIndex = CurrentActivityIndex
@@ -158,7 +172,9 @@ Public Class ActivityType_Question_Opts
         AnswersListBox.Items.Insert(AnswersListBox.Items.Count - 1, AnswerTextBox.Text & " (" & CorrectAnswer & ")")
         AnswerTextBox.Clear()
 
+#If DEBUG Then
         LogD(Me, "New answer pair: " & Answers(Answers.Count - 1) & ";" & AnswersStatuses(AnswersStatuses.Count - 1).ToString)
+#End If
         CorrectAnswerCheckBox.Checked = False
         AddAnswerButton.Enabled = False
     End Sub
