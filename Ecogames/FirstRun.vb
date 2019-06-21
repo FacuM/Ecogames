@@ -27,6 +27,7 @@
         SettingsSaver()
         Hide()
         Settings.Show()
+        Settings.UpdateActivities()
         Close()
     End Sub
 

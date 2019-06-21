@@ -39,7 +39,9 @@
         'Copyright info
         Copyright.Text = My.Application.Info.Copyright
 
+#If DEBUG Then
         LogD(Me, "Preparing " & Settings.Name & " elements...")
+#End If
 
         ' Prepare elements in Settings.
         Settings.SettingsActivityType.Items.Add(My.Resources.ActivityType_Crossword)
@@ -56,7 +58,11 @@
 
         Ready = True
 
+#If DEBUG Then
         LogD(Me, "Done.")
+#End If
+
+        Settings.UpdateActivities()
 
         ' We're done, lets fire up the timer.
         Timer1.Enabled = True

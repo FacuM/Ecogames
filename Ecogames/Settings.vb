@@ -2,15 +2,25 @@
 
 Public Class Settings
     Public Sub UpdateActivities()
+        'My.Settings.Activities
+        '  => String()
+        '     => ID;Name;Description;Activity Type;Activity Data
+
+#If DEBUG Then
         LogD(Me, "Updating activities list...")
+#End If
         If (My.Settings.Activities Is Nothing) Then
+#If DEBUG Then
             LogD(Me, "no activities found, (re-)initializing container.")
+#End If
             My.Settings.Activities = New StringCollection From {Nothing}
             My.Settings.Activities.Clear()
             SettingsSaver()
             ActivityListBox.Visible = False
         Else
+#If DEBUG Then
             LogD(Me, My.Settings.Activities.Count & " activities found, processing...")
+#End If
             ActivityListBox.Items.Clear()
             ActivityListBox.Visible = True
 
@@ -19,44 +29,34 @@ Public Class Settings
 
                 ActivityListBox.Items.Add(data(1))
             Next
+#If DEBUG Then
             LogD(Me, "Done.")
+#End If
         End If
 
         ActivityListBox.Items.Add(My.Resources.Settings_General_NewActivity)
     End Sub
 
-    Private Sub Settings_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Enabled = False
-        UseWaitCursor = True
-
-        LogD(Me, "Loading...")
-
-        UpdateActivities()
-
-        'My.Settings.Activities = String and contains ID, Name, Description, Activity Type (in order).
-
-        UpdateActivities()
-
-        LogD(Me, "Done.")
-
-        Enabled = True
-        UseWaitCursor = False
-    End Sub
-
     Private Sub Settings_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+#If DEBUG Then
         LogD(Me, "Saving window state and closing...")
+#End If
         SettingsSaver()
     End Sub
 
     Private Sub Settings_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+#If DEBUG Then
         LogD(Me, "Closed.")
+#End If
         Play_Activities.Show()
     End Sub
 
     Private Sub SettingsActivityType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SettingsActivityType.SelectedIndexChanged
         If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
             Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";") ' Just for shortening purposes
+#If DEBUG Then
             LogD(Me, "Updating selected activity (""" & original(1) & """)...")
+#End If
             My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & ";" & original(1) & ";" & original(2) & ";" & SettingsActivityType.SelectedIndex
             SettingsSaver()
         Else
@@ -73,7 +73,9 @@ Public Class Settings
     Private Sub SettingsActivityDescription_TextChanged(sender As Object, e As EventArgs) Handles SettingsActivityDescription.TextChanged
         If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
             Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";") ' Just for shortening purposes
+#If DEBUG Then
             LogD(Me, "Updating selected activity (""" & original(1) & """)...")
+#End If
             My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & ";" & original(1) & ";" & SettingsActivityDescription.Text & ";" & original(3)
             SettingsSaver()
         Else
@@ -83,7 +85,9 @@ Public Class Settings
     Private Sub SettingsActivityName_TextChanged(sender As Object, e As EventArgs) Handles SettingsActivityName.TextChanged
         If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
             Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";") ' Just for shortening purposes
+#If DEBUG Then
             LogD(Me, "Updating selected activity (""" & original(1) & """)...")
+#End If
             My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & ";" & SettingsActivityName.Text & ";" & original(2) & ";" & original(3)
             SettingsSaver()
             UpdateActivities()
@@ -94,7 +98,9 @@ Public Class Settings
                 SettingsActivityDescription.Enabled = False
                 AddActivity.Enabled = False
             Else
+#If DEBUG Then
                 LogD(Me, "Switched to activity creation mode.")
+#End If
 
                 SettingsActivityType.Enabled = True
                 SettingsActivityDescription.Enabled = True
@@ -133,7 +139,9 @@ Public Class Settings
     End Sub
 
     Private Sub ActivityListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ActivityListBox.SelectedIndexChanged
+#If DEBUG Then
         LogD(Me, "Processing selected index...")
+#End If
 
         If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 1) Then
             Dim Activity As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";")
@@ -145,9 +153,13 @@ Public Class Settings
             If Integer.TryParse(Activity(3), ParsedActivityType) Then
                 SettingsActivityType.SelectedIndex = ParsedActivityType
                 SettingsActivityType.Enabled = True
+#If DEBUG Then
                 LogD(Me, "Done.")
+#End If
             Else
+#If DEBUG Then
                 LogD(Me, "WARNING: failed to parse activity type for activity ID " & Activity(0) & ".")
+#End If
                 MsgBox(String.Format(My.Resources.Settings_General_Err_Index, 3, "Activity"), MsgBoxStyle.Critical, My.Resources.General_Error_Title)
             End If
 
@@ -260,5 +272,9 @@ Public Class Settings
             DeleteActivity.Text = My.Resources.Settings_General_DeleteText
             DeleteActivity.Visible = False
         End If
+    End Sub
+
+    Private Sub Settings_Load(sender As Object, e As EventArgs) Handles Me.Load
+
     End Sub
 End Class
