@@ -1,8 +1,4 @@
 ﻿Public Class Login
-    Private Sub ButtonEnabler()
-
-    End Sub
-
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
         If String.IsNullOrEmpty(PasswordTextBox.Text) Then
             PasswordStatusPanel.BackColor = Color.Red
@@ -15,10 +11,6 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         Close()
-    End Sub
-
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs)
-        ButtonEnabler()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
