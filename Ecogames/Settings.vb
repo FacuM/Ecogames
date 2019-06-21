@@ -44,13 +44,13 @@ Public Class Settings
     End Sub
 
     Private Sub Settings_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        My.Settings.LastWindowState = WindowState
         LogD(Me, "Saving window state and closing...")
         SettingsSaver()
     End Sub
 
     Private Sub Settings_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         LogD(Me, "Closed.")
+        Play_Activities.Show()
     End Sub
 
     Private Sub SettingsActivityType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SettingsActivityType.SelectedIndexChanged
@@ -148,7 +148,7 @@ Public Class Settings
                 LogD(Me, "Done.")
             Else
                 LogD(Me, "WARNING: failed to parse activity type for activity ID " & Activity(0) & ".")
-                MsgBox(String.Format(My.Resources.Settings_General_Err_Index, 3, "Activity"), MsgBoxStyle.Critical, My.Resources.Settings_General_Err_Title)
+                MsgBox(String.Format(My.Resources.Settings_General_Err_Index, 3, "Activity"), MsgBoxStyle.Critical, My.Resources.General_Error_Title)
             End If
 
             SettingsActivityDescription.Enabled = True
@@ -225,7 +225,7 @@ Public Class Settings
 
     Private Sub DeleteActivity_Click(sender As Object, e As EventArgs) Handles DeleteActivity.Click
         If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.AltKeyDown And ActivityListBox.Items.Count > 1 Then
-            If MsgBox(My.Resources.Settings_General_DeleteAllWarn, MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, My.Resources.Settings_General_Warn_Title) = MsgBoxResult.Yes Then
+            If MsgBox(My.Resources.Settings_General_DeleteAllWarn, MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, My.Resources.General_Warn_Title) = MsgBoxResult.Yes Then
                 For i = My.Settings.Activities.Count - 1 To 0 Step -1
                     My.Settings.Activities.RemoveAt(i)
                 Next

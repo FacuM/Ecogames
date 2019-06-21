@@ -12,6 +12,7 @@
     Public Const HangmanMaximumSecondsPerCharacter As Integer = 45
     Public Const HangmanMinimumSecondsPerCharacter As Integer = 5
     Public Const HangmanMaximumAttemptsPerCharacter As Integer = 15
+    Public Const DefaultScoreMultiplier As Integer = 10
 
     ' Local
     Private Const MinimumPasswordLength As Integer = 8
@@ -23,6 +24,7 @@
 
     ' Global
     Public CurrentActivityIndex As Integer = -1
+    Public CurrentActivityTypeId As Integer = -1 ' Only used for play mode.
 
     ' Local
 

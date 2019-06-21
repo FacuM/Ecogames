@@ -152,11 +152,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Error.
+        '''</summary>
+        Friend ReadOnly Property General_Error_Title() As String
+            Get
+                Return ResourceManager.GetString("General_Error_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Información.
+        '''</summary>
+        Friend ReadOnly Property General_Info_Title() As String
+            Get
+                Return ResourceManager.GetString("General_Info_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Advertencia.
+        '''</summary>
+        Friend ReadOnly Property General_Warn_Title() As String
+            Get
+                Return ResourceManager.GetString("General_Warn_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to La contraseña que ingresaste es incorrecta, por favor intentálo otra vez..
         '''</summary>
         Friend ReadOnly Property Login_WrongPassword() As String
             Get
                 Return ResourceManager.GetString("Login_WrongPassword", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Muy bien! Completaste una fila..
+        '''</summary>
+        Friend ReadOnly Property Play_Crossword_RowDone() As String
+            Get
+                Return ResourceManager.GetString("Play_Crossword_RowDone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to No completaste la actividad, ¿querés salir de todos modos?.
+        '''</summary>
+        Friend ReadOnly Property Play_General_IncompleteActivityWarn() As String
+            Get
+                Return ResourceManager.GetString("Play_General_IncompleteActivityWarn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Felicidades! Completaste la actividad con un puntaje perfecto..
+        '''</summary>
+        Friend ReadOnly Property Play_General_PerfectScore() As String
+            Get
+                Return ResourceManager.GetString("Play_General_PerfectScore", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Correcto!.
+        '''</summary>
+        Friend ReadOnly Property Play_General_RightAnswer() As String
+            Get
+                Return ResourceManager.GetString("Play_General_RightAnswer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Uh, ¡te equivocaste!.
+        '''</summary>
+        Friend ReadOnly Property Play_General_WrongAnswer() As String
+            Get
+                Return ResourceManager.GetString("Play_General_WrongAnswer", resourceCulture)
             End Get
         End Property
         
@@ -289,7 +361,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Alto ahí! Vas a borrar todo, ¿estás seguro?.
+        '''  Looks up a localized string similar to ¡Alto ahí! Vas a borrar todo, ¿querés continuar?.
         '''</summary>
         Friend ReadOnly Property Settings_General_DeleteAllWarn() As String
             Get
@@ -325,15 +397,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Error.
-        '''</summary>
-        Friend ReadOnly Property Settings_General_Err_Title() As String
-            Get
-                Return ResourceManager.GetString("Settings_General_Err_Title", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to &lt;Nueva actividad&gt;.
         '''</summary>
         Friend ReadOnly Property Settings_General_NewActivity() As String
@@ -357,15 +420,6 @@ Namespace My.Resources
         Friend ReadOnly Property Settings_General_UnsavedWarn() As String
             Get
                 Return ResourceManager.GetString("Settings_General_UnsavedWarn", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Advertencia.
-        '''</summary>
-        Friend ReadOnly Property Settings_General_Warn_Title() As String
-            Get
-                Return ResourceManager.GetString("Settings_General_Warn_Title", resourceCulture)
             End Get
         End Property
     End Module

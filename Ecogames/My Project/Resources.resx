@@ -132,7 +132,7 @@
   <data name="ActivityType_Hangman" xml:space="preserve">
     <value>Ahorcado</value>
   </data>
-  <data name="Settings_General_Err_Title" xml:space="preserve">
+  <data name="General_Error_Title" xml:space="preserve">
     <value>Error</value>
   </data>
   <data name="ActivityType_Crossword" xml:space="preserve">
@@ -178,7 +178,7 @@
   <data name="Settings_General_UnsavedWarn" xml:space="preserve">
     <value>Vas a perder tus cambios, ¿querés salir de todos modos?</value>
   </data>
-  <data name="Settings_General_Warn_Title" xml:space="preserve">
+  <data name="General_Warn_Title" xml:space="preserve">
     <value>Advertencia</value>
   </data>
   <data name="Question_Saved" xml:space="preserve">
@@ -214,12 +214,30 @@ Cuando termines, hacé clic en "Guardar".</value>
     <value>Eliminar todo</value>
   </data>
   <data name="Settings_General_DeleteAllWarn" xml:space="preserve">
-    <value>¡Alto ahí! Vas a borrar todo, ¿estás seguro?</value>
+    <value>¡Alto ahí! Vas a borrar todo, ¿querés continuar?</value>
   </data>
   <data name="Settings_General_DeleteText" xml:space="preserve">
     <value>Eliminar</value>
   </data>
   <data name="Login_WrongPassword" xml:space="preserve">
     <value>La contraseña que ingresaste es incorrecta, por favor intentálo otra vez.</value>
+  </data>
+  <data name="General_Info_Title" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="Play_Crossword_RowDone" xml:space="preserve">
+    <value>¡Muy bien! Completaste una fila.</value>
+  </data>
+  <data name="Play_General_IncompleteActivityWarn" xml:space="preserve">
+    <value>No completaste la actividad, ¿querés salir de todos modos?</value>
+  </data>
+  <data name="Play_General_PerfectScore" xml:space="preserve">
+    <value>¡Felicidades! Completaste la actividad con un puntaje perfecto.</value>
+  </data>
+  <data name="Play_General_RightAnswer" xml:space="preserve">
+    <value>¡Correcto!</value>
+  </data>
+  <data name="Play_General_WrongAnswer" xml:space="preserve">
+    <value>Uh, ¡te equivocaste!</value>
   </data>
 </root>

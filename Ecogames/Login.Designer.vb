@@ -65,7 +65,7 @@ Partial Class Login
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(93, 23)
         Me.QuitButton.TabIndex = 4
-        Me.QuitButton.Text = "Salir"
+        Me.QuitButton.Text = "Cancelar"
         '
         'PasswordStatusPanel
         '
@@ -92,6 +92,7 @@ Partial Class Login
         Me.MinimizeBox = False
         Me.Name = "Login"
         Me.Resizable = False
+        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
         Me.Text = "Iniciá sesión"
         Me.ResumeLayout(False)
 

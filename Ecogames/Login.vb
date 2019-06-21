@@ -18,8 +18,15 @@
             Hide()
             Settings.Show()
             Close()
+            If Play_Activities.Visible Then
+                Play_Activities.Close()
+            End If
         Else
-            MsgBox(My.Resources.Login_WrongPassword, MsgBoxStyle.Critical, My.Resources.Settings_General_Err_Title)
+            MsgBox(My.Resources.Login_WrongPassword, MsgBoxStyle.Critical, My.Resources.General_Error_Title)
         End If
+    End Sub
+
+    Private Sub Login_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        PasswordTextBox.Text = String.Empty
     End Sub
 End Class

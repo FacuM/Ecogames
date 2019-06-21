@@ -6,7 +6,7 @@
         If My.Settings.FirstRun Then
             FirstRun.Show()
         Else
-            Login.Show()
+            Play_Activities.Show()
         End If
         UseWaitCursor = False
         Close()

@@ -100,6 +100,12 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Play_ActivityType_Crossword.Designer.vb">
+      <DependentUpon>Play_ActivityType_Crossword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Play_ActivityType_Crossword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ActivityType_Crossword.Designer.vb">
       <DependentUpon>ActivityType_Crossword.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,12 @@
     <Compile Include="FirstRun.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Play_Activities.Designer.vb">
+      <DependentUpon>Play_Activities.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Play_Activities.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Settings.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Play_ActivityType_Crossword.resx">
+      <DependentUpon>Play_ActivityType_Crossword.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActivityType_Crossword.resx">
       <DependentUpon>ActivityType_Crossword.vb</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FirstRun.resx">
       <DependentUpon>FirstRun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Play_Activities.resx">
+      <DependentUpon>Play_Activities.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.vb</DependentUpon>

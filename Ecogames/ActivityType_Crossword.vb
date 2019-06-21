@@ -4,9 +4,7 @@
 
 Public Class ActivityType_Crossword
     Private Sub WipeDatagridView()
-        For i = DataGridView1.DisplayedColumnCount(0) - 1 To 0 Step -1
-            DataGridView1.Columns.RemoveAt(i)
-        Next
+        DataGridView1.Columns.Clear()
     End Sub
 
     Public Sub PrepareNew()
@@ -222,7 +220,7 @@ Public Class ActivityType_Crossword
             Try
                 If Cell.Value IsNot Nothing Then
                     If Cell.Value.ToString.Contains(RowSplitter(0)) Then
-                        MsgBox(String.Format(My.Resources.Settings_Crossword_IllegalStringException, RowSplitter), MsgBoxStyle.Critical, My.Resources.Settings_General_Err_Title)
+                        MsgBox(String.Format(My.Resources.Settings_Crossword_IllegalStringException, RowSplitter), MsgBoxStyle.Critical, My.Resources.General_Error_Title)
                     End If
                 End If
             Catch ex As Exception
