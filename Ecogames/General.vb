@@ -12,7 +12,9 @@
     Public Const HangmanMaximumSecondsPerCharacter As Integer = 45
     Public Const HangmanMinimumSecondsPerCharacter As Integer = 5
     Public Const HangmanMaximumAttemptsPerCharacter As Integer = 15
+    Public Const HangmanSeparator As Char = "_"
     Public Const DefaultScoreMultiplier As Integer = 10
+    Public Const SpaceChar As Char = " "
 
     ' Local
     Private Const MinimumPasswordLength As Integer = 8

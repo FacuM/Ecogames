@@ -197,11 +197,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Conseguiste {0}/{1} puntos (un {2}%)..
+        '''</summary>
+        Friend ReadOnly Property Play_General_CompletionLevel() As String
+            Get
+                Return ResourceManager.GetString("Play_General_CompletionLevel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Comienza la partida!.
+        '''</summary>
+        Friend ReadOnly Property Play_General_GameBegins() As String
+            Get
+                Return ResourceManager.GetString("Play_General_GameBegins", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to No completaste la actividad, ¿querés salir de todos modos?.
         '''</summary>
         Friend ReadOnly Property Play_General_IncompleteActivityWarn() As String
             Get
                 Return ResourceManager.GetString("Play_General_IncompleteActivityWarn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Te quedaste sin intentos!.
+        '''</summary>
+        Friend ReadOnly Property Play_General_NoAttempts() As String
+            Get
+                Return ResourceManager.GetString("Play_General_NoAttempts", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to No conseguiste ningún punto..
+        '''</summary>
+        Friend ReadOnly Property Play_General_NoCompletion() As String
+            Get
+                Return ResourceManager.GetString("Play_General_NoCompletion", resourceCulture)
             End Get
         End Property
         
@@ -215,6 +251,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to ¡Perfecto!.
+        '''</summary>
+        Friend ReadOnly Property Play_General_PerfectScore_Trim() As String
+            Get
+                Return ResourceManager.GetString("Play_General_PerfectScore_Trim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Te quedan {0} segundos..
+        '''</summary>
+        Friend ReadOnly Property Play_General_RemainingSeconds_Plural() As String
+            Get
+                Return ResourceManager.GetString("Play_General_RemainingSeconds_Plural", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Te queda {0} segundo..
+        '''</summary>
+        Friend ReadOnly Property Play_General_RemainingSeconds_Singular() As String
+            Get
+                Return ResourceManager.GetString("Play_General_RemainingSeconds_Singular", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to ¡Correcto!.
         '''</summary>
         Friend ReadOnly Property Play_General_RightAnswer() As String
@@ -224,11 +287,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Uh, ¡te quedaste sin tiempo!.
+        '''</summary>
+        Friend ReadOnly Property Play_General_Timedout() As String
+            Get
+                Return ResourceManager.GetString("Play_General_Timedout", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Uh, ¡te equivocaste!.
         '''</summary>
         Friend ReadOnly Property Play_General_WrongAnswer() As String
             Get
                 Return ResourceManager.GetString("Play_General_WrongAnswer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Incorrecto! Te quedan {0} intentos..
+        '''</summary>
+        Friend ReadOnly Property Play_Hangman_Wrong_RemainingAttempts() As String
+            Get
+                Return ResourceManager.GetString("Play_Hangman_Wrong_RemainingAttempts", resourceCulture)
             End Get
         End Property
         

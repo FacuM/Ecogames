@@ -45,9 +45,10 @@ Partial Class Login
         Me.PasswordTextBox.Location = New System.Drawing.Point(23, 108)
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.PasswordTextBox.Size = New System.Drawing.Size(203, 20)
         Me.PasswordTextBox.TabIndex = 1
+        Me.PasswordTextBox.UseSystemPasswordChar = True
         '
         'ContinueButton
         '

@@ -70,18 +70,20 @@ Partial Class FirstRun
         Me.PasswordTextBox.Location = New System.Drawing.Point(128, 133)
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.PasswordTextBox.Size = New System.Drawing.Size(191, 20)
         Me.PasswordTextBox.TabIndex = 1
+        Me.PasswordTextBox.UseSystemPasswordChar = True
         '
         'PasswordVerifyTextBox
         '
         Me.PasswordVerifyTextBox.Location = New System.Drawing.Point(128, 159)
         Me.PasswordVerifyTextBox.MaxLength = 64
         Me.PasswordVerifyTextBox.Name = "PasswordVerifyTextBox"
-        Me.PasswordVerifyTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordVerifyTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.PasswordVerifyTextBox.Size = New System.Drawing.Size(191, 20)
         Me.PasswordVerifyTextBox.TabIndex = 2
+        Me.PasswordVerifyTextBox.UseSystemPasswordChar = True
         '
         'Button1
         '

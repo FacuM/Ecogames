@@ -165,10 +165,10 @@ Public Class Play_Activities
                 Play_ActivityType_Crossword.Text = SettingsActivityName.Text
                 Play_ActivityType_Crossword.LoadActivity()
                 Play_ActivityType_Crossword.ShowDialog()
-                'Case My.Resources.ActivityType_Hangman_ID
-                '   ActivityType_Hangman.Text = SettingsActivityName.Text
-                '    ActivityType_Hangman.PrepareNew()
-                '    ActivityType_Hangman.ShowDialog()
+            Case My.Resources.ActivityType_Hangman_ID
+                Play_ActivityType_Hangman.Text = SettingsActivityName.Text
+                Play_ActivityType_Hangman.LoadActivity()
+                Play_ActivityType_Hangman.ShowDialog()
                 'Case My.Resources.ActivityType_Question_Open_ID
                 '    ActivityType_Question_Open.Text = SettingsActivityName.Text
                 '    ActivityType_Question_Open.PrepareNew()

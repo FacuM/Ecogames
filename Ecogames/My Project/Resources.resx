@@ -240,4 +240,31 @@ Cuando termines, hacé clic en "Guardar".</value>
   <data name="Play_General_WrongAnswer" xml:space="preserve">
     <value>Uh, ¡te equivocaste!</value>
   </data>
+  <data name="Play_General_CompletionLevel" xml:space="preserve">
+    <value>Conseguiste {0}/{1} puntos (un {2}%).</value>
+  </data>
+  <data name="Play_General_GameBegins" xml:space="preserve">
+    <value>¡Comienza la partida!</value>
+  </data>
+  <data name="Play_General_NoAttempts" xml:space="preserve">
+    <value>¡Te quedaste sin intentos!</value>
+  </data>
+  <data name="Play_General_NoCompletion" xml:space="preserve">
+    <value>No conseguiste ningún punto.</value>
+  </data>
+  <data name="Play_General_PerfectScore_Trim" xml:space="preserve">
+    <value>¡Perfecto!</value>
+  </data>
+  <data name="Play_General_RemainingSeconds_Plural" xml:space="preserve">
+    <value>Te quedan {0} segundos.</value>
+  </data>
+  <data name="Play_General_RemainingSeconds_Singular" xml:space="preserve">
+    <value>Te queda {0} segundo.</value>
+  </data>
+  <data name="Play_General_Timedout" xml:space="preserve">
+    <value>Uh, ¡te quedaste sin tiempo!</value>
+  </data>
+  <data name="Play_Hangman_Wrong_RemainingAttempts" xml:space="preserve">
+    <value>¡Incorrecto! Te quedan {0} intentos.</value>
+  </data>
 </root>
