@@ -24,6 +24,10 @@ Partial Class ActivityType_Hangman
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ActivityType_Hangman))
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.HangmanScorePerLetterCheckbox = New MetroFramework.Controls.MetroCheckBox()
+        Me.HangmanMaxTryAmountCheckbox = New MetroFramework.Controls.MetroCheckBox()
+        Me.HangmanDefaultLetterAmountCheckbox = New MetroFramework.Controls.MetroCheckBox()
+        Me.HangmanTimePerLetterCheckbox = New MetroFramework.Controls.MetroCheckBox()
         Me.SaveActivity = New MetroFramework.Controls.MetroButton()
         Me.Label16 = New MetroFramework.Controls.MetroLabel()
         Me.HangmanMaxTryAmount = New System.Windows.Forms.NumericUpDown()
@@ -46,6 +50,10 @@ Partial Class ActivityType_Hangman
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.HangmanScorePerLetterCheckbox)
+        Me.GroupBox4.Controls.Add(Me.HangmanMaxTryAmountCheckbox)
+        Me.GroupBox4.Controls.Add(Me.HangmanDefaultLetterAmountCheckbox)
+        Me.GroupBox4.Controls.Add(Me.HangmanTimePerLetterCheckbox)
         Me.GroupBox4.Controls.Add(Me.SaveActivity)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.HangmanMaxTryAmount)
@@ -62,9 +70,44 @@ Partial Class ActivityType_Hangman
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Ajustes"
         '
+        'HangmanScorePerLetterCheckbox
+        '
+        Me.HangmanScorePerLetterCheckbox.Checked = True
+        Me.HangmanScorePerLetterCheckbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.HangmanScorePerLetterCheckbox.Enabled = False
+        Me.HangmanScorePerLetterCheckbox.Location = New System.Drawing.Point(354, 30)
+        Me.HangmanScorePerLetterCheckbox.Name = "HangmanScorePerLetterCheckbox"
+        Me.HangmanScorePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
+        Me.HangmanScorePerLetterCheckbox.TabIndex = 14
+        Me.HangmanScorePerLetterCheckbox.UseVisualStyleBackColor = True
+        '
+        'HangmanMaxTryAmountCheckbox
+        '
+        Me.HangmanMaxTryAmountCheckbox.Location = New System.Drawing.Point(354, 174)
+        Me.HangmanMaxTryAmountCheckbox.Name = "HangmanMaxTryAmountCheckbox"
+        Me.HangmanMaxTryAmountCheckbox.Size = New System.Drawing.Size(21, 20)
+        Me.HangmanMaxTryAmountCheckbox.TabIndex = 13
+        Me.HangmanMaxTryAmountCheckbox.UseVisualStyleBackColor = True
+        '
+        'HangmanDefaultLetterAmountCheckbox
+        '
+        Me.HangmanDefaultLetterAmountCheckbox.Location = New System.Drawing.Point(354, 125)
+        Me.HangmanDefaultLetterAmountCheckbox.Name = "HangmanDefaultLetterAmountCheckbox"
+        Me.HangmanDefaultLetterAmountCheckbox.Size = New System.Drawing.Size(21, 20)
+        Me.HangmanDefaultLetterAmountCheckbox.TabIndex = 12
+        Me.HangmanDefaultLetterAmountCheckbox.UseVisualStyleBackColor = True
+        '
+        'HangmanTimePerLetterCheckbox
+        '
+        Me.HangmanTimePerLetterCheckbox.Location = New System.Drawing.Point(354, 77)
+        Me.HangmanTimePerLetterCheckbox.Name = "HangmanTimePerLetterCheckbox"
+        Me.HangmanTimePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
+        Me.HangmanTimePerLetterCheckbox.TabIndex = 11
+        Me.HangmanTimePerLetterCheckbox.UseVisualStyleBackColor = True
+        '
         'SaveActivity
         '
-        Me.SaveActivity.Location = New System.Drawing.Point(101, 216)
+        Me.SaveActivity.Location = New System.Drawing.Point(122, 215)
         Me.SaveActivity.Name = "SaveActivity"
         Me.SaveActivity.Size = New System.Drawing.Size(116, 23)
         Me.SaveActivity.TabIndex = 10
@@ -81,18 +124,20 @@ Partial Class ActivityType_Hangman
         '
         'HangmanMaxTryAmount
         '
+        Me.HangmanMaxTryAmount.Enabled = False
         Me.HangmanMaxTryAmount.Location = New System.Drawing.Point(199, 174)
         Me.HangmanMaxTryAmount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.HangmanMaxTryAmount.Name = "HangmanMaxTryAmount"
-        Me.HangmanMaxTryAmount.Size = New System.Drawing.Size(171, 20)
+        Me.HangmanMaxTryAmount.Size = New System.Drawing.Size(149, 20)
         Me.HangmanMaxTryAmount.TabIndex = 8
         Me.HangmanMaxTryAmount.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'HangmanDefaultLetterAmount
         '
+        Me.HangmanDefaultLetterAmount.Enabled = False
         Me.HangmanDefaultLetterAmount.Location = New System.Drawing.Point(199, 125)
         Me.HangmanDefaultLetterAmount.Name = "HangmanDefaultLetterAmount"
-        Me.HangmanDefaultLetterAmount.Size = New System.Drawing.Size(171, 20)
+        Me.HangmanDefaultLetterAmount.Size = New System.Drawing.Size(149, 20)
         Me.HangmanDefaultLetterAmount.TabIndex = 7
         '
         'Label15
@@ -106,9 +151,10 @@ Partial Class ActivityType_Hangman
         '
         'HangmanTimePerLetter
         '
+        Me.HangmanTimePerLetter.Enabled = False
         Me.HangmanTimePerLetter.Location = New System.Drawing.Point(199, 77)
         Me.HangmanTimePerLetter.Name = "HangmanTimePerLetter"
-        Me.HangmanTimePerLetter.Size = New System.Drawing.Size(171, 20)
+        Me.HangmanTimePerLetter.Size = New System.Drawing.Size(149, 20)
         Me.HangmanTimePerLetter.TabIndex = 5
         '
         'Label14
@@ -124,7 +170,7 @@ Partial Class ActivityType_Hangman
         '
         Me.HangmanScorePerLetter.Location = New System.Drawing.Point(199, 30)
         Me.HangmanScorePerLetter.Name = "HangmanScorePerLetter"
-        Me.HangmanScorePerLetter.Size = New System.Drawing.Size(171, 20)
+        Me.HangmanScorePerLetter.Size = New System.Drawing.Size(149, 20)
         Me.HangmanScorePerLetter.TabIndex = 3
         '
         'Label13
@@ -202,4 +248,8 @@ Partial Class ActivityType_Hangman
     Friend WithEvents Label14 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Label13 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Label11 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents HangmanMaxTryAmountCheckbox As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents HangmanDefaultLetterAmountCheckbox As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents HangmanTimePerLetterCheckbox As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents HangmanScorePerLetterCheckbox As MetroFramework.Controls.MetroCheckBox
 End Class
