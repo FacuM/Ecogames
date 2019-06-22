@@ -206,6 +206,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to (vacío).
+        '''</summary>
+        Friend ReadOnly Property Play_General_EmptyAnswerDescriptor() As String
+            Get
+                Return ResourceManager.GetString("Play_General_EmptyAnswerDescriptor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to ¡Comienza la partida!.
         '''</summary>
         Friend ReadOnly Property Play_General_GameBegins() As String
@@ -310,6 +319,82 @@ Namespace My.Resources
         Friend ReadOnly Property Play_Hangman_Wrong_RemainingAttempts() As String
             Get
                 Return ResourceManager.GetString("Play_Hangman_Wrong_RemainingAttempts", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tu respuesta estaba vacía y no obtuviste puntos (completaste un {0}%)..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_AutoEvalEmpty() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_AutoEvalEmpty", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to No respondiste, ¿querés continuar de todos modos?.
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_AutoEvalEmptyAnswerWarn() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_AutoEvalEmptyAnswerWarn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Muy bien! Lograste un {0}%..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_AutoEvalRegular() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_AutoEvalRegular", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tu respuesta: 
+        '''{0}
+        '''
+        '''Respuesta esperada: 
+        '''{1}.
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_AutoEvalResult() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_AutoEvalResult", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Excelente, ¡seguí así! Sacaste un {0}%..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_AutoEvalRight() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_AutoEvalRight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Uh! Conseguiste apenas un {0}%..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_AutoEvalWrong() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_AutoEvalWrong", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Por favor, esperá a que la respuesta sea evaluada personalmente por el profesor..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_NoAutoEvalInfo() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_NoAutoEvalInfo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Gracias por responder!.
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_NoAutoEvalThanks() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_NoAutoEvalThanks", resourceCulture)
             End Get
         End Property
         

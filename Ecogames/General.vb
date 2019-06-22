@@ -6,7 +6,7 @@
     ' Global
     Public Const MaximumCrosswordXIndex As Long = Long.MaxValue
     Public Const SemicolonAlternativeString As String = "[sc]"
-    Public RowSplitter As String() = New String() {"[rs]"}
+    Public ReadOnly RowSplitter As String() = New String() {"[rs]"}
     Public Const CrosswordDefaultColumns As Integer = 13
     Public Const CrosswordDefaultRows As Integer = 15
     Public Const HangmanMaximumSecondsPerCharacter As Integer = 45
@@ -15,6 +15,32 @@
     Public Const HangmanSeparator As Char = "_"
     Public Const DefaultScoreMultiplier As Integer = 10
     Public Const SpaceChar As Char = " "
+    Public Const DotChar As Char = "."
+    Public Const SemicolonChar As Char = ";"
+    Public Const CommaChar As Char = ","
+    Public ReadOnly NormalExpressions As String() = { ' Common Spanish expressions, tweak as needed.
+        "es",
+        "está",
+        "tiene",
+        "contiene",
+        "que",
+        "por",
+        "así",
+        "asi",
+        "si",
+        "debe",
+        "ende",
+        "tal",
+        "como",
+        "qué",
+        "cuál",
+        "dónde",
+        "donde",
+        "debe",
+        "puede",
+        "hace",
+        "hacer"
+    }
 
     ' Local
     Private Const MinimumPasswordLength As Integer = 8

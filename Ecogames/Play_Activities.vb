@@ -169,10 +169,10 @@ Public Class Play_Activities
                 Play_ActivityType_Hangman.Text = SettingsActivityName.Text
                 Play_ActivityType_Hangman.LoadActivity()
                 Play_ActivityType_Hangman.ShowDialog()
-                'Case My.Resources.ActivityType_Question_Open_ID
-                '    ActivityType_Question_Open.Text = SettingsActivityName.Text
-                '    ActivityType_Question_Open.PrepareNew()
-                '    ActivityType_Question_Open.ShowDialog()
+            Case My.Resources.ActivityType_Question_Open_ID
+                Play_ActivityType_Question_Open.Text = SettingsActivityName.Text
+                Play_ActivityType_Question_Open.LoadActivity()
+                Play_ActivityType_Question_Open.ShowDialog()
                 'Case My.Resources.ActivityType_Question_Opts_ID
                 '    ActivityType_Question_Opts.Text = SettingsActivityName.Text
                 '    ActivityType_Question_Opts.PrepareNew()
