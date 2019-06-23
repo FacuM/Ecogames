@@ -30,7 +30,9 @@ Public Class Play_ActivityType_Question_Open
             Paragraph = Paragraph.Replace(DotChar, String.Empty).Replace(CommaChar, String.Empty).Replace(SemicolonChar, String.Empty)
 
             For Each Word In Paragraph.ToLower().Split(SpaceChar)
+#If DEBUG Then
                 LogD(Me, "Storing """ & Word & """ for comparison...")
+#End If
                 AnswerExpectedWords.Add(Word)
             Next
 #If DEBUG Then
@@ -79,7 +81,9 @@ Public Class Play_ActivityType_Question_Open
                 Paragraph = Paragraph.Replace(DotChar, String.Empty).Replace(CommaChar, String.Empty).Replace(SemicolonChar, String.Empty)
 
                 For Each Word In Paragraph.ToLower().Split(SpaceChar)
+#If DEBUG Then
                     LogD(Me, "Comparing """ & Word & """...")
+#End If
                     If AnswerExpectedWords.Contains(Word) Then
                         WordMatchCount += 1
                     End If
