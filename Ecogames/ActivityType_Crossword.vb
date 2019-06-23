@@ -37,6 +37,8 @@ Public Class ActivityType_Crossword
             DataGridView1.Rows.Add(New DataGridViewRow)
         Next
 
+        ColumnCountLabel.Text = DataGridView1.Columns.GetColumnCount(0).ToString
+
         UseWaitCursor = False
     End Sub
 
@@ -122,6 +124,8 @@ Public Class ActivityType_Crossword
             CurIdx += 1
         Next
 
+        ColumnCountLabel.Text = DataGridView1.Columns.GetColumnCount(0).ToString
+
         DataGridView1.Enabled = True
         DataGridView1.ReadOnly = False
 
@@ -184,7 +188,7 @@ Public Class ActivityType_Crossword
         DataGridView1.ReadOnly = False
 
         ColumnCount = DataGridView1.Columns.GetColumnCount(0)
-        Label12.Text = ColumnCount.ToString
+        Me.ColumnCountLabel.Text = ColumnCount.ToString
 
 #If DEBUG Then
         LogD(Me, "Column count: " & ColumnCount)
@@ -204,7 +208,7 @@ Public Class ActivityType_Crossword
         End If
 
         ColumnCount = DataGridView1.Columns.GetColumnCount(0)
-        Label12.Text = ColumnCount.ToString
+        Me.ColumnCountLabel.Text = ColumnCount.ToString
 
 #If DEBUG Then
         LogD(Me, "Column count: " & ColumnCount)

@@ -27,7 +27,7 @@ Partial Class ActivityType_Crossword
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New MetroFramework.Controls.MetroPanel()
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
-        Me.Label12 = New MetroFramework.Controls.MetroLabel()
+        Me.ColumnCountLabel = New MetroFramework.Controls.MetroLabel()
         Me.Panel1 = New MetroFramework.Controls.MetroPanel()
         Me.AddColumn = New MetroFramework.Controls.MetroButton()
         Me.SaveActivity = New MetroFramework.Controls.MetroButton()
@@ -61,7 +61,7 @@ Partial Class ActivityType_Crossword
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.Label12)
+        Me.Panel2.Controls.Add(Me.ColumnCountLabel)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.HorizontalScrollbarBarColor = True
         Me.Panel2.HorizontalScrollbarHighlightOnWheel = False
@@ -83,14 +83,14 @@ Partial Class ActivityType_Crossword
         Me.Label1.Text = "Columnas: "
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label12
+        'ColumnCountLabel
         '
-        Me.Label12.Location = New System.Drawing.Point(95, 4)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(102, 20)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "0"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ColumnCountLabel.Location = New System.Drawing.Point(95, 4)
+        Me.ColumnCountLabel.Name = "ColumnCountLabel"
+        Me.ColumnCountLabel.Size = New System.Drawing.Size(102, 20)
+        Me.ColumnCountLabel.TabIndex = 21
+        Me.ColumnCountLabel.Text = "0"
+        Me.ColumnCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel1
         '
@@ -154,7 +154,7 @@ Partial Class ActivityType_Crossword
     End Sub
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label12 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ColumnCountLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents AddColumn As MetroFramework.Controls.MetroButton
     Friend WithEvents SaveActivity As MetroFramework.Controls.MetroButton
     Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
