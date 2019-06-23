@@ -1,6 +1,31 @@
 ﻿Imports System.Collections.Specialized
 
 Public Class Settings
+    Public Sub Populate()
+#If DEBUG Then
+        LogD(Me, "Preparing " & Name & " elements...")
+#End If
+
+        ' Cleanup.
+        SettingsActivityType.Items.Clear()
+
+        ' Prepare elements in Settings.
+        SettingsActivityType.Items.Add(My.Resources.ActivityType_Crossword)
+        SettingsActivityType.Items.Add(My.Resources.ActivityType_Hangman)
+        SettingsActivityType.Items.Add(My.Resources.ActivityType_Question_Open)
+        SettingsActivityType.Items.Add(My.Resources.ActivityType_Question_Opts)
+
+        GetColor(My.Settings.UserRepOk, Panel3)
+        GetColor(My.Settings.UserRepWrong, Panel4)
+        GetColor(My.Settings.UserRepRegular, Panel5)
+        GetColor(My.Settings.UserRepCust1, Panel6)
+        GetColor(My.Settings.UserRepCust2, Panel7)
+        GetColor(My.Settings.UserRepCust3, Panel8)
+
+#If DEBUG Then
+        LogD(Me, "Done.")
+#End If
+    End Sub
     Public Sub UpdateActivities()
         'My.Settings.Activities
         '  => String()

@@ -26,8 +26,9 @@
         My.Settings.FirstRun = False
         SettingsSaver()
         Hide()
-        Settings.Show()
+        Settings.Populate()
         Settings.UpdateActivities()
+        Settings.Show()
         Close()
     End Sub
 

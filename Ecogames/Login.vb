@@ -16,6 +16,8 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
         If PasswordTextBox.Text = My.Settings.UserPassword Then
             Hide()
+            Settings.Populate()
+            Settings.UpdateActivities()
             Settings.Show()
             Close()
             If Play_Activities.Visible Then

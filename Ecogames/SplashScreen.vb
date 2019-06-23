@@ -39,30 +39,10 @@
         'Copyright info
         Copyright.Text = My.Application.Info.Copyright
 
-#If DEBUG Then
-        LogD(Me, "Preparing " & Settings.Name & " elements...")
-#End If
-
-        ' Prepare elements in Settings.
-        Settings.SettingsActivityType.Items.Add(My.Resources.ActivityType_Crossword)
-        Settings.SettingsActivityType.Items.Add(My.Resources.ActivityType_Hangman)
-        Settings.SettingsActivityType.Items.Add(My.Resources.ActivityType_Question_Open)
-        Settings.SettingsActivityType.Items.Add(My.Resources.ActivityType_Question_Opts)
-
-        GetColor(My.Settings.UserRepOk, Settings.Panel3)
-        GetColor(My.Settings.UserRepWrong, Settings.Panel4)
-        GetColor(My.Settings.UserRepRegular, Settings.Panel5)
-        GetColor(My.Settings.UserRepCust1, Settings.Panel6)
-        GetColor(My.Settings.UserRepCust2, Settings.Panel7)
-        GetColor(My.Settings.UserRepCust3, Settings.Panel8)
+        Settings.Populate()
+        Settings.UpdateActivities()
 
         Ready = True
-
-#If DEBUG Then
-        LogD(Me, "Done.")
-#End If
-
-        Settings.UpdateActivities()
 
         ' We're done, lets fire up the timer.
         Timer1.Enabled = True
