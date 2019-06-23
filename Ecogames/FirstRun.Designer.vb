@@ -42,7 +42,7 @@ Partial Class FirstRun
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Location = New System.Drawing.Point(20, 60)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(328, 45)
+        Me.Label1.Size = New System.Drawing.Size(370, 45)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Para continuar, regístrese."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -51,7 +51,7 @@ Partial Class FirstRun
         '
         Me.Label4.Location = New System.Drawing.Point(20, 131)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 23)
+        Me.Label4.Size = New System.Drawing.Size(143, 23)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Contraseña: "
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -60,14 +60,14 @@ Partial Class FirstRun
         '
         Me.Label2.Location = New System.Drawing.Point(20, 157)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 23)
+        Me.Label2.Size = New System.Drawing.Size(143, 23)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Repetir contraseña: "
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PasswordTextBox
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(128, 133)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(169, 134)
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
@@ -77,7 +77,7 @@ Partial Class FirstRun
         '
         'PasswordVerifyTextBox
         '
-        Me.PasswordVerifyTextBox.Location = New System.Drawing.Point(128, 159)
+        Me.PasswordVerifyTextBox.Location = New System.Drawing.Point(169, 160)
         Me.PasswordVerifyTextBox.MaxLength = 64
         Me.PasswordVerifyTextBox.Name = "PasswordVerifyTextBox"
         Me.PasswordVerifyTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
@@ -88,7 +88,7 @@ Partial Class FirstRun
         'Button1
         '
         Me.Button1.Enabled = False
-        Me.Button1.Location = New System.Drawing.Point(152, 185)
+        Me.Button1.Location = New System.Drawing.Point(106, 200)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(93, 23)
         Me.Button1.TabIndex = 3
@@ -97,7 +97,7 @@ Partial Class FirstRun
         'Button2
         '
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button2.Location = New System.Drawing.Point(252, 185)
+        Me.Button2.Location = New System.Drawing.Point(206, 200)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(93, 23)
         Me.Button2.TabIndex = 4
@@ -106,7 +106,7 @@ Partial Class FirstRun
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Red
-        Me.Panel1.Location = New System.Drawing.Point(325, 133)
+        Me.Panel1.Location = New System.Drawing.Point(366, 134)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(20, 20)
         Me.Panel1.TabIndex = 13
@@ -114,7 +114,7 @@ Partial Class FirstRun
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Red
-        Me.Panel2.Location = New System.Drawing.Point(325, 159)
+        Me.Panel2.Location = New System.Drawing.Point(366, 160)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(20, 20)
         Me.Panel2.TabIndex = 14
@@ -122,14 +122,14 @@ Partial Class FirstRun
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Red
-        Me.Panel3.Location = New System.Drawing.Point(325, 107)
+        Me.Panel3.Location = New System.Drawing.Point(366, 108)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(20, 20)
         Me.Panel3.TabIndex = 16
         '
         'UsernameTextBox
         '
-        Me.UsernameTextBox.Location = New System.Drawing.Point(128, 107)
+        Me.UsernameTextBox.Location = New System.Drawing.Point(169, 108)
         Me.UsernameTextBox.MaxLength = 35
         Me.UsernameTextBox.Name = "UsernameTextBox"
         Me.UsernameTextBox.Size = New System.Drawing.Size(191, 20)
@@ -139,7 +139,7 @@ Partial Class FirstRun
         '
         Me.Label3.Location = New System.Drawing.Point(20, 105)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(102, 23)
+        Me.Label3.Size = New System.Drawing.Size(143, 23)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Nombre:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -150,7 +150,7 @@ Partial Class FirstRun
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Button2
-        Me.ClientSize = New System.Drawing.Size(368, 220)
+        Me.ClientSize = New System.Drawing.Size(410, 239)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.UsernameTextBox)
         Me.Controls.Add(Me.Panel2)
@@ -167,6 +167,7 @@ Partial Class FirstRun
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FirstRun"
+        Me.Resizable = False
         Me.Text = "Primer inicio"
         Me.ResumeLayout(False)
 

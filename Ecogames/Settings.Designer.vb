@@ -201,7 +201,7 @@ Partial Class Settings
         '
         Me.Label6.Location = New System.Drawing.Point(6, 163)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 23)
+        Me.Label6.Size = New System.Drawing.Size(198, 23)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Personalizado 3:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -226,7 +226,7 @@ Partial Class Settings
         '
         Me.Label5.Location = New System.Drawing.Point(6, 134)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(104, 23)
+        Me.Label5.Size = New System.Drawing.Size(198, 23)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Personalizado 2:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -251,7 +251,7 @@ Partial Class Settings
         '
         Me.Label4.Location = New System.Drawing.Point(6, 105)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 23)
+        Me.Label4.Size = New System.Drawing.Size(198, 23)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Personalizado 1:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -276,7 +276,7 @@ Partial Class Settings
         '
         Me.Label3.Location = New System.Drawing.Point(6, 74)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 23)
+        Me.Label3.Size = New System.Drawing.Size(198, 23)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Regular:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -301,7 +301,7 @@ Partial Class Settings
         '
         Me.Label2.Location = New System.Drawing.Point(6, 45)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(81, 23)
+        Me.Label2.Size = New System.Drawing.Size(198, 23)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Incorrecta:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -326,7 +326,7 @@ Partial Class Settings
         '
         Me.Label1.Location = New System.Drawing.Point(6, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 23)
+        Me.Label1.Size = New System.Drawing.Size(198, 23)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Correcta: "
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

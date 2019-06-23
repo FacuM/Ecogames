@@ -35,7 +35,7 @@ Partial Class Login
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Location = New System.Drawing.Point(20, 60)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(232, 45)
+        Me.Label1.Size = New System.Drawing.Size(252, 45)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Para continuar, ingresá tu contraseña."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -46,14 +46,14 @@ Partial Class Login
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(203, 20)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
         Me.PasswordTextBox.TabIndex = 1
         Me.PasswordTextBox.UseSystemPasswordChar = True
         '
         'ContinueButton
         '
         Me.ContinueButton.Enabled = False
-        Me.ContinueButton.Location = New System.Drawing.Point(59, 147)
+        Me.ContinueButton.Location = New System.Drawing.Point(77, 150)
         Me.ContinueButton.Name = "ContinueButton"
         Me.ContinueButton.Size = New System.Drawing.Size(93, 23)
         Me.ContinueButton.TabIndex = 3
@@ -62,7 +62,7 @@ Partial Class Login
         'QuitButton
         '
         Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.QuitButton.Location = New System.Drawing.Point(159, 147)
+        Me.QuitButton.Location = New System.Drawing.Point(176, 150)
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(93, 23)
         Me.QuitButton.TabIndex = 4
@@ -71,7 +71,7 @@ Partial Class Login
         'PasswordStatusPanel
         '
         Me.PasswordStatusPanel.BackColor = System.Drawing.Color.Red
-        Me.PasswordStatusPanel.Location = New System.Drawing.Point(232, 108)
+        Me.PasswordStatusPanel.Location = New System.Drawing.Point(249, 108)
         Me.PasswordStatusPanel.Name = "PasswordStatusPanel"
         Me.PasswordStatusPanel.Size = New System.Drawing.Size(20, 20)
         Me.PasswordStatusPanel.TabIndex = 13
@@ -82,7 +82,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.QuitButton
-        Me.ClientSize = New System.Drawing.Size(272, 193)
+        Me.ClientSize = New System.Drawing.Size(292, 195)
         Me.Controls.Add(Me.PasswordStatusPanel)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.ContinueButton)
