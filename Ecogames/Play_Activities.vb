@@ -31,7 +31,7 @@ Public Class Play_Activities
         End If
     End Sub
 
-    Private Sub Settings_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub PlayActivity_Load(sender As Object, e As EventArgs) Handles Me.Load
         Enabled = False
         UseWaitCursor = True
 
@@ -40,8 +40,6 @@ Public Class Play_Activities
 #End If
 
         UpdateActivities()
-
-        'My.Settings.Activities = String and contains ID, Name, Description, Activity Type (in order).
 
 #If DEBUG Then
         LogD(Me, "Done.")
@@ -56,30 +54,6 @@ Public Class Play_Activities
         LogD(Me, "Closed.")
     End Sub
 #End If
-
-    Private Sub SettingsActivityType_SelectedIndexChanged(sender As Object, e As EventArgs)
-        If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
-#If DEBUG Then
-            LogD(Me, "Updating selected activity (""" & original(1) & """)...")
-#End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & original(1) & SemicolonChar & original(2) & SemicolonChar & CurrentActivityTypeId
-            SettingsSaver()
-        Else
-            If String.IsNullOrEmpty(SettingsActivityName.Text) Then
-                SettingsActivityType.Enabled = False
-                SettingsActivityDescription.Enabled = False
-            Else
-                SettingsActivityType.Enabled = True
-                SettingsActivityDescription.Enabled = True
-            End If
-        End If
-    End Sub
-
-    Dim PreviousIndex As Integer
-    Private Sub SettingsActivityName_Leave(sender As Object, e As EventArgs) Handles SettingsActivityName.Leave
-        PreviousIndex = ActivityListBox.SelectedIndex
-    End Sub
 
     Private Sub ActivityListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ActivityListBox.SelectedIndexChanged
 #If DEBUG Then
@@ -125,30 +99,6 @@ Public Class Play_Activities
         End If
 
         SettingsActivityName.Enabled = True
-    End Sub
-
-    Private Sub ModifyActivity_Click(sender As Object, e As EventArgs)
-        If ActivityListBox.SelectedIndex > -1 Then
-            CurrentActivityIndex = ActivityListBox.SelectedIndex
-        End If
-        Select Case CurrentActivityTypeId
-            Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
-                ActivityType_Crossword.Text = SettingsActivityName.Text
-                ActivityType_Crossword.PrepareModification()
-                ActivityType_Crossword.ShowDialog()
-            Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
-                ActivityType_Hangman.Text = SettingsActivityName.Text
-                ActivityType_Hangman.PrepareModification()
-                ActivityType_Hangman.ShowDialog()
-            Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
-                ActivityType_Question_Open.Text = SettingsActivityName.Text
-                ActivityType_Question_Open.PrepareModification()
-                ActivityType_Question_Open.ShowDialog()
-            Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
-                ActivityType_Question_Opts.Text = SettingsActivityName.Text
-                ActivityType_Question_Opts.PrepareModification()
-                ActivityType_Question_Opts.ShowDialog()
-        End Select
     End Sub
 
     Private Sub Play_Activities_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
