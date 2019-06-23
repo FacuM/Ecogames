@@ -21,7 +21,7 @@ Public Class Play_Activities
             ActivityListBox.Visible = True
 
             For Each Activity As String In My.Settings.Activities
-                Dim data As String() = Activity.Split(";")
+                Dim data As String() = Activity.Split(SemicolonChar)
 
                 ActivityListBox.Items.Add(data(1))
             Next
@@ -59,11 +59,11 @@ Public Class Play_Activities
 
     Private Sub SettingsActivityType_SelectedIndexChanged(sender As Object, e As EventArgs)
         If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";") ' Just for shortening purposes
+            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
 #If DEBUG Then
             LogD(Me, "Updating selected activity (""" & original(1) & """)...")
 #End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & ";" & original(1) & ";" & original(2) & ";" & CurrentActivityTypeId
+            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & original(1) & SemicolonChar & original(2) & SemicolonChar & CurrentActivityTypeId
             SettingsSaver()
         Else
             If String.IsNullOrEmpty(SettingsActivityName.Text) Then
@@ -88,7 +88,7 @@ Public Class Play_Activities
         CurrentActivityIndex = ActivityListBox.SelectedIndex
 
         If ActivityListBox.SelectedIndex > -1 Then
-            Dim Activity As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";")
+            Dim Activity As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar)
 
             SettingsActivityDescription.Text = Activity(2)
             SettingsActivityName.Text = Activity(1)
@@ -97,13 +97,13 @@ Public Class Play_Activities
             If Integer.TryParse(Activity(3), ParsedActivityType) Then
                 CurrentActivityTypeId = ParsedActivityType
                 Select Case CurrentActivityTypeId
-                    Case My.Resources.ActivityType_Crossword_ID
+                    Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
                         SettingsActivityType.Text = My.Resources.ActivityType_Crossword
-                    Case My.Resources.ActivityType_Hangman_ID
+                    Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
                         SettingsActivityType.Text = My.Resources.ActivityType_Hangman
-                    Case My.Resources.ActivityType_Question_Open_ID
+                    Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
                         SettingsActivityType.Text = My.Resources.ActivityType_Question_Open
-                    Case My.Resources.ActivityType_Question_Opts_ID
+                    Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
                         SettingsActivityType.Text = My.Resources.ActivityType_Question_Opts
                     Case Else
                 End Select
@@ -114,7 +114,7 @@ Public Class Play_Activities
 #If DEBUG Then
                 LogD(Me, "WARNING: failed to parse activity type for activity ID " & Activity(0) & ".")
 #End If
-                MsgBox(String.Format(My.Resources.Settings_General_Err_Index, 3, "Activity"), MsgBoxStyle.Critical, My.Resources.General_Error_Title)
+                MessageBox.Show(String.Format(My.Resources.Settings_General_Err_Index, 3, "Activity"), My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
             ' Enable activity play button.
@@ -132,19 +132,19 @@ Public Class Play_Activities
             CurrentActivityIndex = ActivityListBox.SelectedIndex
         End If
         Select Case CurrentActivityTypeId
-            Case My.Resources.ActivityType_Crossword_ID
+            Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
                 ActivityType_Crossword.Text = SettingsActivityName.Text
                 ActivityType_Crossword.PrepareModification()
                 ActivityType_Crossword.ShowDialog()
-            Case My.Resources.ActivityType_Hangman_ID
+            Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
                 ActivityType_Hangman.Text = SettingsActivityName.Text
                 ActivityType_Hangman.PrepareModification()
                 ActivityType_Hangman.ShowDialog()
-            Case My.Resources.ActivityType_Question_Open_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
                 ActivityType_Question_Open.Text = SettingsActivityName.Text
                 ActivityType_Question_Open.PrepareModification()
                 ActivityType_Question_Open.ShowDialog()
-            Case My.Resources.ActivityType_Question_Opts_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
                 ActivityType_Question_Opts.Text = SettingsActivityName.Text
                 ActivityType_Question_Opts.PrepareModification()
                 ActivityType_Question_Opts.ShowDialog()
@@ -161,19 +161,19 @@ Public Class Play_Activities
         UseWaitCursor = False
 
         Select Case CurrentActivityTypeId
-            Case My.Resources.ActivityType_Crossword_ID
+            Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
                 Play_ActivityType_Crossword.Text = SettingsActivityName.Text
                 Play_ActivityType_Crossword.LoadActivity()
                 Play_ActivityType_Crossword.ShowDialog()
-            Case My.Resources.ActivityType_Hangman_ID
+            Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
                 Play_ActivityType_Hangman.Text = SettingsActivityName.Text
                 Play_ActivityType_Hangman.LoadActivity()
                 Play_ActivityType_Hangman.ShowDialog()
-            Case My.Resources.ActivityType_Question_Open_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
                 Play_ActivityType_Question_Open.Text = SettingsActivityName.Text
                 Play_ActivityType_Question_Open.LoadActivity()
                 Play_ActivityType_Question_Open.ShowDialog()
-            Case My.Resources.ActivityType_Question_Opts_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
                 Play_ActivityType_Question_Opts.Text = SettingsActivityName.Text
                 Play_ActivityType_Question_Opts.LoadActivity()
                 Play_ActivityType_Question_Opts.ShowDialog()

@@ -25,7 +25,7 @@ Public Class Settings
             ActivityListBox.Visible = True
 
             For Each Activity As String In My.Settings.Activities
-                Dim data As String() = Activity.Split(";")
+                Dim data As String() = Activity.Split(SemicolonChar)
 
                 ActivityListBox.Items.Add(data(1))
             Next
@@ -53,11 +53,11 @@ Public Class Settings
 
     Private Sub SettingsActivityType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SettingsActivityType.SelectedIndexChanged
         If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";") ' Just for shortening purposes
+            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
 #If DEBUG Then
             LogD(Me, "Updating selected activity (""" & original(1) & """)...")
 #End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & ";" & original(1) & ";" & original(2) & ";" & SettingsActivityType.SelectedIndex
+            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & original(1) & SemicolonChar & original(2) & SemicolonChar & SettingsActivityType.SelectedIndex
             SettingsSaver()
         Else
             If String.IsNullOrEmpty(SettingsActivityName.Text) Then
@@ -72,11 +72,11 @@ Public Class Settings
 
     Private Sub SettingsActivityDescription_TextChanged(sender As Object, e As EventArgs) Handles SettingsActivityDescription.TextChanged
         If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";") ' Just for shortening purposes
+            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
 #If DEBUG Then
             LogD(Me, "Updating selected activity (""" & original(1) & """)...")
 #End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & ";" & original(1) & ";" & SettingsActivityDescription.Text & ";" & original(3)
+            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & original(1) & SemicolonChar & SettingsActivityDescription.Text & SemicolonChar & original(3)
             SettingsSaver()
         Else
         End If
@@ -84,11 +84,11 @@ Public Class Settings
 
     Private Sub SettingsActivityName_TextChanged(sender As Object, e As EventArgs) Handles SettingsActivityName.TextChanged
         If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";") ' Just for shortening purposes
+            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
 #If DEBUG Then
             LogD(Me, "Updating selected activity (""" & original(1) & """)...")
 #End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & ";" & SettingsActivityName.Text & ";" & original(2) & ";" & original(3)
+            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & SettingsActivityName.Text & SemicolonChar & original(2) & SemicolonChar & original(3)
             SettingsSaver()
             UpdateActivities()
             ActivityListBox.SelectedIndex = PreviousIndex
@@ -144,7 +144,7 @@ Public Class Settings
 #End If
 
         If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 1) Then
-            Dim Activity As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(";")
+            Dim Activity As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar)
 
             SettingsActivityDescription.Text = Activity(2)
             SettingsActivityName.Text = Activity(1)
@@ -160,7 +160,7 @@ Public Class Settings
 #If DEBUG Then
                 LogD(Me, "WARNING: failed to parse activity type for activity ID " & Activity(0) & ".")
 #End If
-                MsgBox(String.Format(My.Resources.Settings_General_Err_Index, 3, "Activity"), MsgBoxStyle.Critical, My.Resources.General_Error_Title)
+                MessageBox.Show(String.Format(My.Resources.Settings_General_Err_Index, 3, "Activity"), My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
             SettingsActivityDescription.Enabled = True
@@ -191,19 +191,19 @@ Public Class Settings
             CurrentActivityIndex = ActivityListBox.SelectedIndex
         End If
         Select Case SettingsActivityType.SelectedIndex
-            Case My.Resources.ActivityType_Crossword_ID
+            Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
                 ActivityType_Crossword.Text = SettingsActivityName.Text
                 ActivityType_Crossword.PrepareModification()
                 ActivityType_Crossword.ShowDialog()
-            Case My.Resources.ActivityType_Hangman_ID
+            Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
                 ActivityType_Hangman.Text = SettingsActivityName.Text
                 ActivityType_Hangman.PrepareModification()
                 ActivityType_Hangman.ShowDialog()
-            Case My.Resources.ActivityType_Question_Open_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
                 ActivityType_Question_Open.Text = SettingsActivityName.Text
                 ActivityType_Question_Open.PrepareModification()
                 ActivityType_Question_Open.ShowDialog()
-            Case My.Resources.ActivityType_Question_Opts_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
                 ActivityType_Question_Opts.Text = SettingsActivityName.Text
                 ActivityType_Question_Opts.PrepareModification()
                 ActivityType_Question_Opts.ShowDialog()
@@ -214,19 +214,19 @@ Public Class Settings
         UseWaitCursor = False
 
         Select Case SettingsActivityType.SelectedIndex
-            Case My.Resources.ActivityType_Crossword_ID
+            Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
                 ActivityType_Crossword.Text = SettingsActivityName.Text
                 ActivityType_Crossword.PrepareNew()
                 ActivityType_Crossword.ShowDialog()
-            Case My.Resources.ActivityType_Hangman_ID
+            Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
                 ActivityType_Hangman.Text = SettingsActivityName.Text
                 ActivityType_Hangman.PrepareNew()
                 ActivityType_Hangman.ShowDialog()
-            Case My.Resources.ActivityType_Question_Open_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
                 ActivityType_Question_Open.Text = SettingsActivityName.Text
                 ActivityType_Question_Open.PrepareNew()
                 ActivityType_Question_Open.ShowDialog()
-            Case My.Resources.ActivityType_Question_Opts_ID
+            Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
                 ActivityType_Question_Opts.Text = SettingsActivityName.Text
                 ActivityType_Question_Opts.PrepareNew()
                 ActivityType_Question_Opts.ShowDialog()
@@ -237,7 +237,7 @@ Public Class Settings
 
     Private Sub DeleteActivity_Click(sender As Object, e As EventArgs) Handles DeleteActivity.Click
         If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.AltKeyDown And ActivityListBox.Items.Count > 1 Then
-            If MsgBox(My.Resources.Settings_General_DeleteAllWarn, MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, My.Resources.General_Warn_Title) = MsgBoxResult.Yes Then
+            If MessageBox.Show(My.Resources.Settings_General_DeleteAllWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 For i = My.Settings.Activities.Count - 1 To 0 Step -1
                     My.Settings.Activities.RemoveAt(i)
                 Next

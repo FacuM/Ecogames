@@ -22,7 +22,7 @@
                 Play_Activities.Close()
             End If
         Else
-            MsgBox(My.Resources.Login_WrongPassword, MsgBoxStyle.Critical, My.Resources.General_Error_Title)
+            MessageBox.Show(My.Resources.Login_WrongPassword, My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 

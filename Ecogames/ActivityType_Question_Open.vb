@@ -15,7 +15,7 @@ Public Class ActivityType_Question_Open
 
         IsModifying = True
 
-        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(";")
+        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(SemicolonChar)
 
 #If DEBUG Then
         LogD(Me, "Parsing activity...")
@@ -34,22 +34,22 @@ Public Class ActivityType_Question_Open
 
     Private Sub AutomaticEvaluationCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles AutomaticEvaluationCheckBox.CheckedChanged
         If Not My.Settings.AutoEvalWarnShown Then
-            MsgBox(My.Resources.Question_Open_AutoEvalWarn, MsgBoxStyle.Exclamation, My.Resources.General_Warn_Title)
+            MessageBox.Show(My.Resources.Question_Open_AutoEvalWarn, My.Resources.General_Warn_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
             My.Settings.AutoEvalWarnShown = True
             SettingsSaver()
         End If
     End Sub
     Private Sub SaveActivityButton_Click(sender As Object, e As EventArgs) Handles SaveActivityButton.Click
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString
+            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString)
 #If DEBUG Then
-            LogD(Me, NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & AnswerTextBox.Text & ";" & AutomaticEvaluationCheckBox.Checked.ToString)
+            LogD(Me, NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString)
 #End If
             CurrentActivityIndex = NewActivityID
         End If
@@ -62,7 +62,7 @@ Public Class ActivityType_Question_Open
 
     Private Sub ActivityType_Question_Open_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If Not Saved Then
-            If (MsgBox(My.Resources.Settings_General_UnsavedWarn, MsgBoxStyle.YesNo, My.Resources.General_Warn_Title) = MsgBoxResult.No) Then
+            If MessageBox.Show(My.Resources.Settings_General_UnsavedWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
                 e.Cancel = True
             End If
         End If

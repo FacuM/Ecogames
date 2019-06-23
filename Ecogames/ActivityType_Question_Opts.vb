@@ -49,7 +49,7 @@ Public Class ActivityType_Question_Opts
 
         Answers.Clear()
         AnswersStatuses.Clear()
-        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(";")
+        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(SemicolonChar)
 
 #If DEBUG Then
         LogD(Me, "Parsing activity...")
@@ -58,7 +58,7 @@ Public Class ActivityType_Question_Opts
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 4
-            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(";") + 1)
+            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
 #End If
@@ -68,11 +68,11 @@ Public Class ActivityType_Question_Opts
 #If DEBUG Then
             LogD(Me, AnswerPair)
 #End If
-            Dim Answer As String() = AnswerPair.Split(";")
+            Dim Answer As String() = AnswerPair.Split(SemicolonChar)
 
             If Answer.Length > 1 Then
                 Answers.Add(Answer(0))
-                AnswersStatuses.Add(Answer(1))
+                AnswersStatuses.Add(Boolean.Parse(Answer(1)))
             End If
         Next
 
@@ -90,18 +90,18 @@ Public Class ActivityType_Question_Opts
     Private Sub SaveActivityButton_Click(sender As Object, e As EventArgs) Handles SaveActivityButton.Click
         Dim ActivityString = String.Empty
         For i = 0 To Answers.Count - 1
-            ActivityString &= Answers(i) & ";" & AnswersStatuses(i) & ";" & RowSplitter(0)
+            ActivityString &= Answers(i) & SemicolonChar & AnswersStatuses(i) & SemicolonChar & RowSplitter(0)
         Next
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString
+            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString)
 #If DEBUG Then
-            LogD(Me, NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & QuestionTextBox.Text & ";" & ActivityString)
+            LogD(Me, NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString)
 #End If
             CurrentActivityIndex = NewActivityID
         End If
@@ -117,7 +117,7 @@ Public Class ActivityType_Question_Opts
 
     Private Sub ActivityType_Question_Open_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If Not Saved Then
-            If (MsgBox(My.Resources.Settings_General_UnsavedWarn, MsgBoxStyle.YesNo, My.Resources.General_Warn_Title) = MsgBoxResult.No) Then
+            If MessageBox.Show(My.Resources.Settings_General_UnsavedWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
                 e.Cancel = True
             End If
         End If
@@ -173,7 +173,7 @@ Public Class ActivityType_Question_Opts
         AnswerTextBox.Clear()
 
 #If DEBUG Then
-        LogD(Me, "New answer pair: " & Answers(Answers.Count - 1) & ";" & AnswersStatuses(AnswersStatuses.Count - 1).ToString)
+        LogD(Me, "New answer pair: " & Answers(Answers.Count - 1) & SemicolonChar & AnswersStatuses(AnswersStatuses.Count - 1).ToString)
 #End If
         CorrectAnswerCheckBox.Checked = False
         AddAnswerButton.Enabled = False
@@ -193,7 +193,7 @@ Public Class ActivityType_Question_Opts
 
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
         If String.IsNullOrEmpty(AnswerTextBox.Text) Then
-            If MsgBox(My.Resources.Question_Opts_Empty, MsgBoxStyle.OkCancel, My.Resources.General_Warn_Title) = MsgBoxResult.Ok Then
+            If MessageBox.Show(My.Resources.Question_Opts_Empty, My.Resources.General_Warn_Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = DialogResult.OK Then
                 Answers.RemoveAt(AnswersListBox.SelectedIndex)
                 AnswersStatuses.RemoveAt(AnswersListBox.SelectedIndex)
 

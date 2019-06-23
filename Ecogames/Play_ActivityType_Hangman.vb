@@ -24,7 +24,7 @@ Public Class Play_ActivityType_Hangman
 
         Score = 0
 
-        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(";")
+        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(SemicolonChar)
 
         HangmanWordText = Activity(4)
         HangmanWordTextAux = HangmanWordText
@@ -137,9 +137,9 @@ Public Class Play_ActivityType_Hangman
                                         TimeManager.Enabled = False
 
                                         If Score = 0 Then
-                                            MsgBox(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & My.Resources.Play_General_NoCompletion, MsgBoxStyle.Information, My.Resources.General_Info_Title)
+                                            MessageBox.Show(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & My.Resources.Play_General_NoCompletion, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Else
-                                            MsgBox(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), MsgBoxStyle.Information, My.Resources.General_Info_Title)
+                                            MessageBox.Show(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         End If
                                         StatusLabel.Text = My.Resources.Play_General_NoAttempts
 
@@ -150,7 +150,7 @@ Public Class Play_ActivityType_Hangman
                         If Score = MaxScore Then
                             TimeManager.Enabled = False
                             StatusResetTimer.Enabled = False
-                            MsgBox(My.Resources.Play_General_PerfectScore, MsgBoxStyle.Information, My.Resources.General_Info_Title)
+                            MessageBox.Show(My.Resources.Play_General_PerfectScore, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                             DoKeyPressEvent = False
                             StatusLabel.Text = My.Resources.Play_General_PerfectScore_Trim
                         Else
@@ -183,9 +183,9 @@ Public Class Play_ActivityType_Hangman
                 StatusLabel.Text = My.Resources.Play_General_Timedout
 
                 If Score = 0 Then
-                    MsgBox(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & My.Resources.Play_General_NoCompletion, MsgBoxStyle.Information, My.Resources.General_Info_Title)
+                    MessageBox.Show(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & My.Resources.Play_General_NoCompletion, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MsgBox(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), MsgBoxStyle.Information, My.Resources.General_Info_Title)
+                    MessageBox.Show(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If

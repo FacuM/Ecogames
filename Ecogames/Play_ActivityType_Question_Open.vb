@@ -10,7 +10,7 @@ Public Class Play_ActivityType_Question_Open
     Public Sub LoadActivity()
         UseWaitCursor = True
 
-        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(";")
+        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(SemicolonChar)
 
 #If DEBUG Then
         LogD(Me, "Parsing activity...")
@@ -58,13 +58,18 @@ Public Class Play_ActivityType_Question_Open
 
         Dim CompleteEvaluation As Boolean = True
         If String.IsNullOrEmpty(AnswerTextBox.Text) Then
-            If MsgBox(My.Resources.Play_Question_General_AutoEvalEmptyAnswerWarn, MsgBoxStyle.Information + MsgBoxStyle.YesNo, My.Resources.General_Info_Title) = MsgBoxResult.Yes Then
-                MsgBox(String.Format(My.Resources.Play_Question_General_AutoEvalEmpty, 0), MsgBoxStyle.Information, My.Resources.General_Info_Title)
+            If MessageBox.Show(My.Resources.Play_Question_General_AutoEvalEmptyAnswerWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                MessageBox.Show(String.Format(My.Resources.Play_Question_General_AutoEvalEmpty, 0), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Answer = My.Resources.Play_General_EmptyAnswerDescriptor
-            Else
-                CompleteEvaluation = False
+
+
+                AnswerTextBox.ReadOnly = True
+                AnswerTextBox.Text = String.Format(My.Resources.Play_Question_Open_AutoEvalResult, Answer, ExpectedAnswer)
+
+                VerifyButton.Enabled = False
             End If
+            CompleteEvaluation = False
         Else
             Answer = AnswerTextBox.Text
         End If
@@ -99,14 +104,14 @@ Public Class Play_ActivityType_Question_Open
                     Case Else ' > 71 %
                         Message = String.Format(My.Resources.Play_Question_General_AutoEvalRight, MatchPercentage)
                 End Select
-                MsgBox(Message, MsgBoxStyle.Information, My.Resources.General_Info_Title)
+                MessageBox.Show(Message, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 StatusLabel.Text = MatchPercentage & "% completado"
 
 #If DEBUG Then
                 LogD(Me, "Answer verification completed.")
 #End If
             Else
-                MsgBox(My.Resources.Play_Question_Open_NoAutoEvalThanks & vbCrLf & vbCrLf & My.Resources.Play_Question_Open_NoAutoEvalInfo, MsgBoxStyle.Information, My.Resources.General_Info_Title)
+                MessageBox.Show(My.Resources.Play_Question_Open_NoAutoEvalThanks & vbCrLf & vbCrLf & My.Resources.Play_Question_Open_NoAutoEvalInfo, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 
 

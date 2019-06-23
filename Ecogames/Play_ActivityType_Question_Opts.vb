@@ -18,7 +18,7 @@ Public Class Play_ActivityType_Question_Opts
 
         AnswersListBox.Visible = True
 
-        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(";")
+        Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(SemicolonChar)
 
 #If DEBUG Then
         LogD(Me, "Parsing activity...")
@@ -27,7 +27,7 @@ Public Class Play_ActivityType_Question_Opts
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 4
-            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(";") + 1)
+            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
 #End If
@@ -37,11 +37,11 @@ Public Class Play_ActivityType_Question_Opts
 #If DEBUG Then
             LogD(Me, AnswerPair)
 #End If
-            Dim Answer As String() = AnswerPair.Split(";")
+            Dim Answer As String() = AnswerPair.Split(SemicolonChar)
 
             If Answer.Length > 1 Then
                 Answers.Add(Answer(0))
-                AnswersStatuses.Add(Answer(1))
+                AnswersStatuses.Add(Boolean.Parse(Answer(1)))
 
                 AnswersListBox.Items.Add(Answer(0))
             End If
@@ -66,7 +66,7 @@ Public Class Play_ActivityType_Question_Opts
 
     Private Sub ActivityType_Question_Open_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If Not Verified Then
-            If (MsgBox(My.Resources.Play_General_IncompleteActivityWarn, MsgBoxStyle.Information + MsgBoxStyle.YesNo, My.Resources.General_Warn_Title) = MsgBoxResult.No) Then
+            If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
                 e.Cancel = True
             End If
         End If
@@ -114,7 +114,7 @@ Public Class Play_ActivityType_Question_Opts
         Else
             Message = String.Format(My.Resources.Play_Question_Open_AutoEvalNoScore, MatchPercentage)
         End If
-        MsgBox(Message, MsgBoxStyle.Information, My.Resources.General_Info_Title)
+        MessageBox.Show(Message, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
         StatusLabel.Text = MatchPercentage & "% completado"
 
 #If DEBUG Then

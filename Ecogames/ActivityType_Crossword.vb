@@ -53,7 +53,7 @@ Public Class ActivityType_Crossword
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 3
-            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(";") + 1)
+            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
 #End If
@@ -64,7 +64,7 @@ Public Class ActivityType_Crossword
         LogD(Me, "Parsing activity...")
 #End If
         For Each Row As String In ActivityPre.Split(RowSplitter, options:=StringSplitOptions.None)
-            Dim CurrentRow As String() = Row.Split(";")
+            Dim CurrentRow As String() = Row.Split(SemicolonChar)
 
             Dim CurIdx As Integer = 0
             Dim ActivityRow As New DataGridViewRow()
@@ -184,7 +184,7 @@ Public Class ActivityType_Crossword
         DataGridView1.ReadOnly = False
 
         ColumnCount = DataGridView1.Columns.GetColumnCount(0)
-        Label12.Text = ColumnCount
+        Label12.Text = ColumnCount.ToString
 
 #If DEBUG Then
         LogD(Me, "Column count: " & ColumnCount)
@@ -204,7 +204,7 @@ Public Class ActivityType_Crossword
         End If
 
         ColumnCount = DataGridView1.Columns.GetColumnCount(0)
-        Label12.Text = ColumnCount
+        Label12.Text = ColumnCount.ToString
 
 #If DEBUG Then
         LogD(Me, "Column count: " & ColumnCount)
@@ -214,17 +214,17 @@ Public Class ActivityType_Crossword
     Private Sub SaveActivity_Click(sender As Object, e As EventArgs) Handles SaveActivity.Click
         Dim ActivityString As String = ""
         For Each Row As DataGridViewRow In DataGridView1.Rows
-            'ActivityString &= Row.Index & ";"
+            'ActivityString &= Row.Index & SemicolonChar
 
-            Dim ColumnBoundaries As Integer = DataGridView1.DisplayedColumnCount(0) - 1
+            Dim ColumnBoundaries As Integer = DataGridView1.DisplayedColumnCount(False) - 1
 
             Dim Cell As DataGridViewCell
             For i = 0 To ColumnBoundaries
                 Cell = Row.Cells(i)
                 If Cell.Value IsNot Nothing Then
-                    ActivityString &= Cell.Value
+                    ActivityString &= Cell.Value.ToString
                 End If
-                ActivityString &= ";"
+                ActivityString &= SemicolonChar
             Next
             Cell = Row.Cells(ColumnBoundaries)
             ActivityString &= RowSplitter(0)
@@ -234,7 +234,7 @@ Public Class ActivityType_Crossword
             Try
                 If Cell.Value IsNot Nothing Then
                     If Cell.Value.ToString.Contains(RowSplitter(0)) Then
-                        MsgBox(String.Format(My.Resources.Settings_Crossword_IllegalStringException, RowSplitter), MsgBoxStyle.Critical, My.Resources.General_Error_Title)
+                        MessageBox.Show(String.Format(My.Resources.Settings_Crossword_IllegalStringException, RowSplitter), My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 End If
             Catch ex As Exception
@@ -245,15 +245,15 @@ Public Class ActivityType_Crossword
 #End If
         Next
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = Settings.ActivityListBox.SelectedIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString
+            My.Settings.Activities(CurrentActivityIndex) = Settings.ActivityListBox.SelectedIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString)
 #If DEBUG Then
-            LogD(Me, GetNewID() & ";" & Settings.SettingsActivityName.Text & ";" & Settings.SettingsActivityDescription.Text & ";" & Settings.SettingsActivityType.SelectedIndex & ";" & ActivityString)
+            LogD(Me, GetNewID() & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString)
 #End If
         End If
         SettingsSaver()
@@ -268,7 +268,7 @@ Public Class ActivityType_Crossword
         ' Check if previous row has content
         For Each Cell As DataGridViewCell In DataGridView1.Rows(e.RowIndex).Cells
             If Cell.Value IsNot Nothing Then
-                If Not String.IsNullOrEmpty(Cell.Value) Then
+                If Not String.IsNullOrEmpty(Cell.Value.ToString) Then
 #If DEBUG Then
                     LogD(Me, "Cell at " & Cell.ColumnIndex & " in row index " & e.RowIndex & " is not null, processing...")
 #End If

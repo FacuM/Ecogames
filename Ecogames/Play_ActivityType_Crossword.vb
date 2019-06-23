@@ -31,7 +31,7 @@ Public Class Play_ActivityType_Crossword
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
         For i = 0 To 3
-            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(";") + 1)
+            ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
 #End If
@@ -43,7 +43,7 @@ Public Class Play_ActivityType_Crossword
 #End If
         Dim Y As Integer = 0
         For Each Row As String In ActivityPre.Split(RowSplitter, options:=StringSplitOptions.None)
-            Dim CurrentRow As String() = Row.Split(";")
+            Dim CurrentRow As String() = Row.Split(SemicolonChar)
             Dim ActivityRow As New DataGridViewRow()
             Dim ActivityCells As List(Of DataGridViewCell) = New List(Of DataGridViewCell)
 
@@ -52,7 +52,7 @@ Public Class Play_ActivityType_Crossword
                 For X = 0 To CurrentRow.Length - 2
                     DebugRowStr &= " [" & CurrentRow(X) & "] "
 
-                    Dim XY As String = X & ";" & Y
+                    Dim XY As String = X & SemicolonChar & Y
                     CellMap.Add(XY, CurrentRow(X))
 
                     If Not String.IsNullOrEmpty(CurrentRow(X)) And X <> CurrentRow.Length - 2 Then
@@ -134,7 +134,7 @@ Public Class Play_ActivityType_Crossword
 #If DEBUG Then
         ' Report loaded keypairs and their values.
         For Each Key As String In CellMap.Keys
-            Dim KeyArray As String() = Key.Split(";")
+            Dim KeyArray As String() = Key.Split(SemicolonChar)
             Dim CurX As Integer = Integer.Parse(KeyArray(0))
             Dim CurY As Integer = Integer.Parse(KeyArray(1))
 
@@ -154,18 +154,18 @@ Public Class Play_ActivityType_Crossword
     End Sub
 
     Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
-        Dim TestPair As String = e.ColumnIndex & ";" & e.RowIndex
+        Dim TestPair As String = e.ColumnIndex & SemicolonChar & e.RowIndex
 
         Dim Out As String = String.Empty
         CellMap.TryGetValue(TestPair, Out)
 
         StatusLabel.Text = String.Empty
 
-        If Not String.IsNullOrEmpty(Out) And Not String.IsNullOrEmpty(DataGridView1.CurrentCell.Value) Then
+        If Not String.IsNullOrEmpty(Out) And Not String.IsNullOrEmpty(DataGridView1.CurrentCell.Value.ToString) Then
 #If DEBUG Then
             LogD(Me, "Validating value...")
 #End If
-            If DataGridView1.CurrentCell.Value = Out Then
+            If DataGridView1.CurrentCell.Value.ToString = Out Then
                 DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk
                 Score += DefaultScoreMultiplier
 
@@ -194,7 +194,7 @@ Public Class Play_ActivityType_Crossword
         End If
 
         If Score = MaxScore Then
-            MsgBox(My.Resources.Play_General_PerfectScore, MsgBoxStyle.Information, My.Resources.General_Info_Title)
+            MessageBox.Show(My.Resources.Play_General_PerfectScore, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             StatusLabel.Text = My.Resources.Play_General_PerfectScore
             DataGridView1.ReadOnly = True
@@ -243,7 +243,7 @@ Public Class Play_ActivityType_Crossword
 
     Private Sub Play_ActivityType_Crossword_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If Score < MaxScore Then
-            If MsgBox(My.Resources.Play_General_IncompleteActivityWarn, MsgBoxStyle.Information + MsgBoxStyle.YesNo, My.Resources.General_Warn_Title) = MsgBoxResult.No Then
+            If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
                 e.Cancel = True
             End If
         End If

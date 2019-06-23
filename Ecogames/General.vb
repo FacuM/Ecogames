@@ -12,12 +12,12 @@
     Public Const HangmanMaximumSecondsPerCharacter As Integer = 45
     Public Const HangmanMinimumSecondsPerCharacter As Integer = 5
     Public Const HangmanMaximumAttemptsPerCharacter As Integer = 15
-    Public Const HangmanSeparator As Char = "_"
+    Public Const HangmanSeparator As Char = "_"c
     Public Const DefaultScoreMultiplier As Integer = 10
-    Public Const SpaceChar As Char = " "
-    Public Const DotChar As Char = "."
-    Public Const SemicolonChar As Char = ";"
-    Public Const CommaChar As Char = ","
+    Public Const SpaceChar As Char = " "c
+    Public Const DotChar As Char = "."c
+    Public Const SemicolonChar As Char = ";"c
+    Public Const CommaChar As Char = ","c
     Public ReadOnly NormalExpressions As String() = { ' Common Spanish expressions, tweak as needed.
         "es",
         "está",
@@ -67,7 +67,7 @@
     ' ====================
     '  Content validators
     ' ====================
-    Public Function SimpleLengthVerifier(ByRef InputTextBox As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel)
+    Public Function SimpleLengthVerifier(ByRef InputTextBox As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel) As Boolean
 #If DEBUG Then
         Const TAG = "SimpleLengthVerifier"
         LogD(TAG, "Verifying length Of " & InputTextBox.Name & ", should be greater than " & MinimumSimpleLength & "...")
@@ -87,7 +87,7 @@
         End If
     End Function
 
-    Public Function PasswordStrengthVerifier(ByRef InputTextBox As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel)
+    Public Function PasswordStrengthVerifier(ByRef InputTextBox As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel) As Boolean
 #If DEBUG Then
         Const TAG = "PasswordStrengthVerifier"
         LogD(TAG, "Verifying length Of " & InputTextBox.Name & ", should be greater than " & MinimumPasswordLength & "...")
@@ -112,7 +112,7 @@
         End If
     End Function
 
-    Public Function PasswordConfirmationVerifier(ByRef InputTextBoxOrigin As MetroFramework.Controls.MetroTextBox, ByRef InputTextBoxDestination As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel)
+    Public Function PasswordConfirmationVerifier(ByRef InputTextBoxOrigin As MetroFramework.Controls.MetroTextBox, ByRef InputTextBoxDestination As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel) As Boolean
 #If DEBUG Then
         Const TAG = "PasswordConfirmationVerifier"
         LogD(TAG, "Comparing " & InputTextBoxOrigin.Name & " And " & InputTextBoxDestination.Name & ", looking For a match...")
@@ -134,8 +134,8 @@
 
     ' Escapes a string containing a semicolon with another string
     ' selectable by SemicolonAlternativeString (default is "[sc]").
-    Public Function GetEscapedString(ByVal Data As String)
-        Return Data.Replace(";", SemicolonAlternativeString)
+    Public Function GetEscapedString(ByVal Data As String) As String
+        Return Data.Replace(SemicolonChar, SemicolonAlternativeString)
     End Function
 
     ' ====================
@@ -165,14 +165,14 @@
 #End If
     End Sub
 
-    Public Function GetNewID()
+    Public Function GetNewID() As Integer
 #If DEBUG Then
         Const TAG = "GetNewID"
         LogD(TAG, "Finding a new ID...")
 #End If
         Dim ActivityID As Integer = 0
         For Each Activity As String In My.Settings.Activities
-            Dim ActivityString As String() = Activity.Split(";")
+            Dim ActivityString As String() = Activity.Split(SemicolonChar)
             ActivityID = Integer.Parse(ActivityString(0))
         Next
         ActivityID += 1
