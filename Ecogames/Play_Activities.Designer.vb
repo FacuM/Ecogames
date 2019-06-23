@@ -49,7 +49,7 @@ Partial Class Play_Activities
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox2.Location = New System.Drawing.Point(20, 60)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(347, 496)
+        Me.GroupBox2.Size = New System.Drawing.Size(347, 505)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Actividades"
@@ -66,7 +66,7 @@ Partial Class Play_Activities
         'PlayActivity
         '
         Me.PlayActivity.Enabled = False
-        Me.PlayActivity.Location = New System.Drawing.Point(239, 457)
+        Me.PlayActivity.Location = New System.Drawing.Point(239, 466)
         Me.PlayActivity.Name = "PlayActivity"
         Me.PlayActivity.Size = New System.Drawing.Size(96, 23)
         Me.PlayActivity.TabIndex = 24
@@ -132,7 +132,7 @@ Partial Class Play_Activities
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
-        Me.ClientSize = New System.Drawing.Size(387, 576)
+        Me.ClientSize = New System.Drawing.Size(387, 585)
         Me.Controls.Add(Me.GroupBox2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True

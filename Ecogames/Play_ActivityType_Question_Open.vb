@@ -56,8 +56,8 @@ Public Class Play_ActivityType_Question_Open
 
         Dim CompleteEvaluation As Boolean = True
         If String.IsNullOrEmpty(AnswerTextBox.Text) Then
-            If MsgBox(My.Resources.Play_Question_Open_AutoEvalEmptyAnswerWarn, MsgBoxStyle.Information + MsgBoxStyle.YesNo, My.Resources.General_Info_Title) = MsgBoxResult.Yes Then
-                MsgBox(String.Format(My.Resources.Play_Question_Open_AutoEvalEmpty, 0), MsgBoxStyle.Information, My.Resources.General_Info_Title)
+            If MsgBox(My.Resources.Play_Question_General_AutoEvalEmptyAnswerWarn, MsgBoxStyle.Information + MsgBoxStyle.YesNo, My.Resources.General_Info_Title) = MsgBoxResult.Yes Then
+                MsgBox(String.Format(My.Resources.Play_Question_General_AutoEvalEmpty, 0), MsgBoxStyle.Information, My.Resources.General_Info_Title)
 
                 Answer = My.Resources.Play_General_EmptyAnswerDescriptor
             Else
@@ -89,11 +89,11 @@ Public Class Play_ActivityType_Question_Open
                 Dim Message As String
                 Select Case MatchPercentage
                     Case < 40 '%
-                        Message = String.Format(My.Resources.Play_Question_Open_AutoEvalWrong, MatchPercentage)
+                        Message = String.Format(My.Resources.Play_Question_General_AutoEvalWrong, MatchPercentage)
                     Case < 71 '%
-                        Message = String.Format(My.Resources.Play_Question_Open_AutoEvalRegular, MatchPercentage)
+                        Message = String.Format(My.Resources.Play_Question_General_AutoEvalRegular, MatchPercentage)
                     Case Else ' > 71 %
-                        Message = String.Format(My.Resources.Play_Question_Open_AutoEvalRight, MatchPercentage)
+                        Message = String.Format(My.Resources.Play_Question_General_AutoEvalRight, MatchPercentage)
                 End Select
                 MsgBox(Message, MsgBoxStyle.Information, My.Resources.General_Info_Title)
                 StatusLabel.Text = MatchPercentage & "% completado"

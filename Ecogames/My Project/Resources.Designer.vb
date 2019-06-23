@@ -325,27 +325,54 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Tu respuesta estaba vacía y no obtuviste puntos (completaste un {0}%)..
         '''</summary>
-        Friend ReadOnly Property Play_Question_Open_AutoEvalEmpty() As String
+        Friend ReadOnly Property Play_Question_General_AutoEvalEmpty() As String
             Get
-                Return ResourceManager.GetString("Play_Question_Open_AutoEvalEmpty", resourceCulture)
+                Return ResourceManager.GetString("Play_Question_General_AutoEvalEmpty", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized string similar to No respondiste, ¿querés continuar de todos modos?.
         '''</summary>
-        Friend ReadOnly Property Play_Question_Open_AutoEvalEmptyAnswerWarn() As String
+        Friend ReadOnly Property Play_Question_General_AutoEvalEmptyAnswerWarn() As String
             Get
-                Return ResourceManager.GetString("Play_Question_Open_AutoEvalEmptyAnswerWarn", resourceCulture)
+                Return ResourceManager.GetString("Play_Question_General_AutoEvalEmptyAnswerWarn", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized string similar to ¡Muy bien! Lograste un {0}%..
         '''</summary>
-        Friend ReadOnly Property Play_Question_Open_AutoEvalRegular() As String
+        Friend ReadOnly Property Play_Question_General_AutoEvalRegular() As String
             Get
-                Return ResourceManager.GetString("Play_Question_Open_AutoEvalRegular", resourceCulture)
+                Return ResourceManager.GetString("Play_Question_General_AutoEvalRegular", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Excelente, ¡seguí así! Sacaste un {0}%..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_General_AutoEvalRight() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_General_AutoEvalRight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡Uh! Conseguiste apenas un {0}%..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_General_AutoEvalWrong() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_General_AutoEvalWrong", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ¡No conseguiste ningún punto! {0}% completado..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Open_AutoEvalNoScore() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Open_AutoEvalNoScore", resourceCulture)
             End Get
         End Property
         
@@ -359,24 +386,6 @@ Namespace My.Resources
         Friend ReadOnly Property Play_Question_Open_AutoEvalResult() As String
             Get
                 Return ResourceManager.GetString("Play_Question_Open_AutoEvalResult", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Excelente, ¡seguí así! Sacaste un {0}%..
-        '''</summary>
-        Friend ReadOnly Property Play_Question_Open_AutoEvalRight() As String
-            Get
-                Return ResourceManager.GetString("Play_Question_Open_AutoEvalRight", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to ¡Uh! Conseguiste apenas un {0}%..
-        '''</summary>
-        Friend ReadOnly Property Play_Question_Open_AutoEvalWrong() As String
-            Get
-                Return ResourceManager.GetString("Play_Question_Open_AutoEvalWrong", resourceCulture)
             End Get
         End Property
         
@@ -395,6 +404,15 @@ Namespace My.Resources
         Friend ReadOnly Property Play_Question_Open_NoAutoEvalThanks() As String
             Get
                 Return ResourceManager.GetString("Play_Question_Open_NoAutoEvalThanks", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Podés responder seleccionando todas las opciones que creas correctas..
+        '''</summary>
+        Friend ReadOnly Property Play_Question_Opts_GeneralHelp() As String
+            Get
+                Return ResourceManager.GetString("Play_Question_Opts_GeneralHelp", resourceCulture)
             End Get
         End Property
         
