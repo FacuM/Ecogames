@@ -45,18 +45,64 @@ Partial Class ActivityType_Question_Opts
         '
         'QuestionTextBox
         '
+        '
+        '
+        '
+        Me.QuestionTextBox.CustomButton.Image = Nothing
+        Me.QuestionTextBox.CustomButton.Location = New System.Drawing.Point(294, 1)
+        Me.QuestionTextBox.CustomButton.Name = ""
+        Me.QuestionTextBox.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.QuestionTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.QuestionTextBox.CustomButton.TabIndex = 1
+        Me.QuestionTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.QuestionTextBox.CustomButton.UseSelectable = True
+        Me.QuestionTextBox.CustomButton.Visible = False
+        Me.QuestionTextBox.Lines = New String(-1) {}
         Me.QuestionTextBox.Location = New System.Drawing.Point(23, 164)
+        Me.QuestionTextBox.MaxLength = 32767
         Me.QuestionTextBox.Name = "QuestionTextBox"
+        Me.QuestionTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.QuestionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.QuestionTextBox.SelectedText = ""
+        Me.QuestionTextBox.SelectionLength = 0
+        Me.QuestionTextBox.SelectionStart = 0
+        Me.QuestionTextBox.ShortcutsEnabled = True
         Me.QuestionTextBox.Size = New System.Drawing.Size(316, 23)
         Me.QuestionTextBox.TabIndex = 1
+        Me.QuestionTextBox.UseSelectable = True
+        Me.QuestionTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.QuestionTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'AnswerTextBox
         '
+        '
+        '
+        '
+        Me.AnswerTextBox.CustomButton.Image = Nothing
+        Me.AnswerTextBox.CustomButton.Location = New System.Drawing.Point(294, 1)
+        Me.AnswerTextBox.CustomButton.Name = ""
+        Me.AnswerTextBox.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.AnswerTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.AnswerTextBox.CustomButton.TabIndex = 1
+        Me.AnswerTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.AnswerTextBox.CustomButton.UseSelectable = True
+        Me.AnswerTextBox.CustomButton.Visible = False
+        Me.AnswerTextBox.Lines = New String(-1) {}
         Me.AnswerTextBox.Location = New System.Drawing.Point(23, 341)
+        Me.AnswerTextBox.MaxLength = 32767
         Me.AnswerTextBox.Multiline = True
         Me.AnswerTextBox.Name = "AnswerTextBox"
+        Me.AnswerTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.AnswerTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.AnswerTextBox.SelectedText = ""
+        Me.AnswerTextBox.SelectionLength = 0
+        Me.AnswerTextBox.SelectionStart = 0
+        Me.AnswerTextBox.ShortcutsEnabled = True
         Me.AnswerTextBox.Size = New System.Drawing.Size(316, 23)
         Me.AnswerTextBox.TabIndex = 3
+        Me.AnswerTextBox.UseSelectable = True
+        Me.AnswerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.AnswerTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'MetroLabel2
         '
@@ -74,6 +120,7 @@ Partial Class ActivityType_Question_Opts
         Me.SaveActivityButton.Size = New System.Drawing.Size(117, 23)
         Me.SaveActivityButton.TabIndex = 4
         Me.SaveActivityButton.Text = "Guardar"
+        Me.SaveActivityButton.UseSelectable = True
         '
         'HelperLabel
         '
@@ -93,6 +140,7 @@ Partial Class ActivityType_Question_Opts
         Me.NextActionButton.Size = New System.Drawing.Size(117, 23)
         Me.NextActionButton.TabIndex = 7
         Me.NextActionButton.Text = "Siguiente"
+        Me.NextActionButton.UseSelectable = True
         '
         'AddAnswerButton
         '
@@ -102,6 +150,7 @@ Partial Class ActivityType_Question_Opts
         Me.AddAnswerButton.Size = New System.Drawing.Size(117, 23)
         Me.AddAnswerButton.TabIndex = 8
         Me.AddAnswerButton.Text = "Agregar"
+        Me.AddAnswerButton.UseSelectable = True
         '
         'CorrectAnswerCheckBox
         '
@@ -110,7 +159,7 @@ Partial Class ActivityType_Question_Opts
         Me.CorrectAnswerCheckBox.Size = New System.Drawing.Size(70, 23)
         Me.CorrectAnswerCheckBox.TabIndex = 9
         Me.CorrectAnswerCheckBox.Text = "Correcta"
-        Me.CorrectAnswerCheckBox.UseVisualStyleBackColor = True
+        Me.CorrectAnswerCheckBox.UseSelectable = True
         '
         'AnswersListBox
         '
@@ -128,6 +177,7 @@ Partial Class ActivityType_Question_Opts
         Me.ModifyButton.Size = New System.Drawing.Size(117, 23)
         Me.ModifyButton.TabIndex = 12
         Me.ModifyButton.Text = "Modificar"
+        Me.ModifyButton.UseSelectable = True
         Me.ModifyButton.Visible = False
         '
         'ActivityType_Question_Opts
@@ -150,7 +200,7 @@ Partial Class ActivityType_Question_Opts
         Me.MaximizeBox = False
         Me.Name = "ActivityType_Question_Opts"
         Me.Resizable = False
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "ActivityType_Question_Opts"
         Me.ResumeLayout(False)
 

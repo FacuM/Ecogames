@@ -62,12 +62,34 @@ Partial Class Play_ActivityType_Hangman
         '
         'HangmanWordTextBox
         '
+        '
+        '
+        '
+        Me.HangmanWordTextBox.CustomButton.Image = Nothing
+        Me.HangmanWordTextBox.CustomButton.Location = New System.Drawing.Point(310, 2)
+        Me.HangmanWordTextBox.CustomButton.Name = ""
+        Me.HangmanWordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.HangmanWordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.HangmanWordTextBox.CustomButton.TabIndex = 1
+        Me.HangmanWordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.HangmanWordTextBox.CustomButton.UseSelectable = True
+        Me.HangmanWordTextBox.CustomButton.Visible = False
+        Me.HangmanWordTextBox.Lines = New String(-1) {}
         Me.HangmanWordTextBox.Location = New System.Drawing.Point(181, 147)
         Me.HangmanWordTextBox.MaxLength = 45
         Me.HangmanWordTextBox.Name = "HangmanWordTextBox"
+        Me.HangmanWordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.HangmanWordTextBox.ReadOnly = True
+        Me.HangmanWordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.HangmanWordTextBox.SelectedText = ""
+        Me.HangmanWordTextBox.SelectionLength = 0
+        Me.HangmanWordTextBox.SelectionStart = 0
+        Me.HangmanWordTextBox.ShortcutsEnabled = True
         Me.HangmanWordTextBox.Size = New System.Drawing.Size(328, 20)
         Me.HangmanWordTextBox.TabIndex = 4
+        Me.HangmanWordTextBox.UseSelectable = True
+        Me.HangmanWordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.HangmanWordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'GroupBox1
         '
@@ -164,7 +186,7 @@ Partial Class Play_ActivityType_Hangman
         Me.MaximizeBox = False
         Me.Name = "Play_ActivityType_Hangman"
         Me.Resizable = False
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "Play_ActivityType_Hangman"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

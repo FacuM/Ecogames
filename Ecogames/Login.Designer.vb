@@ -42,13 +42,34 @@ Partial Class Login
         '
         'PasswordTextBox
         '
+        '
+        '
+        '
+        Me.PasswordTextBox.CustomButton.Image = Nothing
+        Me.PasswordTextBox.CustomButton.Location = New System.Drawing.Point(202, 2)
+        Me.PasswordTextBox.CustomButton.Name = ""
+        Me.PasswordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.PasswordTextBox.CustomButton.TabIndex = 1
+        Me.PasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.PasswordTextBox.CustomButton.UseSelectable = True
+        Me.PasswordTextBox.CustomButton.Visible = False
+        Me.PasswordTextBox.Lines = New String(-1) {}
         Me.PasswordTextBox.Location = New System.Drawing.Point(23, 108)
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.PasswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.PasswordTextBox.SelectedText = ""
+        Me.PasswordTextBox.SelectionLength = 0
+        Me.PasswordTextBox.SelectionStart = 0
+        Me.PasswordTextBox.ShortcutsEnabled = True
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
         Me.PasswordTextBox.TabIndex = 1
+        Me.PasswordTextBox.UseSelectable = True
         Me.PasswordTextBox.UseSystemPasswordChar = True
+        Me.PasswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.PasswordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'ContinueButton
         '
@@ -58,6 +79,7 @@ Partial Class Login
         Me.ContinueButton.Size = New System.Drawing.Size(93, 23)
         Me.ContinueButton.TabIndex = 3
         Me.ContinueButton.Text = "Continuar"
+        Me.ContinueButton.UseSelectable = True
         '
         'QuitButton
         '
@@ -67,6 +89,7 @@ Partial Class Login
         Me.QuitButton.Size = New System.Drawing.Size(93, 23)
         Me.QuitButton.TabIndex = 4
         Me.QuitButton.Text = "Cancelar"
+        Me.QuitButton.UseSelectable = True
         '
         'PasswordStatusPanel
         '
@@ -93,7 +116,7 @@ Partial Class Login
         Me.MinimizeBox = False
         Me.Name = "Login"
         Me.Resizable = False
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "Iniciá sesión"
         Me.ResumeLayout(False)
 

@@ -11,14 +11,14 @@ Requisitos
 - Memoria RAM: 64 MB (**con un archivo de paginación de 96 MB o más**), o 160 MB (**no es necesario un archivo de paginación**).
 - Sistema operativo: Windows XP **SP3** (x86).
 - Almacenamiento: 1.5 MB de espacio libre.
-- Software: .NET Framework 4.0.
+- Software: .NET Framework 2.0.
 
 ### Especificaciones recomendadas
 - Procesador: 1 núcleo @ 875 MHz, x86 (32 bits), con soporte para instrucciones PAE/NX, o superior.
 - Memoria RAM: 128 MB (**con un archivo de paginación de 128 MB o más**), o 256 MB (**no es necesario un archivo de paginación**), o más.
 - Sistema operativo: Windows 7 (x86), o superior.
 - Almacenamiento: 5 MB o más de espacio libre.
-- Software: .NET Framework 4.5, o superior.
+- Software: .NET Framework 4.0, o superior.
 
 Interfaz
 ---------
@@ -165,14 +165,14 @@ Además, como medida de optimización a largo plazo, y en busca de prevenir "lea
 #### Tiempo de ejecución
 Las dependencias requeridas durante el tiempo de ejecución son incluídas de manera dinámica en el paquete de distribución al público.
 
-- MetroFramework
+- [MetroFramework](https://github.com/dennismagno/metroframework-modern-ui)
 
 #### Compilación
 - Visual Studio 2017 Community (o superior)
 - NuGet
-- MetroFramework
+- [MetroFramework](https://github.com/dennismagno/metroframework-modern-ui)
 
 ### Licencias
 - Visual Studio 2017 Community: refiérase a [su EULA](https://visualstudio.microsoft.com/license-terms/mlt553321/).
-- MetroFramework: bajo la [licencia de MetroFramework](https://github.com/thielj/MetroFramework/blob/master/LICENSE.md).
+- MetroFramework: bajo la [licencia de MetroFramework](https://github.com/dennismagno/metroframework-modern-ui/blob/master/LICENSE.md).
 - Ecogames (a excepción de sus dependencias externas): bajo la [licencia del MIT](LICENSE).

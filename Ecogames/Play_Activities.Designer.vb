@@ -56,12 +56,35 @@ Partial Class Play_Activities
         '
         'SettingsActivityType
         '
+        '
+        '
+        '
+        Me.SettingsActivityType.CustomButton.Image = Nothing
+        Me.SettingsActivityType.CustomButton.Location = New System.Drawing.Point(193, 1)
+        Me.SettingsActivityType.CustomButton.Name = ""
+        Me.SettingsActivityType.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.SettingsActivityType.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.SettingsActivityType.CustomButton.TabIndex = 1
+        Me.SettingsActivityType.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.SettingsActivityType.CustomButton.UseSelectable = True
+        Me.SettingsActivityType.CustomButton.Visible = False
         Me.SettingsActivityType.Enabled = False
+        Me.SettingsActivityType.Lines = New String(-1) {}
         Me.SettingsActivityType.Location = New System.Drawing.Point(114, 374)
+        Me.SettingsActivityType.MaxLength = 32767
         Me.SettingsActivityType.Name = "SettingsActivityType"
+        Me.SettingsActivityType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.SettingsActivityType.ReadOnly = True
+        Me.SettingsActivityType.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.SettingsActivityType.SelectedText = ""
+        Me.SettingsActivityType.SelectionLength = 0
+        Me.SettingsActivityType.SelectionStart = 0
+        Me.SettingsActivityType.ShortcutsEnabled = True
         Me.SettingsActivityType.Size = New System.Drawing.Size(221, 29)
         Me.SettingsActivityType.TabIndex = 26
+        Me.SettingsActivityType.UseSelectable = True
+        Me.SettingsActivityType.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.SettingsActivityType.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'PlayActivity
         '
@@ -71,15 +94,39 @@ Partial Class Play_Activities
         Me.PlayActivity.Size = New System.Drawing.Size(96, 23)
         Me.PlayActivity.TabIndex = 24
         Me.PlayActivity.Text = "Jugar"
+        Me.PlayActivity.UseSelectable = True
         '
         'SettingsActivityName
         '
+        '
+        '
+        '
+        Me.SettingsActivityName.CustomButton.Image = Nothing
+        Me.SettingsActivityName.CustomButton.Location = New System.Drawing.Point(193, 1)
+        Me.SettingsActivityName.CustomButton.Name = ""
+        Me.SettingsActivityName.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.SettingsActivityName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.SettingsActivityName.CustomButton.TabIndex = 1
+        Me.SettingsActivityName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.SettingsActivityName.CustomButton.UseSelectable = True
+        Me.SettingsActivityName.CustomButton.Visible = False
         Me.SettingsActivityName.Enabled = False
+        Me.SettingsActivityName.Lines = New String(-1) {}
         Me.SettingsActivityName.Location = New System.Drawing.Point(114, 339)
+        Me.SettingsActivityName.MaxLength = 32767
         Me.SettingsActivityName.Name = "SettingsActivityName"
+        Me.SettingsActivityName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.SettingsActivityName.ReadOnly = True
+        Me.SettingsActivityName.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.SettingsActivityName.SelectedText = ""
+        Me.SettingsActivityName.SelectionLength = 0
+        Me.SettingsActivityName.SelectionStart = 0
+        Me.SettingsActivityName.ShortcutsEnabled = True
         Me.SettingsActivityName.Size = New System.Drawing.Size(221, 29)
         Me.SettingsActivityName.TabIndex = 23
+        Me.SettingsActivityName.UseSelectable = True
+        Me.SettingsActivityName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.SettingsActivityName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label10
         '
@@ -101,13 +148,36 @@ Partial Class Play_Activities
         '
         'SettingsActivityDescription
         '
+        '
+        '
+        '
+        Me.SettingsActivityDescription.CustomButton.Image = Nothing
+        Me.SettingsActivityDescription.CustomButton.Location = New System.Drawing.Point(181, 2)
+        Me.SettingsActivityDescription.CustomButton.Name = ""
+        Me.SettingsActivityDescription.CustomButton.Size = New System.Drawing.Size(37, 37)
+        Me.SettingsActivityDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.SettingsActivityDescription.CustomButton.TabIndex = 1
+        Me.SettingsActivityDescription.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.SettingsActivityDescription.CustomButton.UseSelectable = True
+        Me.SettingsActivityDescription.CustomButton.Visible = False
         Me.SettingsActivityDescription.Enabled = False
+        Me.SettingsActivityDescription.Lines = New String(-1) {}
         Me.SettingsActivityDescription.Location = New System.Drawing.Point(114, 409)
+        Me.SettingsActivityDescription.MaxLength = 32767
         Me.SettingsActivityDescription.Multiline = True
         Me.SettingsActivityDescription.Name = "SettingsActivityDescription"
+        Me.SettingsActivityDescription.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.SettingsActivityDescription.ReadOnly = True
+        Me.SettingsActivityDescription.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.SettingsActivityDescription.SelectedText = ""
+        Me.SettingsActivityDescription.SelectionLength = 0
+        Me.SettingsActivityDescription.SelectionStart = 0
+        Me.SettingsActivityDescription.ShortcutsEnabled = True
         Me.SettingsActivityDescription.Size = New System.Drawing.Size(221, 42)
         Me.SettingsActivityDescription.TabIndex = 19
+        Me.SettingsActivityDescription.UseSelectable = True
+        Me.SettingsActivityDescription.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.SettingsActivityDescription.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label8
         '
@@ -131,7 +201,6 @@ Partial Class Play_Activities
         Me.AcceptButton = Me.PlayActivity
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(387, 585)
         Me.Controls.Add(Me.GroupBox2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -139,7 +208,7 @@ Partial Class Play_Activities
         Me.MaximizeBox = False
         Me.Name = "Play_Activities"
         Me.Resizable = False
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "Actividades"
         Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)

@@ -29,8 +29,8 @@ Partial Class Play_ActivityType_Crossword
         Me.StatusPanel = New MetroFramework.Controls.MetroPanel()
         Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
         Me.ScorePanel = New MetroFramework.Controls.MetroPanel()
-        Me.Label1 = New MetroFramework.Controls.MetroLabel()
         Me.ScoreLabel = New MetroFramework.Controls.MetroLabel()
+        Me.Label1 = New MetroFramework.Controls.MetroLabel()
         Me.StatusResetTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -101,16 +101,6 @@ Partial Class Play_ActivityType_Crossword
         Me.ScorePanel.VerticalScrollbarHighlightOnWheel = False
         Me.ScorePanel.VerticalScrollbarSize = 0
         '
-        'Label1
-        '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 30)
-        Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Puntaje: "
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ScoreLabel
         '
         Me.ScoreLabel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -120,6 +110,16 @@ Partial Class Play_ActivityType_Crossword
         Me.ScoreLabel.TabIndex = 21
         Me.ScoreLabel.Text = "N/A"
         Me.ScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label1
+        '
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(64, 30)
+        Me.Label1.TabIndex = 25
+        Me.Label1.Text = "Puntaje: "
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'StatusResetTimer
         '
@@ -134,7 +134,7 @@ Partial Class Play_ActivityType_Crossword
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Play_ActivityType_Crossword"
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "Play_ActivityType_Crossword"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

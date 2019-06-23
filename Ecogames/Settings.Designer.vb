@@ -85,6 +85,7 @@ Partial Class Settings
         Me.DeleteActivity.Size = New System.Drawing.Size(96, 23)
         Me.DeleteActivity.TabIndex = 26
         Me.DeleteActivity.Text = "Eliminar"
+        Me.DeleteActivity.UseSelectable = True
         Me.DeleteActivity.Visible = False
         '
         'ModifyActivity
@@ -94,6 +95,7 @@ Partial Class Settings
         Me.ModifyActivity.Size = New System.Drawing.Size(96, 23)
         Me.ModifyActivity.TabIndex = 25
         Me.ModifyActivity.Text = "Modificar"
+        Me.ModifyActivity.UseSelectable = True
         Me.ModifyActivity.Visible = False
         '
         'AddActivity
@@ -104,14 +106,38 @@ Partial Class Settings
         Me.AddActivity.Size = New System.Drawing.Size(96, 23)
         Me.AddActivity.TabIndex = 24
         Me.AddActivity.Text = "Añadir"
+        Me.AddActivity.UseSelectable = True
         '
         'SettingsActivityName
         '
+        '
+        '
+        '
+        Me.SettingsActivityName.CustomButton.Image = Nothing
+        Me.SettingsActivityName.CustomButton.Location = New System.Drawing.Point(193, 1)
+        Me.SettingsActivityName.CustomButton.Name = ""
+        Me.SettingsActivityName.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.SettingsActivityName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.SettingsActivityName.CustomButton.TabIndex = 1
+        Me.SettingsActivityName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.SettingsActivityName.CustomButton.UseSelectable = True
+        Me.SettingsActivityName.CustomButton.Visible = False
         Me.SettingsActivityName.Enabled = False
+        Me.SettingsActivityName.Lines = New String(-1) {}
         Me.SettingsActivityName.Location = New System.Drawing.Point(114, 160)
+        Me.SettingsActivityName.MaxLength = 32767
         Me.SettingsActivityName.Name = "SettingsActivityName"
+        Me.SettingsActivityName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.SettingsActivityName.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.SettingsActivityName.SelectedText = ""
+        Me.SettingsActivityName.SelectionLength = 0
+        Me.SettingsActivityName.SelectionStart = 0
+        Me.SettingsActivityName.ShortcutsEnabled = True
         Me.SettingsActivityName.Size = New System.Drawing.Size(221, 29)
         Me.SettingsActivityName.TabIndex = 23
+        Me.SettingsActivityName.UseSelectable = True
+        Me.SettingsActivityName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.SettingsActivityName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label10
         '
@@ -132,6 +158,7 @@ Partial Class Settings
         Me.SettingsActivityType.Name = "SettingsActivityType"
         Me.SettingsActivityType.Size = New System.Drawing.Size(221, 29)
         Me.SettingsActivityType.TabIndex = 21
+        Me.SettingsActivityType.UseSelectable = True
         '
         'Label9
         '
@@ -144,12 +171,35 @@ Partial Class Settings
         '
         'SettingsActivityDescription
         '
+        '
+        '
+        '
+        Me.SettingsActivityDescription.CustomButton.Image = Nothing
+        Me.SettingsActivityDescription.CustomButton.Location = New System.Drawing.Point(181, 2)
+        Me.SettingsActivityDescription.CustomButton.Name = ""
+        Me.SettingsActivityDescription.CustomButton.Size = New System.Drawing.Size(37, 37)
+        Me.SettingsActivityDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.SettingsActivityDescription.CustomButton.TabIndex = 1
+        Me.SettingsActivityDescription.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.SettingsActivityDescription.CustomButton.UseSelectable = True
+        Me.SettingsActivityDescription.CustomButton.Visible = False
         Me.SettingsActivityDescription.Enabled = False
+        Me.SettingsActivityDescription.Lines = New String(-1) {}
         Me.SettingsActivityDescription.Location = New System.Drawing.Point(114, 230)
+        Me.SettingsActivityDescription.MaxLength = 32767
         Me.SettingsActivityDescription.Multiline = True
         Me.SettingsActivityDescription.Name = "SettingsActivityDescription"
+        Me.SettingsActivityDescription.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.SettingsActivityDescription.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.SettingsActivityDescription.SelectedText = ""
+        Me.SettingsActivityDescription.SelectionLength = 0
+        Me.SettingsActivityDescription.SelectionStart = 0
+        Me.SettingsActivityDescription.ShortcutsEnabled = True
         Me.SettingsActivityDescription.Size = New System.Drawing.Size(221, 42)
         Me.SettingsActivityDescription.TabIndex = 19
+        Me.SettingsActivityDescription.UseSelectable = True
+        Me.SettingsActivityDescription.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.SettingsActivityDescription.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label8
         '
@@ -221,6 +271,7 @@ Partial Class Settings
         Me.UserRepCust3Btn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepCust3Btn.TabIndex = 15
         Me.UserRepCust3Btn.Text = "Cambiar"
+        Me.UserRepCust3Btn.UseSelectable = True
         '
         'Label5
         '
@@ -246,6 +297,7 @@ Partial Class Settings
         Me.UserRepCust2Btn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepCust2Btn.TabIndex = 12
         Me.UserRepCust2Btn.Text = "Cambiar"
+        Me.UserRepCust2Btn.UseSelectable = True
         '
         'Label4
         '
@@ -271,6 +323,7 @@ Partial Class Settings
         Me.UserRepCust1Btn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepCust1Btn.TabIndex = 9
         Me.UserRepCust1Btn.Text = "Cambiar"
+        Me.UserRepCust1Btn.UseSelectable = True
         '
         'Label3
         '
@@ -296,6 +349,7 @@ Partial Class Settings
         Me.UserRepRegularColorBtn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepRegularColorBtn.TabIndex = 6
         Me.UserRepRegularColorBtn.Text = "Cambiar"
+        Me.UserRepRegularColorBtn.UseSelectable = True
         '
         'Label2
         '
@@ -321,6 +375,7 @@ Partial Class Settings
         Me.UserRepWrongColorBtn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepWrongColorBtn.TabIndex = 3
         Me.UserRepWrongColorBtn.Text = "Cambiar"
+        Me.UserRepWrongColorBtn.UseSelectable = True
         '
         'Label1
         '
@@ -346,12 +401,12 @@ Partial Class Settings
         Me.UserRepOkColorBtn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepOkColorBtn.TabIndex = 0
         Me.UserRepOkColorBtn.Text = "Cambiar"
+        Me.UserRepOkColorBtn.UseSelectable = True
         '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(387, 631)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -360,7 +415,7 @@ Partial Class Settings
         Me.MaximizeBox = False
         Me.Name = "Settings"
         Me.Resizable = False
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "Configuración"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)

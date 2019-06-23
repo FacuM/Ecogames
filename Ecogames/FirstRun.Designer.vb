@@ -67,23 +67,65 @@ Partial Class FirstRun
         '
         'PasswordTextBox
         '
+        '
+        '
+        '
+        Me.PasswordTextBox.CustomButton.Image = Nothing
+        Me.PasswordTextBox.CustomButton.Location = New System.Drawing.Point(173, 2)
+        Me.PasswordTextBox.CustomButton.Name = ""
+        Me.PasswordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.PasswordTextBox.CustomButton.TabIndex = 1
+        Me.PasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.PasswordTextBox.CustomButton.UseSelectable = True
+        Me.PasswordTextBox.CustomButton.Visible = False
+        Me.PasswordTextBox.Lines = New String(-1) {}
         Me.PasswordTextBox.Location = New System.Drawing.Point(169, 134)
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.PasswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.PasswordTextBox.SelectedText = ""
+        Me.PasswordTextBox.SelectionLength = 0
+        Me.PasswordTextBox.SelectionStart = 0
+        Me.PasswordTextBox.ShortcutsEnabled = True
         Me.PasswordTextBox.Size = New System.Drawing.Size(191, 20)
         Me.PasswordTextBox.TabIndex = 1
+        Me.PasswordTextBox.UseSelectable = True
         Me.PasswordTextBox.UseSystemPasswordChar = True
+        Me.PasswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.PasswordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'PasswordVerifyTextBox
         '
+        '
+        '
+        '
+        Me.PasswordVerifyTextBox.CustomButton.Image = Nothing
+        Me.PasswordVerifyTextBox.CustomButton.Location = New System.Drawing.Point(173, 2)
+        Me.PasswordVerifyTextBox.CustomButton.Name = ""
+        Me.PasswordVerifyTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.PasswordVerifyTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.PasswordVerifyTextBox.CustomButton.TabIndex = 1
+        Me.PasswordVerifyTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.PasswordVerifyTextBox.CustomButton.UseSelectable = True
+        Me.PasswordVerifyTextBox.CustomButton.Visible = False
+        Me.PasswordVerifyTextBox.Lines = New String(-1) {}
         Me.PasswordVerifyTextBox.Location = New System.Drawing.Point(169, 160)
         Me.PasswordVerifyTextBox.MaxLength = 64
         Me.PasswordVerifyTextBox.Name = "PasswordVerifyTextBox"
         Me.PasswordVerifyTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.PasswordVerifyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.PasswordVerifyTextBox.SelectedText = ""
+        Me.PasswordVerifyTextBox.SelectionLength = 0
+        Me.PasswordVerifyTextBox.SelectionStart = 0
+        Me.PasswordVerifyTextBox.ShortcutsEnabled = True
         Me.PasswordVerifyTextBox.Size = New System.Drawing.Size(191, 20)
         Me.PasswordVerifyTextBox.TabIndex = 2
+        Me.PasswordVerifyTextBox.UseSelectable = True
         Me.PasswordVerifyTextBox.UseSystemPasswordChar = True
+        Me.PasswordVerifyTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.PasswordVerifyTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Button1
         '
@@ -93,6 +135,7 @@ Partial Class FirstRun
         Me.Button1.Size = New System.Drawing.Size(93, 23)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Continuar"
+        Me.Button1.UseSelectable = True
         '
         'Button2
         '
@@ -102,6 +145,7 @@ Partial Class FirstRun
         Me.Button2.Size = New System.Drawing.Size(93, 23)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Cancelar"
+        Me.Button2.UseSelectable = True
         '
         'Panel1
         '
@@ -129,11 +173,33 @@ Partial Class FirstRun
         '
         'UsernameTextBox
         '
+        '
+        '
+        '
+        Me.UsernameTextBox.CustomButton.Image = Nothing
+        Me.UsernameTextBox.CustomButton.Location = New System.Drawing.Point(173, 2)
+        Me.UsernameTextBox.CustomButton.Name = ""
+        Me.UsernameTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.UsernameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.UsernameTextBox.CustomButton.TabIndex = 1
+        Me.UsernameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.UsernameTextBox.CustomButton.UseSelectable = True
+        Me.UsernameTextBox.CustomButton.Visible = False
+        Me.UsernameTextBox.Lines = New String(-1) {}
         Me.UsernameTextBox.Location = New System.Drawing.Point(169, 108)
         Me.UsernameTextBox.MaxLength = 35
         Me.UsernameTextBox.Name = "UsernameTextBox"
+        Me.UsernameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.UsernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.UsernameTextBox.SelectedText = ""
+        Me.UsernameTextBox.SelectionLength = 0
+        Me.UsernameTextBox.SelectionStart = 0
+        Me.UsernameTextBox.ShortcutsEnabled = True
         Me.UsernameTextBox.Size = New System.Drawing.Size(191, 20)
         Me.UsernameTextBox.TabIndex = 0
+        Me.UsernameTextBox.UseSelectable = True
+        Me.UsernameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.UsernameTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label3
         '
@@ -168,6 +234,7 @@ Partial Class FirstRun
         Me.MinimizeBox = False
         Me.Name = "FirstRun"
         Me.Resizable = False
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "Primer inicio"
         Me.ResumeLayout(False)
 

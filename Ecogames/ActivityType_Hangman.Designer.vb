@@ -79,7 +79,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanScorePerLetterCheckbox.Name = "HangmanScorePerLetterCheckbox"
         Me.HangmanScorePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
         Me.HangmanScorePerLetterCheckbox.TabIndex = 14
-        Me.HangmanScorePerLetterCheckbox.UseVisualStyleBackColor = True
+        Me.HangmanScorePerLetterCheckbox.UseSelectable = True
         '
         'HangmanMaxTryAmountCheckbox
         '
@@ -87,7 +87,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanMaxTryAmountCheckbox.Name = "HangmanMaxTryAmountCheckbox"
         Me.HangmanMaxTryAmountCheckbox.Size = New System.Drawing.Size(21, 20)
         Me.HangmanMaxTryAmountCheckbox.TabIndex = 13
-        Me.HangmanMaxTryAmountCheckbox.UseVisualStyleBackColor = True
+        Me.HangmanMaxTryAmountCheckbox.UseSelectable = True
         '
         'HangmanDefaultLetterAmountCheckbox
         '
@@ -95,7 +95,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanDefaultLetterAmountCheckbox.Name = "HangmanDefaultLetterAmountCheckbox"
         Me.HangmanDefaultLetterAmountCheckbox.Size = New System.Drawing.Size(21, 20)
         Me.HangmanDefaultLetterAmountCheckbox.TabIndex = 12
-        Me.HangmanDefaultLetterAmountCheckbox.UseVisualStyleBackColor = True
+        Me.HangmanDefaultLetterAmountCheckbox.UseSelectable = True
         '
         'HangmanTimePerLetterCheckbox
         '
@@ -103,7 +103,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanTimePerLetterCheckbox.Name = "HangmanTimePerLetterCheckbox"
         Me.HangmanTimePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
         Me.HangmanTimePerLetterCheckbox.TabIndex = 11
-        Me.HangmanTimePerLetterCheckbox.UseVisualStyleBackColor = True
+        Me.HangmanTimePerLetterCheckbox.UseSelectable = True
         '
         'SaveActivity
         '
@@ -112,6 +112,7 @@ Partial Class ActivityType_Hangman
         Me.SaveActivity.Size = New System.Drawing.Size(116, 23)
         Me.SaveActivity.TabIndex = 10
         Me.SaveActivity.Text = "Guardar"
+        Me.SaveActivity.UseSelectable = True
         '
         'Label16
         '
@@ -203,11 +204,33 @@ Partial Class ActivityType_Hangman
         '
         'HangmanWordTextBox
         '
+        '
+        '
+        '
+        Me.HangmanWordTextBox.CustomButton.Image = Nothing
+        Me.HangmanWordTextBox.CustomButton.Location = New System.Drawing.Point(205, 2)
+        Me.HangmanWordTextBox.CustomButton.Name = ""
+        Me.HangmanWordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.HangmanWordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.HangmanWordTextBox.CustomButton.TabIndex = 1
+        Me.HangmanWordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.HangmanWordTextBox.CustomButton.UseSelectable = True
+        Me.HangmanWordTextBox.CustomButton.Visible = False
+        Me.HangmanWordTextBox.Lines = New String(-1) {}
         Me.HangmanWordTextBox.Location = New System.Drawing.Point(181, 147)
         Me.HangmanWordTextBox.MaxLength = 45
         Me.HangmanWordTextBox.Name = "HangmanWordTextBox"
+        Me.HangmanWordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.HangmanWordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.HangmanWordTextBox.SelectedText = ""
+        Me.HangmanWordTextBox.SelectionLength = 0
+        Me.HangmanWordTextBox.SelectionStart = 0
+        Me.HangmanWordTextBox.ShortcutsEnabled = True
         Me.HangmanWordTextBox.Size = New System.Drawing.Size(223, 20)
         Me.HangmanWordTextBox.TabIndex = 4
+        Me.HangmanWordTextBox.UseSelectable = True
+        Me.HangmanWordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.HangmanWordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'ActivityType_Hangman
         '
@@ -222,7 +245,7 @@ Partial Class ActivityType_Hangman
         Me.MaximizeBox = False
         Me.Name = "ActivityType_Hangman"
         Me.Resizable = False
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "ActivityType_Hangman"
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.HangmanMaxTryAmount, System.ComponentModel.ISupportInitialize).EndInit()

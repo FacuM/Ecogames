@@ -116,6 +116,7 @@ Partial Class ActivityType_Crossword
         Me.AddColumn.Size = New System.Drawing.Size(111, 23)
         Me.AddColumn.TabIndex = 20
         Me.AddColumn.Text = "Agregar columna"
+        Me.AddColumn.UseSelectable = True
         '
         'SaveActivity
         '
@@ -125,6 +126,7 @@ Partial Class ActivityType_Crossword
         Me.SaveActivity.Size = New System.Drawing.Size(57, 23)
         Me.SaveActivity.TabIndex = 24
         Me.SaveActivity.Text = "Guardar"
+        Me.SaveActivity.UseSelectable = True
         '
         'RemoveColumn
         '
@@ -133,6 +135,7 @@ Partial Class ActivityType_Crossword
         Me.RemoveColumn.Size = New System.Drawing.Size(111, 23)
         Me.RemoveColumn.TabIndex = 22
         Me.RemoveColumn.Text = "Remover columna"
+        Me.RemoveColumn.UseSelectable = True
         '
         'ActivityType_Crossword
         '
@@ -143,7 +146,7 @@ Partial Class ActivityType_Crossword
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ActivityType_Crossword"
-        Me.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Text = "ActivityType_Crossword"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
