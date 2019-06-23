@@ -71,16 +71,16 @@ Partial Class Settings
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.ActivityListBox)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox2.Location = New System.Drawing.Point(20, 251)
+        Me.GroupBox2.Location = New System.Drawing.Point(20, 280)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(347, 305)
+        Me.GroupBox2.Size = New System.Drawing.Size(347, 331)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Actividades"
         '
         'DeleteActivity
         '
-        Me.DeleteActivity.Location = New System.Drawing.Point(137, 278)
+        Me.DeleteActivity.Location = New System.Drawing.Point(137, 290)
         Me.DeleteActivity.Name = "DeleteActivity"
         Me.DeleteActivity.Size = New System.Drawing.Size(96, 23)
         Me.DeleteActivity.TabIndex = 26
@@ -89,7 +89,7 @@ Partial Class Settings
         '
         'ModifyActivity
         '
-        Me.ModifyActivity.Location = New System.Drawing.Point(239, 278)
+        Me.ModifyActivity.Location = New System.Drawing.Point(239, 290)
         Me.ModifyActivity.Name = "ModifyActivity"
         Me.ModifyActivity.Size = New System.Drawing.Size(96, 23)
         Me.ModifyActivity.TabIndex = 25
@@ -99,7 +99,7 @@ Partial Class Settings
         'AddActivity
         '
         Me.AddActivity.Enabled = False
-        Me.AddActivity.Location = New System.Drawing.Point(239, 278)
+        Me.AddActivity.Location = New System.Drawing.Point(239, 290)
         Me.AddActivity.Name = "AddActivity"
         Me.AddActivity.Size = New System.Drawing.Size(96, 23)
         Me.AddActivity.TabIndex = 24
@@ -192,16 +192,16 @@ Partial Class Settings
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(20, 60)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(347, 191)
+        Me.GroupBox1.Size = New System.Drawing.Size(347, 220)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Colores de respuesta"
         '
         'Label6
         '
-        Me.Label6.Location = New System.Drawing.Point(6, 163)
+        Me.Label6.Location = New System.Drawing.Point(9, 176)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(198, 23)
+        Me.Label6.Size = New System.Drawing.Size(195, 23)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Personalizado 3:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -209,14 +209,14 @@ Partial Class Settings
         'Panel8
         '
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel8.Location = New System.Drawing.Point(210, 161)
+        Me.Panel8.Location = New System.Drawing.Point(210, 174)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(23, 23)
         Me.Panel8.TabIndex = 17
         '
         'UserRepCust3Btn
         '
-        Me.UserRepCust3Btn.Location = New System.Drawing.Point(239, 161)
+        Me.UserRepCust3Btn.Location = New System.Drawing.Point(239, 174)
         Me.UserRepCust3Btn.Name = "UserRepCust3Btn"
         Me.UserRepCust3Btn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepCust3Btn.TabIndex = 15
@@ -224,9 +224,9 @@ Partial Class Settings
         '
         'Label5
         '
-        Me.Label5.Location = New System.Drawing.Point(6, 134)
+        Me.Label5.Location = New System.Drawing.Point(9, 147)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(198, 23)
+        Me.Label5.Size = New System.Drawing.Size(195, 23)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Personalizado 2:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -234,14 +234,14 @@ Partial Class Settings
         'Panel7
         '
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel7.Location = New System.Drawing.Point(210, 132)
+        Me.Panel7.Location = New System.Drawing.Point(210, 145)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(23, 23)
         Me.Panel7.TabIndex = 14
         '
         'UserRepCust2Btn
         '
-        Me.UserRepCust2Btn.Location = New System.Drawing.Point(239, 132)
+        Me.UserRepCust2Btn.Location = New System.Drawing.Point(239, 145)
         Me.UserRepCust2Btn.Name = "UserRepCust2Btn"
         Me.UserRepCust2Btn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepCust2Btn.TabIndex = 12
@@ -249,9 +249,9 @@ Partial Class Settings
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(6, 105)
+        Me.Label4.Location = New System.Drawing.Point(9, 118)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(198, 23)
+        Me.Label4.Size = New System.Drawing.Size(195, 23)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Personalizado 1:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -259,14 +259,14 @@ Partial Class Settings
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Location = New System.Drawing.Point(210, 103)
+        Me.Panel6.Location = New System.Drawing.Point(210, 116)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(23, 23)
         Me.Panel6.TabIndex = 11
         '
         'UserRepCust1Btn
         '
-        Me.UserRepCust1Btn.Location = New System.Drawing.Point(239, 103)
+        Me.UserRepCust1Btn.Location = New System.Drawing.Point(239, 116)
         Me.UserRepCust1Btn.Name = "UserRepCust1Btn"
         Me.UserRepCust1Btn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepCust1Btn.TabIndex = 9
@@ -274,9 +274,9 @@ Partial Class Settings
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(6, 74)
+        Me.Label3.Location = New System.Drawing.Point(9, 87)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(198, 23)
+        Me.Label3.Size = New System.Drawing.Size(195, 23)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Regular:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -284,14 +284,14 @@ Partial Class Settings
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Location = New System.Drawing.Point(210, 74)
+        Me.Panel5.Location = New System.Drawing.Point(210, 87)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(23, 23)
         Me.Panel5.TabIndex = 8
         '
         'UserRepRegularColorBtn
         '
-        Me.UserRepRegularColorBtn.Location = New System.Drawing.Point(239, 74)
+        Me.UserRepRegularColorBtn.Location = New System.Drawing.Point(239, 87)
         Me.UserRepRegularColorBtn.Name = "UserRepRegularColorBtn"
         Me.UserRepRegularColorBtn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepRegularColorBtn.TabIndex = 6
@@ -299,9 +299,9 @@ Partial Class Settings
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(6, 45)
+        Me.Label2.Location = New System.Drawing.Point(9, 58)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(198, 23)
+        Me.Label2.Size = New System.Drawing.Size(195, 23)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Incorrecta:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -309,14 +309,14 @@ Partial Class Settings
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Location = New System.Drawing.Point(210, 45)
+        Me.Panel4.Location = New System.Drawing.Point(210, 58)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(23, 23)
         Me.Panel4.TabIndex = 5
         '
         'UserRepWrongColorBtn
         '
-        Me.UserRepWrongColorBtn.Location = New System.Drawing.Point(239, 45)
+        Me.UserRepWrongColorBtn.Location = New System.Drawing.Point(239, 58)
         Me.UserRepWrongColorBtn.Name = "UserRepWrongColorBtn"
         Me.UserRepWrongColorBtn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepWrongColorBtn.TabIndex = 3
@@ -324,9 +324,9 @@ Partial Class Settings
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Location = New System.Drawing.Point(9, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(198, 23)
+        Me.Label1.Size = New System.Drawing.Size(195, 23)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Correcta: "
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -334,14 +334,14 @@ Partial Class Settings
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Location = New System.Drawing.Point(210, 16)
+        Me.Panel3.Location = New System.Drawing.Point(210, 29)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(23, 23)
         Me.Panel3.TabIndex = 2
         '
         'UserRepOkColorBtn
         '
-        Me.UserRepOkColorBtn.Location = New System.Drawing.Point(239, 16)
+        Me.UserRepOkColorBtn.Location = New System.Drawing.Point(239, 29)
         Me.UserRepOkColorBtn.Name = "UserRepOkColorBtn"
         Me.UserRepOkColorBtn.Size = New System.Drawing.Size(96, 23)
         Me.UserRepOkColorBtn.TabIndex = 0
@@ -352,7 +352,7 @@ Partial Class Settings
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
-        Me.ClientSize = New System.Drawing.Size(387, 576)
+        Me.ClientSize = New System.Drawing.Size(387, 631)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
