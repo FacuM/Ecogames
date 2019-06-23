@@ -3,6 +3,8 @@
 ' ====================
 
 Public Class ActivityType_Crossword
+    Dim ColumnMaxIndex As Integer = -1
+
     Private Sub WipeDatagridView()
         DataGridView1.Columns.Clear()
     End Sub
@@ -14,6 +16,7 @@ Public Class ActivityType_Crossword
         WipeDatagridView() ' Just in case, try to wipe it.
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
+        ColumnMaxIndex = -1
         For i = 0 To CrosswordDefaultColumns
             Dim CellTemplate As New DataGridViewTextBoxCell With {
                 .MaxInputLength = 1
@@ -22,6 +25,7 @@ Public Class ActivityType_Crossword
                 .CellTemplate = CellTemplate
             }
             DataGridView1.Columns.Add(NewColumn)
+            ColumnMaxIndex += 1
         Next
 
         Dim ReferenceTextColumn As New DataGridViewColumn
@@ -37,7 +41,7 @@ Public Class ActivityType_Crossword
             DataGridView1.Rows.Add(New DataGridViewRow)
         Next
 
-        ColumnCountLabel.Text = DataGridView1.Columns.GetColumnCount(0).ToString
+        ColumnCountLabel.Text = (ColumnMaxIndex + 1).ToString
 
         UseWaitCursor = False
     End Sub
@@ -65,6 +69,7 @@ Public Class ActivityType_Crossword
 #If DEBUG Then
         LogD(Me, "Parsing activity...")
 #End If
+        ColumnMaxIndex = -1
         For Each Row As String In ActivityPre.Split(RowSplitter, options:=StringSplitOptions.None)
             Dim CurrentRow As String() = Row.Split(SemicolonChar)
 
@@ -83,13 +88,12 @@ Public Class ActivityType_Crossword
                     ActivityCells.Add(Cell)
 
                     If FirstPass Then
-                        Dim CellTemplate As New DataGridViewTextBoxCell With {
-                                .MaxInputLength = 1
-                        }
+                        Dim CellTemplate As New DataGridViewTextBoxCell
                         Dim NewColumn As New DataGridViewColumn With {
                                 .CellTemplate = CellTemplate
                         }
                         DataGridView1.Columns.Add(NewColumn)
+                        ColumnMaxIndex += 1
                     End If
                 Next
 
@@ -103,28 +107,22 @@ Public Class ActivityType_Crossword
                     ActivityRow.Cells.Add(CurrentCell)
                 Next
                 DataGridView1.Rows.Add(ActivityRow)
-            End If
-            If FirstPass Then
-                Dim ReferenceTextCellTemplate As New DataGridViewTextBoxCell
 
-                ' Set up references column
-                Dim CellBoundaries As Integer = -1
-                ' TODO: Rework this, it's gonna cause performance issues
-                '       at some point.
-                For Each Cell As DataGridViewCell In DataGridView1.Rows(0).Cells
-                    CellBoundaries += 1
-                Next
-                Dim ReferenceTextColumn As DataGridViewColumn = DataGridView1.Columns(CellBoundaries)
-                ReferenceTextColumn.CellTemplate = ReferenceTextCellTemplate
-                ReferenceTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-                ReferenceTextColumn.HeaderText = My.Resources.Crossword_ColumnHeader_ReferenceText
                 FirstPass = False
             End If
 
             CurIdx += 1
         Next
 
-        ColumnCountLabel.Text = DataGridView1.Columns.GetColumnCount(0).ToString
+        Dim ReferenceTextCellTemplate As New DataGridViewTextBoxCell
+
+        ' Set up references column
+        Dim ReferenceTextColumn As DataGridViewColumn = DataGridView1.Columns(ColumnMaxIndex)
+        ReferenceTextColumn.CellTemplate = ReferenceTextCellTemplate
+        ReferenceTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        ReferenceTextColumn.HeaderText = My.Resources.Crossword_ColumnHeader_ReferenceText
+
+        ColumnCountLabel.Text = (ColumnMaxIndex + 1).ToString
 
         DataGridView1.Enabled = True
         DataGridView1.ReadOnly = False
@@ -137,12 +135,9 @@ Public Class ActivityType_Crossword
         DataGridView1.ReadOnly = True
         DataGridView1.Enabled = False
 
-        Dim ColumnCount As Integer = DataGridView1.Columns.GetColumnCount(0)
-#If DEBUG Then
-        LogD(Me, "Column count: " & ColumnCount)
-#End If
+        ColumnMaxIndex = DataGridView1.DisplayedColumnCount(False) - 1
 
-        If ColumnCount < MaximumCrosswordXIndex Then
+        If ColumnMaxIndex < MaximumCrosswordXIndex Then
             Dim CellTemplate As New DataGridViewTextBoxCell With {
                 .MaxInputLength = 1
             }
@@ -150,34 +145,27 @@ Public Class ActivityType_Crossword
                 .CellTemplate = CellTemplate
             }
 
-            If ColumnCount > 1 Then
-                DataGridView1.Columns.Insert(ColumnCount - 2, NewColumn)
+            If ColumnMaxIndex > 0 Then
+                DataGridView1.Columns.Insert(ColumnMaxIndex - 1, NewColumn)
             Else
                 DataGridView1.Columns.Insert(0, NewColumn)
             End If
 
-            For Each Column As DataGridViewColumn In DataGridView1.Columns
+            ColumnMaxIndex += 1
 
-                Dim TempCellTemplate As New DataGridViewTextBoxCell With {
-                    .MaxInputLength = 1
-                }
+            Dim ReferenceTextCellTemplate As New DataGridViewTextBoxCell
 
-                If Column.DisplayIndex > ColumnCount - 1 Then
-                    Dim ReferenceTextCellTemplate As New DataGridViewTextBoxCell
+            Dim ReferenceTextColumn As DataGridViewColumn = DataGridView1.Columns(ColumnMaxIndex)
+            ReferenceTextColumn.CellTemplate = ReferenceTextCellTemplate
+            ReferenceTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            ReferenceTextColumn.HeaderText = My.Resources.Crossword_ColumnHeader_ReferenceText
 
-                    Dim ReferenceTextColumn As DataGridViewColumn = DataGridView1.Columns(Column.DisplayIndex)
-                    ReferenceTextColumn.CellTemplate = ReferenceTextCellTemplate
-                    ReferenceTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-                    ReferenceTextColumn.HeaderText = My.Resources.Crossword_ColumnHeader_ReferenceText
-                Else
-                    Column.CellTemplate = TempCellTemplate
-                End If
-            Next
 
-            RemoveColumn.Enabled = True
         End If
 
-        If ColumnCount + 1 >= MaximumCrosswordXIndex Then
+        RemoveColumn.Enabled = True
+
+        If ColumnMaxIndex + 2 >= MaximumCrosswordXIndex Then
             AddColumn.Enabled = False
         Else
             AddColumn.Enabled = True
@@ -187,31 +175,29 @@ Public Class ActivityType_Crossword
         DataGridView1.Visible = True
         DataGridView1.ReadOnly = False
 
-        ColumnCount = DataGridView1.Columns.GetColumnCount(0)
-        Me.ColumnCountLabel.Text = ColumnCount.ToString
+        ColumnCountLabel.Text = (ColumnMaxIndex + 1).ToString
 
 #If DEBUG Then
-        LogD(Me, "Column count: " & ColumnCount)
+        LogD(Me, "Column count: " & (ColumnMaxIndex + 1).ToString)
 #End If
     End Sub
 
     Private Sub RemoveColumn_Click(sender As Object, e As EventArgs) Handles RemoveColumn.Click
-        Dim ColumnCount As Integer = DataGridView1.Columns.GetColumnCount(0)
-
-        If ColumnCount < 3 Then
-            If ColumnCount > 1 Then
-                DataGridView1.Columns.RemoveAt(ColumnCount - 2)
+        If ColumnMaxIndex < 2 Then
+            If ColumnMaxIndex > 0 Then
+                DataGridView1.Columns.RemoveAt(ColumnMaxIndex - 1)
             End If
             RemoveColumn.Enabled = False
         Else
-            DataGridView1.Columns.RemoveAt(ColumnCount - 2)
+            DataGridView1.Columns.RemoveAt(ColumnMaxIndex - 1)
         End If
 
-        ColumnCount = DataGridView1.Columns.GetColumnCount(0)
-        Me.ColumnCountLabel.Text = ColumnCount.ToString
+        ColumnMaxIndex -= 1
+
+        ColumnCountLabel.Text = (ColumnMaxIndex + 1).ToString
 
 #If DEBUG Then
-        LogD(Me, "Column count: " & ColumnCount)
+        LogD(Me, "Column count: " & (ColumnMaxIndex + 1).ToString)
 #End If
     End Sub
 

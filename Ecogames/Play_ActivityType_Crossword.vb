@@ -85,13 +85,13 @@ Public Class Play_ActivityType_Crossword
                     ActivityCells.Add(Cell)
 
                     If FirstPass Then
-                        Dim CellTemplate As New DataGridViewTextBoxCell With {
-                            .MaxInputLength = 1
-                        }
-                        Dim NewColumn As New DataGridViewColumn With {
+                        Dim CellTemplate As New DataGridViewTextBoxCell
+                        Dim NewColumn As New DataGridViewTextBoxColumn With {
                             .CellTemplate = CellTemplate
                         }
                         DataGridView1.Columns.Add(NewColumn)
+
+                        ColumnMaxIndex += 1
                     End If
                 Next
 
@@ -105,26 +105,22 @@ Public Class Play_ActivityType_Crossword
                     ActivityRow.Cells.Add(CurrentCell)
                 Next
                 DataGridView1.Rows.Add(ActivityRow)
-            End If
-            If FirstPass Then
-                Dim ReferenceTextCellTemplate As New DataGridViewTextBoxCell
-
-                ' Set up references column
-                Dim CellBoundaries As Integer = -1
-                ' TODO: Rework this, it's gonna cause performance issues
-                '       at some point.
-                For Each Cell As DataGridViewCell In DataGridView1.Rows(0).Cells
-                    CellBoundaries += 1
-                Next
-                Dim ReferenceTextColumn As DataGridViewColumn = DataGridView1.Columns(CellBoundaries)
-                ReferenceTextColumn.CellTemplate = ReferenceTextCellTemplate
-                ReferenceTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-                ReferenceTextColumn.HeaderText = My.Resources.Crossword_ColumnHeader_ReferenceText
                 FirstPass = False
             End If
 
             Y += 1
         Next
+
+        For i = 0 To ColumnMaxIndex - 1
+            DirectCast(DataGridView1.Columns(i), DataGridViewTextBoxColumn).MaxInputLength = 1
+        Next
+
+        Dim ReferenceTextCellTemplate As New DataGridViewTextBoxCell
+
+        Dim ReferenceTextColumn As DataGridViewColumn = DataGridView1.Columns(ColumnMaxIndex)
+        ReferenceTextColumn.CellTemplate = ReferenceTextCellTemplate
+        ReferenceTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        ReferenceTextColumn.HeaderText = My.Resources.Crossword_ColumnHeader_ReferenceText
 
         DataGridView1.Enabled = True
         DataGridView1.ReadOnly = False
@@ -149,7 +145,6 @@ Public Class Play_ActivityType_Crossword
         Next
 #End If
 
-        ColumnMaxIndex = DataGridView1.Columns.GetColumnCount(0) - 1
         ScoreLabel.Text = Score.ToString & " / " & MaxScore.ToString
     End Sub
 
@@ -161,37 +156,40 @@ Public Class Play_ActivityType_Crossword
 
         StatusLabel.Text = String.Empty
 
-        If Not String.IsNullOrEmpty(Out) And Not String.IsNullOrEmpty(DataGridView1.CurrentCell.Value.ToString) Then
+        If DataGridView1.CurrentCell.Value IsNot Nothing Then
+            If Not String.IsNullOrEmpty(Out) And Not String.IsNullOrEmpty(DataGridView1.CurrentCell.Value.ToString) Then
 #If DEBUG Then
-            LogD(Me, "Validating value...")
+                LogD(Me, "Validating value...")
 #End If
-            If DataGridView1.CurrentCell.Value.ToString = Out Then
-                DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk
-                Score += DefaultScoreMultiplier
-
-                ScoreLabel.Text = Score.ToString & " / " & MaxScore.ToString
-
-                StatusLabel.Text = My.Resources.Play_General_RightAnswer
-
-#If DEBUG Then
-                LogD(Me, "Done, the answer is right!")
-#End If
-            Else
-                If DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk Then
-                    Score -= DefaultScoreMultiplier
+                If DataGridView1.CurrentCell.Value.ToString = Out Then
+                    DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk
+                    Score += DefaultScoreMultiplier
 
                     ScoreLabel.Text = Score.ToString & " / " & MaxScore.ToString
-                Else
-                    DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepWrong
-                End If
 
-                StatusLabel.Text = My.Resources.Play_General_WrongAnswer
+                    StatusLabel.Text = My.Resources.Play_General_RightAnswer
 
 #If DEBUG Then
-                LogD(Me, "Done, wrong answer.")
+                    LogD(Me, "Done, the answer is right!")
 #End If
+                Else
+                    If DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk Then
+                        Score -= DefaultScoreMultiplier
+
+                        ScoreLabel.Text = Score.ToString & " / " & MaxScore.ToString
+                    Else
+                        DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepWrong
+                    End If
+
+                    StatusLabel.Text = My.Resources.Play_General_WrongAnswer
+
+#If DEBUG Then
+                    LogD(Me, "Done, wrong answer.")
+#End If
+                End If
             End If
         End If
+
 
         If Score = MaxScore Then
             MessageBox.Show(My.Resources.Play_General_PerfectScore, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
