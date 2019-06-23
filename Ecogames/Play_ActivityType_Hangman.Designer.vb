@@ -86,7 +86,7 @@ Partial Class Play_ActivityType_Hangman
         Me.HangmanWordTextBox.SelectionStart = 0
         Me.HangmanWordTextBox.ShortcutsEnabled = True
         Me.HangmanWordTextBox.Size = New System.Drawing.Size(328, 20)
-        Me.HangmanWordTextBox.TabIndex = 4
+        Me.HangmanWordTextBox.TabIndex = 0
         Me.HangmanWordTextBox.UseSelectable = True
         Me.HangmanWordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.HangmanWordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)

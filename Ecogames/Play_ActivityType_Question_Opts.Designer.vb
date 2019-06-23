@@ -65,7 +65,7 @@ Partial Class Play_ActivityType_Question_Opts
         Me.QuestionTextBox.SelectionStart = 0
         Me.QuestionTextBox.ShortcutsEnabled = True
         Me.QuestionTextBox.Size = New System.Drawing.Size(316, 23)
-        Me.QuestionTextBox.TabIndex = 1
+        Me.QuestionTextBox.TabIndex = 0
         Me.QuestionTextBox.UseSelectable = True
         Me.QuestionTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.QuestionTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -83,7 +83,7 @@ Partial Class Play_ActivityType_Question_Opts
         Me.VerifyButton.Location = New System.Drawing.Point(222, 378)
         Me.VerifyButton.Name = "VerifyButton"
         Me.VerifyButton.Size = New System.Drawing.Size(117, 23)
-        Me.VerifyButton.TabIndex = 4
+        Me.VerifyButton.TabIndex = 2
         Me.VerifyButton.Text = "Verificar"
         Me.VerifyButton.UseSelectable = True
         '
@@ -104,7 +104,7 @@ Partial Class Play_ActivityType_Question_Opts
         Me.AnswersListBox.Name = "AnswersListBox"
         Me.AnswersListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.AnswersListBox.Size = New System.Drawing.Size(316, 134)
-        Me.AnswersListBox.TabIndex = 11
+        Me.AnswersListBox.TabIndex = 1
         Me.AnswersListBox.Visible = False
         '
         'StatusLabel

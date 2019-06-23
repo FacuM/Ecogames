@@ -46,7 +46,7 @@ Partial Class Play_ActivityType_Crossword
         Me.DataGridView1.Location = New System.Drawing.Point(20, 60)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(639, 321)
-        Me.DataGridView1.TabIndex = 9
+        Me.DataGridView1.TabIndex = 0
         '
         'GroupBox1
         '

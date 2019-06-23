@@ -78,7 +78,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanScorePerLetterCheckbox.Location = New System.Drawing.Point(354, 30)
         Me.HangmanScorePerLetterCheckbox.Name = "HangmanScorePerLetterCheckbox"
         Me.HangmanScorePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanScorePerLetterCheckbox.TabIndex = 14
+        Me.HangmanScorePerLetterCheckbox.TabIndex = 2
         Me.HangmanScorePerLetterCheckbox.UseSelectable = True
         '
         'HangmanMaxTryAmountCheckbox
@@ -86,7 +86,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanMaxTryAmountCheckbox.Location = New System.Drawing.Point(354, 174)
         Me.HangmanMaxTryAmountCheckbox.Name = "HangmanMaxTryAmountCheckbox"
         Me.HangmanMaxTryAmountCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanMaxTryAmountCheckbox.TabIndex = 13
+        Me.HangmanMaxTryAmountCheckbox.TabIndex = 8
         Me.HangmanMaxTryAmountCheckbox.UseSelectable = True
         '
         'HangmanDefaultLetterAmountCheckbox
@@ -94,7 +94,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanDefaultLetterAmountCheckbox.Location = New System.Drawing.Point(354, 125)
         Me.HangmanDefaultLetterAmountCheckbox.Name = "HangmanDefaultLetterAmountCheckbox"
         Me.HangmanDefaultLetterAmountCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanDefaultLetterAmountCheckbox.TabIndex = 12
+        Me.HangmanDefaultLetterAmountCheckbox.TabIndex = 6
         Me.HangmanDefaultLetterAmountCheckbox.UseSelectable = True
         '
         'HangmanTimePerLetterCheckbox
@@ -102,7 +102,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanTimePerLetterCheckbox.Location = New System.Drawing.Point(354, 77)
         Me.HangmanTimePerLetterCheckbox.Name = "HangmanTimePerLetterCheckbox"
         Me.HangmanTimePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanTimePerLetterCheckbox.TabIndex = 11
+        Me.HangmanTimePerLetterCheckbox.TabIndex = 4
         Me.HangmanTimePerLetterCheckbox.UseSelectable = True
         '
         'SaveActivity
@@ -110,7 +110,7 @@ Partial Class ActivityType_Hangman
         Me.SaveActivity.Location = New System.Drawing.Point(122, 215)
         Me.SaveActivity.Name = "SaveActivity"
         Me.SaveActivity.Size = New System.Drawing.Size(116, 23)
-        Me.SaveActivity.TabIndex = 10
+        Me.SaveActivity.TabIndex = 9
         Me.SaveActivity.Text = "Guardar"
         Me.SaveActivity.UseSelectable = True
         '
@@ -130,7 +130,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanMaxTryAmount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.HangmanMaxTryAmount.Name = "HangmanMaxTryAmount"
         Me.HangmanMaxTryAmount.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanMaxTryAmount.TabIndex = 8
+        Me.HangmanMaxTryAmount.TabIndex = 7
         Me.HangmanMaxTryAmount.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'HangmanDefaultLetterAmount
@@ -139,7 +139,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanDefaultLetterAmount.Location = New System.Drawing.Point(199, 125)
         Me.HangmanDefaultLetterAmount.Name = "HangmanDefaultLetterAmount"
         Me.HangmanDefaultLetterAmount.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanDefaultLetterAmount.TabIndex = 7
+        Me.HangmanDefaultLetterAmount.TabIndex = 5
         '
         'Label15
         '
@@ -156,7 +156,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanTimePerLetter.Location = New System.Drawing.Point(199, 77)
         Me.HangmanTimePerLetter.Name = "HangmanTimePerLetter"
         Me.HangmanTimePerLetter.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanTimePerLetter.TabIndex = 5
+        Me.HangmanTimePerLetter.TabIndex = 3
         '
         'Label14
         '
@@ -172,7 +172,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanScorePerLetter.Location = New System.Drawing.Point(199, 30)
         Me.HangmanScorePerLetter.Name = "HangmanScorePerLetter"
         Me.HangmanScorePerLetter.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanScorePerLetter.TabIndex = 3
+        Me.HangmanScorePerLetter.TabIndex = 1
         '
         'Label13
         '
@@ -227,7 +227,7 @@ Partial Class ActivityType_Hangman
         Me.HangmanWordTextBox.SelectionStart = 0
         Me.HangmanWordTextBox.ShortcutsEnabled = True
         Me.HangmanWordTextBox.Size = New System.Drawing.Size(223, 20)
-        Me.HangmanWordTextBox.TabIndex = 4
+        Me.HangmanWordTextBox.TabIndex = 0
         Me.HangmanWordTextBox.UseSelectable = True
         Me.HangmanWordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.HangmanWordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)

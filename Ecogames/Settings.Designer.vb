@@ -76,7 +76,7 @@ Partial Class Settings
         Me.MetroTabControl1.Name = "MetroTabControl1"
         Me.MetroTabControl1.SelectedIndex = 1
         Me.MetroTabControl1.Size = New System.Drawing.Size(347, 333)
-        Me.MetroTabControl1.TabIndex = 6
+        Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
         '
         'MetroTabPage1
@@ -108,7 +108,7 @@ Partial Class Settings
         Me.DeleteActivity.Location = New System.Drawing.Point(135, 264)
         Me.DeleteActivity.Name = "DeleteActivity"
         Me.DeleteActivity.Size = New System.Drawing.Size(96, 23)
-        Me.DeleteActivity.TabIndex = 35
+        Me.DeleteActivity.TabIndex = 4
         Me.DeleteActivity.Text = "Eliminar"
         Me.DeleteActivity.UseSelectable = True
         Me.DeleteActivity.Visible = False
@@ -118,7 +118,7 @@ Partial Class Settings
         Me.ModifyActivity.Location = New System.Drawing.Point(237, 264)
         Me.ModifyActivity.Name = "ModifyActivity"
         Me.ModifyActivity.Size = New System.Drawing.Size(96, 23)
-        Me.ModifyActivity.TabIndex = 34
+        Me.ModifyActivity.TabIndex = 5
         Me.ModifyActivity.Text = "Modificar"
         Me.ModifyActivity.UseSelectable = True
         Me.ModifyActivity.Visible = False
@@ -159,7 +159,7 @@ Partial Class Settings
         Me.SettingsActivityName.SelectionStart = 0
         Me.SettingsActivityName.ShortcutsEnabled = True
         Me.SettingsActivityName.Size = New System.Drawing.Size(225, 29)
-        Me.SettingsActivityName.TabIndex = 32
+        Me.SettingsActivityName.TabIndex = 1
         Me.SettingsActivityName.UseSelectable = True
         Me.SettingsActivityName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -182,7 +182,7 @@ Partial Class Settings
         Me.SettingsActivityType.Location = New System.Drawing.Point(108, 181)
         Me.SettingsActivityType.Name = "SettingsActivityType"
         Me.SettingsActivityType.Size = New System.Drawing.Size(225, 29)
-        Me.SettingsActivityType.TabIndex = 30
+        Me.SettingsActivityType.TabIndex = 2
         Me.SettingsActivityType.UseSelectable = True
         '
         'Label9
@@ -221,7 +221,7 @@ Partial Class Settings
         Me.SettingsActivityDescription.SelectionStart = 0
         Me.SettingsActivityDescription.ShortcutsEnabled = True
         Me.SettingsActivityDescription.Size = New System.Drawing.Size(225, 42)
-        Me.SettingsActivityDescription.TabIndex = 28
+        Me.SettingsActivityDescription.TabIndex = 3
         Me.SettingsActivityDescription.UseSelectable = True
         Me.SettingsActivityDescription.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityDescription.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -289,7 +289,7 @@ Partial Class Settings
         Me.UserRepCust3Btn.Location = New System.Drawing.Point(243, 199)
         Me.UserRepCust3Btn.Name = "UserRepCust3Btn"
         Me.UserRepCust3Btn.Size = New System.Drawing.Size(96, 23)
-        Me.UserRepCust3Btn.TabIndex = 33
+        Me.UserRepCust3Btn.TabIndex = 5
         Me.UserRepCust3Btn.Text = "Cambiar"
         Me.UserRepCust3Btn.UseSelectable = True
         '
@@ -315,7 +315,7 @@ Partial Class Settings
         Me.UserRepCust2Btn.Location = New System.Drawing.Point(243, 161)
         Me.UserRepCust2Btn.Name = "UserRepCust2Btn"
         Me.UserRepCust2Btn.Size = New System.Drawing.Size(96, 23)
-        Me.UserRepCust2Btn.TabIndex = 30
+        Me.UserRepCust2Btn.TabIndex = 4
         Me.UserRepCust2Btn.Text = "Cambiar"
         Me.UserRepCust2Btn.UseSelectable = True
         '
@@ -341,7 +341,7 @@ Partial Class Settings
         Me.UserRepCust1Btn.Location = New System.Drawing.Point(243, 123)
         Me.UserRepCust1Btn.Name = "UserRepCust1Btn"
         Me.UserRepCust1Btn.Size = New System.Drawing.Size(96, 23)
-        Me.UserRepCust1Btn.TabIndex = 27
+        Me.UserRepCust1Btn.TabIndex = 3
         Me.UserRepCust1Btn.Text = "Cambiar"
         Me.UserRepCust1Btn.UseSelectable = True
         '
@@ -367,7 +367,7 @@ Partial Class Settings
         Me.UserRepRegularColorBtn.Location = New System.Drawing.Point(243, 85)
         Me.UserRepRegularColorBtn.Name = "UserRepRegularColorBtn"
         Me.UserRepRegularColorBtn.Size = New System.Drawing.Size(96, 23)
-        Me.UserRepRegularColorBtn.TabIndex = 24
+        Me.UserRepRegularColorBtn.TabIndex = 2
         Me.UserRepRegularColorBtn.Text = "Cambiar"
         Me.UserRepRegularColorBtn.UseSelectable = True
         '
@@ -393,7 +393,7 @@ Partial Class Settings
         Me.UserRepWrongColorBtn.Location = New System.Drawing.Point(243, 47)
         Me.UserRepWrongColorBtn.Name = "UserRepWrongColorBtn"
         Me.UserRepWrongColorBtn.Size = New System.Drawing.Size(96, 23)
-        Me.UserRepWrongColorBtn.TabIndex = 21
+        Me.UserRepWrongColorBtn.TabIndex = 1
         Me.UserRepWrongColorBtn.Text = "Cambiar"
         Me.UserRepWrongColorBtn.UseSelectable = True
         '
@@ -419,7 +419,7 @@ Partial Class Settings
         Me.UserRepOkColorBtn.Location = New System.Drawing.Point(243, 9)
         Me.UserRepOkColorBtn.Name = "UserRepOkColorBtn"
         Me.UserRepOkColorBtn.Size = New System.Drawing.Size(96, 23)
-        Me.UserRepOkColorBtn.TabIndex = 18
+        Me.UserRepOkColorBtn.TabIndex = 0
         Me.UserRepOkColorBtn.Text = "Cambiar"
         Me.UserRepOkColorBtn.UseSelectable = True
         '

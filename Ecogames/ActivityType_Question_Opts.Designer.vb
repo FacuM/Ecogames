@@ -68,7 +68,7 @@ Partial Class ActivityType_Question_Opts
         Me.QuestionTextBox.SelectionStart = 0
         Me.QuestionTextBox.ShortcutsEnabled = True
         Me.QuestionTextBox.Size = New System.Drawing.Size(316, 23)
-        Me.QuestionTextBox.TabIndex = 1
+        Me.QuestionTextBox.TabIndex = 0
         Me.QuestionTextBox.UseSelectable = True
         Me.QuestionTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.QuestionTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -118,7 +118,7 @@ Partial Class ActivityType_Question_Opts
         Me.SaveActivityButton.Location = New System.Drawing.Point(222, 377)
         Me.SaveActivityButton.Name = "SaveActivityButton"
         Me.SaveActivityButton.Size = New System.Drawing.Size(117, 23)
-        Me.SaveActivityButton.TabIndex = 4
+        Me.SaveActivityButton.TabIndex = 6
         Me.SaveActivityButton.Text = "Guardar"
         Me.SaveActivityButton.UseSelectable = True
         '
@@ -138,7 +138,7 @@ Partial Class ActivityType_Question_Opts
         Me.NextActionButton.Location = New System.Drawing.Point(222, 203)
         Me.NextActionButton.Name = "NextActionButton"
         Me.NextActionButton.Size = New System.Drawing.Size(117, 23)
-        Me.NextActionButton.TabIndex = 7
+        Me.NextActionButton.TabIndex = 1
         Me.NextActionButton.Text = "Siguiente"
         Me.NextActionButton.UseSelectable = True
         '
@@ -157,7 +157,7 @@ Partial Class ActivityType_Question_Opts
         Me.CorrectAnswerCheckBox.Location = New System.Drawing.Point(23, 377)
         Me.CorrectAnswerCheckBox.Name = "CorrectAnswerCheckBox"
         Me.CorrectAnswerCheckBox.Size = New System.Drawing.Size(70, 23)
-        Me.CorrectAnswerCheckBox.TabIndex = 9
+        Me.CorrectAnswerCheckBox.TabIndex = 4
         Me.CorrectAnswerCheckBox.Text = "Correcta"
         Me.CorrectAnswerCheckBox.UseSelectable = True
         '
@@ -167,7 +167,7 @@ Partial Class ActivityType_Question_Opts
         Me.AnswersListBox.Location = New System.Drawing.Point(23, 232)
         Me.AnswersListBox.Name = "AnswersListBox"
         Me.AnswersListBox.Size = New System.Drawing.Size(316, 95)
-        Me.AnswersListBox.TabIndex = 11
+        Me.AnswersListBox.TabIndex = 2
         Me.AnswersListBox.Visible = False
         '
         'ModifyButton
@@ -175,7 +175,7 @@ Partial Class ActivityType_Question_Opts
         Me.ModifyButton.Location = New System.Drawing.Point(99, 377)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(117, 23)
-        Me.ModifyButton.TabIndex = 12
+        Me.ModifyButton.TabIndex = 5
         Me.ModifyButton.Text = "Modificar"
         Me.ModifyButton.UseSelectable = True
         Me.ModifyButton.Visible = False

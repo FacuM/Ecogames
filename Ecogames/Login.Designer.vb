@@ -65,7 +65,7 @@ Partial Class Login
         Me.PasswordTextBox.SelectionStart = 0
         Me.PasswordTextBox.ShortcutsEnabled = True
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
-        Me.PasswordTextBox.TabIndex = 1
+        Me.PasswordTextBox.TabIndex = 0
         Me.PasswordTextBox.UseSelectable = True
         Me.PasswordTextBox.UseSystemPasswordChar = True
         Me.PasswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -77,7 +77,7 @@ Partial Class Login
         Me.ContinueButton.Location = New System.Drawing.Point(77, 150)
         Me.ContinueButton.Name = "ContinueButton"
         Me.ContinueButton.Size = New System.Drawing.Size(93, 23)
-        Me.ContinueButton.TabIndex = 3
+        Me.ContinueButton.TabIndex = 1
         Me.ContinueButton.Text = "Continuar"
         Me.ContinueButton.UseSelectable = True
         '
@@ -87,7 +87,7 @@ Partial Class Login
         Me.QuitButton.Location = New System.Drawing.Point(176, 150)
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(93, 23)
-        Me.QuitButton.TabIndex = 4
+        Me.QuitButton.TabIndex = 2
         Me.QuitButton.Text = "Cancelar"
         Me.QuitButton.UseSelectable = True
         '

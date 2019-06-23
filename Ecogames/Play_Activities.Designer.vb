@@ -60,7 +60,7 @@ Partial Class Play_Activities
         Me.SettingsActivityType.SelectionStart = 0
         Me.SettingsActivityType.ShortcutsEnabled = True
         Me.SettingsActivityType.Size = New System.Drawing.Size(233, 29)
-        Me.SettingsActivityType.TabIndex = 34
+        Me.SettingsActivityType.TabIndex = 2
         Me.SettingsActivityType.UseSelectable = True
         Me.SettingsActivityType.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityType.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -71,7 +71,7 @@ Partial Class Play_Activities
         Me.PlayActivity.Location = New System.Drawing.Point(268, 367)
         Me.PlayActivity.Name = "PlayActivity"
         Me.PlayActivity.Size = New System.Drawing.Size(96, 23)
-        Me.PlayActivity.TabIndex = 33
+        Me.PlayActivity.TabIndex = 4
         Me.PlayActivity.Text = "Jugar"
         Me.PlayActivity.UseSelectable = True
         '
@@ -102,7 +102,7 @@ Partial Class Play_Activities
         Me.SettingsActivityName.SelectionStart = 0
         Me.SettingsActivityName.ShortcutsEnabled = True
         Me.SettingsActivityName.Size = New System.Drawing.Size(233, 29)
-        Me.SettingsActivityName.TabIndex = 32
+        Me.SettingsActivityName.TabIndex = 1
         Me.SettingsActivityName.UseSelectable = True
         Me.SettingsActivityName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -153,7 +153,7 @@ Partial Class Play_Activities
         Me.SettingsActivityDescription.SelectionStart = 0
         Me.SettingsActivityDescription.ShortcutsEnabled = True
         Me.SettingsActivityDescription.Size = New System.Drawing.Size(233, 42)
-        Me.SettingsActivityDescription.TabIndex = 29
+        Me.SettingsActivityDescription.TabIndex = 3
         Me.SettingsActivityDescription.UseSelectable = True
         Me.SettingsActivityDescription.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityDescription.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -173,7 +173,7 @@ Partial Class Play_Activities
         Me.ActivityListBox.Location = New System.Drawing.Point(23, 63)
         Me.ActivityListBox.Name = "ActivityListBox"
         Me.ActivityListBox.Size = New System.Drawing.Size(341, 160)
-        Me.ActivityListBox.TabIndex = 27
+        Me.ActivityListBox.TabIndex = 0
         '
         'Play_Activities
         '

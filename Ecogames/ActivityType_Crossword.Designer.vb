@@ -44,7 +44,7 @@ Partial Class ActivityType_Crossword
         Me.DataGridView1.Location = New System.Drawing.Point(20, 60)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(639, 315)
-        Me.DataGridView1.TabIndex = 9
+        Me.DataGridView1.TabIndex = 0
         '
         'GroupBox1
         '
@@ -114,7 +114,7 @@ Partial Class ActivityType_Crossword
         Me.AddColumn.Location = New System.Drawing.Point(6, 3)
         Me.AddColumn.Name = "AddColumn"
         Me.AddColumn.Size = New System.Drawing.Size(111, 23)
-        Me.AddColumn.TabIndex = 20
+        Me.AddColumn.TabIndex = 1
         Me.AddColumn.Text = "Agregar columna"
         Me.AddColumn.UseSelectable = True
         '
@@ -124,7 +124,7 @@ Partial Class ActivityType_Crossword
         Me.SaveActivity.Location = New System.Drawing.Point(240, 3)
         Me.SaveActivity.Name = "SaveActivity"
         Me.SaveActivity.Size = New System.Drawing.Size(57, 23)
-        Me.SaveActivity.TabIndex = 24
+        Me.SaveActivity.TabIndex = 3
         Me.SaveActivity.Text = "Guardar"
         Me.SaveActivity.UseSelectable = True
         '
@@ -133,7 +133,7 @@ Partial Class ActivityType_Crossword
         Me.RemoveColumn.Location = New System.Drawing.Point(123, 3)
         Me.RemoveColumn.Name = "RemoveColumn"
         Me.RemoveColumn.Size = New System.Drawing.Size(111, 23)
-        Me.RemoveColumn.TabIndex = 22
+        Me.RemoveColumn.TabIndex = 2
         Me.RemoveColumn.Text = "Remover columna"
         Me.RemoveColumn.UseSelectable = True
         '

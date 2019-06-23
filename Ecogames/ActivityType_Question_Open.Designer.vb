@@ -63,7 +63,7 @@ Partial Class ActivityType_Question_Open
         Me.QuestionTextBox.SelectionStart = 0
         Me.QuestionTextBox.ShortcutsEnabled = True
         Me.QuestionTextBox.Size = New System.Drawing.Size(316, 23)
-        Me.QuestionTextBox.TabIndex = 1
+        Me.QuestionTextBox.TabIndex = 0
         Me.QuestionTextBox.UseSelectable = True
         Me.QuestionTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.QuestionTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -94,7 +94,7 @@ Partial Class ActivityType_Question_Open
         Me.AnswerTextBox.SelectionStart = 0
         Me.AnswerTextBox.ShortcutsEnabled = True
         Me.AnswerTextBox.Size = New System.Drawing.Size(316, 131)
-        Me.AnswerTextBox.TabIndex = 3
+        Me.AnswerTextBox.TabIndex = 1
         Me.AnswerTextBox.UseSelectable = True
         Me.AnswerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.AnswerTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -112,7 +112,7 @@ Partial Class ActivityType_Question_Open
         Me.SaveActivityButton.Location = New System.Drawing.Point(222, 299)
         Me.SaveActivityButton.Name = "SaveActivityButton"
         Me.SaveActivityButton.Size = New System.Drawing.Size(117, 23)
-        Me.SaveActivityButton.TabIndex = 4
+        Me.SaveActivityButton.TabIndex = 3
         Me.SaveActivityButton.Text = "Guardar"
         Me.SaveActivityButton.UseSelectable = True
         '
@@ -121,7 +121,7 @@ Partial Class ActivityType_Question_Open
         Me.AutomaticEvaluationCheckBox.Location = New System.Drawing.Point(23, 299)
         Me.AutomaticEvaluationCheckBox.Name = "AutomaticEvaluationCheckBox"
         Me.AutomaticEvaluationCheckBox.Size = New System.Drawing.Size(163, 23)
-        Me.AutomaticEvaluationCheckBox.TabIndex = 5
+        Me.AutomaticEvaluationCheckBox.TabIndex = 2
         Me.AutomaticEvaluationCheckBox.Text = "Evaluar automáticamente"
         Me.AutomaticEvaluationCheckBox.UseSelectable = True
         '

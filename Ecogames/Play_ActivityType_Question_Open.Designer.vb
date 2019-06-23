@@ -64,7 +64,7 @@ Partial Class Play_ActivityType_Question_Open
         Me.QuestionTextBox.SelectionStart = 0
         Me.QuestionTextBox.ShortcutsEnabled = True
         Me.QuestionTextBox.Size = New System.Drawing.Size(316, 23)
-        Me.QuestionTextBox.TabIndex = 1
+        Me.QuestionTextBox.TabIndex = 0
         Me.QuestionTextBox.UseSelectable = True
         Me.QuestionTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.QuestionTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -95,7 +95,7 @@ Partial Class Play_ActivityType_Question_Open
         Me.AnswerTextBox.SelectionStart = 0
         Me.AnswerTextBox.ShortcutsEnabled = True
         Me.AnswerTextBox.Size = New System.Drawing.Size(316, 131)
-        Me.AnswerTextBox.TabIndex = 3
+        Me.AnswerTextBox.TabIndex = 1
         Me.AnswerTextBox.UseSelectable = True
         Me.AnswerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.AnswerTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -113,7 +113,7 @@ Partial Class Play_ActivityType_Question_Open
         Me.VerifyButton.Location = New System.Drawing.Point(222, 299)
         Me.VerifyButton.Name = "VerifyButton"
         Me.VerifyButton.Size = New System.Drawing.Size(117, 23)
-        Me.VerifyButton.TabIndex = 4
+        Me.VerifyButton.TabIndex = 2
         Me.VerifyButton.Text = "Verificar"
         Me.VerifyButton.UseSelectable = True
         '
