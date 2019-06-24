@@ -214,6 +214,7 @@ Public Class Play_ActivityType_Crossword
                 If Cell.Style.BackColor <> Color.LightGray Then
                     If Cell.Style.BackColor <> My.Settings.UserRepOk Then
                         RowIsDone = False
+                        Exit For
                     End If
                 End If
             Next
@@ -234,7 +235,7 @@ Public Class Play_ActivityType_Crossword
     Private Sub DataGridView1_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles DataGridView1.CellBeginEdit
         If e.ColumnIndex = ColumnMaxIndex Or DataGridView1.CurrentCell.Style.BackColor = Color.LightGray Then
 #If DEBUG Then
-            LogD(Me, "Prevented editing of invalid cell.")
+            LogD(Me, "Prevented editing of invalid cell at " & e.RowIndex & SemicolonChar & e.ColumnIndex & ".")
 #End If
             e.Cancel = True
         End If
