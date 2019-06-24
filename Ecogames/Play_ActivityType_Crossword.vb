@@ -8,6 +8,7 @@ Public Class Play_ActivityType_Crossword
     Private Sub WipeDatagridView()
         DataGridView1.Columns.Clear()
         CellMap.Clear()
+        ColumnMaxIndex = -1
     End Sub
 
     ' CellMap
