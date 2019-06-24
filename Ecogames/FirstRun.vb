@@ -1,26 +1,44 @@
 ﻿Public Class FirstRun
     Private Sub ButtonEnabler()
-        If PasswordConfirmationVerifier(PasswordTextBox, PasswordVerifyTextBox, Panel2) And SimpleLengthVerifier(UsernameTextBox, Panel3) Then
-            Button1.Enabled = True
+        If SimpleLengthVerifier(UsernameTextBox, Panel3) Then
+            If String.IsNullOrEmpty(PasswordTextBox.Text) And String.IsNullOrEmpty(PasswordVerifyTextBox.Text) Then
+                StatusLabel.Text = String.Empty
+            Else
+                If PasswordConfirmationVerifier(PasswordTextBox, PasswordVerifyTextBox, Panel2) Then
+                    StatusLabel.Text = String.Empty
+                    ContinueButton.Enabled = True
+                Else
+                    ContinueButton.Enabled = False
+                    StatusLabel.Text = My.Resources.FirstRun_PasswordsDontMatch
+                End If
+            End If
         Else
-            Button1.Enabled = False
+            StatusLabel.Text = My.Resources.FirstRun_UsernameRequired
         End If
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
-        PasswordStrengthVerifier(PasswordTextBox, Panel1)
-        ButtonEnabler()
+    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
+        If String.IsNullOrEmpty(PasswordTextBox.Text) Then
+            StatusLabel.Text = String.Empty
+        Else
+            If PasswordStrengthVerifier(PasswordTextBox, Panel1) Then
+                StatusLabel.Text = String.Empty
+                ButtonEnabler()
+            Else
+                StatusLabel.Text = My.Resources.FirstRun_PasswordTooShort
+            End If
+        End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         Close()
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles PasswordVerifyTextBox.TextChanged
+    Private Sub PasswordVerifyTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordVerifyTextBox.TextChanged
         ButtonEnabler()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub ContinueButton_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
         My.Settings.UserName = UsernameTextBox.Text
         My.Settings.UserPassword = PasswordVerifyTextBox.Text
         My.Settings.FirstRun = False
@@ -32,7 +50,11 @@
         Close()
     End Sub
 
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles UsernameTextBox.TextChanged
+    Private Sub UsernameTextBox_TextChanged(sender As Object, e As EventArgs) Handles UsernameTextBox.TextChanged
         ButtonEnabler()
+    End Sub
+
+    Private Sub FirstRun_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        StatusLabel.Text = String.Empty
     End Sub
 End Class

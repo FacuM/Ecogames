@@ -72,7 +72,7 @@
         Const TAG = "SimpleLengthVerifier"
         LogD(TAG, "Verifying length Of " & InputTextBox.Name & ", should be greater than " & MinimumSimpleLength & "...")
 #End If
-        If InputTextBox.Text.Length > (MinimumSimpleLength + 1) Then
+        If InputTextBox.Text.Length >= MinimumSimpleLength Then
             InputPanel.BackColor = Color.LimeGreen
 #If DEBUG Then
             LogD(TAG, "Verification Of " & InputTextBox.Name & " passed (length = " & InputTextBox.Text.Length & ").")

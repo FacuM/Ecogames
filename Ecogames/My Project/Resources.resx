@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Settings_Activity" xml:space="preserve">
     <value>Actividad</value>
@@ -153,7 +153,7 @@
   <data name="Settings_Crossword_IllegalStringException" xml:space="preserve">
     <value>El valor ingresado "{0}" está reservado para el sistema.</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="drawing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drawing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -303,5 +303,14 @@ Respuesta esperada:
   </data>
   <data name="Play_Question_Open_AutoEvalNoScore" xml:space="preserve">
     <value>¡No conseguiste ningún punto! {0}% completado.</value>
+  </data>
+  <data name="FirstRun_PasswordsDontMatch" xml:space="preserve">
+    <value>Las contraseñas no coinciden.</value>
+  </data>
+  <data name="FirstRun_PasswordTooShort" xml:space="preserve">
+    <value>La contraseña es muy corta.</value>
+  </data>
+  <data name="FirstRun_UsernameRequired" xml:space="preserve">
+    <value>Tenés que introducir un nombre.</value>
   </data>
 </root>

@@ -152,6 +152,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Las contraseñas no coinciden..
+        '''</summary>
+        Friend ReadOnly Property FirstRun_PasswordsDontMatch() As String
+            Get
+                Return ResourceManager.GetString("FirstRun_PasswordsDontMatch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to La contraseña es muy corta..
+        '''</summary>
+        Friend ReadOnly Property FirstRun_PasswordTooShort() As String
+            Get
+                Return ResourceManager.GetString("FirstRun_PasswordTooShort", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tenés que introducir un nombre..
+        '''</summary>
+        Friend ReadOnly Property FirstRun_UsernameRequired() As String
+            Get
+                Return ResourceManager.GetString("FirstRun_UsernameRequired", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Error.
         '''</summary>
         Friend ReadOnly Property General_Error_Title() As String

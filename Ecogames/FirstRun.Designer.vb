@@ -28,13 +28,14 @@ Partial Class FirstRun
         Me.Label2 = New MetroFramework.Controls.MetroLabel()
         Me.PasswordTextBox = New MetroFramework.Controls.MetroTextBox()
         Me.PasswordVerifyTextBox = New MetroFramework.Controls.MetroTextBox()
-        Me.Button1 = New MetroFramework.Controls.MetroButton()
-        Me.Button2 = New MetroFramework.Controls.MetroButton()
+        Me.ContinueButton = New MetroFramework.Controls.MetroButton()
+        Me.QuitButton = New MetroFramework.Controls.MetroButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.UsernameTextBox = New MetroFramework.Controls.MetroTextBox()
         Me.Label3 = New MetroFramework.Controls.MetroLabel()
+        Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
         Me.SuspendLayout()
         '
         'Label1
@@ -42,9 +43,9 @@ Partial Class FirstRun
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Location = New System.Drawing.Point(20, 60)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(370, 45)
+        Me.Label1.Size = New System.Drawing.Size(420, 45)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Para continuar, regístrese."
+        Me.Label1.Text = "Para continuar, registráte."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
@@ -71,7 +72,7 @@ Partial Class FirstRun
         '
         '
         Me.PasswordTextBox.CustomButton.Image = Nothing
-        Me.PasswordTextBox.CustomButton.Location = New System.Drawing.Point(173, 2)
+        Me.PasswordTextBox.CustomButton.Location = New System.Drawing.Point(224, 2)
         Me.PasswordTextBox.CustomButton.Name = ""
         Me.PasswordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
         Me.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -89,7 +90,7 @@ Partial Class FirstRun
         Me.PasswordTextBox.SelectionLength = 0
         Me.PasswordTextBox.SelectionStart = 0
         Me.PasswordTextBox.ShortcutsEnabled = True
-        Me.PasswordTextBox.Size = New System.Drawing.Size(191, 20)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(242, 20)
         Me.PasswordTextBox.TabIndex = 1
         Me.PasswordTextBox.UseSelectable = True
         Me.PasswordTextBox.UseSystemPasswordChar = True
@@ -102,7 +103,7 @@ Partial Class FirstRun
         '
         '
         Me.PasswordVerifyTextBox.CustomButton.Image = Nothing
-        Me.PasswordVerifyTextBox.CustomButton.Location = New System.Drawing.Point(173, 2)
+        Me.PasswordVerifyTextBox.CustomButton.Location = New System.Drawing.Point(224, 2)
         Me.PasswordVerifyTextBox.CustomButton.Name = ""
         Me.PasswordVerifyTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
         Me.PasswordVerifyTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -120,37 +121,37 @@ Partial Class FirstRun
         Me.PasswordVerifyTextBox.SelectionLength = 0
         Me.PasswordVerifyTextBox.SelectionStart = 0
         Me.PasswordVerifyTextBox.ShortcutsEnabled = True
-        Me.PasswordVerifyTextBox.Size = New System.Drawing.Size(191, 20)
+        Me.PasswordVerifyTextBox.Size = New System.Drawing.Size(242, 20)
         Me.PasswordVerifyTextBox.TabIndex = 2
         Me.PasswordVerifyTextBox.UseSelectable = True
         Me.PasswordVerifyTextBox.UseSystemPasswordChar = True
         Me.PasswordVerifyTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.PasswordVerifyTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'Button1
+        'ContinueButton
         '
-        Me.Button1.Enabled = False
-        Me.Button1.Location = New System.Drawing.Point(106, 200)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Continuar"
-        Me.Button1.UseSelectable = True
+        Me.ContinueButton.Enabled = False
+        Me.ContinueButton.Location = New System.Drawing.Point(241, 203)
+        Me.ContinueButton.Name = "ContinueButton"
+        Me.ContinueButton.Size = New System.Drawing.Size(96, 23)
+        Me.ContinueButton.TabIndex = 3
+        Me.ContinueButton.Text = "Continuar"
+        Me.ContinueButton.UseSelectable = True
         '
-        'Button2
+        'QuitButton
         '
-        Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button2.Location = New System.Drawing.Point(206, 200)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(93, 23)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseSelectable = True
+        Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.QuitButton.Location = New System.Drawing.Point(341, 203)
+        Me.QuitButton.Name = "QuitButton"
+        Me.QuitButton.Size = New System.Drawing.Size(96, 23)
+        Me.QuitButton.TabIndex = 4
+        Me.QuitButton.Text = "Cancelar"
+        Me.QuitButton.UseSelectable = True
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Red
-        Me.Panel1.Location = New System.Drawing.Point(366, 134)
+        Me.Panel1.Location = New System.Drawing.Point(417, 134)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(20, 20)
         Me.Panel1.TabIndex = 13
@@ -158,7 +159,7 @@ Partial Class FirstRun
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Red
-        Me.Panel2.Location = New System.Drawing.Point(366, 160)
+        Me.Panel2.Location = New System.Drawing.Point(417, 160)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(20, 20)
         Me.Panel2.TabIndex = 14
@@ -166,7 +167,7 @@ Partial Class FirstRun
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Red
-        Me.Panel3.Location = New System.Drawing.Point(366, 108)
+        Me.Panel3.Location = New System.Drawing.Point(417, 108)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(20, 20)
         Me.Panel3.TabIndex = 16
@@ -177,7 +178,7 @@ Partial Class FirstRun
         '
         '
         Me.UsernameTextBox.CustomButton.Image = Nothing
-        Me.UsernameTextBox.CustomButton.Location = New System.Drawing.Point(173, 2)
+        Me.UsernameTextBox.CustomButton.Location = New System.Drawing.Point(224, 2)
         Me.UsernameTextBox.CustomButton.Name = ""
         Me.UsernameTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
         Me.UsernameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -195,7 +196,7 @@ Partial Class FirstRun
         Me.UsernameTextBox.SelectionLength = 0
         Me.UsernameTextBox.SelectionStart = 0
         Me.UsernameTextBox.ShortcutsEnabled = True
-        Me.UsernameTextBox.Size = New System.Drawing.Size(191, 20)
+        Me.UsernameTextBox.Size = New System.Drawing.Size(242, 20)
         Me.UsernameTextBox.TabIndex = 0
         Me.UsernameTextBox.UseSelectable = True
         Me.UsernameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -210,20 +211,29 @@ Partial Class FirstRun
         Me.Label3.Text = "Nombre:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'StatusLabel
+        '
+        Me.StatusLabel.Location = New System.Drawing.Point(20, 203)
+        Me.StatusLabel.Name = "StatusLabel"
+        Me.StatusLabel.Size = New System.Drawing.Size(215, 23)
+        Me.StatusLabel.TabIndex = 17
+        Me.StatusLabel.Text = "N/A"
+        Me.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'FirstRun
         '
-        Me.AcceptButton = Me.Button1
+        Me.AcceptButton = Me.ContinueButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.Button2
-        Me.ClientSize = New System.Drawing.Size(410, 239)
+        Me.ClientSize = New System.Drawing.Size(460, 249)
+        Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.UsernameTextBox)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.QuitButton)
+        Me.Controls.Add(Me.ContinueButton)
         Me.Controls.Add(Me.PasswordVerifyTextBox)
         Me.Controls.Add(Me.PasswordTextBox)
         Me.Controls.Add(Me.Label2)
@@ -245,10 +255,11 @@ Partial Class FirstRun
     Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Label4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Label2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents Button1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents Button2 As MetroFramework.Controls.MetroButton
+    Friend WithEvents ContinueButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents QuitButton As MetroFramework.Controls.MetroButton
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents StatusLabel As MetroFramework.Controls.MetroLabel
 End Class
