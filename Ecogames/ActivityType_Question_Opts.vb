@@ -28,15 +28,26 @@ Public Class ActivityType_Question_Opts
     End Sub
 
     Public Sub PrepareNew()
+        Answers.Clear()
+        AnswersStatuses.Clear()
         QuestionTextBox.Clear()
         AnswerTextBox.Clear()
+        AnswersListBox.Items.Clear()
+
         Size = New Size(Size.Width, 242)
+
         MetroLabel2.Visible = False
         AnswerTextBox.Visible = False
         SaveActivityButton.Visible = False
-        Answers.Clear()
-        AnswersStatuses.Clear()
+        AnswersListBox.Visible = False
+        NextActionButton.Visible = True
+
+        NextActionButton.Enabled = True
+        QuestionTextBox.Enabled = True
+        SaveActivityButton.Enabled = False
+
         HelperLabel.Text = String.Format(My.Resources.Question_Opts_GeneralHelp, My.Resources.Question_Opts_NextActionHelp)
+
         AnswersListBox.Items.Add(My.Resources.Question_Opts_NewAnswer)
         AnswersListBox.SelectedIndex = AnswersListBox.Items.Count - 1
     End Sub
@@ -160,7 +171,6 @@ Public Class ActivityType_Question_Opts
     Private Sub AddAnswerButton_Click(sender As Object, e As EventArgs) Handles AddAnswerButton.Click
         Dim CorrectAnswer As String
         If CorrectAnswerCheckBox.Checked Then
-            SaveActivityButton.Enabled = True
             CorrectAnswer = "Correcta"
         Else
             CorrectAnswer = "Incorrecta"
@@ -175,8 +185,10 @@ Public Class ActivityType_Question_Opts
 #If DEBUG Then
         LogD(Me, "New answer pair: " & Answers(Answers.Count - 1) & SemicolonChar & AnswersStatuses(AnswersStatuses.Count - 1).ToString)
 #End If
+
         CorrectAnswerCheckBox.Checked = False
         AddAnswerButton.Enabled = False
+        SaveActivityButton.Enabled = True
     End Sub
 
     Private Sub AnswersListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AnswersListBox.SelectedIndexChanged
@@ -198,6 +210,8 @@ Public Class ActivityType_Question_Opts
                 AnswersStatuses.RemoveAt(AnswersListBox.SelectedIndex)
 
                 UpdateAnswers()
+
+                SaveActivityButton.Enabled = AnswersStatuses.Count > 0
             End If
         Else
             Answers(AnswersListBox.SelectedIndex) = AnswerTextBox.Text
@@ -207,6 +221,5 @@ Public Class ActivityType_Question_Opts
 
             AnswerTextBox.Clear()
         End If
-        SaveActivityButton.Enabled = AnswersStatuses.Contains(True)
     End Sub
 End Class
