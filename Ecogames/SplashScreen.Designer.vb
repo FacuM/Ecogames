@@ -34,8 +34,8 @@ Partial Class SplashScreen
         Me.Version = New System.Windows.Forms.Label()
         Me.Copyright = New System.Windows.Forms.Label()
         Me.ApplicationTitle = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MetroProgressSpinner1 = New MetroFramework.Controls.MetroProgressSpinner()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MainLayoutPanel.SuspendLayout()
         Me.DetailsLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -85,7 +85,7 @@ Partial Class SplashScreen
         Me.Version.Size = New System.Drawing.Size(301, 39)
         Me.Version.TabIndex = 1
         Me.Version.Text = "Version {0}.{1:00}"
-        Me.Version.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Version.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Copyright
         '
@@ -98,7 +98,7 @@ Partial Class SplashScreen
         Me.Copyright.Size = New System.Drawing.Size(301, 40)
         Me.Copyright.TabIndex = 2
         Me.Copyright.Text = "Copyright"
-        Me.Copyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ApplicationTitle
         '
@@ -113,10 +113,6 @@ Partial Class SplashScreen
         Me.ApplicationTitle.Text = "Ecogames"
         Me.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1000
-        '
         'MetroProgressSpinner1
         '
         Me.MetroProgressSpinner1.BackColor = System.Drawing.Color.DeepSkyBlue
@@ -128,6 +124,10 @@ Partial Class SplashScreen
         Me.MetroProgressSpinner1.TabIndex = 2
         Me.MetroProgressSpinner1.UseCustomBackColor = True
         Me.MetroProgressSpinner1.UseSelectable = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
         '
         'SplashScreen
         '
