@@ -270,6 +270,8 @@ Public Class Settings
                 For i = My.Settings.Activities.Count - 1 To 0 Step -1
                     My.Settings.Activities.RemoveAt(i)
                 Next
+                CurrentActivityIndex = 0
+                SettingsSaver()
                 UpdateActivities()
             End If
 
