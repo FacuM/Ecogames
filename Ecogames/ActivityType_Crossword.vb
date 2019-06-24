@@ -7,6 +7,8 @@ Public Class ActivityType_Crossword
 
     Dim Saved As Boolean = True
 
+    Dim IsModifying As Boolean = False
+
     Private Sub WipeDatagridView()
         DataGridView1.Columns.Clear()
     End Sub
@@ -48,7 +50,6 @@ Public Class ActivityType_Crossword
         UseWaitCursor = False
     End Sub
 
-    Dim IsModifying As Boolean = False
     Public Sub PrepareModification()
         UseWaitCursor = True
 

@@ -161,7 +161,8 @@ Public Class Play_ActivityType_Crossword
 #If DEBUG Then
                 LogD(Me, "Validating value...")
 #End If
-                If DataGridView1.CurrentCell.Value.ToString = Out Then
+                If DataGridView1.CurrentCell.Value.ToString.ToLower() = Out.ToLower() Then
+                    DataGridView1.CurrentCell.Value = Out
                     DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk
                     Score += DefaultScoreMultiplier
 
