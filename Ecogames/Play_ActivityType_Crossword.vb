@@ -174,6 +174,7 @@ Public Class Play_ActivityType_Crossword
 #If DEBUG Then
                     LogD(Me, "Done, the answer is right!")
 #End If
+                    My.Computer.Audio.Play(My.Resources.Right, AudioPlayMode.Background)
                 Else
                     If DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk Then
                         Score -= DefaultScoreMultiplier
@@ -188,12 +189,14 @@ Public Class Play_ActivityType_Crossword
 #If DEBUG Then
                     LogD(Me, "Done, wrong answer.")
 #End If
+                    My.Computer.Audio.Play(My.Resources.Wrong, AudioPlayMode.Background)
                 End If
             End If
         End If
 
 
         If Score = MaxScore Then
+            My.Computer.Audio.Play(My.Resources.Perfect, AudioPlayMode.Background)
             MessageBox.Show(My.Resources.Play_General_PerfectScore, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             StatusLabel.Text = My.Resources.Play_General_PerfectScore
@@ -208,6 +211,7 @@ Public Class Play_ActivityType_Crossword
                     End If
                 Next
             Next
+
         Else
             Dim RowIsDone As Boolean = True
             For i = 0 To ColumnMaxIndex - 1
@@ -228,13 +232,14 @@ Public Class Play_ActivityType_Crossword
                     Cell.ReadOnly = True
                 Next
                 StatusLabel.Text = My.Resources.Play_Crossword_RowDone
+                My.Computer.Audio.Play(My.Resources.Completed, AudioPlayMode.Background)
             End If
             StatusResetTimer.Enabled = True
         End If
     End Sub
 
     Private Sub DataGridView1_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles DataGridView1.CellBeginEdit
-        If e.ColumnIndex = ColumnMaxIndex Or DataGridView1.CurrentCell.Style.BackColor = Color.LightGray Then
+        If e.ColumnIndex = ColumnMaxIndex Or DataGridView1.CurrentCell.Style.BackColor = Color.LightGray Or DataGridView1.CurrentCell.Style.BackColor = Color.DimGray Then
 #If DEBUG Then
             LogD(Me, "Prevented editing of invalid cell at " & e.RowIndex & SemicolonChar & e.ColumnIndex & ".")
 #End If

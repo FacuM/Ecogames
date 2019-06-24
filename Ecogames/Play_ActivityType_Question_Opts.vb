@@ -106,13 +106,20 @@ Public Class Play_ActivityType_Question_Opts
             Select Case MatchPercentage
                 Case < 40 '%
                     Message = String.Format(My.Resources.Play_Question_General_AutoEvalWrong, MatchPercentage)
+                    My.Computer.Audio.Play(My.Resources.Wrong, AudioPlayMode.Background)
                 Case < 71 '%
                     Message = String.Format(My.Resources.Play_Question_General_AutoEvalRegular, MatchPercentage)
-                Case Else ' > 71 %
+                    My.Computer.Audio.Play(My.Resources.Regular, AudioPlayMode.Background)
+                Case < 100 '%
                     Message = String.Format(My.Resources.Play_Question_General_AutoEvalRight, MatchPercentage)
+                    My.Computer.Audio.Play(My.Resources.Right, AudioPlayMode.Background)
+                Case Else ' = 100 %
+                    Message = String.Format(My.Resources.Play_General_PerfectScore, MatchPercentage)
+                    My.Computer.Audio.Play(My.Resources.Perfect, AudioPlayMode.Background)
             End Select
         Else
             Message = String.Format(My.Resources.Play_Question_Open_AutoEvalNoScore, MatchPercentage)
+            My.Computer.Audio.Play(My.Resources.Wrong, AudioPlayMode.Background)
         End If
         MessageBox.Show(Message, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
         StatusLabel.Text = MatchPercentage & "% completado"

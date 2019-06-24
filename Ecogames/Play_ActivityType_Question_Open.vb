@@ -99,10 +99,13 @@ Public Class Play_ActivityType_Question_Open
                 Select Case MatchPercentage
                     Case < 40 '%
                         Message = String.Format(My.Resources.Play_Question_General_AutoEvalWrong, MatchPercentage)
+                        My.Computer.Audio.Play(My.Resources.Wrong, AudioPlayMode.Background)
                     Case < 71 '%
                         Message = String.Format(My.Resources.Play_Question_General_AutoEvalRegular, MatchPercentage)
+                        My.Computer.Audio.Play(My.Resources.Regular, AudioPlayMode.Background)
                     Case Else ' > 71 %
                         Message = String.Format(My.Resources.Play_Question_General_AutoEvalRight, MatchPercentage)
+                        My.Computer.Audio.Play(My.Resources.Right, AudioPlayMode.Background)
                 End Select
                 MessageBox.Show(Message, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 StatusLabel.Text = MatchPercentage & "% completado"
@@ -111,6 +114,7 @@ Public Class Play_ActivityType_Question_Open
                 LogD(Me, "Answer verification completed.")
 #End If
             Else
+                My.Computer.Audio.Play(My.Resources.Completed, AudioPlayMode.Background)
                 MessageBox.Show(My.Resources.Play_Question_Open_NoAutoEvalThanks & vbCrLf & vbCrLf & My.Resources.Play_Question_Open_NoAutoEvalInfo, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 

@@ -133,6 +133,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Clock_tac() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Clock_tac", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Clock_tic() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Clock_tic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Completed() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Completed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Referencia.
         '''</summary>
         Friend ReadOnly Property Crossword_ColumnHeader_ReferenceText() As String
@@ -211,6 +238,15 @@ Namespace My.Resources
         Friend ReadOnly Property Login_WrongPassword() As String
             Get
                 Return ResourceManager.GetString("Login_WrongPassword", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Perfect() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Perfect", resourceCulture)
             End Get
         End Property
         
@@ -536,6 +572,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Regular() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Regular", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Right() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Right", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Actividad.
         '''</summary>
         Friend ReadOnly Property Settings_Activity() As String
@@ -631,6 +685,15 @@ Namespace My.Resources
         Friend ReadOnly Property Settings_General_UnsavedWarn() As String
             Get
                 Return ResourceManager.GetString("Settings_General_UnsavedWarn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Wrong() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Wrong", resourceCulture)
             End Get
         End Property
     End Module

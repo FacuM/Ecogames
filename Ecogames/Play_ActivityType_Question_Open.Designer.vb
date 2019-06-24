@@ -22,6 +22,7 @@ Partial Class Play_ActivityType_Question_Open
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Play_ActivityType_Question_Open))
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.QuestionTextBox = New MetroFramework.Controls.MetroTextBox()
         Me.AnswerTextBox = New MetroFramework.Controls.MetroTextBox()
@@ -137,6 +138,7 @@ Partial Class Play_ActivityType_Question_Open
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.QuestionTextBox)
         Me.Controls.Add(Me.MetroLabel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Play_ActivityType_Question_Open"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
