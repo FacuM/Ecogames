@@ -5,6 +5,8 @@
 Public Class ActivityType_Crossword
     Dim ColumnMaxIndex As Integer = -1
 
+    Dim Saved As Boolean = True
+
     Private Sub WipeDatagridView()
         DataGridView1.Columns.Clear()
     End Sub
@@ -180,6 +182,8 @@ Public Class ActivityType_Crossword
 #If DEBUG Then
         LogD(Me, "Column count: " & (ColumnMaxIndex + 1).ToString)
 #End If
+
+        Saved = False
     End Sub
 
     Private Sub RemoveColumn_Click(sender As Object, e As EventArgs) Handles RemoveColumn.Click
@@ -199,6 +203,8 @@ Public Class ActivityType_Crossword
 #If DEBUG Then
         LogD(Me, "Column count: " & (ColumnMaxIndex + 1).ToString)
 #End If
+
+        Saved = False
     End Sub
 
     Private Sub SaveActivity_Click(sender As Object, e As EventArgs) Handles SaveActivity.Click
@@ -246,12 +252,22 @@ Public Class ActivityType_Crossword
             LogD(Me, GetNewID() & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString)
 #End If
         End If
+
         SettingsSaver()
+        Saved = True
+        Settings.UpdateActivities()
         Close()
     End Sub
 
+    Private Sub ActivityType_Crossword_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If Not Saved Then
+            If MessageBox.Show(My.Resources.Settings_General_UnsavedWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+                e.Cancel = True
+            End If
+        End If
+    End Sub
+
     Private Sub ActivityType_Crossword_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Settings.UpdateActivities()
     End Sub
 
     Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
@@ -271,5 +287,9 @@ Public Class ActivityType_Crossword
 #End If
             End If
         Next
+    End Sub
+
+    Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
+        Saved = False
     End Sub
 End Class

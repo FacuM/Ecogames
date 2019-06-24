@@ -6,6 +6,8 @@ Public Class ActivityType_Question_Opts
     Dim Answers As List(Of String) = New List(Of String)
     Dim AnswersStatuses As List(Of Boolean) = New List(Of Boolean)
 
+    Dim Saved As Boolean = True
+
     Private Sub UpdateAnswers()
         Dim PreviousIndex As Integer = AnswersListBox.SelectedIndex
 
@@ -109,9 +111,8 @@ Public Class ActivityType_Question_Opts
         LogD(Me, ActivityString)
 #End If
         SettingsSaver()
-        Settings.UpdateActivities()
-        Settings.ActivityListBox.SelectedIndex = CurrentActivityIndex
         Saved = True
+        Settings.UpdateActivities()
         Close()
     End Sub
 
@@ -123,7 +124,6 @@ Public Class ActivityType_Question_Opts
         End If
     End Sub
 
-    Dim Saved As Boolean = True
     Private Sub QuestionTextBox_TextChanged(sender As Object, e As EventArgs) Handles QuestionTextBox.TextChanged
         Saved = False
         If String.IsNullOrEmpty(QuestionTextBox.Text) Then

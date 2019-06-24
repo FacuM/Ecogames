@@ -60,6 +60,10 @@ Public Class Settings
         End If
 
         ActivityListBox.Items.Add(My.Resources.Settings_General_NewActivity)
+
+        If CurrentActivityIndex > -1 Then
+            ActivityListBox.SelectedIndex = CurrentActivityIndex
+        End If
     End Sub
 
     Private Sub Settings_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing

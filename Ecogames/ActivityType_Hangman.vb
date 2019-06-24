@@ -3,6 +3,10 @@
 ' ====================
 
 Public Class ActivityType_Hangman
+    Dim Saved As Boolean = True
+
+    Dim IsModifying As Boolean = False
+
     Public Sub PrepareNew()
         HangmanScorePerLetter.Maximum = Integer.MaxValue
         HangmanScorePerLetter.Value = DefaultScoreMultiplier
@@ -21,7 +25,6 @@ Public Class ActivityType_Hangman
 #End If
     End Sub
 
-    Dim IsModifying As Boolean = False
     Public Sub PrepareModification()
         UseWaitCursor = True
 
@@ -78,7 +81,7 @@ Public Class ActivityType_Hangman
             HangmanMaxTryAmountCheckbox.Checked = False
         Else
             HangmanMaxTryAmount.Value = HangmanMaxTryAmountValue
-            HangmanMaxTryAmountCheckbox.Checked= True
+            HangmanMaxTryAmountCheckbox.Checked = True
         End If
 
 #If DEBUG Then
@@ -118,6 +121,7 @@ Public Class ActivityType_Hangman
         End If
         SettingsSaver()
         Settings.UpdateActivities()
+        Saved = True
         Close()
     End Sub
 
@@ -143,5 +147,13 @@ Public Class ActivityType_Hangman
 
     Private Sub HangmanMaxTryAmountCheckbox_CheckedChanged(sender As Object, e As EventArgs) Handles HangmanMaxTryAmountCheckbox.CheckedChanged
         HangmanMaxTryAmount.Enabled = HangmanMaxTryAmountCheckbox.Checked
+    End Sub
+
+    Private Sub ActivityType_Hangman_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If Not Saved Then
+            If MessageBox.Show(My.Resources.Settings_General_UnsavedWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+                e.Cancel = True
+            End If
+        End If
     End Sub
 End Class

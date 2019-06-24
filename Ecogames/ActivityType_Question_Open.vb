@@ -54,9 +54,8 @@ Public Class ActivityType_Question_Open
             CurrentActivityIndex = NewActivityID
         End If
         SettingsSaver()
-        Settings.UpdateActivities()
-        Settings.ActivityListBox.SelectedIndex = CurrentActivityIndex
         Saved = True
+        Settings.UpdateActivities()
         Close()
     End Sub
 
