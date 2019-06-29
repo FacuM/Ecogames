@@ -8,8 +8,8 @@ Requisitos
 
 ### Especificaciones mínimas
 - Procesador: 1 núcleo @ 613 MHz, x86 (32 bits), sin soporte para instrucciones PAE/NX.
-- Memoria RAM: 64 MB (**con un archivo de paginación de 96 MB o más**), o 160 MB (**no es necesario un archivo de paginación**).
-- Sistema operativo: Windows XP (x86).
+- Memoria RAM: 64 MB (**con un archivo de paginación de 64 MB o más**), o 128 MB (**no es necesario un archivo de paginación**).
+- Sistema operativo: Windows 98 SE (x86).
 - Almacenamiento: 7 MB de espacio libre.
 - Software: .NET Framework 2.0.
 
