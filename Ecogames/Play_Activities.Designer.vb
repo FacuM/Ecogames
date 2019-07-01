@@ -35,21 +35,38 @@ Partial Class Play_Activities
         '
         'SettingsActivityType
         '
+        resources.ApplyResources(Me.SettingsActivityType, "SettingsActivityType")
         '
         '
         '
-        Me.SettingsActivityType.CustomButton.Image = Nothing
-        Me.SettingsActivityType.CustomButton.Location = New System.Drawing.Point(205, 1)
+        Me.SettingsActivityType.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
+        Me.SettingsActivityType.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
+        Me.SettingsActivityType.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
+        Me.SettingsActivityType.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
+        Me.SettingsActivityType.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
+        Me.SettingsActivityType.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
+        Me.SettingsActivityType.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
+        Me.SettingsActivityType.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
+        Me.SettingsActivityType.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
+        Me.SettingsActivityType.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
+        Me.SettingsActivityType.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.SettingsActivityType.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
+        Me.SettingsActivityType.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
+        Me.SettingsActivityType.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
+        Me.SettingsActivityType.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
+        Me.SettingsActivityType.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
+        Me.SettingsActivityType.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.SettingsActivityType.CustomButton.Name = ""
-        Me.SettingsActivityType.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.SettingsActivityType.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
+        Me.SettingsActivityType.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.SettingsActivityType.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.SettingsActivityType.CustomButton.TabIndex = 1
+        Me.SettingsActivityType.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
+        Me.SettingsActivityType.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
+        Me.SettingsActivityType.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.SettingsActivityType.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.SettingsActivityType.CustomButton.UseSelectable = True
-        Me.SettingsActivityType.CustomButton.Visible = False
-        Me.SettingsActivityType.Enabled = False
+        Me.SettingsActivityType.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.SettingsActivityType.Lines = New String(-1) {}
-        Me.SettingsActivityType.Location = New System.Drawing.Point(131, 270)
         Me.SettingsActivityType.MaxLength = 32767
         Me.SettingsActivityType.Name = "SettingsActivityType"
         Me.SettingsActivityType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -59,39 +76,50 @@ Partial Class Play_Activities
         Me.SettingsActivityType.SelectionLength = 0
         Me.SettingsActivityType.SelectionStart = 0
         Me.SettingsActivityType.ShortcutsEnabled = True
-        Me.SettingsActivityType.Size = New System.Drawing.Size(233, 29)
-        Me.SettingsActivityType.TabIndex = 2
         Me.SettingsActivityType.UseSelectable = True
         Me.SettingsActivityType.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityType.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'PlayActivity
         '
-        Me.PlayActivity.Enabled = False
-        Me.PlayActivity.Location = New System.Drawing.Point(268, 367)
+        resources.ApplyResources(Me.PlayActivity, "PlayActivity")
         Me.PlayActivity.Name = "PlayActivity"
-        Me.PlayActivity.Size = New System.Drawing.Size(96, 23)
-        Me.PlayActivity.TabIndex = 4
-        Me.PlayActivity.Text = "Jugar"
         Me.PlayActivity.UseSelectable = True
         '
         'SettingsActivityName
         '
+        resources.ApplyResources(Me.SettingsActivityName, "SettingsActivityName")
         '
         '
         '
-        Me.SettingsActivityName.CustomButton.Image = Nothing
-        Me.SettingsActivityName.CustomButton.Location = New System.Drawing.Point(205, 1)
+        Me.SettingsActivityName.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription1")
+        Me.SettingsActivityName.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName1")
+        Me.SettingsActivityName.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor1"), System.Windows.Forms.AnchorStyles)
+        Me.SettingsActivityName.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize1"), Boolean)
+        Me.SettingsActivityName.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode1"), System.Windows.Forms.AutoSizeMode)
+        Me.SettingsActivityName.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage1"), System.Drawing.Image)
+        Me.SettingsActivityName.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout1"), System.Windows.Forms.ImageLayout)
+        Me.SettingsActivityName.CustomButton.Dock = CType(resources.GetObject("resource.Dock1"), System.Windows.Forms.DockStyle)
+        Me.SettingsActivityName.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle1"), System.Windows.Forms.FlatStyle)
+        Me.SettingsActivityName.CustomButton.Font = CType(resources.GetObject("resource.Font1"), System.Drawing.Font)
+        Me.SettingsActivityName.CustomButton.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        Me.SettingsActivityName.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign1"), System.Drawing.ContentAlignment)
+        Me.SettingsActivityName.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex1"), Integer)
+        Me.SettingsActivityName.CustomButton.ImageKey = resources.GetString("resource.ImageKey1")
+        Me.SettingsActivityName.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode1"), System.Windows.Forms.ImeMode)
+        Me.SettingsActivityName.CustomButton.Location = CType(resources.GetObject("resource.Location1"), System.Drawing.Point)
+        Me.SettingsActivityName.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize1"), System.Drawing.Size)
         Me.SettingsActivityName.CustomButton.Name = ""
-        Me.SettingsActivityName.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.SettingsActivityName.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft1"), System.Windows.Forms.RightToLeft)
+        Me.SettingsActivityName.CustomButton.Size = CType(resources.GetObject("resource.Size1"), System.Drawing.Size)
         Me.SettingsActivityName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.SettingsActivityName.CustomButton.TabIndex = 1
+        Me.SettingsActivityName.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex1"), Integer)
+        Me.SettingsActivityName.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign1"), System.Drawing.ContentAlignment)
+        Me.SettingsActivityName.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation1"), System.Windows.Forms.TextImageRelation)
         Me.SettingsActivityName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.SettingsActivityName.CustomButton.UseSelectable = True
-        Me.SettingsActivityName.CustomButton.Visible = False
-        Me.SettingsActivityName.Enabled = False
+        Me.SettingsActivityName.CustomButton.Visible = CType(resources.GetObject("resource.Visible1"), Boolean)
         Me.SettingsActivityName.Lines = New String(-1) {}
-        Me.SettingsActivityName.Location = New System.Drawing.Point(131, 235)
         Me.SettingsActivityName.MaxLength = 32767
         Me.SettingsActivityName.Name = "SettingsActivityName"
         Me.SettingsActivityName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -101,47 +129,54 @@ Partial Class Play_Activities
         Me.SettingsActivityName.SelectionLength = 0
         Me.SettingsActivityName.SelectionStart = 0
         Me.SettingsActivityName.ShortcutsEnabled = True
-        Me.SettingsActivityName.Size = New System.Drawing.Size(233, 29)
-        Me.SettingsActivityName.TabIndex = 1
         Me.SettingsActivityName.UseSelectable = True
         Me.SettingsActivityName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label10
         '
-        Me.Label10.Location = New System.Drawing.Point(23, 235)
+        resources.ApplyResources(Me.Label10, "Label10")
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(102, 29)
-        Me.Label10.TabIndex = 31
-        Me.Label10.Text = "Nombre: "
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label9
         '
-        Me.Label9.Location = New System.Drawing.Point(23, 270)
+        resources.ApplyResources(Me.Label9, "Label9")
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(102, 29)
-        Me.Label9.TabIndex = 30
-        Me.Label9.Text = "Tipo:"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'SettingsActivityDescription
         '
+        resources.ApplyResources(Me.SettingsActivityDescription, "SettingsActivityDescription")
         '
         '
         '
-        Me.SettingsActivityDescription.CustomButton.Image = Nothing
-        Me.SettingsActivityDescription.CustomButton.Location = New System.Drawing.Point(193, 2)
+        Me.SettingsActivityDescription.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription2")
+        Me.SettingsActivityDescription.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName2")
+        Me.SettingsActivityDescription.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor2"), System.Windows.Forms.AnchorStyles)
+        Me.SettingsActivityDescription.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize2"), Boolean)
+        Me.SettingsActivityDescription.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode2"), System.Windows.Forms.AutoSizeMode)
+        Me.SettingsActivityDescription.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage2"), System.Drawing.Image)
+        Me.SettingsActivityDescription.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout2"), System.Windows.Forms.ImageLayout)
+        Me.SettingsActivityDescription.CustomButton.Dock = CType(resources.GetObject("resource.Dock2"), System.Windows.Forms.DockStyle)
+        Me.SettingsActivityDescription.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle2"), System.Windows.Forms.FlatStyle)
+        Me.SettingsActivityDescription.CustomButton.Font = CType(resources.GetObject("resource.Font2"), System.Drawing.Font)
+        Me.SettingsActivityDescription.CustomButton.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        Me.SettingsActivityDescription.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign2"), System.Drawing.ContentAlignment)
+        Me.SettingsActivityDescription.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex2"), Integer)
+        Me.SettingsActivityDescription.CustomButton.ImageKey = resources.GetString("resource.ImageKey2")
+        Me.SettingsActivityDescription.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode2"), System.Windows.Forms.ImeMode)
+        Me.SettingsActivityDescription.CustomButton.Location = CType(resources.GetObject("resource.Location2"), System.Drawing.Point)
+        Me.SettingsActivityDescription.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize2"), System.Drawing.Size)
         Me.SettingsActivityDescription.CustomButton.Name = ""
-        Me.SettingsActivityDescription.CustomButton.Size = New System.Drawing.Size(37, 37)
+        Me.SettingsActivityDescription.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft2"), System.Windows.Forms.RightToLeft)
+        Me.SettingsActivityDescription.CustomButton.Size = CType(resources.GetObject("resource.Size2"), System.Drawing.Size)
         Me.SettingsActivityDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.SettingsActivityDescription.CustomButton.TabIndex = 1
+        Me.SettingsActivityDescription.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex2"), Integer)
+        Me.SettingsActivityDescription.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign2"), System.Drawing.ContentAlignment)
+        Me.SettingsActivityDescription.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation2"), System.Windows.Forms.TextImageRelation)
         Me.SettingsActivityDescription.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.SettingsActivityDescription.CustomButton.UseSelectable = True
-        Me.SettingsActivityDescription.CustomButton.Visible = False
-        Me.SettingsActivityDescription.Enabled = False
+        Me.SettingsActivityDescription.CustomButton.Visible = CType(resources.GetObject("resource.Visible2"), Boolean)
         Me.SettingsActivityDescription.Lines = New String(-1) {}
-        Me.SettingsActivityDescription.Location = New System.Drawing.Point(131, 305)
         Me.SettingsActivityDescription.MaxLength = 32767
         Me.SettingsActivityDescription.Multiline = True
         Me.SettingsActivityDescription.Name = "SettingsActivityDescription"
@@ -152,34 +187,25 @@ Partial Class Play_Activities
         Me.SettingsActivityDescription.SelectionLength = 0
         Me.SettingsActivityDescription.SelectionStart = 0
         Me.SettingsActivityDescription.ShortcutsEnabled = True
-        Me.SettingsActivityDescription.Size = New System.Drawing.Size(233, 42)
-        Me.SettingsActivityDescription.TabIndex = 3
         Me.SettingsActivityDescription.UseSelectable = True
         Me.SettingsActivityDescription.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.SettingsActivityDescription.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label8
         '
-        Me.Label8.Location = New System.Drawing.Point(23, 299)
+        resources.ApplyResources(Me.Label8, "Label8")
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(102, 20)
-        Me.Label8.TabIndex = 28
-        Me.Label8.Text = "Descripción:"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ActivityListBox
         '
+        resources.ApplyResources(Me.ActivityListBox, "ActivityListBox")
         Me.ActivityListBox.FormattingEnabled = True
-        Me.ActivityListBox.Location = New System.Drawing.Point(23, 63)
         Me.ActivityListBox.Name = "ActivityListBox"
-        Me.ActivityListBox.Size = New System.Drawing.Size(341, 160)
-        Me.ActivityListBox.TabIndex = 0
         '
         'Play_Activities
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(387, 413)
         Me.Controls.Add(Me.SettingsActivityType)
         Me.Controls.Add(Me.PlayActivity)
         Me.Controls.Add(Me.SettingsActivityName)
@@ -188,13 +214,11 @@ Partial Class Play_Activities
         Me.Controls.Add(Me.SettingsActivityDescription)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ActivityListBox)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "Play_Activities"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "Actividades"
         Me.ResumeLayout(False)
 
     End Sub

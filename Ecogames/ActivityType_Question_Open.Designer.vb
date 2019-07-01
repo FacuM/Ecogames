@@ -33,28 +33,43 @@ Partial Class ActivityType_Question_Open
         '
         'MetroLabel1
         '
-        Me.MetroLabel1.Location = New System.Drawing.Point(23, 60)
+        resources.ApplyResources(Me.MetroLabel1, "MetroLabel1")
         Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(72, 23)
-        Me.MetroLabel1.TabIndex = 0
-        Me.MetroLabel1.Text = "Pregunta"
         '
         'QuestionTextBox
         '
+        resources.ApplyResources(Me.QuestionTextBox, "QuestionTextBox")
         '
         '
         '
-        Me.QuestionTextBox.CustomButton.Image = Nothing
-        Me.QuestionTextBox.CustomButton.Location = New System.Drawing.Point(294, 1)
+        Me.QuestionTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
+        Me.QuestionTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
+        Me.QuestionTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
+        Me.QuestionTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
+        Me.QuestionTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
+        Me.QuestionTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
+        Me.QuestionTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
+        Me.QuestionTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
+        Me.QuestionTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
+        Me.QuestionTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
+        Me.QuestionTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.QuestionTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
+        Me.QuestionTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
+        Me.QuestionTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
+        Me.QuestionTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
+        Me.QuestionTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
+        Me.QuestionTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.QuestionTextBox.CustomButton.Name = ""
-        Me.QuestionTextBox.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.QuestionTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
+        Me.QuestionTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.QuestionTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.QuestionTextBox.CustomButton.TabIndex = 1
+        Me.QuestionTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
+        Me.QuestionTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
+        Me.QuestionTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.QuestionTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.QuestionTextBox.CustomButton.UseSelectable = True
-        Me.QuestionTextBox.CustomButton.Visible = False
+        Me.QuestionTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.QuestionTextBox.Lines = New String(-1) {}
-        Me.QuestionTextBox.Location = New System.Drawing.Point(23, 86)
         Me.QuestionTextBox.MaxLength = 32767
         Me.QuestionTextBox.Name = "QuestionTextBox"
         Me.QuestionTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -63,28 +78,44 @@ Partial Class ActivityType_Question_Open
         Me.QuestionTextBox.SelectionLength = 0
         Me.QuestionTextBox.SelectionStart = 0
         Me.QuestionTextBox.ShortcutsEnabled = True
-        Me.QuestionTextBox.Size = New System.Drawing.Size(316, 23)
-        Me.QuestionTextBox.TabIndex = 0
         Me.QuestionTextBox.UseSelectable = True
         Me.QuestionTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.QuestionTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'AnswerTextBox
         '
+        resources.ApplyResources(Me.AnswerTextBox, "AnswerTextBox")
         '
         '
         '
-        Me.AnswerTextBox.CustomButton.Image = Nothing
-        Me.AnswerTextBox.CustomButton.Location = New System.Drawing.Point(186, 1)
+        Me.AnswerTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription1")
+        Me.AnswerTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName1")
+        Me.AnswerTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor1"), System.Windows.Forms.AnchorStyles)
+        Me.AnswerTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize1"), Boolean)
+        Me.AnswerTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode1"), System.Windows.Forms.AutoSizeMode)
+        Me.AnswerTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage1"), System.Drawing.Image)
+        Me.AnswerTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout1"), System.Windows.Forms.ImageLayout)
+        Me.AnswerTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock1"), System.Windows.Forms.DockStyle)
+        Me.AnswerTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle1"), System.Windows.Forms.FlatStyle)
+        Me.AnswerTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font1"), System.Drawing.Font)
+        Me.AnswerTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        Me.AnswerTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign1"), System.Drawing.ContentAlignment)
+        Me.AnswerTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex1"), Integer)
+        Me.AnswerTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey1")
+        Me.AnswerTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode1"), System.Windows.Forms.ImeMode)
+        Me.AnswerTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location1"), System.Drawing.Point)
+        Me.AnswerTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize1"), System.Drawing.Size)
         Me.AnswerTextBox.CustomButton.Name = ""
-        Me.AnswerTextBox.CustomButton.Size = New System.Drawing.Size(129, 129)
+        Me.AnswerTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft1"), System.Windows.Forms.RightToLeft)
+        Me.AnswerTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size1"), System.Drawing.Size)
         Me.AnswerTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.AnswerTextBox.CustomButton.TabIndex = 1
+        Me.AnswerTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex1"), Integer)
+        Me.AnswerTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign1"), System.Drawing.ContentAlignment)
+        Me.AnswerTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation1"), System.Windows.Forms.TextImageRelation)
         Me.AnswerTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.AnswerTextBox.CustomButton.UseSelectable = True
-        Me.AnswerTextBox.CustomButton.Visible = False
+        Me.AnswerTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible1"), Boolean)
         Me.AnswerTextBox.Lines = New String(-1) {}
-        Me.AnswerTextBox.Location = New System.Drawing.Point(23, 151)
         Me.AnswerTextBox.MaxLength = 32767
         Me.AnswerTextBox.Multiline = True
         Me.AnswerTextBox.Name = "AnswerTextBox"
@@ -94,54 +125,40 @@ Partial Class ActivityType_Question_Open
         Me.AnswerTextBox.SelectionLength = 0
         Me.AnswerTextBox.SelectionStart = 0
         Me.AnswerTextBox.ShortcutsEnabled = True
-        Me.AnswerTextBox.Size = New System.Drawing.Size(316, 131)
-        Me.AnswerTextBox.TabIndex = 1
         Me.AnswerTextBox.UseSelectable = True
         Me.AnswerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.AnswerTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'MetroLabel2
         '
-        Me.MetroLabel2.Location = New System.Drawing.Point(23, 125)
+        resources.ApplyResources(Me.MetroLabel2, "MetroLabel2")
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(72, 23)
-        Me.MetroLabel2.TabIndex = 2
-        Me.MetroLabel2.Text = "Respuesta"
         '
         'SaveActivityButton
         '
-        Me.SaveActivityButton.Location = New System.Drawing.Point(222, 299)
+        resources.ApplyResources(Me.SaveActivityButton, "SaveActivityButton")
         Me.SaveActivityButton.Name = "SaveActivityButton"
-        Me.SaveActivityButton.Size = New System.Drawing.Size(117, 23)
-        Me.SaveActivityButton.TabIndex = 3
-        Me.SaveActivityButton.Text = "Guardar"
         Me.SaveActivityButton.UseSelectable = True
         '
         'AutomaticEvaluationCheckBox
         '
-        Me.AutomaticEvaluationCheckBox.Location = New System.Drawing.Point(23, 299)
+        resources.ApplyResources(Me.AutomaticEvaluationCheckBox, "AutomaticEvaluationCheckBox")
         Me.AutomaticEvaluationCheckBox.Name = "AutomaticEvaluationCheckBox"
-        Me.AutomaticEvaluationCheckBox.Size = New System.Drawing.Size(163, 23)
-        Me.AutomaticEvaluationCheckBox.TabIndex = 2
-        Me.AutomaticEvaluationCheckBox.Text = "Evaluar automáticamente"
         Me.AutomaticEvaluationCheckBox.UseSelectable = True
         '
         'ActivityType_Question_Open
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(362, 339)
         Me.Controls.Add(Me.AutomaticEvaluationCheckBox)
         Me.Controls.Add(Me.SaveActivityButton)
         Me.Controls.Add(Me.AnswerTextBox)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.QuestionTextBox)
         Me.Controls.Add(Me.MetroLabel1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ActivityType_Question_Open"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "ActivityType_Question_Open"
         Me.ResumeLayout(False)
 
     End Sub

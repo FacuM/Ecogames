@@ -117,201 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Settings_Activity" xml:space="preserve">
-    <value>Actividad</value>
-  </data>
-  <data name="ActivityType_Question_Open" xml:space="preserve">
-    <value>Preguntas abiertas</value>
-  </data>
-  <data name="Settings_General_NewActivity" xml:space="preserve">
-    <value>&lt;Nueva actividad&gt;</value>
-  </data>
-  <data name="Settings_General_Err" xml:space="preserve">
-    <value>Ocurrió un error interno.</value>
-  </data>
-  <data name="ActivityType_Hangman" xml:space="preserve">
-    <value>Ahorcado</value>
-  </data>
-  <data name="General_Error_Title" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="ActivityType_Crossword" xml:space="preserve">
-    <value>Crucigrama</value>
-  </data>
-  <data name="ActivityType_Question_Opts" xml:space="preserve">
-    <value>Preguntas con opciones</value>
-  </data>
-  <data name="Settings_General_Err_Index" xml:space="preserve">
-    <value>El índice {0} de {1} no es un número.</value>
-  </data>
-  <data name="Settings_General_NoActivities" xml:space="preserve">
-    <value>No hay ninguna actividad.</value>
-  </data>
-  <data name="Settings_Crossword_NoReference" xml:space="preserve">
-    <value>No se estableció una referencia.</value>
-  </data>
-  <data name="Settings_Crossword_IllegalStringException" xml:space="preserve">
-    <value>El valor ingresado "{0}" está reservado para el sistema.</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="drawing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drawing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crossword_ColumnHeader_ReferenceText" xml:space="preserve">
-    <value>Referencia</value>
-  </data>
-  <data name="ActivityType_Crossword_ID" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActivityType_Hangman_ID" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ActivityType_Question_Open_ID" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ActivityType_Question_Opts_ID" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Question_Open_AutoEvalWarn" xml:space="preserve">
-    <value>La evaluación automática no es totalmente precisa y puede dar resultados erróneos.</value>
-  </data>
-  <data name="Settings_General_UnsavedWarn" xml:space="preserve">
-    <value>Vas a perder tus cambios, ¿querés salir de todos modos?</value>
-  </data>
-  <data name="General_Warn_Title" xml:space="preserve">
-    <value>Advertencia</value>
-  </data>
-  <data name="Question_Saved" xml:space="preserve">
-    <value>Guardado</value>
-  </data>
-  <data name="Queston_Add" xml:space="preserve">
-    <value>Agregar</value>
-  </data>
-  <data name="Question_Opts_DelMode" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="Question_Opts_Empty" xml:space="preserve">
-    <value>Vas a eliminar esta opción, ¿estás seguro?</value>
-  </data>
-  <data name="Question_Opts_GeneralHelp" xml:space="preserve">
-    <value>{0}
-
-Cuando termines, hacé clic en "Guardar".</value>
-  </data>
-  <data name="Question_Opts_ModMode" xml:space="preserve">
-    <value>Modificar</value>
-  </data>
-  <data name="Question_Opts_NewAnswer" xml:space="preserve">
-    <value>&lt;Nueva respuesta&gt;</value>
-  </data>
-  <data name="Question_Opts_NextActionHelp" xml:space="preserve">
-    <value>Para configurar las respuestas, hacé clic en "Siguiente".</value>
-  </data>
-  <data name="Question_Opts_NextAnswerHelp" xml:space="preserve">
-    <value>Para agregar una opción, hacé clic en "Agregar".</value>
-  </data>
-  <data name="Settings_General_DeleteAllText" xml:space="preserve">
-    <value>Eliminar todo</value>
-  </data>
-  <data name="Settings_General_DeleteAllWarn" xml:space="preserve">
-    <value>¡Alto ahí! Vas a borrar todo, ¿querés continuar?</value>
-  </data>
-  <data name="Settings_General_DeleteText" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="Login_WrongPassword" xml:space="preserve">
-    <value>La contraseña que ingresaste es incorrecta, por favor intentálo otra vez.</value>
-  </data>
-  <data name="General_Info_Title" xml:space="preserve">
-    <value>Información</value>
-  </data>
-  <data name="Play_Crossword_RowDone" xml:space="preserve">
-    <value>¡Muy bien! Completaste una fila.</value>
-  </data>
-  <data name="Play_General_IncompleteActivityWarn" xml:space="preserve">
-    <value>No completaste la actividad, ¿querés salir de todos modos?</value>
-  </data>
-  <data name="Play_General_PerfectScore" xml:space="preserve">
-    <value>¡Felicidades! Completaste la actividad con un puntaje perfecto.</value>
-  </data>
-  <data name="Play_General_RightAnswer" xml:space="preserve">
-    <value>¡Correcto!</value>
-  </data>
-  <data name="Play_General_WrongAnswer" xml:space="preserve">
-    <value>Uh, ¡te equivocaste!</value>
-  </data>
-  <data name="Play_General_CompletionLevel" xml:space="preserve">
-    <value>Conseguiste {0}/{1} puntos (un {2}%).</value>
-  </data>
-  <data name="Play_General_EmptyAnswerDescriptor" xml:space="preserve">
-    <value>(vacío)</value>
-  </data>
-  <data name="Play_General_GameBegins" xml:space="preserve">
-    <value>¡Comienza la partida!</value>
-  </data>
-  <data name="Play_General_NoAttempts" xml:space="preserve">
-    <value>¡Te quedaste sin intentos!</value>
-  </data>
-  <data name="Play_General_NoCompletion" xml:space="preserve">
-    <value>No conseguiste ningún punto.</value>
-  </data>
-  <data name="Play_General_PerfectScore_Trim" xml:space="preserve">
-    <value>¡Perfecto!</value>
-  </data>
-  <data name="Play_General_RemainingSeconds_Plural" xml:space="preserve">
-    <value>Te quedan {0} segundos.</value>
-  </data>
-  <data name="Play_General_RemainingSeconds_Singular" xml:space="preserve">
-    <value>Te queda {0} segundo.</value>
-  </data>
-  <data name="Play_General_Timedout" xml:space="preserve">
-    <value>Uh, ¡te quedaste sin tiempo!</value>
-  </data>
-  <data name="Play_Hangman_Wrong_RemainingAttempts" xml:space="preserve">
-    <value>¡Incorrecto! Te quedan {0} intentos.</value>
-  </data>
-  <data name="Play_Question_General_AutoEvalEmpty" xml:space="preserve">
-    <value>Tu respuesta estaba vacía y no obtuviste puntos (completaste un {0}%).</value>
-  </data>
-  <data name="Play_Question_General_AutoEvalEmptyAnswerWarn" xml:space="preserve">
-    <value>No respondiste, ¿querés continuar de todos modos?</value>
-  </data>
-  <data name="Play_Question_General_AutoEvalRegular" xml:space="preserve">
-    <value>¡Muy bien! Lograste un {0}%.</value>
-  </data>
-  <data name="Play_Question_Open_AutoEvalResult" xml:space="preserve">
-    <value>Tu respuesta: 
-{0}
-
-Respuesta esperada: 
-{1}</value>
-  </data>
-  <data name="Play_Question_General_AutoEvalRight" xml:space="preserve">
-    <value>Excelente, ¡seguí así! Sacaste un {0}%.</value>
-  </data>
-  <data name="Play_Question_General_AutoEvalWrong" xml:space="preserve">
-    <value>¡Uh! Conseguiste apenas un {0}%.</value>
-  </data>
-  <data name="Play_Question_Open_NoAutoEvalInfo" xml:space="preserve">
-    <value>Por favor, esperá a que la respuesta sea evaluada personalmente por el profesor.</value>
-  </data>
-  <data name="Play_Question_Open_NoAutoEvalThanks" xml:space="preserve">
-    <value>¡Gracias por responder!</value>
-  </data>
-  <data name="Play_Question_Opts_GeneralHelp" xml:space="preserve">
-    <value>Podés responder seleccionando todas las opciones que creas correctas.</value>
-  </data>
-  <data name="Play_Question_Open_AutoEvalNoScore" xml:space="preserve">
-    <value>¡No conseguiste ningún punto! {0}% completado.</value>
-  </data>
-  <data name="FirstRun_PasswordsDontMatch" xml:space="preserve">
-    <value>Las contraseñas no coinciden.</value>
-  </data>
-  <data name="FirstRun_PasswordTooShort" xml:space="preserve">
-    <value>La contraseña es muy corta.</value>
-  </data>
-  <data name="FirstRun_UsernameRequired" xml:space="preserve">
-    <value>Tenés que introducir un nombre.</value>
   </data>
   <data name="Completed" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -319,7 +127,7 @@ Respuesta esperada:
         dXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAABZTeXN0ZW0uSU8uTWVtb3J5
         U3RyZWFtCgAAAAdfYnVmZmVyB19vcmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBh
         bmRhYmxlCV93cml0YWJsZQpfZXhwb3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRl
-        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAAAAAAAIdgUACHYFAAABAAEKDwMAAAAI
+        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAAh2BQAIdgUACHYFAAABAAEKDwMAAAAI
         dgUAAlJJRkYAdgUAV0FWRWZtdCASAAAAAQACAESsAAAQsQIABAAQAAAAZGF0YSBiBQAAAAAA//8AAP7/
         AgABAAIAAwACAAcA/P8GAPL/AgD6////AgD6/wIA8f/9//3///8FAAgA8/8BAOX/FQADAB4AIgD9/xwA
         //8JAOr/7//p//H/AwACAOr/+v/5/w8AAAAMAAEA6f8GAOX/IAD5/xoAAADk//7/8P8nAOb/GwD9/+j/
@@ -6294,7 +6102,7 @@ Respuesta esperada:
         dXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAABZTeXN0ZW0uSU8uTWVtb3J5
         U3RyZWFtCgAAAAdfYnVmZmVyB19vcmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBh
         bmRhYmxlCV93cml0YWJsZQpfZXhwb3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRl
-        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAAAAAAB+2QYAftkGAAABAAEKDwMAAAB+
+        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAH7ZBgB+2QYAftkGAAABAAEKDwMAAAB+
         2QYAAlJJRkZ22QYAV0FWRWZtdCASAAAAAQACAESsAAAQsQIABAAQAAAAZGF0Yai6BgD//wAA//8AAP//
         AAAAAP////8BAAAAAAD//wAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAABAAAA
         AAAAAAEAAAD//wAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAD//wAAAAAAAAAA
@@ -13791,7 +13599,7 @@ Respuesta esperada:
         dXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAABZTeXN0ZW0uSU8uTWVtb3J5
         U3RyZWFtCgAAAAdfYnVmZmVyB19vcmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBh
         bmRhYmxlCV93cml0YWJsZQpfZXhwb3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRl
-        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAAAAAAD6BQIA+gUCAAABAAEKDwMAAAD6
+        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAPoFAgD6BQIA+gUCAAABAAEKDwMAAAD6
         BQIAAlJJRkbyBQIAV0FWRWZtdCASAAAAAQACAESsAAAQsQIABAAQAAAAZGF0YcwFAgAAAP//AAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAP////8BAAAAAAAAAAEAAAD//wAAAQAAAAAAAQABAAAAAAABAAAAAAABAAEA
         AAAAAAIAAAAAAAIAAgD//wAABAACAP//AAAEAAEA//8BAAQAAQABAAIAAgACAAMAAwABAAIABAADAAEA
@@ -16011,7 +15819,7 @@ Respuesta esperada:
         dXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAABZTeXN0ZW0uSU8uTWVtb3J5
         U3RyZWFtCgAAAAdfYnVmZmVyB19vcmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBh
         bmRhYmxlCV93cml0YWJsZQpfZXhwb3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRl
-        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAAAAAAAiwwIAIsMCAAABAAEKDwMAAAAi
+        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAACLDAgAiwwIAIsMCAAABAAEKDwMAAAAi
         wwIAAlJJRkYawwIAV0FWRWZtdCASAAAAAQACAESsAAAQsQIABAAQAAAAZGF0YfTCAgABAP7/AwD//wEA
         AAADAAMABgAEAA0ADwAXABgAMAAwAEcARwBoAGYAiQCKALUAtQDcANoAAgECARwBGwE9AT8BdAFyAYsB
         iwGDAYABWwFdAQ0BCwGZAJgA+//9/0T/Qv9q/mv+hf1//Yv8kPyW+5L7ofqj+s75yPnH+Mr4mPea9672
@@ -19038,7 +18846,7 @@ Respuesta esperada:
         dXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAABZTeXN0ZW0uSU8uTWVtb3J5
         U3RyZWFtCgAAAAdfYnVmZmVyB19vcmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBh
         bmRhYmxlCV93cml0YWJsZQpfZXhwb3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRl
-        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAAAAAACCXQMAgl0DAAABAAEKDwMAAACC
+        bnRpdHkHAAAAAAAAAAACAggICAgBAQEBAgAAAAkDAAAAAAAAAIJdAwCCXQMAgl0DAAABAAEKDwMAAACC
         XQMAAlJJRkZ6XQMAV0FWRWZtdCASAAAAAQACAESsAAAQsQIABAAQAAAAZGF0YVRdAwACAAEA/v/+////
         //8AAAAA/f////7////+/wEAAgD//wcABgAOAA0AFgAZACAAHQAjACMAKgAnACoAKgAmACcAHwAfAA8A
         DQD6//r/1f/U/7H/sP9t/2z/IP8d/7H+tv5F/kb+w/3F/UP9Qf25/Lb8Ofw7/Lz7vftZ+1r7BfsG+876
@@ -22716,5 +22524,229 @@ Respuesta esperada:
         AQD+////AQAAAP7/AAABAAAA//8AAAAA//8AAAEA/////wEAAQD//wAAAQABAP////8AAAEAAAAAAAAA
         AQABAP////8AAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA//8BAAAAAAAAAAEAAAAL
 </value>
+  </data>
+  <data name="ActivityType_Crossword_ID" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActivityType_Hangman_ID" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActivityType_Question_Open_ID" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActivityType_Question_Opts_ID" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ActivityType_Crossword" xml:space="preserve">
+    <value>Crossword</value>
+  </data>
+  <data name="ActivityType_Hangman" xml:space="preserve">
+    <value>Hangman</value>
+  </data>
+  <data name="ActivityType_Question_Open" xml:space="preserve">
+    <value>Open questions</value>
+  </data>
+  <data name="ActivityType_Question_Opts" xml:space="preserve">
+    <value>Closed questions</value>
+  </data>
+  <data name="Crossword_ColumnHeader_ReferenceText" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="FirstRun_PasswordsDontMatch" xml:space="preserve">
+    <value>The passwords do not match.</value>
+  </data>
+  <data name="FirstRun_PasswordTooShort" xml:space="preserve">
+    <value>The password is too short.</value>
+  </data>
+  <data name="FirstRun_UsernameRequired" xml:space="preserve">
+    <value>You must type a name.</value>
+  </data>
+  <data name="General_Error_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="General_Info_Title" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="General_Warn_Title" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Login_WrongPassword" xml:space="preserve">
+    <value>The password you entered is incorrect, please try again.</value>
+  </data>
+  <data name="Play_Crossword_RowDone" xml:space="preserve">
+    <value>Great! You got a row done.</value>
+  </data>
+  <data name="Play_General_CompletionLevel" xml:space="preserve">
+    <value>You got {0}/{1} points (a {2}%).</value>
+  </data>
+  <data name="Play_General_EmptyAnswerDescriptor" xml:space="preserve">
+    <value>(empty)</value>
+  </data>
+  <data name="Play_General_GameBegins" xml:space="preserve">
+    <value>The game begins!</value>
+  </data>
+  <data name="Play_General_IncompleteActivityWarn" xml:space="preserve">
+    <value>You didn't complete the activity, do you really wanna quit anyways?</value>
+  </data>
+  <data name="Play_General_NoAttempts" xml:space="preserve">
+    <value>You ran out of tries.</value>
+  </data>
+  <data name="Play_General_NoCompletion" xml:space="preserve">
+    <value>You didn't get any points.</value>
+  </data>
+  <data name="Play_General_PerfectScore" xml:space="preserve">
+    <value>Congratulations! You've completed the activity with a perfect score.</value>
+  </data>
+  <data name="Play_General_PerfectScore_Trim" xml:space="preserve">
+    <value>Perfect!</value>
+  </data>
+  <data name="Play_General_RemainingSeconds_Plural" xml:space="preserve">
+    <value>{0} seconds remaining.</value>
+  </data>
+  <data name="Play_General_RemainingSeconds_Singular" xml:space="preserve">
+    <value>{0} second remaining.</value>
+  </data>
+  <data name="Play_General_RightAnswer" xml:space="preserve">
+    <value>Right!</value>
+  </data>
+  <data name="Play_General_Timedout" xml:space="preserve">
+    <value>Oh, you ran out of time!</value>
+  </data>
+  <data name="Play_General_WrongAnswer" xml:space="preserve">
+    <value>Oh, that's wrong!</value>
+  </data>
+  <data name="Play_Hangman_Wrong_RemainingAttempts" xml:space="preserve">
+    <value>Wrong! {0} attempts remaining.</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalEmpty" xml:space="preserve">
+    <value>Your answer was empty and you didn't get any points ({0}% completed).</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalEmptyAnswerWarn" xml:space="preserve">
+    <value>You didn't answer, do you wanna continue anyways?</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalRegular" xml:space="preserve">
+    <value>Great! You got a {0}%.</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalRight" xml:space="preserve">
+    <value>Excellent, keep it up! You achieved a {0}%.</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalWrong" xml:space="preserve">
+    <value>Oh! You just got a {0}%.</value>
+  </data>
+  <data name="Play_Question_Open_AutoEvalNoScore" xml:space="preserve">
+    <value>You didn't get any point! {0}% completed.</value>
+  </data>
+  <data name="Play_Question_Open_AutoEvalResult" xml:space="preserve">
+    <value>Your answer: 
+{0}
+
+Expected answer: 
+{1}</value>
+  </data>
+  <data name="Play_Question_Open_NoAutoEvalInfo" xml:space="preserve">
+    <value>Please, wait until your answer is verified by your teacher.</value>
+  </data>
+  <data name="Play_Question_Open_NoAutoEvalThanks" xml:space="preserve">
+    <value>Thanks for replying!</value>
+  </data>
+  <data name="Play_Question_Opts_GeneralHelp" xml:space="preserve">
+    <value>You can reply by selecting all of the right answers.</value>
+  </data>
+  <data name="Question_Open_AutoEvalWarn" xml:space="preserve">
+    <value>The automatic verification isn't totally accurante and might cause unwanted results.</value>
+  </data>
+  <data name="Question_Opts_DelMode" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Question_Opts_Empty" xml:space="preserve">
+    <value>You'll delete this option, are you sure?</value>
+  </data>
+  <data name="Question_Opts_GeneralHelp" xml:space="preserve">
+    <value>{0}
+
+When you're done, click "Save".</value>
+  </data>
+  <data name="Question_Opts_ModMode" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="Question_Opts_NewAnswer" xml:space="preserve">
+    <value>&lt;New answer&gt;</value>
+  </data>
+  <data name="Question_Opts_NextActionHelp" xml:space="preserve">
+    <value>To set up the answers, click "Next".</value>
+  </data>
+  <data name="Question_Opts_NextAnswerHelp" xml:space="preserve">
+    <value>To add an option, click "Add".</value>
+  </data>
+  <data name="Question_Saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="Queston_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Settings_Activity" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="Settings_Crossword_IllegalStringException" xml:space="preserve">
+    <value>The entered value "{0}" is reserved by the system.</value>
+  </data>
+  <data name="Settings_Crossword_NoReference" xml:space="preserve">
+    <value>No references are set.</value>
+  </data>
+  <data name="Settings_General_DeleteAllText" xml:space="preserve">
+    <value>Delete all</value>
+  </data>
+  <data name="Settings_General_DeleteAllWarn" xml:space="preserve">
+    <value>Stop there! You'll delete everything, continue?</value>
+  </data>
+  <data name="Settings_General_DeleteText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Settings_General_Err" xml:space="preserve">
+    <value>An internal error has occured.</value>
+  </data>
+  <data name="Settings_General_Err_Index" xml:space="preserve">
+    <value>The index {0} of {1} isn't a number.</value>
+  </data>
+  <data name="Settings_General_NewActivity" xml:space="preserve">
+    <value>&lt;New activity&gt;</value>
+  </data>
+  <data name="Settings_General_NoActivities" xml:space="preserve">
+    <value>No activities found.</value>
+  </data>
+  <data name="Settings_General_UnsavedWarn" xml:space="preserve">
+    <value>You'll loose your changes, do you wanna quit anyways?</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Language_Spanish" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\logo.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotifyIcon_LanguageResetWarn" xml:space="preserve">
+    <value>To complete your request, all of the open forms must be closed. Close everything right now?</value>
+  </data>
+  <data name="NotifyIcon_Text" xml:space="preserve">
+    <value>Ecogames</value>
+  </data>
+  <data name="Debug_CleanEnvStartup" xml:space="preserve">
+    <value>Welcome to the clean environment debug mode, it's nice to see you here!
+
+In this mode, all of the settings (app settings, activities, etc.) are deleted each time the main form is launched, that is, each time that SplashScreen.Load occurs.</value>
+  </data>
+  <data name="FirstRun_Text" xml:space="preserve">
+    <value>First run</value>
+  </data>
+  <data name="Login_Text" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Play_Activities_Text" xml:space="preserve">
+    <value>Activities</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
 </root>

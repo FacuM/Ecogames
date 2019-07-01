@@ -50,6 +50,7 @@ Partial Class ActivityType_Hangman
         '
         'GroupBox4
         '
+        resources.ApplyResources(Me.GroupBox4, "GroupBox4")
         Me.GroupBox4.Controls.Add(Me.HangmanScorePerLetterCheckbox)
         Me.GroupBox4.Controls.Add(Me.HangmanMaxTryAmountCheckbox)
         Me.GroupBox4.Controls.Add(Me.HangmanDefaultLetterAmountCheckbox)
@@ -63,161 +64,129 @@ Partial Class ActivityType_Hangman
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.HangmanScorePerLetter)
         Me.GroupBox4.Controls.Add(Me.Label13)
-        Me.GroupBox4.Location = New System.Drawing.Point(23, 247)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(381, 259)
-        Me.GroupBox4.TabIndex = 6
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Ajustes"
         '
         'HangmanScorePerLetterCheckbox
         '
+        resources.ApplyResources(Me.HangmanScorePerLetterCheckbox, "HangmanScorePerLetterCheckbox")
         Me.HangmanScorePerLetterCheckbox.Checked = True
         Me.HangmanScorePerLetterCheckbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.HangmanScorePerLetterCheckbox.Enabled = False
-        Me.HangmanScorePerLetterCheckbox.Location = New System.Drawing.Point(354, 30)
         Me.HangmanScorePerLetterCheckbox.Name = "HangmanScorePerLetterCheckbox"
-        Me.HangmanScorePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanScorePerLetterCheckbox.TabIndex = 2
         Me.HangmanScorePerLetterCheckbox.UseSelectable = True
         '
         'HangmanMaxTryAmountCheckbox
         '
-        Me.HangmanMaxTryAmountCheckbox.Location = New System.Drawing.Point(354, 174)
+        resources.ApplyResources(Me.HangmanMaxTryAmountCheckbox, "HangmanMaxTryAmountCheckbox")
         Me.HangmanMaxTryAmountCheckbox.Name = "HangmanMaxTryAmountCheckbox"
-        Me.HangmanMaxTryAmountCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanMaxTryAmountCheckbox.TabIndex = 8
         Me.HangmanMaxTryAmountCheckbox.UseSelectable = True
         '
         'HangmanDefaultLetterAmountCheckbox
         '
-        Me.HangmanDefaultLetterAmountCheckbox.Location = New System.Drawing.Point(354, 125)
+        resources.ApplyResources(Me.HangmanDefaultLetterAmountCheckbox, "HangmanDefaultLetterAmountCheckbox")
         Me.HangmanDefaultLetterAmountCheckbox.Name = "HangmanDefaultLetterAmountCheckbox"
-        Me.HangmanDefaultLetterAmountCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanDefaultLetterAmountCheckbox.TabIndex = 6
         Me.HangmanDefaultLetterAmountCheckbox.UseSelectable = True
         '
         'HangmanTimePerLetterCheckbox
         '
-        Me.HangmanTimePerLetterCheckbox.Location = New System.Drawing.Point(354, 77)
+        resources.ApplyResources(Me.HangmanTimePerLetterCheckbox, "HangmanTimePerLetterCheckbox")
         Me.HangmanTimePerLetterCheckbox.Name = "HangmanTimePerLetterCheckbox"
-        Me.HangmanTimePerLetterCheckbox.Size = New System.Drawing.Size(21, 20)
-        Me.HangmanTimePerLetterCheckbox.TabIndex = 4
         Me.HangmanTimePerLetterCheckbox.UseSelectable = True
         '
         'SaveActivity
         '
-        Me.SaveActivity.Location = New System.Drawing.Point(122, 215)
+        resources.ApplyResources(Me.SaveActivity, "SaveActivity")
         Me.SaveActivity.Name = "SaveActivity"
-        Me.SaveActivity.Size = New System.Drawing.Size(116, 23)
-        Me.SaveActivity.TabIndex = 9
-        Me.SaveActivity.Text = "Guardar"
         Me.SaveActivity.UseSelectable = True
         '
         'Label16
         '
-        Me.Label16.Location = New System.Drawing.Point(6, 174)
+        resources.ApplyResources(Me.Label16, "Label16")
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(187, 20)
-        Me.Label16.TabIndex = 9
-        Me.Label16.Text = "Número máximo de intentos: "
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'HangmanMaxTryAmount
         '
-        Me.HangmanMaxTryAmount.Enabled = False
-        Me.HangmanMaxTryAmount.Location = New System.Drawing.Point(199, 174)
+        resources.ApplyResources(Me.HangmanMaxTryAmount, "HangmanMaxTryAmount")
         Me.HangmanMaxTryAmount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.HangmanMaxTryAmount.Name = "HangmanMaxTryAmount"
-        Me.HangmanMaxTryAmount.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanMaxTryAmount.TabIndex = 7
         Me.HangmanMaxTryAmount.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'HangmanDefaultLetterAmount
         '
-        Me.HangmanDefaultLetterAmount.Enabled = False
-        Me.HangmanDefaultLetterAmount.Location = New System.Drawing.Point(199, 125)
+        resources.ApplyResources(Me.HangmanDefaultLetterAmount, "HangmanDefaultLetterAmount")
         Me.HangmanDefaultLetterAmount.Name = "HangmanDefaultLetterAmount"
-        Me.HangmanDefaultLetterAmount.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanDefaultLetterAmount.TabIndex = 5
         '
         'Label15
         '
-        Me.Label15.Location = New System.Drawing.Point(6, 125)
+        resources.ApplyResources(Me.Label15, "Label15")
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(187, 20)
-        Me.Label15.TabIndex = 6
-        Me.Label15.Text = "Cantidad por defecto: "
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'HangmanTimePerLetter
         '
-        Me.HangmanTimePerLetter.Enabled = False
-        Me.HangmanTimePerLetter.Location = New System.Drawing.Point(199, 77)
+        resources.ApplyResources(Me.HangmanTimePerLetter, "HangmanTimePerLetter")
         Me.HangmanTimePerLetter.Name = "HangmanTimePerLetter"
-        Me.HangmanTimePerLetter.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanTimePerLetter.TabIndex = 3
         '
         'Label14
         '
-        Me.Label14.Location = New System.Drawing.Point(6, 77)
+        resources.ApplyResources(Me.Label14, "Label14")
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(187, 20)
-        Me.Label14.TabIndex = 4
-        Me.Label14.Text = "Tiempo por letra (s):"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'HangmanScorePerLetter
         '
-        Me.HangmanScorePerLetter.Location = New System.Drawing.Point(199, 30)
+        resources.ApplyResources(Me.HangmanScorePerLetter, "HangmanScorePerLetter")
         Me.HangmanScorePerLetter.Name = "HangmanScorePerLetter"
-        Me.HangmanScorePerLetter.Size = New System.Drawing.Size(149, 20)
-        Me.HangmanScorePerLetter.TabIndex = 1
         '
         'Label13
         '
-        Me.Label13.Location = New System.Drawing.Point(6, 30)
+        resources.ApplyResources(Me.Label13, "Label13")
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(187, 20)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "Puntaje por letra:"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(181, 125)
+        resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(39, 19)
-        Me.Label11.TabIndex = 5
-        Me.Label11.Text = "Texto"
         '
         'PictureBox1
         '
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Image = Global.Ecogames.My.Resources.Resources.drawing
-        Me.PictureBox1.Location = New System.Drawing.Point(23, 63)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(152, 178)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
         'HangmanWordTextBox
         '
+        resources.ApplyResources(Me.HangmanWordTextBox, "HangmanWordTextBox")
         '
         '
         '
-        Me.HangmanWordTextBox.CustomButton.Image = Nothing
-        Me.HangmanWordTextBox.CustomButton.Location = New System.Drawing.Point(205, 2)
+        Me.HangmanWordTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
+        Me.HangmanWordTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
+        Me.HangmanWordTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
+        Me.HangmanWordTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
+        Me.HangmanWordTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
+        Me.HangmanWordTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
+        Me.HangmanWordTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
+        Me.HangmanWordTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
+        Me.HangmanWordTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
+        Me.HangmanWordTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
+        Me.HangmanWordTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.HangmanWordTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
+        Me.HangmanWordTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
+        Me.HangmanWordTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
+        Me.HangmanWordTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
+        Me.HangmanWordTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
+        Me.HangmanWordTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.HangmanWordTextBox.CustomButton.Name = ""
-        Me.HangmanWordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.HangmanWordTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
+        Me.HangmanWordTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.HangmanWordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.HangmanWordTextBox.CustomButton.TabIndex = 1
+        Me.HangmanWordTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
+        Me.HangmanWordTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
+        Me.HangmanWordTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.HangmanWordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.HangmanWordTextBox.CustomButton.UseSelectable = True
-        Me.HangmanWordTextBox.CustomButton.Visible = False
+        Me.HangmanWordTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.HangmanWordTextBox.Lines = New String(-1) {}
-        Me.HangmanWordTextBox.Location = New System.Drawing.Point(181, 147)
         Me.HangmanWordTextBox.MaxLength = 45
         Me.HangmanWordTextBox.Name = "HangmanWordTextBox"
         Me.HangmanWordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -226,27 +195,22 @@ Partial Class ActivityType_Hangman
         Me.HangmanWordTextBox.SelectionLength = 0
         Me.HangmanWordTextBox.SelectionStart = 0
         Me.HangmanWordTextBox.ShortcutsEnabled = True
-        Me.HangmanWordTextBox.Size = New System.Drawing.Size(223, 20)
-        Me.HangmanWordTextBox.TabIndex = 0
         Me.HangmanWordTextBox.UseSelectable = True
         Me.HangmanWordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.HangmanWordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'ActivityType_Hangman
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(426, 524)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.HangmanWordTextBox)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "ActivityType_Hangman"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "ActivityType_Hangman"
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.HangmanMaxTryAmount, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HangmanDefaultLetterAmount, System.ComponentModel.ISupportInitialize).EndInit()

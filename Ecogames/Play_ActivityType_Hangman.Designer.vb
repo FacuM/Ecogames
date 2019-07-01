@@ -43,39 +43,50 @@ Partial Class Play_ActivityType_Hangman
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(181, 125)
+        resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(39, 19)
-        Me.Label11.TabIndex = 5
-        Me.Label11.Text = "Texto"
         '
         'PictureBox1
         '
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Image = Global.Ecogames.My.Resources.Resources.drawing
-        Me.PictureBox1.Location = New System.Drawing.Point(23, 63)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(152, 178)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
         'HangmanWordTextBox
         '
+        resources.ApplyResources(Me.HangmanWordTextBox, "HangmanWordTextBox")
         '
         '
         '
-        Me.HangmanWordTextBox.CustomButton.Image = Nothing
-        Me.HangmanWordTextBox.CustomButton.Location = New System.Drawing.Point(310, 2)
+        Me.HangmanWordTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
+        Me.HangmanWordTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
+        Me.HangmanWordTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
+        Me.HangmanWordTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
+        Me.HangmanWordTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
+        Me.HangmanWordTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
+        Me.HangmanWordTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
+        Me.HangmanWordTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
+        Me.HangmanWordTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
+        Me.HangmanWordTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
+        Me.HangmanWordTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.HangmanWordTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
+        Me.HangmanWordTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
+        Me.HangmanWordTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
+        Me.HangmanWordTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
+        Me.HangmanWordTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
+        Me.HangmanWordTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.HangmanWordTextBox.CustomButton.Name = ""
-        Me.HangmanWordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.HangmanWordTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
+        Me.HangmanWordTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.HangmanWordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.HangmanWordTextBox.CustomButton.TabIndex = 1
+        Me.HangmanWordTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
+        Me.HangmanWordTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
+        Me.HangmanWordTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.HangmanWordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.HangmanWordTextBox.CustomButton.UseSelectable = True
-        Me.HangmanWordTextBox.CustomButton.Visible = False
+        Me.HangmanWordTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.HangmanWordTextBox.Lines = New String(-1) {}
-        Me.HangmanWordTextBox.Location = New System.Drawing.Point(181, 147)
         Me.HangmanWordTextBox.MaxLength = 45
         Me.HangmanWordTextBox.Name = "HangmanWordTextBox"
         Me.HangmanWordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -85,84 +96,57 @@ Partial Class Play_ActivityType_Hangman
         Me.HangmanWordTextBox.SelectionLength = 0
         Me.HangmanWordTextBox.SelectionStart = 0
         Me.HangmanWordTextBox.ShortcutsEnabled = True
-        Me.HangmanWordTextBox.Size = New System.Drawing.Size(328, 20)
-        Me.HangmanWordTextBox.TabIndex = 0
         Me.HangmanWordTextBox.UseSelectable = True
         Me.HangmanWordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.HangmanWordTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'GroupBox1
         '
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.StatusPanel)
         Me.GroupBox1.Controls.Add(Me.ScorePanel)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupBox1.Location = New System.Drawing.Point(20, 246)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(489, 49)
-        Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Información"
         '
         'StatusPanel
         '
+        resources.ApplyResources(Me.StatusPanel, "StatusPanel")
         Me.StatusPanel.Controls.Add(Me.StatusLabel)
-        Me.StatusPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StatusPanel.HorizontalScrollbarBarColor = False
         Me.StatusPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.StatusPanel.HorizontalScrollbarSize = 0
-        Me.StatusPanel.Location = New System.Drawing.Point(203, 16)
         Me.StatusPanel.Name = "StatusPanel"
-        Me.StatusPanel.Size = New System.Drawing.Size(283, 30)
-        Me.StatusPanel.TabIndex = 28
         Me.StatusPanel.VerticalScrollbarBarColor = False
         Me.StatusPanel.VerticalScrollbarHighlightOnWheel = False
         Me.StatusPanel.VerticalScrollbarSize = 0
         '
         'StatusLabel
         '
-        Me.StatusLabel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.StatusLabel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.StatusLabel, "StatusLabel")
         Me.StatusLabel.Name = "StatusLabel"
-        Me.StatusLabel.Size = New System.Drawing.Size(280, 30)
-        Me.StatusLabel.TabIndex = 25
-        Me.StatusLabel.Text = "N/A"
-        Me.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ScorePanel
         '
+        resources.ApplyResources(Me.ScorePanel, "ScorePanel")
         Me.ScorePanel.Controls.Add(Me.ScoreLabel)
         Me.ScorePanel.Controls.Add(Me.Label1)
-        Me.ScorePanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.ScorePanel.HorizontalScrollbarBarColor = False
         Me.ScorePanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ScorePanel.HorizontalScrollbarSize = 0
-        Me.ScorePanel.Location = New System.Drawing.Point(3, 16)
         Me.ScorePanel.Name = "ScorePanel"
-        Me.ScorePanel.Size = New System.Drawing.Size(200, 30)
-        Me.ScorePanel.TabIndex = 27
         Me.ScorePanel.VerticalScrollbarBarColor = False
         Me.ScorePanel.VerticalScrollbarHighlightOnWheel = False
         Me.ScorePanel.VerticalScrollbarSize = 0
         '
         'ScoreLabel
         '
-        Me.ScoreLabel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ScoreLabel.Location = New System.Drawing.Point(64, 0)
+        resources.ApplyResources(Me.ScoreLabel, "ScoreLabel")
         Me.ScoreLabel.Name = "ScoreLabel"
-        Me.ScoreLabel.Size = New System.Drawing.Size(136, 30)
-        Me.ScoreLabel.TabIndex = 21
-        Me.ScoreLabel.Text = "N/A"
-        Me.ScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label1
         '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 30)
-        Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Puntaje: "
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'StatusResetTimer
         '
@@ -174,20 +158,17 @@ Partial Class Play_ActivityType_Hangman
         '
         'Play_ActivityType_Hangman
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(529, 315)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.HangmanWordTextBox)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "Play_ActivityType_Hangman"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "Play_ActivityType_Hangman"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.StatusPanel.ResumeLayout(False)

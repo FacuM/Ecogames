@@ -16,6 +16,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
         If PasswordTextBox.Text = My.Settings.UserPassword Then
             Hide()
+            Settings = Nothing
             Settings.Populate()
             Settings.UpdateActivities()
             Settings.Show()
@@ -30,5 +31,9 @@
 
     Private Sub Login_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         PasswordTextBox.Text = String.Empty
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Text = My.Resources.Login_Text
     End Sub
 End Class

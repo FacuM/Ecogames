@@ -41,6 +41,8 @@ Public Class Play_Activities
 
         UpdateActivities()
 
+        Text = My.Resources.Play_Activities_Text
+
 #If DEBUG Then
         LogD(Me, "Done.")
 #End If

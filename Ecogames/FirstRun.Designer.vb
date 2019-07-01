@@ -36,52 +36,41 @@ Partial Class FirstRun
         Me.UsernameTextBox = New MetroFramework.Controls.MetroTextBox()
         Me.Label3 = New MetroFramework.Controls.MetroLabel()
         Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
+        Me.LanguagePickerComboBox = New MetroFramework.Controls.MetroComboBox()
         Me.SuspendLayout()
         '
         'Label1
         '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Location = New System.Drawing.Point(20, 60)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(420, 45)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Para continuar, registráte."
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(20, 131)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 23)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Contraseña: "
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(20, 157)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(143, 23)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Repetir contraseña: "
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PasswordTextBox
         '
         '
         '
         '
-        Me.PasswordTextBox.CustomButton.Image = Nothing
-        Me.PasswordTextBox.CustomButton.Location = New System.Drawing.Point(224, 2)
+        Me.PasswordTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.PasswordTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
+        Me.PasswordTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
         Me.PasswordTextBox.CustomButton.Name = ""
-        Me.PasswordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.PasswordTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.PasswordTextBox.CustomButton.TabIndex = 1
+        Me.PasswordTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
         Me.PasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.PasswordTextBox.CustomButton.UseSelectable = True
-        Me.PasswordTextBox.CustomButton.Visible = False
+        Me.PasswordTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.PasswordTextBox.Lines = New String(-1) {}
-        Me.PasswordTextBox.Location = New System.Drawing.Point(169, 134)
+        resources.ApplyResources(Me.PasswordTextBox, "PasswordTextBox")
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
@@ -90,8 +79,6 @@ Partial Class FirstRun
         Me.PasswordTextBox.SelectionLength = 0
         Me.PasswordTextBox.SelectionStart = 0
         Me.PasswordTextBox.ShortcutsEnabled = True
-        Me.PasswordTextBox.Size = New System.Drawing.Size(242, 20)
-        Me.PasswordTextBox.TabIndex = 1
         Me.PasswordTextBox.UseSelectable = True
         Me.PasswordTextBox.UseSystemPasswordChar = True
         Me.PasswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -102,17 +89,18 @@ Partial Class FirstRun
         '
         '
         '
-        Me.PasswordVerifyTextBox.CustomButton.Image = Nothing
-        Me.PasswordVerifyTextBox.CustomButton.Location = New System.Drawing.Point(224, 2)
+        Me.PasswordVerifyTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        Me.PasswordVerifyTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode1"), System.Windows.Forms.ImeMode)
+        Me.PasswordVerifyTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location1"), System.Drawing.Point)
         Me.PasswordVerifyTextBox.CustomButton.Name = ""
-        Me.PasswordVerifyTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.PasswordVerifyTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size1"), System.Drawing.Size)
         Me.PasswordVerifyTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.PasswordVerifyTextBox.CustomButton.TabIndex = 1
+        Me.PasswordVerifyTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex1"), Integer)
         Me.PasswordVerifyTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.PasswordVerifyTextBox.CustomButton.UseSelectable = True
-        Me.PasswordVerifyTextBox.CustomButton.Visible = False
+        Me.PasswordVerifyTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible1"), Boolean)
         Me.PasswordVerifyTextBox.Lines = New String(-1) {}
-        Me.PasswordVerifyTextBox.Location = New System.Drawing.Point(169, 160)
+        resources.ApplyResources(Me.PasswordVerifyTextBox, "PasswordVerifyTextBox")
         Me.PasswordVerifyTextBox.MaxLength = 64
         Me.PasswordVerifyTextBox.Name = "PasswordVerifyTextBox"
         Me.PasswordVerifyTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
@@ -121,8 +109,6 @@ Partial Class FirstRun
         Me.PasswordVerifyTextBox.SelectionLength = 0
         Me.PasswordVerifyTextBox.SelectionStart = 0
         Me.PasswordVerifyTextBox.ShortcutsEnabled = True
-        Me.PasswordVerifyTextBox.Size = New System.Drawing.Size(242, 20)
-        Me.PasswordVerifyTextBox.TabIndex = 2
         Me.PasswordVerifyTextBox.UseSelectable = True
         Me.PasswordVerifyTextBox.UseSystemPasswordChar = True
         Me.PasswordVerifyTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -130,64 +116,52 @@ Partial Class FirstRun
         '
         'ContinueButton
         '
-        Me.ContinueButton.Enabled = False
-        Me.ContinueButton.Location = New System.Drawing.Point(241, 203)
+        resources.ApplyResources(Me.ContinueButton, "ContinueButton")
         Me.ContinueButton.Name = "ContinueButton"
-        Me.ContinueButton.Size = New System.Drawing.Size(96, 23)
-        Me.ContinueButton.TabIndex = 3
-        Me.ContinueButton.Text = "Continuar"
         Me.ContinueButton.UseSelectable = True
         '
         'QuitButton
         '
         Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.QuitButton.Location = New System.Drawing.Point(341, 203)
+        resources.ApplyResources(Me.QuitButton, "QuitButton")
         Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(96, 23)
-        Me.QuitButton.TabIndex = 4
-        Me.QuitButton.Text = "Cancelar"
         Me.QuitButton.UseSelectable = True
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Red
-        Me.Panel1.Location = New System.Drawing.Point(417, 134)
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(20, 20)
-        Me.Panel1.TabIndex = 13
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Red
-        Me.Panel2.Location = New System.Drawing.Point(417, 160)
+        resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(20, 20)
-        Me.Panel2.TabIndex = 14
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Red
-        Me.Panel3.Location = New System.Drawing.Point(417, 108)
+        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(20, 20)
-        Me.Panel3.TabIndex = 16
         '
         'UsernameTextBox
         '
         '
         '
         '
-        Me.UsernameTextBox.CustomButton.Image = Nothing
-        Me.UsernameTextBox.CustomButton.Location = New System.Drawing.Point(224, 2)
+        Me.UsernameTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        Me.UsernameTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode2"), System.Windows.Forms.ImeMode)
+        Me.UsernameTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location2"), System.Drawing.Point)
         Me.UsernameTextBox.CustomButton.Name = ""
-        Me.UsernameTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.UsernameTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size2"), System.Drawing.Size)
         Me.UsernameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.UsernameTextBox.CustomButton.TabIndex = 1
+        Me.UsernameTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex2"), Integer)
         Me.UsernameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.UsernameTextBox.CustomButton.UseSelectable = True
-        Me.UsernameTextBox.CustomButton.Visible = False
+        Me.UsernameTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible2"), Boolean)
         Me.UsernameTextBox.Lines = New String(-1) {}
-        Me.UsernameTextBox.Location = New System.Drawing.Point(169, 108)
+        resources.ApplyResources(Me.UsernameTextBox, "UsernameTextBox")
         Me.UsernameTextBox.MaxLength = 35
         Me.UsernameTextBox.Name = "UsernameTextBox"
         Me.UsernameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -196,36 +170,33 @@ Partial Class FirstRun
         Me.UsernameTextBox.SelectionLength = 0
         Me.UsernameTextBox.SelectionStart = 0
         Me.UsernameTextBox.ShortcutsEnabled = True
-        Me.UsernameTextBox.Size = New System.Drawing.Size(242, 20)
-        Me.UsernameTextBox.TabIndex = 0
         Me.UsernameTextBox.UseSelectable = True
         Me.UsernameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.UsernameTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(20, 105)
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(143, 23)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Nombre:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'StatusLabel
         '
-        Me.StatusLabel.Location = New System.Drawing.Point(20, 203)
+        resources.ApplyResources(Me.StatusLabel, "StatusLabel")
         Me.StatusLabel.Name = "StatusLabel"
-        Me.StatusLabel.Size = New System.Drawing.Size(215, 23)
-        Me.StatusLabel.TabIndex = 17
-        Me.StatusLabel.Text = "N/A"
-        Me.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'LanguagePickerComboBox
+        '
+        Me.LanguagePickerComboBox.FormattingEnabled = True
+        resources.ApplyResources(Me.LanguagePickerComboBox, "LanguagePickerComboBox")
+        Me.LanguagePickerComboBox.Name = "LanguagePickerComboBox"
+        Me.LanguagePickerComboBox.UseSelectable = True
         '
         'FirstRun
         '
         Me.AcceptButton = Me.ContinueButton
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(460, 249)
+        Me.Controls.Add(Me.LanguagePickerComboBox)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.UsernameTextBox)
@@ -239,13 +210,11 @@ Partial Class FirstRun
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FirstRun"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "Primer inicio"
         Me.ResumeLayout(False)
 
     End Sub
@@ -262,4 +231,5 @@ Partial Class FirstRun
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents StatusLabel As MetroFramework.Controls.MetroLabel
+    Friend WithEvents LanguagePickerComboBox As MetroFramework.Controls.MetroComboBox
 End Class

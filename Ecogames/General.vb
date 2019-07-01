@@ -18,7 +18,10 @@
     Public Const DotChar As Char = "."c
     Public Const SemicolonChar As Char = ";"c
     Public Const CommaChar As Char = ","c
-    Public ReadOnly NormalExpressions As String() = { ' Common Spanish expressions, tweak as needed.
+    Public Const DefaultLanguage As String = "es"
+    Public ReadOnly SupportedLanguages As String() = {"en", "es"}
+    Public ReadOnly LanguagesDescription As String() = {"English", "Español"}
+    Public ReadOnly NormalExpressions As String() = { ' Common Spanish and English expressions, tweak as needed.
         "es",
         "está",
         "tiene",
@@ -39,7 +42,23 @@
         "debe",
         "puede",
         "hace",
-        "hacer"
+        "hacer",
+        "i ",
+        "is",
+        " are ",
+        "'re",
+        " do ",
+        " did ",
+        " have ",
+        " has ",
+        " had ",
+        " we ",
+        "they",
+        "their",
+        "our",
+        "your",
+        "yours",
+        "'s"
     }
 
     ' Local
@@ -67,6 +86,141 @@
     ' ====================
     '  Content validators
     ' ====================
+    Private Sub BrokenBuildException(ByVal Exception As String)
+        MessageBox.Show("This build isn't properly compiled." & vbCrLf & vbCrLf & Exception & " (General.vb).", My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Sub
+    Public Function SelfTest() As Boolean
+        Const TAG = "SelfTest"
+
+#If KEEPLANG Then
+        Dim LanguageBackup As String = My.Settings.Language
+#End If
+#If DEBUG_CLEAN Then
+        My.Settings.Reset()
+        SettingsSaver()
+#End If
+#If KEEPLANG Then
+        My.Settings.Language = LanguageBackup
+#End If
+
+        ' In order of appearance.
+        If MaximumCrosswordXIndex < 1 Then
+            BrokenBuildException("MaximumCrosswordXIndex should be set to 1 or more, up to " & Long.MaxValue)
+
+            Return False
+        End If
+
+        If SemicolonAlternativeString = String.Empty Then
+            BrokenBuildException("SemicolonAlternativeString must not be empty")
+
+            Return False
+        End If
+
+        If RowSplitter.Length < 1 Then
+            BrokenBuildException("RowSplitter must not be empty")
+
+            Return False
+        ElseIf RowSplitter.Length > 1 Then
+            BrokenBuildException("RowSplitter must not have more than one item")
+
+            Return False
+        End If
+
+        ' CrosswordDefaultColumns does not require testing.
+
+        ' CrosswordDefaultRows does not require testing.
+
+        ' HangmanMaximumSecondsPerCharacter does not require testing.
+
+        ' HangmanMinimumSecondsPerCharacter does not require testing.
+
+        ' HangmanMaximumAttemptsPerCharacter does not require testing.
+
+        If HangmanSeparator = Nothing Then
+            BrokenBuildException("HangmanSeparator must not be empty")
+
+            Return False
+        End If
+
+        If DefaultScoreMultiplier < 1 Then
+            BrokenBuildException("DefaultScoreMultiplier should be set to 1 or more.")
+
+            Return False
+        End If
+
+        If SpaceChar = Nothing Then
+            BrokenBuildException("SpaceChar must not be empty")
+
+            Return False
+        End If
+
+        If DotChar = Nothing Then
+            BrokenBuildException("DotChar must not be empty")
+
+            Return False
+        End If
+
+        If SemicolonChar = Nothing Then
+            BrokenBuildException("SemicolonChar must not be empty")
+
+            Return False
+        End If
+
+        If CommaChar = Nothing Then
+            BrokenBuildException("CommaChar must not be empty")
+
+            Return False
+        End If
+
+        ' NormalExpressions does not require testing.
+
+        If MinimumPasswordLength < 1 Then
+            BrokenBuildException("MinimumPasswordLength should be set to 1 or more.")
+
+            Return False
+        End If
+
+        If MinimumSimpleLength < 1 Then
+            BrokenBuildException("MinimumSimpleLength should be set to 1 or more.")
+
+            Return False
+        End If
+
+        If DefaultLanguage = String.Empty Then
+            BrokenBuildException("A default language must be set.")
+
+            Return False
+        End If
+
+        If (SupportedLanguages.Length < 1 Or LanguagesDescription.Length < 1) Or (SupportedLanguages.Length <> LanguagesDescription.Length) Then
+            BrokenBuildException("The structure of SupportedLanguages and LanguageDescription doesn't match.")
+
+            Return False
+        End If
+
+        If CurrentActivityIndex <> -1 Then
+            BrokenBuildException("CurrentActivityIndex must be set to -1")
+
+            Return False
+        End If
+
+        If CurrentActivityTypeId <> -1 Then
+            BrokenBuildException("CurrentActivityTypeId must be set to -1")
+
+            Return False
+        End If
+
+        If My.Settings.Language = String.Empty Then
+#If DEBUG Then
+            LogD(TAG, "No language has been set, falling back to defaults (" & DefaultLanguage & ").")
+#End If
+            My.Settings.Language = DefaultLanguage
+        End If
+        LoadLanguage()
+
+        Return True ' Everything is fine.
+    End Function
+
     Public Function SimpleLengthVerifier(ByRef InputTextBox As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel) As Boolean
 #If DEBUG Then
         Const TAG = "SimpleLengthVerifier"
@@ -185,6 +339,88 @@
     ' ====================
     '    User interface
     ' ====================
+    Public Sub LoadLanguage(ByVal Optional Language As String = DefaultLanguage)
+#If DEBUG Then
+        Const TAG = "LoadLanguage"
+        LogD(TAG, "Current language: " & My.Application.UICulture.ToString)
+#End If
+        If My.Application.UICulture.ToString <> My.Settings.Language Then
+#If DEBUG Then
+            LogD(TAG, "New language: " & My.Application.UICulture.ToString)
+#End If
+            My.Application.ChangeUICulture(My.Settings.Language)
+        End If
+    End Sub
+
+    Private Sub SetLanguage(sender As Object, e As EventArgs)
+        Dim ToolStripItemClickedEventArgs As ToolStripItemClickedEventArgs = DirectCast(e, ToolStripItemClickedEventArgs)
+        My.Settings.Language = SupportedLanguages(Array.IndexOf(LanguagesDescription, ToolStripItemClickedEventArgs.ClickedItem.ToString))
+
+        SettingsSaver()
+
+        LoadLanguage()
+        RequestUIRedraw()
+    End Sub
+
+    Private NotifyIcon As NotifyIcon = New NotifyIcon()
+    Private ContextMenuStrip As ContextMenuStrip = New ContextMenuStrip()
+    Public Sub PopulateNotifyIcon()
+        If NotifyIcon.Icon IsNot Nothing Then
+            NotifyIcon.Icon.Dispose()
+        End If
+        NotifyIcon.Dispose()
+
+        NotifyIcon = New NotifyIcon With {
+            .Icon = My.Resources.Logo,
+            .Text = My.Resources.NotifyIcon_Text
+        }
+
+        ContextMenuStrip = New ContextMenuStrip()
+        For Each Language As String In LanguagesDescription
+            ContextMenuStrip.Items.Add(Language)
+        Next
+
+        AddHandler ContextMenuStrip.ItemClicked, AddressOf SetLanguage
+
+        NotifyIcon.ContextMenuStrip = ContextMenuStrip
+
+        NotifyIcon.Visible = True
+    End Sub
+
+    Private Sub Restart()
+        Const TAG = "Restart"
+        SplashScreen.SeparateThreadBusy = True
+        For i = My.Application.OpenForms.Count - 1 To 0 Step -1
+            Dim Form As Form = My.Application.OpenForms(i)
+            If Not Form.Name = SplashScreen.Name Then
+#If DEBUG Then
+                LogD(TAG, "Hiding """ & Form.Name & """...")
+#End If
+                Form.Hide()
+            End If
+        Next
+        SplashScreen.Show()
+        For i = My.Application.OpenForms.Count - 1 To 0 Step -1
+            Dim Form As Form = My.Application.OpenForms(i)
+            If Not Form.Name = SplashScreen.Name Then
+#If DEBUG Then
+                LogD(TAG, "Closing """ & Form.Name & """...")
+#End If
+                Form.Close()
+            End If
+        Next
+        SplashScreen.SeparateThreadBusy = False
+    End Sub
+    Public Sub RequestUIRedraw(ByVal Optional ConfirmationProvided As Boolean = False)
+        If ConfirmationProvided Then
+            Restart()
+        Else
+            If MessageBox.Show(My.Resources.NotifyIcon_LanguageResetWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
+                Restart()
+            End If
+        End If
+    End Sub
+
     Public Sub SetColor(ByRef ReplyColor As Color, ByRef ColorPreviewPanel As Panel)
 #If DEBUG Then
         Const TAG As String = "ColorDialog"

@@ -61,7 +61,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Crucigrama.
+        '''  Looks up a localized string similar to Crossword.
         '''</summary>
         Friend ReadOnly Property ActivityType_Crossword() As String
             Get
@@ -79,7 +79,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Ahorcado.
+        '''  Looks up a localized string similar to Hangman.
         '''</summary>
         Friend ReadOnly Property ActivityType_Hangman() As String
             Get
@@ -97,7 +97,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Preguntas abiertas.
+        '''  Looks up a localized string similar to Open questions.
         '''</summary>
         Friend ReadOnly Property ActivityType_Question_Open() As String
             Get
@@ -115,7 +115,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Preguntas con opciones.
+        '''  Looks up a localized string similar to Closed questions.
         '''</summary>
         Friend ReadOnly Property ActivityType_Question_Opts() As String
             Get
@@ -160,11 +160,22 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Referencia.
+        '''  Looks up a localized string similar to Reference.
         '''</summary>
         Friend ReadOnly Property Crossword_ColumnHeader_ReferenceText() As String
             Get
                 Return ResourceManager.GetString("Crossword_ColumnHeader_ReferenceText", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Welcome to the clean environment debug mode, it&apos;s nice to see you here!
+        '''
+        '''In this mode, all of the settings (app settings, activities, etc.) are deleted each time the main form is launched, that is, each time that SplashScreen.Load occurs..
+        '''</summary>
+        Friend ReadOnly Property Debug_CleanEnvStartup() As String
+            Get
+                Return ResourceManager.GetString("Debug_CleanEnvStartup", resourceCulture)
             End Get
         End Property
         
@@ -179,7 +190,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Las contraseñas no coinciden..
+        '''  Looks up a localized string similar to The passwords do not match..
         '''</summary>
         Friend ReadOnly Property FirstRun_PasswordsDontMatch() As String
             Get
@@ -188,7 +199,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to La contraseña es muy corta..
+        '''  Looks up a localized string similar to The password is too short..
         '''</summary>
         Friend ReadOnly Property FirstRun_PasswordTooShort() As String
             Get
@@ -197,7 +208,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Tenés que introducir un nombre..
+        '''  Looks up a localized string similar to First run.
+        '''</summary>
+        Friend ReadOnly Property FirstRun_Text() As String
+            Get
+                Return ResourceManager.GetString("FirstRun_Text", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to You must type a name..
         '''</summary>
         Friend ReadOnly Property FirstRun_UsernameRequired() As String
             Get
@@ -215,7 +235,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Información.
+        '''  Looks up a localized string similar to Information.
         '''</summary>
         Friend ReadOnly Property General_Info_Title() As String
             Get
@@ -224,7 +244,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Advertencia.
+        '''  Looks up a localized string similar to Warning.
         '''</summary>
         Friend ReadOnly Property General_Warn_Title() As String
             Get
@@ -233,11 +253,66 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to La contraseña que ingresaste es incorrecta, por favor intentálo otra vez..
+        '''  Looks up a localized string similar to English.
+        '''</summary>
+        Friend ReadOnly Property Language_English() As String
+            Get
+                Return ResourceManager.GetString("Language_English", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Español.
+        '''</summary>
+        Friend ReadOnly Property Language_Spanish() As String
+            Get
+                Return ResourceManager.GetString("Language_Spanish", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sign in.
+        '''</summary>
+        Friend ReadOnly Property Login_Text() As String
+            Get
+                Return ResourceManager.GetString("Login_Text", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The password you entered is incorrect, please try again..
         '''</summary>
         Friend ReadOnly Property Login_WrongPassword() As String
             Get
                 Return ResourceManager.GetString("Login_WrongPassword", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        '''</summary>
+        Friend ReadOnly Property Logo() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Logo", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To complete your request, all of the open forms must be closed. Close everything right now?.
+        '''</summary>
+        Friend ReadOnly Property NotifyIcon_LanguageResetWarn() As String
+            Get
+                Return ResourceManager.GetString("NotifyIcon_LanguageResetWarn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ecogames.
+        '''</summary>
+        Friend ReadOnly Property NotifyIcon_Text() As String
+            Get
+                Return ResourceManager.GetString("NotifyIcon_Text", resourceCulture)
             End Get
         End Property
         
@@ -251,7 +326,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Muy bien! Completaste una fila..
+        '''  Looks up a localized string similar to Activities.
+        '''</summary>
+        Friend ReadOnly Property Play_Activities_Text() As String
+            Get
+                Return ResourceManager.GetString("Play_Activities_Text", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Great! You got a row done..
         '''</summary>
         Friend ReadOnly Property Play_Crossword_RowDone() As String
             Get
@@ -260,7 +344,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Conseguiste {0}/{1} puntos (un {2}%)..
+        '''  Looks up a localized string similar to You got {0}/{1} points (a {2}%)..
         '''</summary>
         Friend ReadOnly Property Play_General_CompletionLevel() As String
             Get
@@ -269,7 +353,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to (vacío).
+        '''  Looks up a localized string similar to (empty).
         '''</summary>
         Friend ReadOnly Property Play_General_EmptyAnswerDescriptor() As String
             Get
@@ -278,7 +362,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Comienza la partida!.
+        '''  Looks up a localized string similar to The game begins!.
         '''</summary>
         Friend ReadOnly Property Play_General_GameBegins() As String
             Get
@@ -287,7 +371,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to No completaste la actividad, ¿querés salir de todos modos?.
+        '''  Looks up a localized string similar to You didn&apos;t complete the activity, do you really wanna quit anyways?.
         '''</summary>
         Friend ReadOnly Property Play_General_IncompleteActivityWarn() As String
             Get
@@ -296,7 +380,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Te quedaste sin intentos!.
+        '''  Looks up a localized string similar to You ran out of tries..
         '''</summary>
         Friend ReadOnly Property Play_General_NoAttempts() As String
             Get
@@ -305,7 +389,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to No conseguiste ningún punto..
+        '''  Looks up a localized string similar to You didn&apos;t get any points..
         '''</summary>
         Friend ReadOnly Property Play_General_NoCompletion() As String
             Get
@@ -314,7 +398,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Felicidades! Completaste la actividad con un puntaje perfecto..
+        '''  Looks up a localized string similar to Congratulations! You&apos;ve completed the activity with a perfect score..
         '''</summary>
         Friend ReadOnly Property Play_General_PerfectScore() As String
             Get
@@ -323,7 +407,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Perfecto!.
+        '''  Looks up a localized string similar to Perfect!.
         '''</summary>
         Friend ReadOnly Property Play_General_PerfectScore_Trim() As String
             Get
@@ -332,7 +416,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Te quedan {0} segundos..
+        '''  Looks up a localized string similar to {0} seconds remaining..
         '''</summary>
         Friend ReadOnly Property Play_General_RemainingSeconds_Plural() As String
             Get
@@ -341,7 +425,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Te queda {0} segundo..
+        '''  Looks up a localized string similar to {0} second remaining..
         '''</summary>
         Friend ReadOnly Property Play_General_RemainingSeconds_Singular() As String
             Get
@@ -350,7 +434,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Correcto!.
+        '''  Looks up a localized string similar to Right!.
         '''</summary>
         Friend ReadOnly Property Play_General_RightAnswer() As String
             Get
@@ -359,7 +443,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Uh, ¡te quedaste sin tiempo!.
+        '''  Looks up a localized string similar to Oh, you ran out of time!.
         '''</summary>
         Friend ReadOnly Property Play_General_Timedout() As String
             Get
@@ -368,7 +452,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Uh, ¡te equivocaste!.
+        '''  Looks up a localized string similar to Oh, that&apos;s wrong!.
         '''</summary>
         Friend ReadOnly Property Play_General_WrongAnswer() As String
             Get
@@ -377,7 +461,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Incorrecto! Te quedan {0} intentos..
+        '''  Looks up a localized string similar to Wrong! {0} attempts remaining..
         '''</summary>
         Friend ReadOnly Property Play_Hangman_Wrong_RemainingAttempts() As String
             Get
@@ -386,7 +470,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Tu respuesta estaba vacía y no obtuviste puntos (completaste un {0}%)..
+        '''  Looks up a localized string similar to Your answer was empty and you didn&apos;t get any points ({0}% completed)..
         '''</summary>
         Friend ReadOnly Property Play_Question_General_AutoEvalEmpty() As String
             Get
@@ -395,7 +479,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to No respondiste, ¿querés continuar de todos modos?.
+        '''  Looks up a localized string similar to You didn&apos;t answer, do you wanna continue anyways?.
         '''</summary>
         Friend ReadOnly Property Play_Question_General_AutoEvalEmptyAnswerWarn() As String
             Get
@@ -404,7 +488,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Muy bien! Lograste un {0}%..
+        '''  Looks up a localized string similar to Great! You got a {0}%..
         '''</summary>
         Friend ReadOnly Property Play_Question_General_AutoEvalRegular() As String
             Get
@@ -413,7 +497,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Excelente, ¡seguí así! Sacaste un {0}%..
+        '''  Looks up a localized string similar to Excellent, keep it up! You achieved a {0}%..
         '''</summary>
         Friend ReadOnly Property Play_Question_General_AutoEvalRight() As String
             Get
@@ -422,7 +506,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Uh! Conseguiste apenas un {0}%..
+        '''  Looks up a localized string similar to Oh! You just got a {0}%..
         '''</summary>
         Friend ReadOnly Property Play_Question_General_AutoEvalWrong() As String
             Get
@@ -431,7 +515,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡No conseguiste ningún punto! {0}% completado..
+        '''  Looks up a localized string similar to You didn&apos;t get any point! {0}% completed..
         '''</summary>
         Friend ReadOnly Property Play_Question_Open_AutoEvalNoScore() As String
             Get
@@ -440,10 +524,10 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Tu respuesta: 
+        '''  Looks up a localized string similar to Your answer: 
         '''{0}
         '''
-        '''Respuesta esperada: 
+        '''Expected answer: 
         '''{1}.
         '''</summary>
         Friend ReadOnly Property Play_Question_Open_AutoEvalResult() As String
@@ -453,7 +537,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Por favor, esperá a que la respuesta sea evaluada personalmente por el profesor..
+        '''  Looks up a localized string similar to Please, wait until your answer is verified by your teacher..
         '''</summary>
         Friend ReadOnly Property Play_Question_Open_NoAutoEvalInfo() As String
             Get
@@ -462,7 +546,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Gracias por responder!.
+        '''  Looks up a localized string similar to Thanks for replying!.
         '''</summary>
         Friend ReadOnly Property Play_Question_Open_NoAutoEvalThanks() As String
             Get
@@ -471,7 +555,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Podés responder seleccionando todas las opciones que creas correctas..
+        '''  Looks up a localized string similar to You can reply by selecting all of the right answers..
         '''</summary>
         Friend ReadOnly Property Play_Question_Opts_GeneralHelp() As String
             Get
@@ -480,7 +564,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to La evaluación automática no es totalmente precisa y puede dar resultados erróneos..
+        '''  Looks up a localized string similar to The automatic verification isn&apos;t totally accurante and might cause unwanted results..
         '''</summary>
         Friend ReadOnly Property Question_Open_AutoEvalWarn() As String
             Get
@@ -489,7 +573,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Eliminar.
+        '''  Looks up a localized string similar to Delete.
         '''</summary>
         Friend ReadOnly Property Question_Opts_DelMode() As String
             Get
@@ -498,7 +582,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Vas a eliminar esta opción, ¿estás seguro?.
+        '''  Looks up a localized string similar to You&apos;ll delete this option, are you sure?.
         '''</summary>
         Friend ReadOnly Property Question_Opts_Empty() As String
             Get
@@ -509,7 +593,7 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {0}
         '''
-        '''Cuando termines, hacé clic en &quot;Guardar&quot;..
+        '''When you&apos;re done, click &quot;Save&quot;..
         '''</summary>
         Friend ReadOnly Property Question_Opts_GeneralHelp() As String
             Get
@@ -518,7 +602,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Modificar.
+        '''  Looks up a localized string similar to Modify.
         '''</summary>
         Friend ReadOnly Property Question_Opts_ModMode() As String
             Get
@@ -527,7 +611,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to &lt;Nueva respuesta&gt;.
+        '''  Looks up a localized string similar to &lt;New answer&gt;.
         '''</summary>
         Friend ReadOnly Property Question_Opts_NewAnswer() As String
             Get
@@ -536,7 +620,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Para configurar las respuestas, hacé clic en &quot;Siguiente&quot;..
+        '''  Looks up a localized string similar to To set up the answers, click &quot;Next&quot;..
         '''</summary>
         Friend ReadOnly Property Question_Opts_NextActionHelp() As String
             Get
@@ -545,7 +629,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Para agregar una opción, hacé clic en &quot;Agregar&quot;..
+        '''  Looks up a localized string similar to To add an option, click &quot;Add&quot;..
         '''</summary>
         Friend ReadOnly Property Question_Opts_NextAnswerHelp() As String
             Get
@@ -554,7 +638,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Guardado.
+        '''  Looks up a localized string similar to Saved.
         '''</summary>
         Friend ReadOnly Property Question_Saved() As String
             Get
@@ -563,7 +647,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Agregar.
+        '''  Looks up a localized string similar to Add.
         '''</summary>
         Friend ReadOnly Property Queston_Add() As String
             Get
@@ -590,7 +674,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Actividad.
+        '''  Looks up a localized string similar to Activity.
         '''</summary>
         Friend ReadOnly Property Settings_Activity() As String
             Get
@@ -599,7 +683,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to El valor ingresado &quot;{0}&quot; está reservado para el sistema..
+        '''  Looks up a localized string similar to The entered value &quot;{0}&quot; is reserved by the system..
         '''</summary>
         Friend ReadOnly Property Settings_Crossword_IllegalStringException() As String
             Get
@@ -608,7 +692,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to No se estableció una referencia..
+        '''  Looks up a localized string similar to No references are set..
         '''</summary>
         Friend ReadOnly Property Settings_Crossword_NoReference() As String
             Get
@@ -617,7 +701,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Eliminar todo.
+        '''  Looks up a localized string similar to Delete all.
         '''</summary>
         Friend ReadOnly Property Settings_General_DeleteAllText() As String
             Get
@@ -626,7 +710,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ¡Alto ahí! Vas a borrar todo, ¿querés continuar?.
+        '''  Looks up a localized string similar to Stop there! You&apos;ll delete everything, continue?.
         '''</summary>
         Friend ReadOnly Property Settings_General_DeleteAllWarn() As String
             Get
@@ -635,7 +719,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Eliminar.
+        '''  Looks up a localized string similar to Delete.
         '''</summary>
         Friend ReadOnly Property Settings_General_DeleteText() As String
             Get
@@ -644,7 +728,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Ocurrió un error interno..
+        '''  Looks up a localized string similar to An internal error has occured..
         '''</summary>
         Friend ReadOnly Property Settings_General_Err() As String
             Get
@@ -653,7 +737,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to El índice {0} de {1} no es un número..
+        '''  Looks up a localized string similar to The index {0} of {1} isn&apos;t a number..
         '''</summary>
         Friend ReadOnly Property Settings_General_Err_Index() As String
             Get
@@ -662,7 +746,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to &lt;Nueva actividad&gt;.
+        '''  Looks up a localized string similar to &lt;New activity&gt;.
         '''</summary>
         Friend ReadOnly Property Settings_General_NewActivity() As String
             Get
@@ -671,7 +755,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to No hay ninguna actividad..
+        '''  Looks up a localized string similar to No activities found..
         '''</summary>
         Friend ReadOnly Property Settings_General_NoActivities() As String
             Get
@@ -680,11 +764,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Vas a perder tus cambios, ¿querés salir de todos modos?.
+        '''  Looks up a localized string similar to You&apos;ll loose your changes, do you wanna quit anyways?.
         '''</summary>
         Friend ReadOnly Property Settings_General_UnsavedWarn() As String
             Get
                 Return ResourceManager.GetString("Settings_General_UnsavedWarn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Settings.
+        '''</summary>
+        Friend ReadOnly Property Settings_Text() As String
+            Get
+                Return ResourceManager.GetString("Settings_Text", resourceCulture)
             End Get
         End Property
         

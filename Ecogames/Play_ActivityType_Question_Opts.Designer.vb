@@ -34,28 +34,43 @@ Partial Class Play_ActivityType_Question_Opts
         '
         'MetroLabel1
         '
-        Me.MetroLabel1.Location = New System.Drawing.Point(23, 138)
+        resources.ApplyResources(Me.MetroLabel1, "MetroLabel1")
         Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(72, 23)
-        Me.MetroLabel1.TabIndex = 0
-        Me.MetroLabel1.Text = "Pregunta"
         '
         'QuestionTextBox
         '
+        resources.ApplyResources(Me.QuestionTextBox, "QuestionTextBox")
         '
         '
         '
-        Me.QuestionTextBox.CustomButton.Image = Nothing
-        Me.QuestionTextBox.CustomButton.Location = New System.Drawing.Point(294, 1)
+        Me.QuestionTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
+        Me.QuestionTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
+        Me.QuestionTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
+        Me.QuestionTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
+        Me.QuestionTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
+        Me.QuestionTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
+        Me.QuestionTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
+        Me.QuestionTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
+        Me.QuestionTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
+        Me.QuestionTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
+        Me.QuestionTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.QuestionTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
+        Me.QuestionTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
+        Me.QuestionTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
+        Me.QuestionTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
+        Me.QuestionTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
+        Me.QuestionTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.QuestionTextBox.CustomButton.Name = ""
-        Me.QuestionTextBox.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.QuestionTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
+        Me.QuestionTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.QuestionTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.QuestionTextBox.CustomButton.TabIndex = 1
+        Me.QuestionTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
+        Me.QuestionTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
+        Me.QuestionTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.QuestionTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.QuestionTextBox.CustomButton.UseSelectable = True
-        Me.QuestionTextBox.CustomButton.Visible = False
+        Me.QuestionTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.QuestionTextBox.Lines = New String(-1) {}
-        Me.QuestionTextBox.Location = New System.Drawing.Point(23, 164)
         Me.QuestionTextBox.MaxLength = 32767
         Me.QuestionTextBox.Name = "QuestionTextBox"
         Me.QuestionTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -65,63 +80,42 @@ Partial Class Play_ActivityType_Question_Opts
         Me.QuestionTextBox.SelectionLength = 0
         Me.QuestionTextBox.SelectionStart = 0
         Me.QuestionTextBox.ShortcutsEnabled = True
-        Me.QuestionTextBox.Size = New System.Drawing.Size(316, 23)
-        Me.QuestionTextBox.TabIndex = 0
         Me.QuestionTextBox.UseSelectable = True
         Me.QuestionTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.QuestionTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'MetroLabel2
         '
-        Me.MetroLabel2.Location = New System.Drawing.Point(23, 203)
+        resources.ApplyResources(Me.MetroLabel2, "MetroLabel2")
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(72, 23)
-        Me.MetroLabel2.TabIndex = 2
-        Me.MetroLabel2.Text = "Opciones"
         '
         'VerifyButton
         '
-        Me.VerifyButton.Location = New System.Drawing.Point(222, 378)
+        resources.ApplyResources(Me.VerifyButton, "VerifyButton")
         Me.VerifyButton.Name = "VerifyButton"
-        Me.VerifyButton.Size = New System.Drawing.Size(117, 23)
-        Me.VerifyButton.TabIndex = 2
-        Me.VerifyButton.Text = "Verificar"
         Me.VerifyButton.UseSelectable = True
         '
         'HelperLabel
         '
-        Me.HelperLabel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.HelperLabel.Location = New System.Drawing.Point(20, 60)
+        resources.ApplyResources(Me.HelperLabel, "HelperLabel")
         Me.HelperLabel.Name = "HelperLabel"
-        Me.HelperLabel.Size = New System.Drawing.Size(322, 74)
-        Me.HelperLabel.TabIndex = 6
-        Me.HelperLabel.Text = "N/A"
-        Me.HelperLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'AnswersListBox
         '
+        resources.ApplyResources(Me.AnswersListBox, "AnswersListBox")
         Me.AnswersListBox.FormattingEnabled = True
-        Me.AnswersListBox.Location = New System.Drawing.Point(23, 232)
         Me.AnswersListBox.Name = "AnswersListBox"
         Me.AnswersListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.AnswersListBox.Size = New System.Drawing.Size(316, 134)
-        Me.AnswersListBox.TabIndex = 1
-        Me.AnswersListBox.Visible = False
         '
         'StatusLabel
         '
-        Me.StatusLabel.Location = New System.Drawing.Point(23, 378)
+        resources.ApplyResources(Me.StatusLabel, "StatusLabel")
         Me.StatusLabel.Name = "StatusLabel"
-        Me.StatusLabel.Size = New System.Drawing.Size(193, 23)
-        Me.StatusLabel.TabIndex = 12
-        Me.StatusLabel.Text = "N/A"
-        Me.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Play_ActivityType_Question_Opts
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(362, 412)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.AnswersListBox)
         Me.Controls.Add(Me.HelperLabel)
@@ -129,12 +123,10 @@ Partial Class Play_ActivityType_Question_Opts
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.QuestionTextBox)
         Me.Controls.Add(Me.MetroLabel1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Play_ActivityType_Question_Opts"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "Play_ActivityType_Question_Opts"
         Me.ResumeLayout(False)
 
     End Sub

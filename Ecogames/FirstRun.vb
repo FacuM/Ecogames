@@ -1,4 +1,14 @@
 ﻿Public Class FirstRun
+    Public Sub Populate()
+        For i = 0 To LanguagesDescription.Length - 1
+            LanguagePickerComboBox.Items.Add(LanguagesDescription(i))
+        Next
+
+        LanguagePickerComboBox.SelectedIndex = Array.IndexOf(SupportedLanguages, My.Settings.Language)
+
+        Text = My.Resources.FirstRun_Text
+    End Sub
+
     Private Sub ButtonEnabler()
         If SimpleLengthVerifier(UsernameTextBox, Panel3) Then
             If String.IsNullOrEmpty(PasswordTextBox.Text) And String.IsNullOrEmpty(PasswordVerifyTextBox.Text) Then
@@ -44,6 +54,7 @@
         My.Settings.FirstRun = False
         SettingsSaver()
         Hide()
+        Settings = Nothing
         Settings.Populate()
         Settings.UpdateActivities()
         Settings.Show()
@@ -56,5 +67,11 @@
 
     Private Sub FirstRun_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         StatusLabel.Text = String.Empty
+    End Sub
+
+    Private Sub LanguagePickerComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LanguagePickerComboBox.SelectedIndexChanged
+        My.Settings.Language = SupportedLanguages(LanguagePickerComboBox.SelectedIndex)
+
+        RequestUIRedraw(ConfirmationProvided:=True)
     End Sub
 End Class

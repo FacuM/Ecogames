@@ -32,30 +32,43 @@ Partial Class Login
         '
         'Label1
         '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Location = New System.Drawing.Point(20, 60)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(252, 45)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Para continuar, ingresá tu contraseña."
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PasswordTextBox
         '
+        resources.ApplyResources(Me.PasswordTextBox, "PasswordTextBox")
         '
         '
         '
-        Me.PasswordTextBox.CustomButton.Image = Nothing
-        Me.PasswordTextBox.CustomButton.Location = New System.Drawing.Point(202, 2)
+        Me.PasswordTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
+        Me.PasswordTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
+        Me.PasswordTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
+        Me.PasswordTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
+        Me.PasswordTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
+        Me.PasswordTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
+        Me.PasswordTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
+        Me.PasswordTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
+        Me.PasswordTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
+        Me.PasswordTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
+        Me.PasswordTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.PasswordTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
+        Me.PasswordTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
+        Me.PasswordTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
+        Me.PasswordTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
+        Me.PasswordTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
+        Me.PasswordTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.PasswordTextBox.CustomButton.Name = ""
-        Me.PasswordTextBox.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.PasswordTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
+        Me.PasswordTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.PasswordTextBox.CustomButton.TabIndex = 1
+        Me.PasswordTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
+        Me.PasswordTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
+        Me.PasswordTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.PasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.PasswordTextBox.CustomButton.UseSelectable = True
-        Me.PasswordTextBox.CustomButton.Visible = False
+        Me.PasswordTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.PasswordTextBox.Lines = New String(-1) {}
-        Me.PasswordTextBox.Location = New System.Drawing.Point(23, 108)
         Me.PasswordTextBox.MaxLength = 64
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
@@ -64,8 +77,6 @@ Partial Class Login
         Me.PasswordTextBox.SelectionLength = 0
         Me.PasswordTextBox.SelectionStart = 0
         Me.PasswordTextBox.ShortcutsEnabled = True
-        Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
-        Me.PasswordTextBox.TabIndex = 0
         Me.PasswordTextBox.UseSelectable = True
         Me.PasswordTextBox.UseSystemPasswordChar = True
         Me.PasswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -73,51 +84,39 @@ Partial Class Login
         '
         'ContinueButton
         '
-        Me.ContinueButton.Enabled = False
-        Me.ContinueButton.Location = New System.Drawing.Point(77, 150)
+        resources.ApplyResources(Me.ContinueButton, "ContinueButton")
         Me.ContinueButton.Name = "ContinueButton"
-        Me.ContinueButton.Size = New System.Drawing.Size(93, 23)
-        Me.ContinueButton.TabIndex = 1
-        Me.ContinueButton.Text = "Continuar"
         Me.ContinueButton.UseSelectable = True
         '
         'QuitButton
         '
+        resources.ApplyResources(Me.QuitButton, "QuitButton")
         Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.QuitButton.Location = New System.Drawing.Point(176, 150)
         Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(93, 23)
-        Me.QuitButton.TabIndex = 2
-        Me.QuitButton.Text = "Cancelar"
         Me.QuitButton.UseSelectable = True
         '
         'PasswordStatusPanel
         '
+        resources.ApplyResources(Me.PasswordStatusPanel, "PasswordStatusPanel")
         Me.PasswordStatusPanel.BackColor = System.Drawing.Color.Red
-        Me.PasswordStatusPanel.Location = New System.Drawing.Point(249, 108)
         Me.PasswordStatusPanel.Name = "PasswordStatusPanel"
-        Me.PasswordStatusPanel.Size = New System.Drawing.Size(20, 20)
-        Me.PasswordStatusPanel.TabIndex = 13
         '
         'Login
         '
         Me.AcceptButton = Me.ContinueButton
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.QuitButton
-        Me.ClientSize = New System.Drawing.Size(292, 195)
         Me.Controls.Add(Me.PasswordStatusPanel)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.ContinueButton)
         Me.Controls.Add(Me.PasswordTextBox)
         Me.Controls.Add(Me.Label1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Login"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "Iniciá sesión"
         Me.ResumeLayout(False)
 
     End Sub

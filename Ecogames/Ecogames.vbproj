@@ -77,6 +77,8 @@
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
+    <DefineConstants>
+    </DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -183,6 +185,11 @@
     <Compile Include="Play_Activities.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Resources.es.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +221,39 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ActivityType_Crossword.es.resx">
+      <DependentUpon>ActivityType_Crossword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivityType_Hangman.es.resx">
+      <DependentUpon>ActivityType_Hangman.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivityType_Question_Open.es.resx">
+      <DependentUpon>ActivityType_Question_Open.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivityType_Question_Opts.es.resx">
+      <DependentUpon>ActivityType_Question_Opts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstRun.es.resx">
+      <DependentUpon>FirstRun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.es.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Play_Activities.es.resx">
+      <DependentUpon>Play_Activities.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Play_ActivityType_Crossword.es.resx">
+      <DependentUpon>Play_ActivityType_Crossword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Play_ActivityType_Hangman.es.resx">
+      <DependentUpon>Play_ActivityType_Hangman.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Play_ActivityType_Question_Open.es.resx">
+      <DependentUpon>Play_ActivityType_Question_Open.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Play_ActivityType_Question_Opts.es.resx">
+      <DependentUpon>Play_ActivityType_Question_Opts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Play_ActivityType_Question_Opts.resx">
       <DependentUpon>Play_ActivityType_Question_Opts.vb</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +287,14 @@
     <EmbeddedResource Include="Play_Activities.resx">
       <DependentUpon>Play_Activities.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.es.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.es.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.vb</DependentUpon>
     </EmbeddedResource>
@@ -271,7 +319,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -281,14 +331,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
-    <EmbeddedResource Include="Resources\clock_tic.wav" />
-    <EmbeddedResource Include="Resources\clock_tac.wav" />
-    <EmbeddedResource Include="Resources\right.wav" />
-    <EmbeddedResource Include="Resources\wrong.wav" />
-    <EmbeddedResource Include="Resources\regular.wav" />
-    <EmbeddedResource Include="Resources\notification.wav" />
-    <EmbeddedResource Include="Resources\completed.wav" />
-    <EmbeddedResource Include="Resources\perfect.wav" />
+    <EmbeddedResource Include="Resources\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\clock_tic.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\clock_tac.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\right.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\wrong.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\regular.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\notification.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\completed.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\perfect.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivityType_Crossword" xml:space="preserve">
+    <value>Crucigrama</value>
+  </data>
+  <data name="ActivityType_Hangman" xml:space="preserve">
+    <value>Ahorcado</value>
+  </data>
+  <data name="ActivityType_Question_Open" xml:space="preserve">
+    <value>Preguntas abiertas</value>
+  </data>
+  <data name="ActivityType_Question_Opts" xml:space="preserve">
+    <value>Preguntas con opciones</value>
+  </data>
+  <data name="Crossword_ColumnHeader_ReferenceText" xml:space="preserve">
+    <value>Referencia</value>
+  </data>
+  <data name="FirstRun_PasswordsDontMatch" xml:space="preserve">
+    <value>Las contraseñas no coinciden.</value>
+  </data>
+  <data name="FirstRun_PasswordTooShort" xml:space="preserve">
+    <value>La contraseña es muy corta.</value>
+  </data>
+  <data name="FirstRun_UsernameRequired" xml:space="preserve">
+    <value>Tenés que introducir un nombre.</value>
+  </data>
+  <data name="General_Error_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="General_Info_Title" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="General_Warn_Title" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="Login_WrongPassword" xml:space="preserve">
+    <value>La contraseña que ingresaste es incorrecta, por favor intentálo otra vez.</value>
+  </data>
+  <data name="Play_Crossword_RowDone" xml:space="preserve">
+    <value>¡Muy bien! Completaste una fila.</value>
+  </data>
+  <data name="Play_General_CompletionLevel" xml:space="preserve">
+    <value>Conseguiste {0}/{1} puntos (un {2}%).</value>
+  </data>
+  <data name="Play_General_EmptyAnswerDescriptor" xml:space="preserve">
+    <value>(vacío)</value>
+  </data>
+  <data name="Play_General_GameBegins" xml:space="preserve">
+    <value>¡Comienza la partida!</value>
+  </data>
+  <data name="Play_General_IncompleteActivityWarn" xml:space="preserve">
+    <value>No completaste la actividad, ¿querés salir de todos modos?</value>
+  </data>
+  <data name="Play_General_NoAttempts" xml:space="preserve">
+    <value>¡Te quedaste sin intentos!</value>
+  </data>
+  <data name="Play_General_NoCompletion" xml:space="preserve">
+    <value>No conseguiste ningún punto.</value>
+  </data>
+  <data name="Play_General_PerfectScore" xml:space="preserve">
+    <value>¡Felicidades! Completaste la actividad con un puntaje perfecto.</value>
+  </data>
+  <data name="Play_General_PerfectScore_Trim" xml:space="preserve">
+    <value>¡Perfecto!</value>
+  </data>
+  <data name="Play_General_RemainingSeconds_Plural" xml:space="preserve">
+    <value>Te quedan {0} segundos.</value>
+  </data>
+  <data name="Play_General_RemainingSeconds_Singular" xml:space="preserve">
+    <value>Te queda {0} segundo.</value>
+  </data>
+  <data name="Play_General_RightAnswer" xml:space="preserve">
+    <value>¡Correcto!</value>
+  </data>
+  <data name="Play_General_Timedout" xml:space="preserve">
+    <value>Uh, ¡te quedaste sin tiempo!</value>
+  </data>
+  <data name="Play_General_WrongAnswer" xml:space="preserve">
+    <value>Uh, ¡te equivocaste!</value>
+  </data>
+  <data name="Play_Hangman_Wrong_RemainingAttempts" xml:space="preserve">
+    <value>¡Incorrecto! Te quedan {0} intentos.</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalEmpty" xml:space="preserve">
+    <value>Tu respuesta estaba vacía y no obtuviste puntos (completaste un {0}%).</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalEmptyAnswerWarn" xml:space="preserve">
+    <value>No respondiste, ¿querés continuar de todos modos?</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalRegular" xml:space="preserve">
+    <value>¡Muy bien! Lograste un {0}%.</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalRight" xml:space="preserve">
+    <value>Excelente, ¡seguí así! Sacaste un {0}%.</value>
+  </data>
+  <data name="Play_Question_General_AutoEvalWrong" xml:space="preserve">
+    <value>¡Uh! Conseguiste apenas un {0}%.</value>
+  </data>
+  <data name="Play_Question_Open_AutoEvalNoScore" xml:space="preserve">
+    <value>¡No conseguiste ningún punto! {0}% completado.</value>
+  </data>
+  <data name="Play_Question_Open_AutoEvalResult" xml:space="preserve">
+    <value>Tu respuesta: 
+{0}
+
+Respuesta esperada: 
+{1}</value>
+  </data>
+  <data name="Play_Question_Open_NoAutoEvalInfo" xml:space="preserve">
+    <value>Por favor, esperá a que la respuesta sea evaluada personalmente por el profesor.</value>
+  </data>
+  <data name="Play_Question_Open_NoAutoEvalThanks" xml:space="preserve">
+    <value>¡Gracias por responder!</value>
+  </data>
+  <data name="Play_Question_Opts_GeneralHelp" xml:space="preserve">
+    <value>Podés responder seleccionando todas las opciones que creas correctas.</value>
+  </data>
+  <data name="Question_Open_AutoEvalWarn" xml:space="preserve">
+    <value>La evaluación automática no es totalmente precisa y puede dar resultados erróneos.</value>
+  </data>
+  <data name="Question_Opts_DelMode" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Question_Opts_Empty" xml:space="preserve">
+    <value>Vas a eliminar esta opción, ¿estás seguro?</value>
+  </data>
+  <data name="Question_Opts_GeneralHelp" xml:space="preserve">
+    <value>{0}
+
+Cuando termines, hacé clic en "Guardar".</value>
+  </data>
+  <data name="Question_Opts_ModMode" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="Question_Opts_NewAnswer" xml:space="preserve">
+    <value>&lt;Nueva respuesta&gt;</value>
+  </data>
+  <data name="Question_Opts_NextActionHelp" xml:space="preserve">
+    <value>Para configurar las respuestas, hacé clic en "Siguiente".</value>
+  </data>
+  <data name="Question_Opts_NextAnswerHelp" xml:space="preserve">
+    <value>Para agregar una opción, hacé clic en "Agregar".</value>
+  </data>
+  <data name="Question_Saved" xml:space="preserve">
+    <value>Guardado</value>
+  </data>
+  <data name="Queston_Add" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="Settings_Activity" xml:space="preserve">
+    <value>Actividad</value>
+  </data>
+  <data name="Settings_Crossword_IllegalStringException" xml:space="preserve">
+    <value>El valor ingresado "{0}" está reservado para el sistema.</value>
+  </data>
+  <data name="Settings_Crossword_NoReference" xml:space="preserve">
+    <value>No se estableció una referencia.</value>
+  </data>
+  <data name="Settings_General_DeleteAllText" xml:space="preserve">
+    <value>Eliminar todo</value>
+  </data>
+  <data name="Settings_General_DeleteAllWarn" xml:space="preserve">
+    <value>¡Alto ahí! Vas a borrar todo, ¿querés continuar?</value>
+  </data>
+  <data name="Settings_General_DeleteText" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Settings_General_Err" xml:space="preserve">
+    <value>Ocurrió un error interno.</value>
+  </data>
+  <data name="Settings_General_Err_Index" xml:space="preserve">
+    <value>El índice {0} de {1} no es un número.</value>
+  </data>
+  <data name="Settings_General_NewActivity" xml:space="preserve">
+    <value>&lt;Nueva actividad&gt;</value>
+  </data>
+  <data name="Settings_General_NoActivities" xml:space="preserve">
+    <value>No hay ninguna actividad.</value>
+  </data>
+  <data name="Settings_General_UnsavedWarn" xml:space="preserve">
+    <value>Vas a perder tus cambios, ¿querés salir de todos modos?</value>
+  </data>
+  <data name="NotifyIcon_LanguageResetWarn" xml:space="preserve">
+    <value>Para completar tu solicitud, todos los formularios abiertos deben cerrarse. ¿Cerrar todo ahora?</value>
+  </data>
+  <data name="FirstRun_Text" xml:space="preserve">
+    <value>Primer inicio</value>
+  </data>
+  <data name="Login_Text" xml:space="preserve">
+    <value>Iniciá sesión</value>
+  </data>
+  <data name="Play_Activities_Text" xml:space="preserve">
+    <value>Actividades</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="Debug_CleanEnvStartup" xml:space="preserve">
+    <value>Bievenido al modo de depuración limpia, ¡es un placer verte por acá!
+
+En este modo, todas las configuraciones (ajustes, actividades, etc.) son eliminadas cada vez que el formulario principal es lanzado, o sea, cuando SplashScreen.Load sucede.</value>
+  </data>
+</root>

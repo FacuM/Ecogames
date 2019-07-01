@@ -22,6 +22,8 @@ Public Class Settings
         GetColor(My.Settings.UserRepCust2, Panel7)
         GetColor(My.Settings.UserRepCust3, Panel8)
 
+        Text = My.Resources.Settings_Text
+
 #If DEBUG Then
         LogD(Me, "Done.")
 #End If

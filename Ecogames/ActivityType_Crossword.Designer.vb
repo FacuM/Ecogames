@@ -40,114 +40,80 @@ Partial Class ActivityType_Crossword
         '
         'DataGridView1
         '
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(20, 60)
+        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(639, 315)
-        Me.DataGridView1.TabIndex = 0
         '
         'GroupBox1
         '
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.Panel1)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupBox1.Location = New System.Drawing.Point(20, 375)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(639, 55)
-        Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Opciones"
         '
         'Panel2
         '
+        resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.ColumnCountLabel)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.HorizontalScrollbarBarColor = True
         Me.Panel2.HorizontalScrollbarHighlightOnWheel = False
         Me.Panel2.HorizontalScrollbarSize = 10
-        Me.Panel2.Location = New System.Drawing.Point(3, 16)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 36)
-        Me.Panel2.TabIndex = 27
         Me.Panel2.VerticalScrollbarBarColor = True
         Me.Panel2.VerticalScrollbarHighlightOnWheel = False
         Me.Panel2.VerticalScrollbarSize = 10
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(9, 4)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 20)
-        Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Columnas: "
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ColumnCountLabel
         '
-        Me.ColumnCountLabel.Location = New System.Drawing.Point(95, 4)
+        resources.ApplyResources(Me.ColumnCountLabel, "ColumnCountLabel")
         Me.ColumnCountLabel.Name = "ColumnCountLabel"
-        Me.ColumnCountLabel.Size = New System.Drawing.Size(102, 20)
-        Me.ColumnCountLabel.TabIndex = 21
-        Me.ColumnCountLabel.Text = "0"
-        Me.ColumnCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel1
         '
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Controls.Add(Me.AddColumn)
         Me.Panel1.Controls.Add(Me.SaveActivity)
         Me.Panel1.Controls.Add(Me.RemoveColumn)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.HorizontalScrollbarBarColor = True
         Me.Panel1.HorizontalScrollbarHighlightOnWheel = False
         Me.Panel1.HorizontalScrollbarSize = 10
-        Me.Panel1.Location = New System.Drawing.Point(331, 16)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(305, 36)
-        Me.Panel1.TabIndex = 26
         Me.Panel1.VerticalScrollbarBarColor = True
         Me.Panel1.VerticalScrollbarHighlightOnWheel = False
         Me.Panel1.VerticalScrollbarSize = 10
         '
         'AddColumn
         '
-        Me.AddColumn.Location = New System.Drawing.Point(6, 3)
+        resources.ApplyResources(Me.AddColumn, "AddColumn")
         Me.AddColumn.Name = "AddColumn"
-        Me.AddColumn.Size = New System.Drawing.Size(111, 23)
-        Me.AddColumn.TabIndex = 1
-        Me.AddColumn.Text = "Agregar columna"
         Me.AddColumn.UseSelectable = True
         '
         'SaveActivity
         '
-        Me.SaveActivity.Enabled = False
-        Me.SaveActivity.Location = New System.Drawing.Point(240, 3)
+        resources.ApplyResources(Me.SaveActivity, "SaveActivity")
         Me.SaveActivity.Name = "SaveActivity"
-        Me.SaveActivity.Size = New System.Drawing.Size(57, 23)
-        Me.SaveActivity.TabIndex = 3
-        Me.SaveActivity.Text = "Guardar"
         Me.SaveActivity.UseSelectable = True
         '
         'RemoveColumn
         '
-        Me.RemoveColumn.Location = New System.Drawing.Point(123, 3)
+        resources.ApplyResources(Me.RemoveColumn, "RemoveColumn")
         Me.RemoveColumn.Name = "RemoveColumn"
-        Me.RemoveColumn.Size = New System.Drawing.Size(111, 23)
-        Me.RemoveColumn.TabIndex = 2
-        Me.RemoveColumn.Text = "Remover columna"
         Me.RemoveColumn.UseSelectable = True
         '
         'ActivityType_Crossword
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(679, 450)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ActivityType_Crossword"
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
-        Me.Text = "ActivityType_Crossword"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
