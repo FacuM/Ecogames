@@ -171,7 +171,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Welcome to the clean environment debug mode, it&apos;s nice to see you here!
         '''
-        '''In this mode, all of the settings (app settings, activities, etc.) are deleted each time the main form is launched, that is, each time that SplashScreen.Load occurs..
+        '''In this mode, all of the settings (app settings, activities, etc.) are deleted each time the main form is launched, that is, each time that SplashScreen.Load occurs.
+        '''
+        '''If you&apos;re testing a translations set, you might not want the language to go back to defaults. To prevent such behavior, make sure that you&apos;re building with the following constants defined: DEBUG, DEBUG_CLEAN=True and KEEP_LANG=True..
         '''</summary>
         Friend ReadOnly Property Debug_CleanEnvStartup() As String
             Get
@@ -186,6 +188,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("drawing", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to No secret word entered, you won&apos;t be able to recover your password. Continue anyways?.
+        '''</summary>
+        Friend ReadOnly Property FirstRun_EmptySecretWordWarn() As String
+            Get
+                Return ResourceManager.GetString("FirstRun_EmptySecretWordWarn", resourceCulture)
             End Get
         End Property
         
@@ -208,7 +219,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to First run.
+        '''  Looks up a localized string similar to Sign up.
         '''</summary>
         Friend ReadOnly Property FirstRun_Text() As String
             Get
@@ -271,11 +282,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to You can&apos;t keep trying, the application will now close..
+        '''</summary>
+        Friend ReadOnly Property Login_RecoveryMode_NoAttempts() As String
+            Get
+                Return ResourceManager.GetString("Login_RecoveryMode_NoAttempts", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To recover your password, type the secret word in the box below..
+        '''</summary>
+        Friend ReadOnly Property Login_RecoveryModeHelper() As String
+            Get
+                Return ResourceManager.GetString("Login_RecoveryModeHelper", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to That&apos;s not the right word, {0} attempts remaining..
+        '''</summary>
+        Friend ReadOnly Property Login_RecoveryModeWrongWord() As String
+            Get
+                Return ResourceManager.GetString("Login_RecoveryModeWrongWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sign in.
         '''</summary>
         Friend ReadOnly Property Login_Text() As String
             Get
                 Return ResourceManager.GetString("Login_Text", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Recovery.
+        '''</summary>
+        Friend ReadOnly Property Login_Text_RecoveryMode() As String
+            Get
+                Return ResourceManager.GetString("Login_Text_RecoveryMode", resourceCulture)
             End Get
         End Property
         

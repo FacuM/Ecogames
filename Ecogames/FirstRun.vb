@@ -40,7 +40,7 @@
         End If
     End Sub
 
-    Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
+    Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         Close()
     End Sub
 
@@ -49,16 +49,28 @@
     End Sub
 
     Private Sub ContinueButton_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
-        My.Settings.UserName = UsernameTextBox.Text
-        My.Settings.UserPassword = PasswordVerifyTextBox.Text
-        My.Settings.FirstRun = False
-        SettingsSaver()
-        Hide()
-        Settings = Nothing
-        Settings.Populate()
-        Settings.UpdateActivities()
-        Settings.Show()
-        Close()
+        Dim ContinueSignup As Boolean = False
+        If SecurityWordTextBox.Text = String.Empty Then
+            If MessageBox.Show(My.Resources.FirstRun_EmptySecretWordWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
+                ContinueSignup = True
+            End If
+        Else
+            My.Settings.SecurityWord = SecurityWordTextBox.Text
+            ContinueSignup = True
+        End If
+
+        If ContinueSignup Then
+            My.Settings.UserName = UsernameTextBox.Text
+            My.Settings.UserPassword = PasswordVerifyTextBox.Text
+            My.Settings.FirstRun = False
+            SettingsSaver()
+            Hide()
+            Settings = Nothing
+            Settings.Populate()
+            Settings.UpdateActivities()
+            Settings.Show()
+            Close()
+        End If
     End Sub
 
     Private Sub UsernameTextBox_TextChanged(sender As Object, e As EventArgs) Handles UsernameTextBox.TextChanged
@@ -73,5 +85,9 @@
         My.Settings.Language = SupportedLanguages(LanguagePickerComboBox.SelectedIndex)
 
         RequestUIRedraw(ConfirmationProvided:=True)
+    End Sub
+
+    Private Sub SecurityWordTextBox_TextChanged(sender As Object, e As EventArgs) Handles SecurityWordTextBox.TextChanged
+        SimpleLengthVerifier(SecurityWordTextBox, Panel4)
     End Sub
 End Class

@@ -14,6 +14,7 @@
     Public Const HangmanMaximumAttemptsPerCharacter As Integer = 15
     Public Const HangmanSeparator As Char = "_"c
     Public Const DefaultScoreMultiplier As Integer = 10
+    Public Const MaximumRecoveryAttempts As Integer = 3
     Public Const SpaceChar As Char = " "c
     Public Const DotChar As Char = "."c
     Public Const SemicolonChar As Char = ";"c
@@ -60,6 +61,7 @@
         "yours",
         "'s"
     }
+    Public RecoveryMode As Boolean = False
 
     ' Local
     Private Const MinimumPasswordLength As Integer = 8
@@ -92,16 +94,25 @@
     Public Function SelfTest() As Boolean
         Const TAG = "SelfTest"
 
-#If KEEPLANG Then
+#If KEEP_LANG Then
         Dim LanguageBackup As String = My.Settings.Language
 #End If
 #If DEBUG_CLEAN Then
         My.Settings.Reset()
         SettingsSaver()
 #End If
-#If KEEPLANG Then
+#If KEEP_LANG Then
         My.Settings.Language = LanguageBackup
 #End If
+
+        If RecoveryMode Then
+            ' Recovery sequence (lost password).
+            My.Settings.UserName = Nothing
+            My.Settings.UserPassword = Nothing
+            My.Settings.SecurityWord = Nothing
+            My.Settings.FirstRun = True
+            SettingsSaver()
+        End If
 
         ' In order of appearance.
         If MaximumCrosswordXIndex < 1 Then
@@ -224,18 +235,18 @@
     Public Function SimpleLengthVerifier(ByRef InputTextBox As MetroFramework.Controls.MetroTextBox, ByRef InputPanel As Panel) As Boolean
 #If DEBUG Then
         Const TAG = "SimpleLengthVerifier"
-        LogD(TAG, "Verifying length Of " & InputTextBox.Name & ", should be greater than " & MinimumSimpleLength & "...")
+        LogD(TAG, "Verifying length of " & InputTextBox.Name & ", should be greater than " & MinimumSimpleLength & "...")
 #End If
         If InputTextBox.Text.Length >= MinimumSimpleLength Then
             InputPanel.BackColor = Color.LimeGreen
 #If DEBUG Then
-            LogD(TAG, "Verification Of " & InputTextBox.Name & " passed (length = " & InputTextBox.Text.Length & ").")
+            LogD(TAG, "Verification of " & InputTextBox.Name & " passed (length = " & InputTextBox.Text.Length & ").")
 #End If
             Return True
         Else
             InputPanel.BackColor = Color.Red
 #If DEBUG Then
-            LogD(TAG, "Verification Of " & InputTextBox.Name & " failed (length = " & InputTextBox.Text.Length & ").")
+            LogD(TAG, "Verification of " & InputTextBox.Name & " failed (length = " & InputTextBox.Text.Length & ").")
 #End If
             Return False
         End If
@@ -362,7 +373,7 @@
         RequestUIRedraw()
     End Sub
 
-    Private NotifyIcon As NotifyIcon = New NotifyIcon()
+    Public NotifyIcon As NotifyIcon = New NotifyIcon()
     Private ContextMenuStrip As ContextMenuStrip = New ContextMenuStrip()
     Public Sub PopulateNotifyIcon()
         If NotifyIcon.Icon IsNot Nothing Then
@@ -411,6 +422,18 @@
         Next
         SplashScreen.SeparateThreadBusy = False
     End Sub
+
+    Public Sub Shutdown()
+        Const TAG = "Shutdown"
+        For i = My.Application.OpenForms.Count - 1 To 0 Step -1
+            Dim Form As Form = My.Application.OpenForms(i)
+#If DEBUG Then
+            LogD(TAG, "Closing """ & Form.Name & """...")
+#End If
+            Form.Close()
+        Next
+    End Sub
+
     Public Sub RequestUIRedraw(ByVal Optional ConfirmationProvided As Boolean = False)
         If ConfirmationProvided Then
             Restart()

@@ -22735,10 +22735,12 @@ When you're done, click "Save".</value>
   <data name="Debug_CleanEnvStartup" xml:space="preserve">
     <value>Welcome to the clean environment debug mode, it's nice to see you here!
 
-In this mode, all of the settings (app settings, activities, etc.) are deleted each time the main form is launched, that is, each time that SplashScreen.Load occurs.</value>
+In this mode, all of the settings (app settings, activities, etc.) are deleted each time the main form is launched, that is, each time that SplashScreen.Load occurs.
+
+If you're testing a translations set, you might not want the language to go back to defaults. To prevent such behavior, make sure that you're building with the following constants defined: DEBUG, DEBUG_CLEAN=True and KEEP_LANG=True.</value>
   </data>
   <data name="FirstRun_Text" xml:space="preserve">
-    <value>First run</value>
+    <value>Sign up</value>
   </data>
   <data name="Login_Text" xml:space="preserve">
     <value>Sign in</value>
@@ -22748,5 +22750,20 @@ In this mode, all of the settings (app settings, activities, etc.) are deleted e
   </data>
   <data name="Settings_Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="FirstRun_EmptySecretWordWarn" xml:space="preserve">
+    <value>No secret word entered, you won't be able to recover your password. Continue anyways?</value>
+  </data>
+  <data name="Login_RecoveryModeHelper" xml:space="preserve">
+    <value>To recover your password, type the secret word in the box below.</value>
+  </data>
+  <data name="Login_RecoveryModeWrongWord" xml:space="preserve">
+    <value>That's not the right word, {0} attempts remaining.</value>
+  </data>
+  <data name="Login_RecoveryMode_NoAttempts" xml:space="preserve">
+    <value>You can't keep trying, the application will now close.</value>
+  </data>
+  <data name="Login_Text_RecoveryMode" xml:space="preserve">
+    <value>Recovery</value>
   </data>
 </root>

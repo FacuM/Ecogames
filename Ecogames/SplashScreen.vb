@@ -28,6 +28,9 @@
         Ready = False
 
         If SelfTest() Then ' the self test passes, keep going.
+#If DEBUG And DEBUG_CLEAN Then
+            MessageBox.Show(My.Resources.Debug_CleanEnvStartup, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+#End If
             PopulateNotifyIcon()
 
             If My.Settings.FirstRun Then

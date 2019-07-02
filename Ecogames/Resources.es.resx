@@ -301,7 +301,7 @@ Cuando termines, hacé clic en "Guardar".</value>
     <value>Para completar tu solicitud, todos los formularios abiertos deben cerrarse. ¿Cerrar todo ahora?</value>
   </data>
   <data name="FirstRun_Text" xml:space="preserve">
-    <value>Primer inicio</value>
+    <value>Registráte</value>
   </data>
   <data name="Login_Text" xml:space="preserve">
     <value>Iniciá sesión</value>
@@ -315,6 +315,23 @@ Cuando termines, hacé clic en "Guardar".</value>
   <data name="Debug_CleanEnvStartup" xml:space="preserve">
     <value>Bievenido al modo de depuración limpia, ¡es un placer verte por acá!
 
-En este modo, todas las configuraciones (ajustes, actividades, etc.) son eliminadas cada vez que el formulario principal es lanzado, o sea, cuando SplashScreen.Load sucede.</value>
+En este modo, todas las configuraciones (ajustes, actividades, etc.) son eliminadas cada vez que el formulario principal es lanzado, o sea, cuando SplashScreen.Load sucede.
+
+Si estás probando un conjunto de traducciones, puede que no quieras que el lenguaje vuelva a la selección por defecto. Para prevenir ese comportamiento, aseguráte de que estás compilando con las siguientes constantes y que están definidas con los valores indicados: DEBUG, DEBUG_CLEAN=True y KEEP_LANG=True.</value>
+  </data>
+  <data name="FirstRun_EmptySecretWordWarn" xml:space="preserve">
+    <value>No pusiste ninguna palabra secreta, si continuás, la recuperación de contraseña no va a estar disponible. ¿Querés continuar de todos modos?</value>
+  </data>
+  <data name="Login_RecoveryModeHelper" xml:space="preserve">
+    <value>Para recuperar tu contraseña, escribí la palabra secreta en el campo de abajo.</value>
+  </data>
+  <data name="Login_RecoveryModeWrongWord" xml:space="preserve">
+    <value>Esa no es la palabra correcta, te quedan {0} intentos.</value>
+  </data>
+  <data name="Login_RecoveryMode_NoAttempts" xml:space="preserve">
+    <value>Ya no podés intentarlo más, la aplicación va a cerrarse.</value>
+  </data>
+  <data name="Login_Text_RecoveryMode" xml:space="preserve">
+    <value>Recuperación</value>
   </data>
 </root>

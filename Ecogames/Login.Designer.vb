@@ -23,17 +23,19 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
-        Me.Label1 = New MetroFramework.Controls.MetroLabel()
+        Me.HelperLabel = New MetroFramework.Controls.MetroLabel()
         Me.PasswordTextBox = New MetroFramework.Controls.MetroTextBox()
         Me.ContinueButton = New MetroFramework.Controls.MetroButton()
         Me.QuitButton = New MetroFramework.Controls.MetroButton()
         Me.PasswordStatusPanel = New System.Windows.Forms.Panel()
+        Me.ForgotPasswordLink = New MetroFramework.Controls.MetroLink()
         Me.SuspendLayout()
         '
-        'Label1
+        'HelperLabel
         '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
+        resources.ApplyResources(Me.HelperLabel, "HelperLabel")
+        Me.HelperLabel.Name = "HelperLabel"
+        Me.HelperLabel.WrapToLine = True
         '
         'PasswordTextBox
         '
@@ -85,6 +87,7 @@ Partial Class Login
         'ContinueButton
         '
         resources.ApplyResources(Me.ContinueButton, "ContinueButton")
+        Me.ContinueButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ContinueButton.Name = "ContinueButton"
         Me.ContinueButton.UseSelectable = True
         '
@@ -101,17 +104,24 @@ Partial Class Login
         Me.PasswordStatusPanel.BackColor = System.Drawing.Color.Red
         Me.PasswordStatusPanel.Name = "PasswordStatusPanel"
         '
+        'ForgotPasswordLink
+        '
+        resources.ApplyResources(Me.ForgotPasswordLink, "ForgotPasswordLink")
+        Me.ForgotPasswordLink.Name = "ForgotPasswordLink"
+        Me.ForgotPasswordLink.UseSelectable = True
+        '
         'Login
         '
         Me.AcceptButton = Me.ContinueButton
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.QuitButton
+        Me.Controls.Add(Me.ForgotPasswordLink)
         Me.Controls.Add(Me.PasswordStatusPanel)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.ContinueButton)
         Me.Controls.Add(Me.PasswordTextBox)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.HelperLabel)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Login"
@@ -121,8 +131,9 @@ Partial Class Login
 
     End Sub
     Friend WithEvents PasswordTextBox As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents HelperLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents ContinueButton As MetroFramework.Controls.MetroButton
     Friend WithEvents QuitButton As MetroFramework.Controls.MetroButton
     Friend WithEvents PasswordStatusPanel As System.Windows.Forms.Panel
+    Friend WithEvents ForgotPasswordLink As MetroFramework.Controls.MetroLink
 End Class
