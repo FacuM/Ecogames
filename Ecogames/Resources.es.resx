@@ -322,6 +322,9 @@ Si estás probando un conjunto de traducciones, puede que no quieras que el leng
   <data name="FirstRun_EmptySecretWordWarn" xml:space="preserve">
     <value>No pusiste ninguna palabra secreta, si continuás, la recuperación de contraseña no va a estar disponible. ¿Querés continuar de todos modos?</value>
   </data>
+  <data name="Login_HelperText" xml:space="preserve">
+    <value>Para continuar, ingresá tu contraseña.</value>
+  </data>
   <data name="Login_RecoveryModeHelper" xml:space="preserve">
     <value>Para recuperar tu contraseña, escribí la palabra secreta en el campo de abajo.</value>
   </data>

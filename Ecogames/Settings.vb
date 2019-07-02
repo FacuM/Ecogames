@@ -201,6 +201,10 @@ Public Class Settings
             ModifyActivity.Visible = True
             DeleteActivity.Visible = True
             AddActivity.Visible = False
+
+            SettingsActivityName.Enabled = False
+            SettingsActivityType.Enabled = False
+            SettingsActivityDescription.Enabled = False
         ElseIf ActivityListBox.SelectedIndex = ActivityListBox.Items.Count - 1 Then
             SettingsActivityDescription.Enabled = True
             SettingsActivityDescription.Text = ""

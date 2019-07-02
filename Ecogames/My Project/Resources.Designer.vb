@@ -282,6 +282,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to To keep going, type your password..
+        '''</summary>
+        Friend ReadOnly Property Login_HelperText() As String
+            Get
+                Return ResourceManager.GetString("Login_HelperText", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to You can&apos;t keep trying, the application will now close..
         '''</summary>
         Friend ReadOnly Property Login_RecoveryMode_NoAttempts() As String

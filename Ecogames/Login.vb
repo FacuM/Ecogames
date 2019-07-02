@@ -14,6 +14,7 @@
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         RecoveryMode = False
         Close()
+        Dispose()
     End Sub
 
     Private Sub ContinueButton_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
@@ -50,12 +51,10 @@
         End If
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Login_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Text = My.Resources.Login_Text
         PasswordTextBox.Text = String.Empty
-    End Sub
-
-    Private Sub Login_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        HelperLabel.Text = My.Resources.Login_HelperText
         ForgotPasswordLink.Visible = (My.Settings.SecurityWord <> String.Empty)
     End Sub
 

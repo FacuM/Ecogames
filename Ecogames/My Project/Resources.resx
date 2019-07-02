@@ -22760,6 +22760,9 @@ If you're testing a translations set, you might not want the language to go back
   <data name="Login_RecoveryModeWrongWord" xml:space="preserve">
     <value>That's not the right word, {0} attempts remaining.</value>
   </data>
+  <data name="Login_HelperText" xml:space="preserve">
+    <value>To keep going, type your password.</value>
+  </data>
   <data name="Login_RecoveryMode_NoAttempts" xml:space="preserve">
     <value>You can't keep trying, the application will now close.</value>
   </data>
