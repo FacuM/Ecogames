@@ -1,7 +1,9 @@
+[English (international)](README.en.md)
 
 Ecogames
 ========
 Ecogames es un juego educativo moderno tipo trivia pensado para realizar actividades sobre economía.
+
 
 Requisitos
 -------------
