@@ -1,6 +1,7 @@
 ﻿Public NotInheritable Class SplashScreen
     Public SeparateThreadBusy As Boolean = False
     Private Ready As Boolean = False
+
     Private Sub LoadNextScreen()
         If Ready And Not SeparateThreadBusy Then
             UseWaitCursor = True
@@ -70,7 +71,6 @@
 
         'Copyright info
         Copyright.Text = My.Application.Info.Copyright
-
 
     End Sub
 End Class

@@ -106,6 +106,15 @@ Public Class Play_Activities
     Private Sub Play_Activities_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If My.Computer.Keyboard.CtrlKeyDown And e.KeyCode = Keys.S Then
             Login.ShowDialog()
+#If ENABLE_MASTER_RESET Then
+        Else
+            If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.AltKeyDown And e.KeyCode = Keys.M Then
+                LogD(Me, My.Settings.ToString)
+                My.Settings.Reset()
+                SettingsSaver()
+                RequestUIRedraw(ConfirmationProvided:=True)
+            End If
+#End If
         End If
     End Sub
 

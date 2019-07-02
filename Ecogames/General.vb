@@ -1,4 +1,6 @@
-﻿Module General
+﻿Imports System.Configuration
+
+Module General
     ' ====================
     '      Constants
     ' ====================
@@ -105,6 +107,11 @@
         My.Settings.Language = LanguageBackup
 #End If
 
+        ' Try to save settings, even before one
+        ' entry is created, so that we can keep
+        ' everything properly encrypted.
+        SettingsSaver()
+
         If RecoveryMode Then
             ' Recovery sequence (lost password).
             My.Settings.UserName = Nothing
@@ -209,16 +216,18 @@
             Return False
         End If
 
-        If CurrentActivityIndex <> -1 Then
-            BrokenBuildException("CurrentActivityIndex must be set to -1")
+        If Not SplashScreen.SeparateThreadBusy Then ' (aka if not restarting).
+            If CurrentActivityIndex <> -1 Then
+                BrokenBuildException("CurrentActivityIndex must be set to -1")
 
-            Return False
-        End If
+                Return False
+            End If
 
-        If CurrentActivityTypeId <> -1 Then
-            BrokenBuildException("CurrentActivityTypeId must be set to -1")
+            If CurrentActivityTypeId <> -1 Then
+                BrokenBuildException("CurrentActivityTypeId must be set to -1")
 
-            Return False
+                Return False
+            End If
         End If
 
         If My.Settings.Language = String.Empty Then
@@ -324,7 +333,17 @@
         Const TAG = "SettingsSaver"
         LogD(TAG, "Saving settings...")
 #End If
-        My.Settings.Save()
+
+        Dim Configuration As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal)
+        Dim Section As ConfigurationSection = Configuration.GetSection("userSettings/" & My.Application.Info.Title & ".My.MySettings")
+
+        If Not Section.SectionInformation.IsProtected Then
+            Section.SectionInformation.ProtectSection("RsaProtectedConfigurationProvider")
+        End If
+        Section.SectionInformation.ForceSave = True
+
+        Configuration.Save(ConfigurationSaveMode.Full)
+
 #If DEBUG Then
         LogD(TAG, "Done saving.")
 #End If
