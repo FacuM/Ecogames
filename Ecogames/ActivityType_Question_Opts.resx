@@ -171,8 +171,8 @@
   <data name="&gt;&gt;MetroLabel1.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;MetroLabel2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
+    <value>294, 1</value>
   </data>
   <data name="HelperLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>322, 74</value>
@@ -180,8 +180,8 @@
   <data name="&gt;&gt;CorrectAnswerCheckBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="resource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
+  <data name="CorrectAnswerCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 23</value>
   </data>
   <data name="ModifyButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -195,8 +195,8 @@
   <data name="QuestionTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="MetroLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ActivityType_Question_Opts</value>
   </data>
   <data name="resource.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5271,9 +5271,6 @@
   <data name="MetroLabel1.Text" xml:space="preserve">
     <value>Question</value>
   </data>
-  <data name="&gt;&gt;AnswerTextBox.Name" xml:space="preserve">
-    <value>AnswerTextBox</value>
-  </data>
   <data name="resource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
   </data>
@@ -5343,9 +5340,6 @@
   <data name="resource.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="CorrectAnswerCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
-  </data>
   <data name="CorrectAnswerCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -5363,9 +5357,6 @@
   </data>
   <data name="&gt;&gt;QuestionTextBox.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
-    <value>294, 1</value>
   </data>
   <data name="resource.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -5400,14 +5391,17 @@
   <data name="resource.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="resource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="resource.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
   <data name="resource.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ActivityType_Question_Opts</value>
+  <data name="&gt;&gt;AnswersListBox.Name" xml:space="preserve">
+    <value>AnswersListBox</value>
   </data>
   <data name="ModifyButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 23</value>
@@ -5439,8 +5433,8 @@
   <data name="AnswersListBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="resource.AutoSize1" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;MetroLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;AnswerTextBox.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -5456,9 +5450,6 @@
   </data>
   <data name="ModifyButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>99, 377</value>
-  </data>
-  <data name="resource.ImageKey1" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
@@ -5477,9 +5468,6 @@
   </data>
   <data name="resource.AccessibleDescription1" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
-  </data>
-  <data name="&gt;&gt;AnswersListBox.Name" xml:space="preserve">
-    <value>AnswersListBox</value>
   </data>
   <data name="resource.TabIndex1" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5505,6 +5493,9 @@
   <data name="resource.MaximumSize1" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="MetroLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 138</value>
+  </data>
   <data name="&gt;&gt;AddAnswerButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -5523,6 +5514,9 @@
   <data name="MetroLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="resource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
   <data name="&gt;&gt;AnswerTextBox.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
@@ -5540,6 +5534,9 @@
   </data>
   <data name="SaveActivityButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="MetroLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;MetroLabel2.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -5568,8 +5565,8 @@
   <data name="AnswersListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 232</value>
   </data>
-  <data name="MetroLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 138</value>
+  <data name="&gt;&gt;AnswerTextBox.Name" xml:space="preserve">
+    <value>AnswerTextBox</value>
   </data>
   <data name="resource.Font1" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -5577,8 +5574,11 @@
   <data name="NextActionButton.Text" xml:space="preserve">
     <value>Next</value>
   </data>
-  <data name="resource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
+  <data name="resource.AutoSize1" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="resource.ImageKey1" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;NextActionButton.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>

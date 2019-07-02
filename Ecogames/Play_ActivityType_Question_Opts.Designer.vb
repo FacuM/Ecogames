@@ -99,6 +99,7 @@ Partial Class Play_ActivityType_Question_Opts
         '
         resources.ApplyResources(Me.HelperLabel, "HelperLabel")
         Me.HelperLabel.Name = "HelperLabel"
+        Me.HelperLabel.WrapToLine = True
         '
         'AnswersListBox
         '
