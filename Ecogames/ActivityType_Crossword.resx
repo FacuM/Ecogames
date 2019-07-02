@@ -137,8 +137,8 @@
   <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="AddColumn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 23</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>679, 450</value>
   </data>
   <data name="RemoveColumn.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 23</value>
@@ -146,20 +146,17 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ActivityType_Crossword</value>
   </data>
+  <data name="SaveActivity.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;DataGridView1.Name" xml:space="preserve">
     <value>DataGridView1</value>
-  </data>
-  <data name="&gt;&gt;AddColumn.Name" xml:space="preserve">
-    <value>AddColumn</value>
   </data>
   <data name="&gt;&gt;ColumnCountLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="&gt;&gt;DataGridView1.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
     <value>Panel2</value>
@@ -198,11 +195,11 @@
   <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="DataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;AddColumn.Parent" xml:space="preserve">
-    <value>Panel1</value>
+  <data name="AddColumn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
   </data>
   <data name="&gt;&gt;SaveActivity.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -213,9 +210,6 @@
   <data name="DataGridView1.Size" type="System.Drawing.Size, System.Drawing">
     <value>639, 315</value>
   </data>
-  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="Label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
@@ -225,8 +219,8 @@
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>331, 16</value>
   </data>
-  <data name="&gt;&gt;RemoveColumn.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="DataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 60</value>
   </data>
   <data name="&gt;&gt;RemoveColumn.Parent" xml:space="preserve">
     <value>Panel1</value>
@@ -245,9 +239,6 @@
   </data>
   <data name="&gt;&gt;SaveActivity.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
     <value>Columns:</value>
@@ -278,6 +269,9 @@
   </data>
   <data name="ColumnCountLabel.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
+  </data>
+  <data name="RemoveColumn.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="ColumnCountLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -446,8 +440,14 @@
   <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 16</value>
   </data>
+  <data name="&gt;&gt;RemoveColumn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
   <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 375</value>
+  </data>
+  <data name="&gt;&gt;AddColumn.Parent" xml:space="preserve">
+    <value>Panel1</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 20</value>
@@ -455,14 +455,14 @@
   <data name="AddColumn.Text" xml:space="preserve">
     <value>Add column</value>
   </data>
-  <data name="SaveActivity.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;AddColumn.Name" xml:space="preserve">
+    <value>AddColumn</value>
   </data>
   <data name="&gt;&gt;ColumnCountLabel.Name" xml:space="preserve">
     <value>ColumnCountLabel</value>
   </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 36</value>
+  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="ColumnCountLabel.Text" xml:space="preserve">
     <value>0</value>
@@ -473,8 +473,8 @@
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 4</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>679, 450</value>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
@@ -488,8 +488,8 @@
   <data name="&gt;&gt;RemoveColumn.Name" xml:space="preserve">
     <value>RemoveColumn</value>
   </data>
-  <data name="RemoveColumn.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 36</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

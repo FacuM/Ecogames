@@ -117,17 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Columnas:</value>
+  </data>
   <data name="AddColumn.Text" xml:space="preserve">
     <value>Agregar columna</value>
   </data>
   <data name="SaveActivity.Text" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="RemoveColumn.Text" xml:space="preserve">
+    <value>Remover columna</value>
+  </data>
   <data name="GroupBox1.Text" xml:space="preserve">
     <value>Opciones</value>
-  </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Columnas:</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
