@@ -454,6 +454,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to The game is now paused, click &quot;Ok&quot; once you&apos;re ready..
+        '''</summary>
+        Friend ReadOnly Property Play_General_Paused() As String
+            Get
+                Return ResourceManager.GetString("Play_General_Paused", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Congratulations! You&apos;ve completed the activity with a perfect score..
         '''</summary>
         Friend ReadOnly Property Play_General_PerfectScore() As String

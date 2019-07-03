@@ -41,6 +41,7 @@
             Settings.Populate()
             Settings.UpdateActivities()
 
+            SeparateThreadBusy = False
             Ready = True
 
             ' We're done, lets fire up the timer.

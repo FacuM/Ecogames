@@ -26,15 +26,19 @@ Partial Class ActivityType_Crossword
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New MetroFramework.Controls.MetroPanel()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.TimePerRowNumericUpDown = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
         Me.ColumnCountLabel = New MetroFramework.Controls.MetroLabel()
         Me.Panel1 = New MetroFramework.Controls.MetroPanel()
         Me.AddColumn = New MetroFramework.Controls.MetroButton()
         Me.SaveActivity = New MetroFramework.Controls.MetroButton()
         Me.RemoveColumn = New MetroFramework.Controls.MetroButton()
+        Me.TimePerRowCheckBox = New MetroFramework.Controls.MetroCheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.TimePerRowNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,17 +49,20 @@ Partial Class ActivityType_Crossword
         '
         'GroupBox1
         '
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.Panel1)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
         'Panel2
         '
-        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Controls.Add(Me.TimePerRowCheckBox)
+        Me.Panel2.Controls.Add(Me.MetroLabel1)
+        Me.Panel2.Controls.Add(Me.TimePerRowNumericUpDown)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.ColumnCountLabel)
+        resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.HorizontalScrollbarBarColor = True
         Me.Panel2.HorizontalScrollbarHighlightOnWheel = False
         Me.Panel2.HorizontalScrollbarSize = 10
@@ -63,6 +70,16 @@ Partial Class ActivityType_Crossword
         Me.Panel2.VerticalScrollbarBarColor = True
         Me.Panel2.VerticalScrollbarHighlightOnWheel = False
         Me.Panel2.VerticalScrollbarSize = 10
+        '
+        'MetroLabel1
+        '
+        resources.ApplyResources(Me.MetroLabel1, "MetroLabel1")
+        Me.MetroLabel1.Name = "MetroLabel1"
+        '
+        'TimePerRowNumericUpDown
+        '
+        resources.ApplyResources(Me.TimePerRowNumericUpDown, "TimePerRowNumericUpDown")
+        Me.TimePerRowNumericUpDown.Name = "TimePerRowNumericUpDown"
         '
         'Label1
         '
@@ -76,10 +93,10 @@ Partial Class ActivityType_Crossword
         '
         'Panel1
         '
-        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Controls.Add(Me.AddColumn)
         Me.Panel1.Controls.Add(Me.SaveActivity)
         Me.Panel1.Controls.Add(Me.RemoveColumn)
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.HorizontalScrollbarBarColor = True
         Me.Panel1.HorizontalScrollbarHighlightOnWheel = False
         Me.Panel1.HorizontalScrollbarSize = 10
@@ -106,6 +123,14 @@ Partial Class ActivityType_Crossword
         Me.RemoveColumn.Name = "RemoveColumn"
         Me.RemoveColumn.UseSelectable = True
         '
+        'TimePerRowCheckBox
+        '
+        Me.TimePerRowCheckBox.Checked = True
+        Me.TimePerRowCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        resources.ApplyResources(Me.TimePerRowCheckBox, "TimePerRowCheckBox")
+        Me.TimePerRowCheckBox.Name = "TimePerRowCheckBox"
+        Me.TimePerRowCheckBox.UseSelectable = True
+        '
         'ActivityType_Crossword
         '
         resources.ApplyResources(Me, "$this")
@@ -117,6 +142,7 @@ Partial Class ActivityType_Crossword
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        CType(Me.TimePerRowNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -126,8 +152,11 @@ Partial Class ActivityType_Crossword
     Friend WithEvents ColumnCountLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents AddColumn As MetroFramework.Controls.MetroButton
     Friend WithEvents SaveActivity As MetroFramework.Controls.MetroButton
-    Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents RemoveColumn As MetroFramework.Controls.MetroButton
     Friend WithEvents Panel1 As MetroFramework.Controls.MetroPanel
     Friend WithEvents Panel2 As MetroFramework.Controls.MetroPanel
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents TimePerRowNumericUpDown As NumericUpDown
+    Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents TimePerRowCheckBox As MetroFramework.Controls.MetroCheckBox
 End Class

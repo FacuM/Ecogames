@@ -13,6 +13,8 @@ Module General
     Public Const CrosswordDefaultRows As Integer = 15
     Public Const HangmanMaximumSecondsPerCharacter As Integer = 45
     Public Const HangmanMinimumSecondsPerCharacter As Integer = 5
+    Public Const CrosswordMaximumSecondsPerCharacter As Integer = HangmanMaximumSecondsPerCharacter
+    Public Const CrosswordMinimumSecondsPerCharacter As Integer = HangmanMinimumSecondsPerCharacter
     Public Const HangmanMaximumAttemptsPerCharacter As Integer = 15
     Public Const HangmanSeparator As Char = "_"c
     Public Const DefaultScoreMultiplier As Integer = 10
@@ -64,6 +66,7 @@ Module General
         "'s"
     }
     Public RecoveryMode As Boolean = False
+    Public PreventClose As Boolean = True
 
     ' Local
     Private Const MinimumPasswordLength As Integer = 8
@@ -383,6 +386,8 @@ Module General
     End Sub
 
     Private Sub SetLanguage(sender As Object, e As EventArgs)
+        PreventClose = False
+
         Dim ToolStripItemClickedEventArgs As ToolStripItemClickedEventArgs = DirectCast(e, ToolStripItemClickedEventArgs)
         My.Settings.Language = SupportedLanguages(Array.IndexOf(LanguagesDescription, ToolStripItemClickedEventArgs.ClickedItem.ToString))
 
@@ -439,7 +444,8 @@ Module General
                 Form.Close()
             End If
         Next
-        SplashScreen.SeparateThreadBusy = False
+
+        PreventClose = True
     End Sub
 
     Public Sub Shutdown()

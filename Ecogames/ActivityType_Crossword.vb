@@ -20,6 +20,9 @@ Public Class ActivityType_Crossword
         WipeDatagridView() ' Just in case, try to wipe it.
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
+        TimePerRowNumericUpDown.Maximum = CrosswordMaximumSecondsPerCharacter
+        TimePerRowNumericUpDown.Minimum = CrosswordMinimumSecondsPerCharacter
+
         ColumnMaxIndex = -1
         For i = 0 To CrosswordDefaultColumns
             Dim CellTemplate As New DataGridViewTextBoxCell With {
@@ -60,8 +63,17 @@ Public Class ActivityType_Crossword
         WipeDatagridView() ' Try to wipe it.
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
+        TimePerRowNumericUpDown.Maximum = CrosswordMaximumSecondsPerCharacter
+        TimePerRowNumericUpDown.Minimum = CrosswordMinimumSecondsPerCharacter
+
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
-        For i = 0 To 3
+
+        Dim TimePerRow As Integer = Integer.Parse(ActivityPre.Split(SemicolonChar)(4))
+        If TimePerRow < 1 Then
+            TimePerRowNumericUpDown.Value = TimePerRowNumericUpDown.Minimum
+        End If
+
+        For i = 0 To 4
             ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
@@ -241,16 +253,24 @@ Public Class ActivityType_Crossword
             LogD(Me, ActivityString)
 #End If
         Next
+
+        Dim TimePerRow As Integer
+        If TimePerRowCheckBox.Checked Then
+            TimePerRow = CInt(TimePerRowNumericUpDown.Value)
+        Else
+            TimePerRow = 0
+        End If
+
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = Settings.ActivityListBox.SelectedIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString
+            My.Settings.Activities(CurrentActivityIndex) = Settings.ActivityListBox.SelectedIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
 #If DEBUG Then
-            LogD(Me, GetNewID() & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & ActivityString)
+            LogD(Me, GetNewID() & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
 #End If
         End If
 
@@ -266,9 +286,6 @@ Public Class ActivityType_Crossword
                 e.Cancel = True
             End If
         End If
-    End Sub
-
-    Private Sub ActivityType_Crossword_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
     End Sub
 
     Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
@@ -292,5 +309,10 @@ Public Class ActivityType_Crossword
 
     Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
         Saved = False
+    End Sub
+
+    Private Sub TimePerRowCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles TimePerRowCheckBox.CheckedChanged
+        Saved = False
+        TimePerRowNumericUpDown.Enabled = TimePerRowCheckBox.Checked
     End Sub
 End Class

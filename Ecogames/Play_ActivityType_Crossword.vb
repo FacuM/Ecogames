@@ -4,6 +4,7 @@
 
 Public Class Play_ActivityType_Crossword
     Dim ColumnMaxIndex As Integer = -1
+    Dim CrosswordMaxTimePerRow As Integer = 0
 
     Private Sub WipeDatagridView()
         DataGridView1.Columns.Clear()
@@ -18,6 +19,10 @@ Public Class Play_ActivityType_Crossword
 
     Dim Score As Integer = 0
     Dim MaxScore As Integer = 0
+
+    Dim RemainingSeconds As Integer
+    Dim ClockMode As Boolean = True
+
     Public Sub LoadActivity()
         UseWaitCursor = True
 
@@ -26,12 +31,19 @@ Public Class Play_ActivityType_Crossword
 
         WipeDatagridView() ' Try to wipe it.
 
+        ' Cleanup
+        Score = 0
+        MaxScore = 0
+
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
         StatusLabel.Text = String.Empty
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
-        For i = 0 To 3
+
+        CrosswordMaxTimePerRow = Integer.Parse(ActivityPre.Split(SemicolonChar)(4))
+
+        For i = 0 To 4
             ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
@@ -48,10 +60,14 @@ Public Class Play_ActivityType_Crossword
             Dim ActivityRow As New DataGridViewRow()
             Dim ActivityCells As List(Of DataGridViewCell) = New List(Of DataGridViewCell)
 
+#If DEBUG Then
             Dim DebugRowStr As String = CurrentRow.Length & ":"
+#End If
             If CurrentRow.Length > 1 Then
                 For X = 0 To CurrentRow.Length - 2
+#If DEBUG Then
                     DebugRowStr &= " [" & CurrentRow(X) & "] "
+#End If
 
                     Dim XY As String = X & SemicolonChar & Y
                     CellMap.Add(XY, CurrentRow(X))
@@ -147,6 +163,12 @@ Public Class Play_ActivityType_Crossword
 #End If
 
         ScoreLabel.Text = Score.ToString & " / " & MaxScore.ToString
+
+        If CrosswordMaxTimePerRow > 0 Then
+            TimeManager.Enabled = True
+
+            RemainingSeconds = CrosswordMaxTimePerRow
+        End If
     End Sub
 
     Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
@@ -163,6 +185,8 @@ Public Class Play_ActivityType_Crossword
                 LogD(Me, "Validating value...")
 #End If
                 If DataGridView1.CurrentCell.Value.ToString.ToLower() = Out.ToLower() Then
+                    RemainingSeconds = CrosswordMaxTimePerRow
+
                     DataGridView1.CurrentCell.Value = Out
                     DataGridView1.CurrentCell.Style.BackColor = My.Settings.UserRepOk
                     Score += DefaultScoreMultiplier
@@ -196,6 +220,8 @@ Public Class Play_ActivityType_Crossword
 
 
         If Score = MaxScore Then
+            TimeManager.Enabled = False
+
             My.Computer.Audio.Play(My.Resources.Perfect, AudioPlayMode.Background)
             MessageBox.Show(My.Resources.Play_General_PerfectScore, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -233,6 +259,8 @@ Public Class Play_ActivityType_Crossword
                 Next
                 StatusLabel.Text = My.Resources.Play_Crossword_RowDone
                 My.Computer.Audio.Play(My.Resources.Completed, AudioPlayMode.Background)
+
+                RemainingSeconds = CrosswordMaxTimePerRow
             End If
             StatusResetTimer.Enabled = True
         End If
@@ -248,7 +276,7 @@ Public Class Play_ActivityType_Crossword
     End Sub
 
     Private Sub Play_ActivityType_Crossword_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If Score < MaxScore Then
+        If Score < MaxScore And PreventClose Then
             If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
                 e.Cancel = True
             End If
@@ -258,5 +286,55 @@ Public Class Play_ActivityType_Crossword
     Private Sub StatusResetTImer_Tick(sender As Object, e As EventArgs) Handles StatusResetTimer.Tick
         StatusLabel.Text = String.Empty
         StatusResetTimer.Enabled = False
+    End Sub
+
+    Private Sub TimeManager_Tick(sender As Object, e As EventArgs) Handles TimeManager.Tick
+        If Not (StatusResetTimer.Enabled And SplashScreen.SeparateThreadBusy) Then
+            If RemainingSeconds > 0 Then
+                If RemainingSeconds = 1 Then
+                    StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Singular, RemainingSeconds)
+                Else
+                    StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Plural, RemainingSeconds)
+                End If
+#If DEBUG Then
+                LogD(Me, RemainingSeconds & " seconds remaining.")
+#End If
+                RemainingSeconds -= 1
+
+                If RemainingSeconds < 5 Then
+                    If ClockMode Then
+                        My.Computer.Audio.Play(My.Resources.Clock_tic, AudioPlayMode.Background)
+                    Else
+                        My.Computer.Audio.Play(My.Resources.Clock_tac, AudioPlayMode.Background)
+                    End If
+
+                    ClockMode = Not ClockMode
+                End If
+            Else
+                PreventClose = False
+                DataGridView1.ReadOnly = True
+                TimeManager.Enabled = False
+
+                StatusLabel.Text = My.Resources.Play_General_Timedout
+
+                If Score = 0 Then
+                    My.Computer.Audio.Play(My.Resources.Wrong, AudioPlayMode.Background)
+                    MessageBox.Show(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & My.Resources.Play_General_NoCompletion, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    My.Computer.Audio.Play(My.Resources.Completed, AudioPlayMode.Background)
+                    MessageBox.Show(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End If
+        ElseIf SplashScreen.SeparateThreadBusy Then
+            TimeManager.Enabled = False
+        End If
+    End Sub
+
+    Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
+        TimeManager.Enabled = False
+        Hide()
+        MessageBox.Show(My.Resources.Play_General_Paused, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Show()
+        TimeManager.Enabled = True
     End Sub
 End Class

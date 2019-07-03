@@ -120,6 +120,45 @@ Public Class Play_ActivityType_Hangman
                             IndexOfMatch = HangmanWordText.ToLower.IndexOf(e.KeyChar.ToString.ToLower)
                             IndexOfMatchAux = HangmanWordTextAux.ToLower.IndexOf(e.KeyChar.ToString.ToLower, LastIndex + 1)
                         End While
+
+                        If DoKeyPressEvent Then
+                            If IndexOfMatch < 0 Then
+                                If RightAnswer Then
+                                    ScoreLabel.Text = Score.ToString & " / " & MaxScore.ToString
+                                Else
+                                    StatusLabel.Text = My.Resources.Play_General_WrongAnswer
+
+#If DEBUG Then
+                                    LogD(Me, "That was wrong.")
+#End If
+                                    My.Computer.Audio.Play(My.Resources.Wrong, AudioPlayMode.Background)
+
+                                    If HangmanMaxTryAmount > 0 Then
+#If DEBUG Then
+                                        LogD(Me, RemainingAttempts & " remaining attempts.")
+#End If
+                                        If RemainingAttempts > 0 Then
+                                            StatusLabel.Text = String.Format(My.Resources.Play_Hangman_Wrong_RemainingAttempts, RemainingAttempts)
+                                            RemainingAttempts -= 1
+                                        Else
+                                            DoKeyPressEvent = False
+
+                                            StatusResetTimer.Enabled = False
+                                            TimeManager.Enabled = False
+
+                                            If Score = 0 Then
+                                                MessageBox.Show(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & My.Resources.Play_General_NoCompletion, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                            Else
+                                                MessageBox.Show(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                            End If
+                                            StatusLabel.Text = My.Resources.Play_General_NoAttempts
+
+                                        End If
+                                    End If
+                                End If
+                            End If
+                        End If
+
                         If Score = MaxScore Then
                             TimeManager.Enabled = False
                             StatusResetTimer.Enabled = False
@@ -128,45 +167,7 @@ Public Class Play_ActivityType_Hangman
                             DoKeyPressEvent = False
                             StatusLabel.Text = My.Resources.Play_General_PerfectScore_Trim
                         Else
-                            If DoKeyPressEvent Then
-                                If IndexOfMatch < 0 Then
-                                    If RightAnswer Then
-                                        ScoreLabel.Text = Score.ToString & " / " & MaxScore.ToString
-                                    Else
-                                        StatusLabel.Text = My.Resources.Play_General_WrongAnswer
-
-#If DEBUG Then
-                                LogD(Me, "That was wrong.")
-#End If
-                                        My.Computer.Audio.Play(My.Resources.Wrong, AudioPlayMode.Background)
-
-                                        If HangmanMaxTryAmount > 0 Then
-#If DEBUG Then
-                                    LogD(Me, RemainingAttempts & " remaining attempts.")
-#End If
-                                            If RemainingAttempts > 0 Then
-                                                StatusLabel.Text = String.Format(My.Resources.Play_Hangman_Wrong_RemainingAttempts, RemainingAttempts)
-                                                RemainingAttempts -= 1
-                                            Else
-                                                DoKeyPressEvent = False
-
-                                                StatusResetTimer.Enabled = False
-                                                TimeManager.Enabled = False
-
-                                                If Score = 0 Then
-                                                    MessageBox.Show(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & My.Resources.Play_General_NoCompletion, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                                Else
-                                                    MessageBox.Show(My.Resources.Play_General_NoAttempts & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                                End If
-                                                StatusLabel.Text = My.Resources.Play_General_NoAttempts
-
-                                            End If
-                                        End If
-                                    End If
-                                End If
-
-                                StatusResetTimer.Enabled = True
-                            End If
+                            StatusResetTimer.Enabled = True
                         End If
                     End If
                 End If
@@ -175,7 +176,7 @@ Public Class Play_ActivityType_Hangman
     End Sub
 
     Private Sub TimeManager_Tick(sender As Object, e As EventArgs) Handles TimeManager.Tick
-        If Not StatusResetTimer.Enabled Then
+        If Not (StatusResetTimer.Enabled And SplashScreen.SeparateThreadBusy) Then
             If RemainingSeconds > 0 Then
                 If RemainingSeconds = 1 Then
                     StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Singular, RemainingSeconds)
@@ -210,6 +211,8 @@ Public Class Play_ActivityType_Hangman
                     MessageBox.Show(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
+        ElseIf SplashScreen.SeparateThreadBusy Then
+            TimeManager.Enabled = False
         End If
     End Sub
 End Class

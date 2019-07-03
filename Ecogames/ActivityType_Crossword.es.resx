@@ -117,8 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="GroupBox1.Text" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="MetroLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 20</value>
+  </data>
+  <data name="MetroLabel1.Text" xml:space="preserve">
+    <value>Tiempo por fila (s):</value>
+  </data>
+  <data name="TimePerRowNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 20</value>
+  </data>
   <data name="Label1.Text" xml:space="preserve">
     <value>Columnas:</value>
+  </data>
+  <data name="ColumnCountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 4</value>
+  </data>
+  <data name="ColumnCountLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 20</value>
   </data>
   <data name="AddColumn.Text" xml:space="preserve">
     <value>Agregar columna</value>
@@ -129,10 +151,6 @@
   <data name="RemoveColumn.Text" xml:space="preserve">
     <value>Remover columna</value>
   </data>
-  <data name="GroupBox1.Text" xml:space="preserve">
-    <value>Opciones</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAMDAAAAEACACoDgAANgAAACAgAAABAAgAqAgAAN4OAAAQEAAAAQAIAGgFAACGFwAAKAAAADAA
@@ -260,5 +278,9 @@
         HBwcHBwYBxEBAAABEQwTExMTExMYCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

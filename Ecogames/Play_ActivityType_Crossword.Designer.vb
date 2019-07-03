@@ -29,9 +29,11 @@ Partial Class Play_ActivityType_Crossword
         Me.StatusPanel = New MetroFramework.Controls.MetroPanel()
         Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
         Me.ScorePanel = New MetroFramework.Controls.MetroPanel()
-        Me.ScoreLabel = New MetroFramework.Controls.MetroLabel()
+        Me.PauseButton = New MetroFramework.Controls.MetroButton()
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
+        Me.ScoreLabel = New MetroFramework.Controls.MetroLabel()
         Me.StatusResetTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.TimeManager = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.StatusPanel.SuspendLayout()
@@ -40,23 +42,23 @@ Partial Class Play_ActivityType_Crossword
         '
         'DataGridView1
         '
-        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
         Me.DataGridView1.Name = "DataGridView1"
         '
         'GroupBox1
         '
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.StatusPanel)
         Me.GroupBox1.Controls.Add(Me.ScorePanel)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
         'StatusPanel
         '
-        resources.ApplyResources(Me.StatusPanel, "StatusPanel")
         Me.StatusPanel.Controls.Add(Me.StatusLabel)
+        resources.ApplyResources(Me.StatusPanel, "StatusPanel")
         Me.StatusPanel.HorizontalScrollbarBarColor = False
         Me.StatusPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.StatusPanel.HorizontalScrollbarSize = 0
@@ -72,9 +74,10 @@ Partial Class Play_ActivityType_Crossword
         '
         'ScorePanel
         '
-        resources.ApplyResources(Me.ScorePanel, "ScorePanel")
-        Me.ScorePanel.Controls.Add(Me.ScoreLabel)
+        Me.ScorePanel.Controls.Add(Me.PauseButton)
         Me.ScorePanel.Controls.Add(Me.Label1)
+        Me.ScorePanel.Controls.Add(Me.ScoreLabel)
+        resources.ApplyResources(Me.ScorePanel, "ScorePanel")
         Me.ScorePanel.HorizontalScrollbarBarColor = False
         Me.ScorePanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ScorePanel.HorizontalScrollbarSize = 0
@@ -83,19 +86,29 @@ Partial Class Play_ActivityType_Crossword
         Me.ScorePanel.VerticalScrollbarHighlightOnWheel = False
         Me.ScorePanel.VerticalScrollbarSize = 0
         '
-        'ScoreLabel
+        'PauseButton
         '
-        resources.ApplyResources(Me.ScoreLabel, "ScoreLabel")
-        Me.ScoreLabel.Name = "ScoreLabel"
+        resources.ApplyResources(Me.PauseButton, "PauseButton")
+        Me.PauseButton.Name = "PauseButton"
+        Me.PauseButton.UseSelectable = True
         '
         'Label1
         '
         resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
         '
+        'ScoreLabel
+        '
+        resources.ApplyResources(Me.ScoreLabel, "ScoreLabel")
+        Me.ScoreLabel.Name = "ScoreLabel"
+        '
         'StatusResetTimer
         '
         Me.StatusResetTimer.Interval = 2000
+        '
+        'TimeManager
+        '
+        Me.TimeManager.Interval = 1000
         '
         'Play_ActivityType_Crossword
         '
@@ -121,4 +134,6 @@ Partial Class Play_ActivityType_Crossword
     Friend WithEvents StatusPanel As MetroFramework.Controls.MetroPanel
     Friend WithEvents StatusLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents StatusResetTimer As Timer
+    Friend WithEvents TimeManager As Timer
+    Friend WithEvents PauseButton As MetroFramework.Controls.MetroButton
 End Class

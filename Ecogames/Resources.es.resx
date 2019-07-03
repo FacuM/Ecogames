@@ -337,4 +337,7 @@ Si estás probando un conjunto de traducciones, puede que no quieras que el leng
   <data name="Login_Text_RecoveryMode" xml:space="preserve">
     <value>Recuperación</value>
   </data>
+  <data name="Play_General_Paused" xml:space="preserve">
+    <value>El juego está pausado, hacé clic en "Aceptar" cuando estés listo.</value>
+  </data>
 </root>
