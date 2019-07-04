@@ -176,7 +176,8 @@ Public Class Play_ActivityType_Hangman
     End Sub
 
     Private Sub TimeManager_Tick(sender As Object, e As EventArgs) Handles TimeManager.Tick
-        If Not (StatusResetTimer.Enabled And SplashScreen.SeparateThreadBusy) Then
+        RemainingSeconds -= 1
+        If Not StatusResetTimer.Enabled Then
             If RemainingSeconds > 0 Then
                 If RemainingSeconds = 1 Then
                     StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Singular, RemainingSeconds)
@@ -186,7 +187,6 @@ Public Class Play_ActivityType_Hangman
 #If DEBUG Then
                 LogD(Me, RemainingSeconds & " seconds remaining.")
 #End If
-                RemainingSeconds -= 1
 
                 If RemainingSeconds < 5 Then
                     If ClockMode Then
@@ -211,7 +211,17 @@ Public Class Play_ActivityType_Hangman
                     MessageBox.Show(My.Resources.Play_General_Timedout & vbCrLf & vbCrLf & String.Format(My.Resources.Play_General_CompletionLevel, Score, MaxScore, ((Score * MaxScore) / 100)), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
-        ElseIf SplashScreen.SeparateThreadBusy Then
+        End If
+    End Sub
+
+    Private Sub Play_ActivityType_Hangman_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If PreventClose Then
+            If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
+                e.Cancel = True
+            Else
+                TimeManager.Enabled = False
+            End If
+        Else
             TimeManager.Enabled = False
         End If
     End Sub

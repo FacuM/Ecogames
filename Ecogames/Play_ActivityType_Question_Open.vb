@@ -6,6 +6,12 @@ Public Class Play_ActivityType_Question_Open
     Dim DoAutoEvaluation As Boolean = False
     Dim AnswerExpectedWords As List(Of String) = New List(Of String)
     Dim ExpectedAnswer As String
+    Dim QuestionOpenMaxTimePerQuestion As Integer = 0
+
+    Dim RemainingSeconds As Integer
+    Dim ClockMode As Boolean = True
+    Dim WarnEmptyAnswer As Boolean = True
+
 
     Public Sub LoadActivity()
         UseWaitCursor = True
@@ -39,6 +45,9 @@ Public Class Play_ActivityType_Question_Open
             LogD(Me, "Automatic evaluation: enabled.")
 #End If
         End If
+
+        QuestionOpenMaxTimePerQuestion = Integer.Parse(Activity(7))
+
 #If DEBUG Then
         LogD(Me, "Done.")
 #End If
@@ -50,6 +59,14 @@ Public Class Play_ActivityType_Question_Open
 
         VerifyButton.Enabled = True
 
+        If QuestionOpenMaxTimePerQuestion > 0 Then
+            TimeManager.Enabled = True
+
+            RemainingSeconds = QuestionOpenMaxTimePerQuestion
+        End If
+
+        WarnEmptyAnswer = True
+
         UseWaitCursor = False
     End Sub
 
@@ -57,17 +74,19 @@ Public Class Play_ActivityType_Question_Open
         Dim Answer As String = ""
 
         Dim CompleteEvaluation As Boolean = True
-        If String.IsNullOrEmpty(AnswerTextBox.Text) Then
+        If String.IsNullOrEmpty(AnswerTextBox.Text) And WarnEmptyAnswer Then
             If MessageBox.Show(My.Resources.Play_Question_General_AutoEvalEmptyAnswerWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 MessageBox.Show(String.Format(My.Resources.Play_Question_General_AutoEvalEmpty, 0), My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Answer = My.Resources.Play_General_EmptyAnswerDescriptor
 
-
                 AnswerTextBox.ReadOnly = True
                 AnswerTextBox.Text = String.Format(My.Resources.Play_Question_Open_AutoEvalResult, Answer, ExpectedAnswer)
 
                 VerifyButton.Enabled = False
+                PauseButton.Enabled = False
+
+                PreventClose = False
             End If
             CompleteEvaluation = False
         Else
@@ -75,6 +94,13 @@ Public Class Play_ActivityType_Question_Open
         End If
 
         If CompleteEvaluation Then
+            VerifyButton.Enabled = False
+            PauseButton.Enabled = False
+
+            TimeManager.Enabled = False
+
+            PreventClose = False
+
             If DoAutoEvaluation Then
 #If DEBUG Then
                 LogD(Me, "Verifying answer...")
@@ -125,8 +151,60 @@ Public Class Play_ActivityType_Question_Open
             If Not DoAutoEvaluation Then
                 AnswerTextBox.Text &= vbCrLf & vbCrLf & My.Resources.Play_Question_Open_NoAutoEvalInfo
             End If
+        End If
+    End Sub
 
-            VerifyButton.Enabled = False
+    Private Sub TimeManager_Tick(sender As Object, e As EventArgs) Handles TimeManager.Tick
+        RemainingSeconds -= 1
+        If RemainingSeconds > 0 Then
+            If RemainingSeconds = 1 Then
+                StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Singular, RemainingSeconds)
+            Else
+                StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Plural, RemainingSeconds)
+            End If
+#If DEBUG Then
+            LogD(Me, RemainingSeconds & " seconds remaining.")
+#End If
+
+            If RemainingSeconds < 5 Then
+                If ClockMode Then
+                    My.Computer.Audio.Play(My.Resources.Clock_tic, AudioPlayMode.Background)
+                Else
+                    My.Computer.Audio.Play(My.Resources.Clock_tac, AudioPlayMode.Background)
+                End If
+
+                ClockMode = Not ClockMode
+            End If
+        Else
+            TimeManager.Enabled = False
+
+            WarnEmptyAnswer = False
+
+            VerifyButton.PerformClick()
+
+            PreventClose = False
+            QuestionTextBox.ReadOnly = True
+            AnswerTextBox.ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
+        TimeManager.Enabled = False
+        Hide()
+        MessageBox.Show(My.Resources.Play_General_Paused, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Show()
+        TimeManager.Enabled = True
+    End Sub
+
+    Private Sub Play_ActivityType_Question_Open_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If PreventClose Then
+            If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
+                e.Cancel = True
+            Else
+                TimeManager.Enabled = False
+            End If
+        Else
+            TimeManager.Enabled = False
         End If
     End Sub
 End Class

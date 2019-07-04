@@ -22,6 +22,7 @@ Partial Class Play_ActivityType_Question_Open
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Play_ActivityType_Question_Open))
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.QuestionTextBox = New MetroFramework.Controls.MetroTextBox()
@@ -29,6 +30,8 @@ Partial Class Play_ActivityType_Question_Open
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.VerifyButton = New MetroFramework.Controls.MetroButton()
         Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
+        Me.TimeManager = New System.Windows.Forms.Timer(Me.components)
+        Me.PauseButton = New MetroFramework.Controls.MetroButton()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -146,16 +149,29 @@ Partial Class Play_ActivityType_Question_Open
         resources.ApplyResources(Me.StatusLabel, "StatusLabel")
         Me.StatusLabel.Name = "StatusLabel"
         '
+        'TimeManager
+        '
+        Me.TimeManager.Interval = 1000
+        '
+        'PauseButton
+        '
+        resources.ApplyResources(Me.PauseButton, "PauseButton")
+        Me.PauseButton.Name = "PauseButton"
+        Me.PauseButton.UseSelectable = True
+        '
         'Play_ActivityType_Question_Open
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.VerifyButton)
         Me.Controls.Add(Me.AnswerTextBox)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.QuestionTextBox)
         Me.Controls.Add(Me.MetroLabel1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Play_ActivityType_Question_Open"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
@@ -169,4 +185,6 @@ Partial Class Play_ActivityType_Question_Open
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents VerifyButton As MetroFramework.Controls.MetroButton
     Friend WithEvents StatusLabel As MetroFramework.Controls.MetroLabel
+    Friend WithEvents TimeManager As Timer
+    Friend WithEvents PauseButton As MetroFramework.Controls.MetroButton
 End Class
