@@ -5,8 +5,12 @@
 Public Class ActivityType_Question_Opts
     Dim Answers As List(Of String) = New List(Of String)
     Dim AnswersStatuses As List(Of Boolean) = New List(Of Boolean)
+    Dim QuestionsOptsMaxTime As Integer = 0
 
     Dim Saved As Boolean = True
+
+    Dim RemainingSeconds As Integer
+    Dim ClockMode As Boolean = True
 
     Private Sub UpdateAnswers()
         Dim PreviousIndex As Integer = AnswersListBox.SelectedIndex
@@ -28,6 +32,11 @@ Public Class ActivityType_Question_Opts
     End Sub
 
     Public Sub PrepareNew()
+        UseWaitCursor = True
+
+        MaxTimeNumericUpDown.Maximum = QuestionOptsMaximumMinutes
+        MaxTimeNumericUpDown.Minimum = QuestionOptsMinimumMinutes
+
         Answers.Clear()
         AnswersStatuses.Clear()
         QuestionTextBox.Clear()
@@ -50,6 +59,8 @@ Public Class ActivityType_Question_Opts
 
         AnswersListBox.Items.Add(My.Resources.Question_Opts_NewAnswer)
         AnswersListBox.SelectedIndex = AnswersListBox.Items.Count - 1
+
+        UseWaitCursor = False
     End Sub
 
     Dim IsModifying As Boolean = False
@@ -62,6 +73,18 @@ Public Class ActivityType_Question_Opts
 
         Answers.Clear()
         AnswersStatuses.Clear()
+
+        NextActionButton.Visible = False
+
+        MetroLabel3.Visible = True
+        MaxTimeNumericUpDown.Visible = True
+        MaxTimeCheckBox.Visible = True
+
+        MaxTimeNumericUpDown.Maximum = QuestionOptsMaximumMinutes
+        MaxTimeNumericUpDown.Minimum = QuestionOptsMinimumMinutes
+
+        HelperLabel.Text = My.Resources.Question_Opts_NextAnswerHelp
+
         Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(SemicolonChar)
 
 #If DEBUG Then
@@ -70,7 +93,13 @@ Public Class ActivityType_Question_Opts
         QuestionTextBox.Text = Activity(4)
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
-        For i = 0 To 4
+
+        Dim MaxTime As Integer = Integer.Parse(ActivityPre.Split(SemicolonChar)(5))
+        If MaxTime < 1 Then
+            MaxTimeNumericUpDown.Value = MaxTimeNumericUpDown.Minimum
+        End If
+
+        For i = 0 To 5
             ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
@@ -101,20 +130,27 @@ Public Class ActivityType_Question_Opts
     End Sub
 
     Private Sub SaveActivityButton_Click(sender As Object, e As EventArgs) Handles SaveActivityButton.Click
+        Dim MaxTime As Integer
+        If MaxTimeCheckBox.Checked Then
+            MaxTime = CInt(MaxTimeNumericUpDown.Value)
+        Else
+            MaxTime = 0
+        End If
+
         Dim ActivityString = String.Empty
         For i = 0 To Answers.Count - 1
             ActivityString &= Answers(i) & SemicolonChar & AnswersStatuses(i) & SemicolonChar & RowSplitter(0)
         Next
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString
+            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
 #If DEBUG Then
-            LogD(Me, NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & ActivityString)
+            LogD(Me, NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
 #End If
             CurrentActivityIndex = NewActivityID
         End If
@@ -155,7 +191,7 @@ Public Class ActivityType_Question_Opts
         End If
     End Sub
 
-    Dim NormalHeight As Integer = 412
+    Dim NormalHeight As Integer = 508
     Private Sub NextActionButton_Click(sender As Object, e As EventArgs) Handles NextActionButton.Click
         AnswersListBox.Visible = True
         QuestionTextBox.Enabled = False
@@ -163,6 +199,9 @@ Public Class ActivityType_Question_Opts
         AnswerTextBox.Visible = True
         SaveActivityButton.Visible = True
         NextActionButton.Visible = False
+        MetroLabel3.Visible = True
+        MaxTimeNumericUpDown.Visible = True
+        MaxTimeCheckBox.Visible = True
         Size = New Size(Size.Width, NormalHeight)
         AcceptButton = AddAnswerButton
         HelperLabel.Text = String.Format(My.Resources.Question_Opts_GeneralHelp, My.Resources.Question_Opts_NextAnswerHelp)
@@ -221,5 +260,10 @@ Public Class ActivityType_Question_Opts
 
             AnswerTextBox.Clear()
         End If
+    End Sub
+
+    Private Sub MaxTimeCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles MaxTimeCheckBox.CheckedChanged
+        Saved = False
+        MaxTimeNumericUpDown.Enabled = MaxTimeCheckBox.Checked
     End Sub
 End Class

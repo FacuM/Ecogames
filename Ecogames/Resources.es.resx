@@ -340,4 +340,10 @@ Si estás probando un conjunto de traducciones, puede que no quieras que el leng
   <data name="Play_General_Paused" xml:space="preserve">
     <value>El juego está pausado, hacé clic en "Aceptar" cuando estés listo.</value>
   </data>
+  <data name="Play_General_RemainingMinutes_Plural" xml:space="preserve">
+    <value>Te quedan {0} minutos.</value>
+  </data>
+  <data name="Play_General_RemainingMinutes_Singular" xml:space="preserve">
+    <value>Te queda {0} minuto.</value>
+  </data>
 </root>

@@ -26,6 +26,7 @@ Partial Class ActivityType_Crossword
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New MetroFramework.Controls.MetroPanel()
+        Me.TimePerRowCheckBox = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.TimePerRowNumericUpDown = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
@@ -34,7 +35,6 @@ Partial Class ActivityType_Crossword
         Me.AddColumn = New MetroFramework.Controls.MetroButton()
         Me.SaveActivity = New MetroFramework.Controls.MetroButton()
         Me.RemoveColumn = New MetroFramework.Controls.MetroButton()
-        Me.TimePerRowCheckBox = New MetroFramework.Controls.MetroCheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -70,6 +70,14 @@ Partial Class ActivityType_Crossword
         Me.Panel2.VerticalScrollbarBarColor = True
         Me.Panel2.VerticalScrollbarHighlightOnWheel = False
         Me.Panel2.VerticalScrollbarSize = 10
+        '
+        'TimePerRowCheckBox
+        '
+        Me.TimePerRowCheckBox.Checked = True
+        Me.TimePerRowCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        resources.ApplyResources(Me.TimePerRowCheckBox, "TimePerRowCheckBox")
+        Me.TimePerRowCheckBox.Name = "TimePerRowCheckBox"
+        Me.TimePerRowCheckBox.UseSelectable = True
         '
         'MetroLabel1
         '
@@ -122,14 +130,6 @@ Partial Class ActivityType_Crossword
         resources.ApplyResources(Me.RemoveColumn, "RemoveColumn")
         Me.RemoveColumn.Name = "RemoveColumn"
         Me.RemoveColumn.UseSelectable = True
-        '
-        'TimePerRowCheckBox
-        '
-        Me.TimePerRowCheckBox.Checked = True
-        Me.TimePerRowCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
-        resources.ApplyResources(Me.TimePerRowCheckBox, "TimePerRowCheckBox")
-        Me.TimePerRowCheckBox.Name = "TimePerRowCheckBox"
-        Me.TimePerRowCheckBox.UseSelectable = True
         '
         'ActivityType_Crossword
         '

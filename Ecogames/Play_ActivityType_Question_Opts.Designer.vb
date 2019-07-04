@@ -22,6 +22,7 @@ Partial Class Play_ActivityType_Question_Opts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Play_ActivityType_Question_Opts))
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.QuestionTextBox = New MetroFramework.Controls.MetroTextBox()
@@ -30,6 +31,8 @@ Partial Class Play_ActivityType_Question_Opts
         Me.HelperLabel = New MetroFramework.Controls.MetroLabel()
         Me.AnswersListBox = New System.Windows.Forms.ListBox()
         Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
+        Me.TimeManager = New System.Windows.Forms.Timer(Me.components)
+        Me.PauseButton = New MetroFramework.Controls.MetroButton()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -113,10 +116,21 @@ Partial Class Play_ActivityType_Question_Opts
         resources.ApplyResources(Me.StatusLabel, "StatusLabel")
         Me.StatusLabel.Name = "StatusLabel"
         '
+        'TimeManager
+        '
+        Me.TimeManager.Interval = 1000
+        '
+        'PauseButton
+        '
+        resources.ApplyResources(Me.PauseButton, "PauseButton")
+        Me.PauseButton.Name = "PauseButton"
+        Me.PauseButton.UseSelectable = True
+        '
         'Play_ActivityType_Question_Opts
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.AnswersListBox)
         Me.Controls.Add(Me.HelperLabel)
@@ -139,4 +153,6 @@ Partial Class Play_ActivityType_Question_Opts
     Friend WithEvents HelperLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents AnswersListBox As ListBox
     Friend WithEvents StatusLabel As MetroFramework.Controls.MetroLabel
+    Friend WithEvents TimeManager As Timer
+    Friend WithEvents PauseButton As MetroFramework.Controls.MetroButton
 End Class

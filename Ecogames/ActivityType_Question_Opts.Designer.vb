@@ -34,6 +34,10 @@ Partial Class ActivityType_Question_Opts
         Me.CorrectAnswerCheckBox = New MetroFramework.Controls.MetroCheckBox()
         Me.AnswersListBox = New System.Windows.Forms.ListBox()
         Me.ModifyButton = New MetroFramework.Controls.MetroButton()
+        Me.MaxTimeCheckBox = New MetroFramework.Controls.MetroCheckBox()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.MaxTimeNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        CType(Me.MaxTimeNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -43,38 +47,21 @@ Partial Class ActivityType_Question_Opts
         '
         'QuestionTextBox
         '
-        resources.ApplyResources(Me.QuestionTextBox, "QuestionTextBox")
         '
         '
         '
-        Me.QuestionTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
-        Me.QuestionTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
-        Me.QuestionTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
-        Me.QuestionTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
-        Me.QuestionTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
-        Me.QuestionTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
-        Me.QuestionTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
-        Me.QuestionTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
-        Me.QuestionTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
-        Me.QuestionTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
         Me.QuestionTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.QuestionTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
-        Me.QuestionTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
-        Me.QuestionTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
         Me.QuestionTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
         Me.QuestionTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
-        Me.QuestionTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.QuestionTextBox.CustomButton.Name = ""
-        Me.QuestionTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
         Me.QuestionTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.QuestionTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.QuestionTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
-        Me.QuestionTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
-        Me.QuestionTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.QuestionTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.QuestionTextBox.CustomButton.UseSelectable = True
         Me.QuestionTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.QuestionTextBox.Lines = New String(-1) {}
+        resources.ApplyResources(Me.QuestionTextBox, "QuestionTextBox")
         Me.QuestionTextBox.MaxLength = 32767
         Me.QuestionTextBox.Name = "QuestionTextBox"
         Me.QuestionTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -89,38 +76,21 @@ Partial Class ActivityType_Question_Opts
         '
         'AnswerTextBox
         '
-        resources.ApplyResources(Me.AnswerTextBox, "AnswerTextBox")
         '
         '
         '
-        Me.AnswerTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription1")
-        Me.AnswerTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName1")
-        Me.AnswerTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor1"), System.Windows.Forms.AnchorStyles)
-        Me.AnswerTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize1"), Boolean)
-        Me.AnswerTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode1"), System.Windows.Forms.AutoSizeMode)
-        Me.AnswerTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage1"), System.Drawing.Image)
-        Me.AnswerTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout1"), System.Windows.Forms.ImageLayout)
-        Me.AnswerTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock1"), System.Windows.Forms.DockStyle)
-        Me.AnswerTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle1"), System.Windows.Forms.FlatStyle)
-        Me.AnswerTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font1"), System.Drawing.Font)
         Me.AnswerTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        Me.AnswerTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign1"), System.Drawing.ContentAlignment)
-        Me.AnswerTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex1"), Integer)
-        Me.AnswerTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey1")
         Me.AnswerTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode1"), System.Windows.Forms.ImeMode)
         Me.AnswerTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location1"), System.Drawing.Point)
-        Me.AnswerTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize1"), System.Drawing.Size)
         Me.AnswerTextBox.CustomButton.Name = ""
-        Me.AnswerTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft1"), System.Windows.Forms.RightToLeft)
         Me.AnswerTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size1"), System.Drawing.Size)
         Me.AnswerTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.AnswerTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex1"), Integer)
-        Me.AnswerTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign1"), System.Drawing.ContentAlignment)
-        Me.AnswerTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation1"), System.Windows.Forms.TextImageRelation)
         Me.AnswerTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.AnswerTextBox.CustomButton.UseSelectable = True
         Me.AnswerTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible1"), Boolean)
         Me.AnswerTextBox.Lines = New String(-1) {}
+        resources.ApplyResources(Me.AnswerTextBox, "AnswerTextBox")
         Me.AnswerTextBox.MaxLength = 32767
         Me.AnswerTextBox.Multiline = True
         Me.AnswerTextBox.Name = "AnswerTextBox"
@@ -171,8 +141,8 @@ Partial Class ActivityType_Question_Opts
         '
         'AnswersListBox
         '
-        resources.ApplyResources(Me.AnswersListBox, "AnswersListBox")
         Me.AnswersListBox.FormattingEnabled = True
+        resources.ApplyResources(Me.AnswersListBox, "AnswersListBox")
         Me.AnswersListBox.Name = "AnswersListBox"
         '
         'ModifyButton
@@ -181,11 +151,32 @@ Partial Class ActivityType_Question_Opts
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.UseSelectable = True
         '
+        'MaxTimeCheckBox
+        '
+        Me.MaxTimeCheckBox.Checked = True
+        Me.MaxTimeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        resources.ApplyResources(Me.MaxTimeCheckBox, "MaxTimeCheckBox")
+        Me.MaxTimeCheckBox.Name = "MaxTimeCheckBox"
+        Me.MaxTimeCheckBox.UseSelectable = True
+        '
+        'MetroLabel3
+        '
+        resources.ApplyResources(Me.MetroLabel3, "MetroLabel3")
+        Me.MetroLabel3.Name = "MetroLabel3"
+        '
+        'MaxTimeNumericUpDown
+        '
+        resources.ApplyResources(Me.MaxTimeNumericUpDown, "MaxTimeNumericUpDown")
+        Me.MaxTimeNumericUpDown.Name = "MaxTimeNumericUpDown"
+        '
         'ActivityType_Question_Opts
         '
         Me.AcceptButton = Me.NextActionButton
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.MaxTimeCheckBox)
+        Me.Controls.Add(Me.MetroLabel3)
+        Me.Controls.Add(Me.MaxTimeNumericUpDown)
         Me.Controls.Add(Me.ModifyButton)
         Me.Controls.Add(Me.AnswersListBox)
         Me.Controls.Add(Me.CorrectAnswerCheckBox)
@@ -201,6 +192,7 @@ Partial Class ActivityType_Question_Opts
         Me.Name = "ActivityType_Question_Opts"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
+        CType(Me.MaxTimeNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -216,4 +208,7 @@ Partial Class ActivityType_Question_Opts
     Friend WithEvents CorrectAnswerCheckBox As MetroFramework.Controls.MetroCheckBox
     Friend WithEvents AnswersListBox As ListBox
     Friend WithEvents ModifyButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents MaxTimeCheckBox As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MaxTimeNumericUpDown As NumericUpDown
 End Class

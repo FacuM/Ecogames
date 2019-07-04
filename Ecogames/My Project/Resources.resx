@@ -22772,4 +22772,10 @@ If you're testing a translations set, you might not want the language to go back
   <data name="Play_General_Paused" xml:space="preserve">
     <value>The game is now paused, click "Ok" once you're ready.</value>
   </data>
+  <data name="Play_General_RemainingMinutes_Plural" xml:space="preserve">
+    <value>{0} minutes remaining.</value>
+  </data>
+  <data name="Play_General_RemainingMinutes_Singular" xml:space="preserve">
+    <value>{0} minute remaining.</value>
+  </data>
 </root>

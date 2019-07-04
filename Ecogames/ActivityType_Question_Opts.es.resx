@@ -120,13 +120,6 @@
   <data name="MetroLabel1.Text" xml:space="preserve">
     <value>Pregunta</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="resource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="resource.ImeMode1" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="MetroLabel2.Text" xml:space="preserve">
     <value>Respuesta</value>
   </data>
@@ -136,6 +129,9 @@
   <data name="NextActionButton.Text" xml:space="preserve">
     <value>Siguiente</value>
   </data>
+  <data name="AddAnswerButton.Text" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
   <data name="CorrectAnswerCheckBox.Text" xml:space="preserve">
     <value>Correcta</value>
   </data>
@@ -143,6 +139,18 @@
     <value>Modificar</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="MetroLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 20</value>
+  </data>
+  <data name="MetroLabel3.Text" xml:space="preserve">
+    <value>Tiempo para completar (m):</value>
+  </data>
+  <data name="MaxTimeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 422</value>
+  </data>
+  <data name="MaxTimeNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 20</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAoAAAAAAAEAIAAFCwAApgAAAMDAAAABACAAKFICAKsLAACAgAAAAQAgACgIAQDTXQIAYGAAAAEA
@@ -5179,5 +5187,9 @@
         AAAfAAAAAAAAAAAAAAAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAABAAAQAAAAGAAAABwAAAAe
         AAAAHwAAAAAAAAAAAAAAAAAAAA==
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

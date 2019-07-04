@@ -176,6 +176,7 @@ Public Class Play_ActivityType_Question_Open
                 ClockMode = Not ClockMode
             End If
         Else
+
             TimeManager.Enabled = False
 
             WarnEmptyAnswer = False

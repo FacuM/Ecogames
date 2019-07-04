@@ -117,15 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="MetroButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 378</value>
+  </data>
   <data name="&gt;&gt;VerifyButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;PauseButton.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;MetroButton1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;AnswersListBox.Name" xml:space="preserve">
     <value>AnswersListBox</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="QuestionTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>316, 23</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="HelperLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;PauseButton.Name" xml:space="preserve">
+    <value>PauseButton</value>
+  </data>
+  <data name="&gt;&gt;PauseButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AnswersListBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="QuestionTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 164</value>
@@ -137,9 +159,8 @@
   <data name="AnswersListBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="resource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
   <data name="resource.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Standard</value>
@@ -153,26 +174,32 @@
   <data name="AnswersListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>316, 134</value>
   </data>
+  <data name="MetroButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 23</value>
+  </data>
   <data name="&gt;&gt;MetroLabel1.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MetroButton1.Name" xml:space="preserve">
+    <value>MetroButton1</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="resource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
+  <data name="resource.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="resource.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="&gt;&gt;StatusLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="resource.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowOnly</value>
+  <data name="resource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
   </data>
   <data name="StatusLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 378</value>
+  </data>
+  <data name="HelperLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;HelperLabel.Name" xml:space="preserve">
     <value>HelperLabel</value>
@@ -180,32 +207,29 @@
   <data name="resource.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;MetroLabel2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;StatusLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="StatusLabel.Text" xml:space="preserve">
     <value>N/A</value>
   </data>
   <data name="&gt;&gt;HelperLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="VerifyButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 23</value>
+    <value>60, 23</value>
   </data>
   <data name="&gt;&gt;StatusLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;AnswersListBox.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="resource.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
   </data>
-  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 1</value>
-  </data>
-  <data name="QuestionTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;AnswersListBox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="VerifyButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 378</value>
+    <value>213, 378</value>
   </data>
   <data name="&gt;&gt;MetroLabel1.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
@@ -213,11 +237,17 @@
   <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
     <value>StatusLabel</value>
   </data>
-  <data name="StatusLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="MetroButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="resource.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 1</value>
+  </data>
+  <data name="PauseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 378</value>
+  </data>
+  <data name="PauseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="MetroLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -225,17 +255,26 @@
   <data name="MetroLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
   </data>
+  <data name="&gt;&gt;MetroButton1.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="MetroButton1.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
   <data name="&gt;&gt;AnswersListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="resource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
+  <data name="MetroLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;AnswersListBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="resource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="StatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;PauseButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MetroButton1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;MetroLabel2.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
@@ -249,8 +288,11 @@
   <data name="MetroLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 138</value>
   </data>
-  <data name="HelperLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="&gt;&gt;HelperLabel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="&gt;&gt;VerifyButton.Name" xml:space="preserve">
     <value>VerifyButton</value>
@@ -258,11 +300,11 @@
   <data name="MetroLabel1.Text" xml:space="preserve">
     <value>Question</value>
   </data>
-  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="resource.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="StatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 23</value>
+    <value>184, 23</value>
   </data>
   <data name="HelperLabel.Text" xml:space="preserve">
     <value>N/A</value>
@@ -270,11 +312,8 @@
   <data name="&gt;&gt;QuestionTextBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="resource.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="MetroLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="resource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1966,8 +2005,8 @@
   <data name="resource.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="HelperLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;MetroLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="VerifyButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1981,14 +2020,20 @@
   <data name="resource.ImageIndex" type="System.Int32, mscorlib">
     <value>-1</value>
   </data>
-  <data name="&gt;&gt;HelperLabel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="StatusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="QuestionTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="StatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;StatusLabel.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;QuestionTextBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="MetroLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
@@ -2000,7 +2045,7 @@
     <value />
   </data>
   <data name="&gt;&gt;MetroLabel1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="HelperLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2011,14 +2056,17 @@
   <data name="&gt;&gt;QuestionTextBox.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="resource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
+  <data name="&gt;&gt;TimeManager.Name" xml:space="preserve">
+    <value>TimeManager</value>
   </data>
   <data name="&gt;&gt;HelperLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="VerifyButton.Text" xml:space="preserve">
     <value>Verify</value>
+  </data>
+  <data name="&gt;&gt;TimeManager.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="resource.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
@@ -2051,15 +2099,18 @@
     <value>Options</value>
   </data>
   <data name="&gt;&gt;MetroLabel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="resource.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>es</value>
+  </metadata>
+  <metadata name="TimeManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

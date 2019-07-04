@@ -5,8 +5,12 @@
 Public Class Play_ActivityType_Question_Opts
     Dim Answers As List(Of String) = New List(Of String)
     Dim AnswersStatuses As List(Of Boolean) = New List(Of Boolean)
+    Dim QuestionOptsMaxTime As Integer = 0
 
     Dim Verified As Boolean = False
+
+    Dim RemainingSeconds As Integer
+    Dim ClockMode As Boolean = True
 
     Public Sub LoadActivity()
         UseWaitCursor = True
@@ -20,13 +24,15 @@ Public Class Play_ActivityType_Question_Opts
 
         Dim Activity As String() = My.Settings.Activities(CurrentActivityIndex).Split(SemicolonChar)
 
+        QuestionOptsMaxTime = Integer.Parse(Activity(5))
+
 #If DEBUG Then
         LogD(Me, "Parsing activity...")
 #End If
         QuestionTextBox.Text = Activity(4)
 
         Dim ActivityPre As String = My.Settings.Activities(CurrentActivityIndex)
-        For i = 0 To 4
+        For i = 0 To 5
             ActivityPre = ActivityPre.Remove(0, ActivityPre.IndexOf(SemicolonChar) + 1)
 #If DEBUG Then
             LogD(Me, ActivityPre)
@@ -61,14 +67,24 @@ Public Class Play_ActivityType_Question_Opts
 
         Verified = False
 
+        If QuestionOptsMaxTime > 0 Then
+            TimeManager.Enabled = True
+
+            RemainingSeconds = QuestionOptsMaxTime * SecondsInAMinute
+        End If
+
         UseWaitCursor = False
     End Sub
 
     Private Sub ActivityType_Question_Open_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If Not Verified Then
-            If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
+        If Not Verified And PreventClose Then
+            If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
                 e.Cancel = True
+            Else
+                TimeManager.Enabled = False
             End If
+        Else
+            TimeManager.Enabled = False
         End If
     End Sub
 
@@ -76,6 +92,7 @@ Public Class Play_ActivityType_Question_Opts
 #If DEBUG Then
         LogD(Me, "Verifying answer...")
 #End If
+        TimeManager.Enabled = False
 
         Dim MaxScore As Integer = AnswersStatuses.Count
         Dim Score As Integer = MaxScore
@@ -131,7 +148,51 @@ Public Class Play_ActivityType_Question_Opts
         AnswersListBox.Enabled = False
 
         VerifyButton.Enabled = False
+        PauseButton.Enabled = False
 
         Verified = True
+    End Sub
+
+    Private Sub TimeManager_Tick(sender As Object, e As EventArgs) Handles TimeManager.Tick
+        RemainingSeconds -= 1
+        If RemainingSeconds > 0 Then
+            If RemainingSeconds > 90 Then
+                StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingMinutes_Plural, Math.Round(RemainingSeconds / SecondsInAMinute, 0))
+            ElseIf RemainingSeconds > 60 And RemainingSeconds < 91 Then
+                StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingMinutes_Plural, 2)
+            ElseIf RemainingSeconds = 60 Then
+                StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingMinutes_Singular, Math.Round(RemainingSeconds / SecondsInAMinute, 0))
+            ElseIf RemainingSeconds > 1 Then
+                StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Plural, RemainingSeconds)
+            Else
+                StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Singular, RemainingSeconds)
+            End If
+#If DEBUG Then
+            LogD(Me, RemainingSeconds & " seconds remaining.")
+#End If
+
+            If RemainingSeconds < 5 Then
+                If ClockMode Then
+                    My.Computer.Audio.Play(My.Resources.Clock_tic, AudioPlayMode.Background)
+                Else
+                    My.Computer.Audio.Play(My.Resources.Clock_tac, AudioPlayMode.Background)
+                End If
+
+                ClockMode = Not ClockMode
+            End If
+        Else
+            PreventClose = False
+            TimeManager.Enabled = False
+
+            VerifyButton.PerformClick()
+        End If
+    End Sub
+
+    Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
+        TimeManager.Enabled = False
+        Hide()
+        MessageBox.Show(My.Resources.Play_General_Paused, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Show()
+        TimeManager.Enabled = True
     End Sub
 End Class

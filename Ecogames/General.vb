@@ -17,6 +17,9 @@ Module General
     Public Const CrosswordMinimumSecondsPerCharacter As Integer = HangmanMinimumSecondsPerCharacter
     Public Const QuestionOpenMaximumSecondsPerCharacter As Integer = HangmanMaximumSecondsPerCharacter
     Public Const QuestionOpenMinimumSecondsPerCharacter As Integer = HangmanMinimumSecondsPerCharacter
+    Public Const QuestionOptsMaximumMinutes As Integer = 10
+    Public Const QuestionOptsMinimumMinutes As Integer = 1
+    Public Const SecondsInAMinute As Integer = 60
     Public Const HangmanMaximumAttemptsPerCharacter As Integer = 15
     Public Const HangmanSeparator As Char = "_"c
     Public Const DefaultScoreMultiplier As Integer = 10

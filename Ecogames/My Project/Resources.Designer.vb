@@ -481,6 +481,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {0} minutes remaining..
+        '''</summary>
+        Friend ReadOnly Property Play_General_RemainingMinutes_Plural() As String
+            Get
+                Return ResourceManager.GetString("Play_General_RemainingMinutes_Plural", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {0} minute remaining..
+        '''</summary>
+        Friend ReadOnly Property Play_General_RemainingMinutes_Singular() As String
+            Get
+                Return ResourceManager.GetString("Play_General_RemainingMinutes_Singular", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to {0} seconds remaining..
         '''</summary>
         Friend ReadOnly Property Play_General_RemainingSeconds_Plural() As String
