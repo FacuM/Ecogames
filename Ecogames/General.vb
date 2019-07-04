@@ -224,20 +224,6 @@ Module General
             Return False
         End If
 
-        If Not SplashScreen.SeparateThreadBusy Then ' (aka if not restarting).
-            If CurrentActivityIndex <> -1 Then
-                BrokenBuildException("CurrentActivityIndex must be set to -1")
-
-                Return False
-            End If
-
-            If CurrentActivityTypeId <> -1 Then
-                BrokenBuildException("CurrentActivityTypeId must be set to -1")
-
-                Return False
-            End If
-        End If
-
         If My.Settings.Language = String.Empty Then
 #If DEBUG Then
             LogD(TAG, "No language has been set, falling back to defaults (" & DefaultLanguage & ").")
