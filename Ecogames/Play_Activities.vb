@@ -109,7 +109,12 @@ Public Class Play_Activities
 #If ENABLE_MASTER_RESET Then
         Else
             If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.AltKeyDown And e.KeyCode = Keys.M Then
-                LogD(Me, My.Settings.ToString)
+#If DEBUG Then
+                LogD(Me, "=> Running a master reset!")
+#End If
+
+                NotifyIcon.ShowBalloonTip(5000, My.Application.Info.Title, My.Resources.Release_Beta_MasterReset, ToolTipIcon.Info)
+
                 My.Settings.Reset()
                 SettingsSaver()
                 RequestUIRedraw(ConfirmationProvided:=True)

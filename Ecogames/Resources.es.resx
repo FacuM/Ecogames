@@ -346,4 +346,7 @@ Si estás probando un conjunto de traducciones, puede que no quieras que el leng
   <data name="Play_General_RemainingMinutes_Singular" xml:space="preserve">
     <value>Te queda {0} minuto.</value>
   </data>
+  <data name="Release_Beta_MasterReset" xml:space="preserve">
+    <value>Limpiando y reiniciando...</value>
+  </data>
 </root>

@@ -748,6 +748,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Cleaning up and restarting....
+        '''</summary>
+        Friend ReadOnly Property Release_Beta_MasterReset() As String
+            Get
+                Return ResourceManager.GetString("Release_Beta_MasterReset", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         '''</summary>
         Friend ReadOnly Property Right() As System.IO.UnmanagedMemoryStream
@@ -861,6 +870,15 @@ Namespace My.Resources
         Friend ReadOnly Property Settings_Text() As String
             Get
                 Return ResourceManager.GetString("Settings_Text", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Version {0}.{1:00}.
+        '''</summary>
+        Friend ReadOnly Property Version_Text() As String
+            Get
+                Return ResourceManager.GetString("Version_Text", resourceCulture)
             End Get
         End Property
         

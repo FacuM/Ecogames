@@ -77,8 +77,7 @@
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants>ENABLE_MASTER_RESET=True</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
