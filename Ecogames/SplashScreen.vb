@@ -16,7 +16,7 @@
         End If
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles AnimationHolderTimer.Tick
         LoadNextScreen()
     End Sub
 
@@ -26,30 +26,6 @@
     End Sub
 
     Private Sub SplashScreen_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Ready = False
-
-        If SelfTest() Then ' the self test passes, keep going.
-#If DEBUG And DEBUG_CLEAN Then
-            MessageBox.Show(My.Resources.Debug_CleanEnvStartup, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
-#End If
-            PopulateNotifyIcon()
-
-            If My.Settings.FirstRun Then
-                FirstRun.Populate()
-            End If
-
-            Settings.Populate()
-            Settings.UpdateActivities()
-
-            SeparateThreadBusy = False
-            Ready = True
-
-            ' We're done, lets fire up the timer.
-            Timer1.Enabled = True
-        Else ' after displaying the crash, shutdown.
-            Close()
-        End If
-
         'Set up the dialog text at runtime according to the application's assembly information.  
 
         'Application title
@@ -73,5 +49,32 @@
         'Copyright info
         Copyright.Text = My.Application.Info.Copyright
 
+        OperationsDeferrerTimer.Enabled = True
+    End Sub
+
+    Private Sub OperationsDeferrerTimer_Tick(sender As Object, e As EventArgs) Handles OperationsDeferrerTimer.Tick
+        Ready = False
+
+        If SelfTest() Then ' the self test passes, keep going.
+#If DEBUG And DEBUG_CLEAN Then
+            MessageBox.Show(My.Resources.Debug_CleanEnvStartup, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
+#End If
+            PopulateNotifyIcon()
+
+            If My.Settings.FirstRun Then
+                FirstRun.Populate()
+            End If
+
+            Settings.Populate()
+            Settings.UpdateActivities()
+
+            SeparateThreadBusy = False
+            Ready = True
+
+            ' We're done, lets fire up the timer.
+            AnimationHolderTimer.Enabled = True
+        Else ' after displaying the crash, shutdown.
+            Close()
+        End If
     End Sub
 End Class
