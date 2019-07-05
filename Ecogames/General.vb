@@ -102,7 +102,9 @@ Module General
         MessageBox.Show("This build isn't properly compiled." & vbCrLf & vbCrLf & Exception & " (General.vb).", My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
     Public Function SelfTest() As Boolean
+#If DEUBG Then
         Const TAG = "SelfTest"
+#End If
 
 #If KEEP_LANG Then
         Dim LanguageBackup As String = My.Settings.Language
@@ -414,7 +416,9 @@ Module General
     End Sub
 
     Private Sub Restart()
+#If DEUBG Then
         Const TAG = "Restart"
+#End If
         SplashScreen.SeparateThreadBusy = True
         For i = My.Application.OpenForms.Count - 1 To 0 Step -1
             Dim Form As Form = My.Application.OpenForms(i)
@@ -440,7 +444,9 @@ Module General
     End Sub
 
     Public Sub Shutdown()
+#If DEUBG Then
         Const TAG = "Shutdown"
+#End If
         For i = My.Application.OpenForms.Count - 1 To 0 Step -1
             Dim Form As Form = My.Application.OpenForms(i)
 #If DEBUG Then
