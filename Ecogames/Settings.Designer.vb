@@ -54,6 +54,7 @@ Partial Class Settings
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.UserRepOkColorBtn = New MetroFramework.Controls.MetroButton()
+        Me.RefreshButton = New MetroFramework.Controls.MetroButton()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
@@ -77,6 +78,7 @@ Partial Class Settings
         'MetroTabPage1
         '
         resources.ApplyResources(Me.MetroTabPage1, "MetroTabPage1")
+        Me.MetroTabPage1.Controls.Add(Me.RefreshButton)
         Me.MetroTabPage1.Controls.Add(Me.DeleteActivity)
         Me.MetroTabPage1.Controls.Add(Me.ModifyActivity)
         Me.MetroTabPage1.Controls.Add(Me.AddActivity)
@@ -360,6 +362,12 @@ Partial Class Settings
         Me.UserRepOkColorBtn.Name = "UserRepOkColorBtn"
         Me.UserRepOkColorBtn.UseSelectable = True
         '
+        'RefreshButton
+        '
+        resources.ApplyResources(Me.RefreshButton, "RefreshButton")
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.UseSelectable = True
+        '
         'Settings
         '
         resources.ApplyResources(Me, "$this")
@@ -407,4 +415,5 @@ Partial Class Settings
     Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents UserRepOkColorBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents RefreshButton As MetroFramework.Controls.MetroButton
 End Class

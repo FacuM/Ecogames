@@ -856,6 +856,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to (modified).
+        '''</summary>
+        Friend ReadOnly Property Settings_General_Outdated() As String
+            Get
+                Return ResourceManager.GetString("Settings_General_Outdated", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to You&apos;ll loose your changes, do you wanna quit anyways?.
         '''</summary>
         Friend ReadOnly Property Settings_General_UnsavedWarn() As String

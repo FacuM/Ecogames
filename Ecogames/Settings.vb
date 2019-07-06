@@ -68,6 +68,24 @@ Public Class Settings
         End If
     End Sub
 
+    Private Sub CheckForModifications()
+        Dim Original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
+#If DEBUG Then
+        LogD(Me, "Updating selected activity (""" & Original(1) & """)...")
+#End If
+        If Original(1) <> SettingsActivityName.Text Or Original(2) <> SettingsActivityDescription.Text Then
+            My.Settings.Activities(ActivityListBox.SelectedIndex) = Original(0) & SemicolonChar & SettingsActivityName.Text & SemicolonChar & SettingsActivityDescription.Text & SemicolonChar & Original(3)
+            If Not ActivityListBox.Items(ActivityListBox.SelectedIndex).ToString.Contains(My.Resources.Settings_General_Outdated) Then
+                ActivityListBox.Items(ActivityListBox.SelectedIndex) = ActivityListBox.Items(ActivityListBox.SelectedIndex).ToString & SpaceChar & My.Resources.Settings_General_Outdated
+                RefreshButton.Visible = True
+            End If
+
+            SettingsActivityName.Focus()
+            SettingsActivityName.SelectionStart = SettingsActivityName.Text.Length
+            SettingsActivityName.SelectionLength = 0
+        End If
+    End Sub
+
     Private Sub Settings_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
 #If DEBUG Then
         LogD(Me, "Saving window state and closing...")
@@ -83,59 +101,41 @@ Public Class Settings
     End Sub
 
     Private Sub SettingsActivityType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SettingsActivityType.SelectedIndexChanged
-        If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
-#If DEBUG Then
-            LogD(Me, "Updating selected activity (""" & original(1) & """)...")
-#End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & original(1) & SemicolonChar & original(2) & SemicolonChar & SettingsActivityType.SelectedIndex
-            SettingsSaver()
+        If String.IsNullOrEmpty(SettingsActivityName.Text) Then
+            SettingsActivityType.Enabled = False
+            SettingsActivityDescription.Enabled = False
         Else
-            If String.IsNullOrEmpty(SettingsActivityName.Text) Then
-                SettingsActivityType.Enabled = False
-                SettingsActivityDescription.Enabled = False
-            Else
-                SettingsActivityType.Enabled = True
-                SettingsActivityDescription.Enabled = True
-            End If
+            SettingsActivityType.Enabled = True
+            SettingsActivityDescription.Enabled = True
         End If
     End Sub
 
     Private Sub SettingsActivityDescription_TextChanged(sender As Object, e As EventArgs) Handles SettingsActivityDescription.TextChanged
-        If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
-#If DEBUG Then
-            LogD(Me, "Updating selected activity (""" & original(1) & """)...")
-#End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & original(1) & SemicolonChar & SettingsActivityDescription.Text & SemicolonChar & original(3)
-            SettingsSaver()
-        Else
+        If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
+            CheckForModifications()
         End If
     End Sub
 
     Private Sub SettingsActivityName_TextChanged(sender As Object, e As EventArgs) Handles SettingsActivityName.TextChanged
-        If ActivityListBox.SelectedIndex > 0 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
-            Dim original As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar) ' Just for shortening purposes
-#If DEBUG Then
-            LogD(Me, "Updating selected activity (""" & original(1) & """)...")
-#End If
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = original(0) & SemicolonChar & SettingsActivityName.Text & SemicolonChar & original(2) & SemicolonChar & original(3)
-            SettingsSaver()
-            UpdateActivities()
-            ActivityListBox.SelectedIndex = PreviousIndex
+        If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 1) Then
+            CheckForModifications()
         Else
             If String.IsNullOrEmpty(SettingsActivityName.Text) Then
                 SettingsActivityType.Enabled = False
                 SettingsActivityDescription.Enabled = False
                 AddActivity.Enabled = False
-            Else
-#If DEBUG Then
-                LogD(Me, "Switched to activity creation mode.")
-#End If
 
+#If DEBUG Then
+                LogD(Me, "Switched to the activity modification mode.")
+#End If
+            Else
                 SettingsActivityType.Enabled = True
                 SettingsActivityDescription.Enabled = True
                 AddActivity.Enabled = True
+
+#If DEBUG Then
+                LogD(Me, "Switched to the activity creation mode.")
+#End If
             End If
         End If
     End Sub
@@ -171,7 +171,7 @@ Public Class Settings
 
     Private Sub ActivityListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ActivityListBox.SelectedIndexChanged
 #If DEBUG Then
-        LogD(Me, "Processing selected index...")
+        LogD(Me, "Processing selected index (" & ActivityListBox.SelectedIndex & "/" & ActivityListBox.Items.Count - 1 & ")...")
 #End If
 
         If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 1) Then
@@ -184,6 +184,7 @@ Public Class Settings
             If Integer.TryParse(Activity(3), ParsedActivityType) Then
                 SettingsActivityType.SelectedIndex = ParsedActivityType
                 SettingsActivityType.Enabled = True
+
 #If DEBUG Then
                 LogD(Me, "Done.")
 #End If
@@ -202,21 +203,23 @@ Public Class Settings
             DeleteActivity.Visible = True
             AddActivity.Visible = False
 
-            SettingsActivityName.Enabled = False
             SettingsActivityType.Enabled = False
-            SettingsActivityDescription.Enabled = False
         ElseIf ActivityListBox.SelectedIndex = ActivityListBox.Items.Count - 1 Then
-            SettingsActivityDescription.Enabled = True
             SettingsActivityDescription.Text = ""
             SettingsActivityName.Text = ""
+
             SettingsActivityType.Enabled = True
-            SettingsActivityType.SelectedIndex = 0
+
+            SettingsActivityType.SelectedIndex = ActivityListBox.Items.Count - 1
 
             ' Enable activity creation, disable modify and delete mode.
             ModifyActivity.Visible = False
             DeleteActivity.Visible = False
             AddActivity.Visible = True
         End If
+
+        SettingsActivityName.Enabled = True
+        SettingsActivityDescription.Enabled = True
 
         SettingsActivityName.Enabled = True
     End Sub
@@ -309,5 +312,12 @@ Public Class Settings
             DeleteActivity.Text = My.Resources.Settings_General_DeleteText
             DeleteActivity.Visible = False
         End If
+    End Sub
+
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+        Dim PreviousIndex As Integer = ActivityListBox.SelectedIndex
+        UpdateActivities()
+        ActivityListBox.SelectedIndex = PreviousIndex
+        RefreshButton.Visible = False
     End Sub
 End Class

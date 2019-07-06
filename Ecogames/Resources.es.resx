@@ -349,4 +349,7 @@ Si estás probando un conjunto de traducciones, puede que no quieras que el leng
   <data name="Release_Beta_MasterReset" xml:space="preserve">
     <value>Limpiando y reiniciando...</value>
   </data>
+  <data name="Settings_General_Outdated" xml:space="preserve">
+    <value>(editado)</value>
+  </data>
 </root>

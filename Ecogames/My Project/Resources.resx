@@ -22784,4 +22784,7 @@ If you're testing a translations set, you might not want the language to go back
   <data name="Release_Beta_MasterReset" xml:space="preserve">
     <value>Cleaning up and restarting...</value>
   </data>
+  <data name="Settings_General_Outdated" xml:space="preserve">
+    <value>(modified)</value>
+  </data>
 </root>
