@@ -102,7 +102,7 @@ Module General
         MessageBox.Show("This build isn't properly compiled." & vbCrLf & vbCrLf & Exception & " (General.vb).", My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
     Public Function SelfTest() As Boolean
-#If DEUBG Then
+#If DEBUG Then
         Const TAG = "SelfTest"
 #End If
 
@@ -416,7 +416,7 @@ Module General
     End Sub
 
     Private Sub Restart()
-#If DEUBG Then
+#If DEBUG Then
         Const TAG = "Restart"
 #End If
         SplashScreen.SeparateThreadBusy = True
@@ -444,7 +444,7 @@ Module General
     End Sub
 
     Public Sub Shutdown()
-#If DEUBG Then
+#If DEBUG Then
         Const TAG = "Shutdown"
 #End If
         For i = My.Application.OpenForms.Count - 1 To 0 Step -1
