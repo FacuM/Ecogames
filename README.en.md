@@ -106,6 +106,11 @@ In the same way, if you feel like you need to remove all the activities, as a la
 
 If you want to do it, keep pressing and, then, you'll notice that "**Delete**" will now be "**Delete all**", click it to do the operation. You'll be requested for confirmation.
 
+
+Also, you can delete the data and restart the application easily if your version has `ENABLE_MASTER_RESET` defined and it's `True`, using the following combination:
+
+`CTRL` + `ALT` + `M`
+
 ### User
 The user has an interface that looks like the one you can see below.
 
@@ -177,6 +182,16 @@ Also, as a long-term optimization measurement, and to prevent leaks of internal 
 <p align="center">
 	<img src="https://i.imgur.com/tH62uh4.png" alt="Símbolos de depuración" />
 </p>
+
+### Optional parameters
+
+Clarification: the following constants shall be understood as defined and with a `True` value.
+
+`DEBUG` - Enables the debugging symbols and posts messages to the console output.
+ - `DEBUG_CLEAN` - Wipes the system data each time the application is started.
+   - `KEEP_LANG` - Won't wipe the language selection during the cleanup.
+
+`ENABLE_MASTER_RESET` - Allows issuing  `CTRL` + `ALT` + `M` to run a quick manual wipe.
 
 ### Dependencies
 

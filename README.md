@@ -106,6 +106,11 @@ Asimismo, si cree necesario eliminar todas las actividades, como último recurso
 
 Si desea hacerlo, continúe pulsando y, a continuación, notará que "**Eliminar**" pasará a ser "**Eliminar todo**", haga clic sobre este para realizar la operación. Se le solicitará una última confirmación.
 
+
+También, puede borrar los datos y reiniciar la aplicación fácilmente si, en su versión, `ENABLE_MASTER_RESET` está definido y es verdadero (`True`), utilizando la siguiente combinación:
+
+`CTRL` + `ALT` + `M`
+
 ### Usuario
 El usuario posee una interfaz como la que observa a continuación.
 
@@ -177,6 +182,16 @@ Además, como medida de optimización a largo plazo, y en busca de prevenir "lea
 <p align="center">
 	<img src="https://i.imgur.com/tH62uh4.png" alt="Símbolos de depuración" />
 </p>
+
+### Parámetros opcionales
+
+Aclaración: se entiende para las siguientes constantes que están definidas y su valor es verdadero (`True`).
+
+`DEBUG` - Habilita los símbolos de depuración y envía mensajes a la salida de la consola.
+ - `DEBUG_CLEAN` - Limpia todos los datos del sistema cada vez que la aplicación es iniciada.
+   - `KEEP_LANG` - Durante la limpieza, no elimina la elección de lenguaje realizada.
+
+`ENABLE_MASTER_RESET` - Permite utilizar `CTRL` + `ALT` + `M` y realizar el borrado de datos rápido.
 
 ### Dependencias
 
