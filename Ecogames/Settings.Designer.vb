@@ -26,6 +26,7 @@ Partial Class Settings
         Me.ActivityListBox = New System.Windows.Forms.ListBox()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.RefreshButton = New MetroFramework.Controls.MetroButton()
         Me.DeleteActivity = New MetroFramework.Controls.MetroButton()
         Me.ModifyActivity = New MetroFramework.Controls.MetroButton()
         Me.AddActivity = New MetroFramework.Controls.MetroButton()
@@ -54,7 +55,6 @@ Partial Class Settings
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.UserRepOkColorBtn = New MetroFramework.Controls.MetroButton()
-        Me.RefreshButton = New MetroFramework.Controls.MetroButton()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
@@ -62,22 +62,21 @@ Partial Class Settings
         '
         'ActivityListBox
         '
-        resources.ApplyResources(Me.ActivityListBox, "ActivityListBox")
         Me.ActivityListBox.FormattingEnabled = True
+        resources.ApplyResources(Me.ActivityListBox, "ActivityListBox")
         Me.ActivityListBox.Name = "ActivityListBox"
         '
         'MetroTabControl1
         '
-        resources.ApplyResources(Me.MetroTabControl1, "MetroTabControl1")
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
+        resources.ApplyResources(Me.MetroTabControl1, "MetroTabControl1")
         Me.MetroTabControl1.Name = "MetroTabControl1"
         Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.UseSelectable = True
         '
         'MetroTabPage1
         '
-        resources.ApplyResources(Me.MetroTabPage1, "MetroTabPage1")
         Me.MetroTabPage1.Controls.Add(Me.RefreshButton)
         Me.MetroTabPage1.Controls.Add(Me.DeleteActivity)
         Me.MetroTabPage1.Controls.Add(Me.ModifyActivity)
@@ -92,10 +91,17 @@ Partial Class Settings
         Me.MetroTabPage1.HorizontalScrollbarBarColor = True
         Me.MetroTabPage1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.HorizontalScrollbarSize = 10
+        resources.ApplyResources(Me.MetroTabPage1, "MetroTabPage1")
         Me.MetroTabPage1.Name = "MetroTabPage1"
         Me.MetroTabPage1.VerticalScrollbarBarColor = True
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
+        '
+        'RefreshButton
+        '
+        resources.ApplyResources(Me.RefreshButton, "RefreshButton")
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.UseSelectable = True
         '
         'DeleteActivity
         '
@@ -117,37 +123,20 @@ Partial Class Settings
         '
         'SettingsActivityName
         '
-        resources.ApplyResources(Me.SettingsActivityName, "SettingsActivityName")
         '
         '
         '
-        Me.SettingsActivityName.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
-        Me.SettingsActivityName.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
-        Me.SettingsActivityName.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
-        Me.SettingsActivityName.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
-        Me.SettingsActivityName.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
-        Me.SettingsActivityName.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
-        Me.SettingsActivityName.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
-        Me.SettingsActivityName.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
-        Me.SettingsActivityName.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
-        Me.SettingsActivityName.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
         Me.SettingsActivityName.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.SettingsActivityName.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
-        Me.SettingsActivityName.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
-        Me.SettingsActivityName.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
         Me.SettingsActivityName.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
         Me.SettingsActivityName.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
-        Me.SettingsActivityName.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.SettingsActivityName.CustomButton.Name = ""
-        Me.SettingsActivityName.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
         Me.SettingsActivityName.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.SettingsActivityName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.SettingsActivityName.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
-        Me.SettingsActivityName.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
-        Me.SettingsActivityName.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.SettingsActivityName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.SettingsActivityName.CustomButton.UseSelectable = True
         Me.SettingsActivityName.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
+        resources.ApplyResources(Me.SettingsActivityName, "SettingsActivityName")
         Me.SettingsActivityName.Lines = New String(-1) {}
         Me.SettingsActivityName.MaxLength = 32767
         Me.SettingsActivityName.Name = "SettingsActivityName"
@@ -168,8 +157,8 @@ Partial Class Settings
         '
         'SettingsActivityType
         '
-        resources.ApplyResources(Me.SettingsActivityType, "SettingsActivityType")
         Me.SettingsActivityType.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        resources.ApplyResources(Me.SettingsActivityType, "SettingsActivityType")
         Me.SettingsActivityType.FormattingEnabled = True
         Me.SettingsActivityType.Name = "SettingsActivityType"
         Me.SettingsActivityType.UseSelectable = True
@@ -181,37 +170,20 @@ Partial Class Settings
         '
         'SettingsActivityDescription
         '
-        resources.ApplyResources(Me.SettingsActivityDescription, "SettingsActivityDescription")
         '
         '
         '
-        Me.SettingsActivityDescription.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription1")
-        Me.SettingsActivityDescription.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName1")
-        Me.SettingsActivityDescription.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor1"), System.Windows.Forms.AnchorStyles)
-        Me.SettingsActivityDescription.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize1"), Boolean)
-        Me.SettingsActivityDescription.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode1"), System.Windows.Forms.AutoSizeMode)
-        Me.SettingsActivityDescription.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage1"), System.Drawing.Image)
-        Me.SettingsActivityDescription.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout1"), System.Windows.Forms.ImageLayout)
-        Me.SettingsActivityDescription.CustomButton.Dock = CType(resources.GetObject("resource.Dock1"), System.Windows.Forms.DockStyle)
-        Me.SettingsActivityDescription.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle1"), System.Windows.Forms.FlatStyle)
-        Me.SettingsActivityDescription.CustomButton.Font = CType(resources.GetObject("resource.Font1"), System.Drawing.Font)
         Me.SettingsActivityDescription.CustomButton.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        Me.SettingsActivityDescription.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign1"), System.Drawing.ContentAlignment)
-        Me.SettingsActivityDescription.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex1"), Integer)
-        Me.SettingsActivityDescription.CustomButton.ImageKey = resources.GetString("resource.ImageKey1")
         Me.SettingsActivityDescription.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode1"), System.Windows.Forms.ImeMode)
         Me.SettingsActivityDescription.CustomButton.Location = CType(resources.GetObject("resource.Location1"), System.Drawing.Point)
-        Me.SettingsActivityDescription.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize1"), System.Drawing.Size)
         Me.SettingsActivityDescription.CustomButton.Name = ""
-        Me.SettingsActivityDescription.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft1"), System.Windows.Forms.RightToLeft)
         Me.SettingsActivityDescription.CustomButton.Size = CType(resources.GetObject("resource.Size1"), System.Drawing.Size)
         Me.SettingsActivityDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.SettingsActivityDescription.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex1"), Integer)
-        Me.SettingsActivityDescription.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign1"), System.Drawing.ContentAlignment)
-        Me.SettingsActivityDescription.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation1"), System.Windows.Forms.TextImageRelation)
         Me.SettingsActivityDescription.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.SettingsActivityDescription.CustomButton.UseSelectable = True
         Me.SettingsActivityDescription.CustomButton.Visible = CType(resources.GetObject("resource.Visible1"), Boolean)
+        resources.ApplyResources(Me.SettingsActivityDescription, "SettingsActivityDescription")
         Me.SettingsActivityDescription.Lines = New String(-1) {}
         Me.SettingsActivityDescription.MaxLength = 32767
         Me.SettingsActivityDescription.Multiline = True
@@ -233,7 +205,6 @@ Partial Class Settings
         '
         'MetroTabPage2
         '
-        resources.ApplyResources(Me.MetroTabPage2, "MetroTabPage2")
         Me.MetroTabPage2.Controls.Add(Me.Label6)
         Me.MetroTabPage2.Controls.Add(Me.Panel8)
         Me.MetroTabPage2.Controls.Add(Me.UserRepCust3Btn)
@@ -255,6 +226,7 @@ Partial Class Settings
         Me.MetroTabPage2.HorizontalScrollbarBarColor = True
         Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.HorizontalScrollbarSize = 10
+        resources.ApplyResources(Me.MetroTabPage2, "MetroTabPage2")
         Me.MetroTabPage2.Name = "MetroTabPage2"
         Me.MetroTabPage2.VerticalScrollbarBarColor = True
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
@@ -267,8 +239,8 @@ Partial Class Settings
         '
         'Panel8
         '
-        resources.ApplyResources(Me.Panel8, "Panel8")
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel8, "Panel8")
         Me.Panel8.Name = "Panel8"
         '
         'UserRepCust3Btn
@@ -284,8 +256,8 @@ Partial Class Settings
         '
         'Panel7
         '
-        resources.ApplyResources(Me.Panel7, "Panel7")
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel7, "Panel7")
         Me.Panel7.Name = "Panel7"
         '
         'UserRepCust2Btn
@@ -301,8 +273,8 @@ Partial Class Settings
         '
         'Panel6
         '
-        resources.ApplyResources(Me.Panel6, "Panel6")
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel6, "Panel6")
         Me.Panel6.Name = "Panel6"
         '
         'UserRepCust1Btn
@@ -318,8 +290,8 @@ Partial Class Settings
         '
         'Panel5
         '
-        resources.ApplyResources(Me.Panel5, "Panel5")
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel5, "Panel5")
         Me.Panel5.Name = "Panel5"
         '
         'UserRepRegularColorBtn
@@ -335,8 +307,8 @@ Partial Class Settings
         '
         'Panel4
         '
-        resources.ApplyResources(Me.Panel4, "Panel4")
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel4, "Panel4")
         Me.Panel4.Name = "Panel4"
         '
         'UserRepWrongColorBtn
@@ -352,8 +324,8 @@ Partial Class Settings
         '
         'Panel3
         '
-        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
         '
         'UserRepOkColorBtn
@@ -361,12 +333,6 @@ Partial Class Settings
         resources.ApplyResources(Me.UserRepOkColorBtn, "UserRepOkColorBtn")
         Me.UserRepOkColorBtn.Name = "UserRepOkColorBtn"
         Me.UserRepOkColorBtn.UseSelectable = True
-        '
-        'RefreshButton
-        '
-        resources.ApplyResources(Me.RefreshButton, "RefreshButton")
-        Me.RefreshButton.Name = "RefreshButton"
-        Me.RefreshButton.UseSelectable = True
         '
         'Settings
         '

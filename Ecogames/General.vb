@@ -70,9 +70,6 @@ Module General
         "yours",
         "'s"
     }
-    Public RecoveryMode As Boolean = False
-    Public PreventClose As Boolean = True
-
     ' Local
     Private Const MinimumPasswordLength As Integer = 8
     Private Const MinimumSimpleLength As Integer = 1
@@ -84,6 +81,9 @@ Module General
     ' Global
     Public CurrentActivityIndex As Integer = -1
     Public CurrentActivityTypeId As Integer = -1 ' Only used for play mode.
+
+    Public RecoveryMode As Boolean = False
+    Public PreventClose As Boolean = True
 
     ' Local
 
