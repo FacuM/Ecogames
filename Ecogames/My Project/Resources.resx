@@ -22787,4 +22787,48 @@ If you're testing a translations set, you might not want the language to go back
   <data name="Settings_General_Outdated" xml:space="preserve">
     <value>(modified)</value>
   </data>
+  <data name="Tutorial_Play_Crossword_DataGridView" xml:space="preserve">
+    <value>Double-click the white tiles, then, type the letter you guessed.</value>
+  </data>
+  <data name="Tutorial_Play_Crossword_Score" xml:space="preserve">
+    <value>Your score will increase {0} points each time you got one right.</value>
+  </data>
+  <data name="Tutorial_General_ActivityRestartRequest" xml:space="preserve">
+    <value>After showing the tutorial, your changes wil be lost, do you want to continue anyways?</value>
+  </data>
+  <data name="Tutorial_Play_Crossword_DataGridView_TryRight" xml:space="preserve">
+    <value>If you get it right, it'll turn green.</value>
+  </data>
+  <data name="Tutorial_Play_Crossword_DataGridView_TryWrong" xml:space="preserve">
+    <value>If you don't get it at the first try, it'll turn red instead.</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Controls_Right" xml:space="preserve">
+    <value>Typing a letter, will reveal each occurence.</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Controls_Right_Final" xml:space="preserve">
+    <value>If you get all of them, you win!</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Controls_Wrong" xml:space="preserve">
+    <value>If there aren't any, you won't get points.</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Word_Right" xml:space="preserve">
+    <value>D___</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Word_Right_Final" xml:space="preserve">
+    <value>Demo</value>
+  </data>
+  <data name="Tutorial_Play_QuestionClosed_AnswersListBox" xml:space="preserve">
+    <value>And here, you'll see the possible options.</value>
+  </data>
+  <data name="Tutorial_Play_QuestionClosed_AnswersListBox_Final" xml:space="preserve">
+    <value>Select each one you think is right.</value>
+  </data>
+  <data name="Tutorial_Play_QuestionOpen_AnswerTextBox" xml:space="preserve">
+    <value>And here, you'll be able to type your answer.
+
+Once you're done, click "Verify". If automatic verification is enabled, the system will quickly determine your score and display it, else, you'll have to wait for your teacher to review it.</value>
+  </data>
+  <data name="Tutorial_Play_Question_QuestionTextBox" xml:space="preserve">
+    <value>Here, you'll see the question.</value>
+  </data>
 </root>

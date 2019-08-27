@@ -35,6 +35,8 @@ Partial Class Play_ActivityType_Hangman
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
         Me.StatusResetTimer = New System.Windows.Forms.Timer(Me.components)
         Me.TimeManager = New System.Windows.Forms.Timer(Me.components)
+        Me.HowToPlayButton = New System.Windows.Forms.Button()
+        Me.TutorialTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.StatusPanel.SuspendLayout()
@@ -48,45 +50,28 @@ Partial Class Play_ActivityType_Hangman
         '
         'PictureBox1
         '
-        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Image = Global.Ecogames.My.Resources.Resources.drawing
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
         '
         'HangmanWordTextBox
         '
-        resources.ApplyResources(Me.HangmanWordTextBox, "HangmanWordTextBox")
         '
         '
         '
-        Me.HangmanWordTextBox.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription")
-        Me.HangmanWordTextBox.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName")
-        Me.HangmanWordTextBox.CustomButton.Anchor = CType(resources.GetObject("resource.Anchor"), System.Windows.Forms.AnchorStyles)
-        Me.HangmanWordTextBox.CustomButton.AutoSize = CType(resources.GetObject("resource.AutoSize"), Boolean)
-        Me.HangmanWordTextBox.CustomButton.AutoSizeMode = CType(resources.GetObject("resource.AutoSizeMode"), System.Windows.Forms.AutoSizeMode)
-        Me.HangmanWordTextBox.CustomButton.BackgroundImage = CType(resources.GetObject("resource.BackgroundImage"), System.Drawing.Image)
-        Me.HangmanWordTextBox.CustomButton.BackgroundImageLayout = CType(resources.GetObject("resource.BackgroundImageLayout"), System.Windows.Forms.ImageLayout)
-        Me.HangmanWordTextBox.CustomButton.Dock = CType(resources.GetObject("resource.Dock"), System.Windows.Forms.DockStyle)
-        Me.HangmanWordTextBox.CustomButton.FlatStyle = CType(resources.GetObject("resource.FlatStyle"), System.Windows.Forms.FlatStyle)
-        Me.HangmanWordTextBox.CustomButton.Font = CType(resources.GetObject("resource.Font"), System.Drawing.Font)
         Me.HangmanWordTextBox.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.HangmanWordTextBox.CustomButton.ImageAlign = CType(resources.GetObject("resource.ImageAlign"), System.Drawing.ContentAlignment)
-        Me.HangmanWordTextBox.CustomButton.ImageIndex = CType(resources.GetObject("resource.ImageIndex"), Integer)
-        Me.HangmanWordTextBox.CustomButton.ImageKey = resources.GetString("resource.ImageKey")
         Me.HangmanWordTextBox.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
         Me.HangmanWordTextBox.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
-        Me.HangmanWordTextBox.CustomButton.MaximumSize = CType(resources.GetObject("resource.MaximumSize"), System.Drawing.Size)
         Me.HangmanWordTextBox.CustomButton.Name = ""
-        Me.HangmanWordTextBox.CustomButton.RightToLeft = CType(resources.GetObject("resource.RightToLeft"), System.Windows.Forms.RightToLeft)
         Me.HangmanWordTextBox.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.HangmanWordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.HangmanWordTextBox.CustomButton.TabIndex = CType(resources.GetObject("resource.TabIndex"), Integer)
-        Me.HangmanWordTextBox.CustomButton.TextAlign = CType(resources.GetObject("resource.TextAlign"), System.Drawing.ContentAlignment)
-        Me.HangmanWordTextBox.CustomButton.TextImageRelation = CType(resources.GetObject("resource.TextImageRelation"), System.Windows.Forms.TextImageRelation)
         Me.HangmanWordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.HangmanWordTextBox.CustomButton.UseSelectable = True
         Me.HangmanWordTextBox.CustomButton.Visible = CType(resources.GetObject("resource.Visible"), Boolean)
         Me.HangmanWordTextBox.Lines = New String(-1) {}
+        resources.ApplyResources(Me.HangmanWordTextBox, "HangmanWordTextBox")
         Me.HangmanWordTextBox.MaxLength = 45
         Me.HangmanWordTextBox.Name = "HangmanWordTextBox"
         Me.HangmanWordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -102,16 +87,16 @@ Partial Class Play_ActivityType_Hangman
         '
         'GroupBox1
         '
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.StatusPanel)
         Me.GroupBox1.Controls.Add(Me.ScorePanel)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
         'StatusPanel
         '
-        resources.ApplyResources(Me.StatusPanel, "StatusPanel")
         Me.StatusPanel.Controls.Add(Me.StatusLabel)
+        resources.ApplyResources(Me.StatusPanel, "StatusPanel")
         Me.StatusPanel.HorizontalScrollbarBarColor = False
         Me.StatusPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.StatusPanel.HorizontalScrollbarSize = 0
@@ -127,9 +112,9 @@ Partial Class Play_ActivityType_Hangman
         '
         'ScorePanel
         '
-        resources.ApplyResources(Me.ScorePanel, "ScorePanel")
         Me.ScorePanel.Controls.Add(Me.ScoreLabel)
         Me.ScorePanel.Controls.Add(Me.Label1)
+        resources.ApplyResources(Me.ScorePanel, "ScorePanel")
         Me.ScorePanel.HorizontalScrollbarBarColor = False
         Me.ScorePanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ScorePanel.HorizontalScrollbarSize = 0
@@ -156,10 +141,21 @@ Partial Class Play_ActivityType_Hangman
         '
         Me.TimeManager.Interval = 1000
         '
+        'HowToPlayButton
+        '
+        resources.ApplyResources(Me.HowToPlayButton, "HowToPlayButton")
+        Me.HowToPlayButton.Name = "HowToPlayButton"
+        Me.HowToPlayButton.UseVisualStyleBackColor = True
+        '
+        'TutorialTimer
+        '
+        Me.TutorialTimer.Interval = 5000
+        '
         'Play_ActivityType_Hangman
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.HowToPlayButton)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.PictureBox1)
@@ -188,4 +184,6 @@ Partial Class Play_ActivityType_Hangman
     Friend WithEvents Label1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents StatusResetTimer As Timer
     Friend WithEvents TimeManager As Timer
+    Friend WithEvents HowToPlayButton As Button
+    Friend WithEvents TutorialTimer As Timer
 End Class

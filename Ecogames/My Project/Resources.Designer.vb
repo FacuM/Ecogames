@@ -883,6 +883,134 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to After showing the tutorial, your changes wil be lost, do you want to continue anyways?.
+        '''</summary>
+        Friend ReadOnly Property Tutorial_General_ActivityRestartRequest() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_General_ActivityRestartRequest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Double-click the white tiles, then, type the letter you guessed..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Crossword_DataGridView() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Crossword_DataGridView", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If you get it right, it&apos;ll turn green..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Crossword_DataGridView_TryRight() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Crossword_DataGridView_TryRight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If you don&apos;t get it at the first try, it&apos;ll turn red instead..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Crossword_DataGridView_TryWrong() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Crossword_DataGridView_TryWrong", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Your score will increase {0} points each time you got one right..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Crossword_Score() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Crossword_Score", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Typing a letter, will reveal each occurence..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Hangman_Controls_Right() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Hangman_Controls_Right", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If you get all of them, you win!.
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Hangman_Controls_Right_Final() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Hangman_Controls_Right_Final", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If there aren&apos;t any, you won&apos;t get points..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Hangman_Controls_Wrong() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Hangman_Controls_Wrong", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to D___.
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Hangman_Word_Right() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Hangman_Word_Right", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Demo.
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Hangman_Word_Right_Final() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Hangman_Word_Right_Final", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Here, you&apos;ll see the question..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_Question_QuestionTextBox() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_Question_QuestionTextBox", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to And here, you&apos;ll see the possible options..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_QuestionClosed_AnswersListBox() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_QuestionClosed_AnswersListBox", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Select each one you think is right..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_QuestionClosed_AnswersListBox_Final() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_QuestionClosed_AnswersListBox_Final", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to And here, you&apos;ll be able to type your answer.
+        '''
+        '''Once you&apos;re done, click &quot;Verify&quot;. If automatic verification is enabled, the system will quickly determine your score and display it, else, you&apos;ll have to wait for your teacher to review it..
+        '''</summary>
+        Friend ReadOnly Property Tutorial_Play_QuestionOpen_AnswerTextBox() As String
+            Get
+                Return ResourceManager.GetString("Tutorial_Play_QuestionOpen_AnswerTextBox", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Version {0}.{1:00}.
         '''</summary>
         Friend ReadOnly Property Version_Text() As String

@@ -117,14 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;TutorialTimer.Name" xml:space="preserve">
+    <value>TutorialTimer</value>
+  </data>
   <data name="&gt;&gt;DataGridView1.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;StatusResetTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="HowToPlayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="&gt;&gt;ScorePanel.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;StatusResetTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="StatusLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -136,7 +143,6 @@
   <data name="Label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="StatusPanel.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
@@ -153,8 +159,14 @@
   <data name="&gt;&gt;DataGridView1.Name" xml:space="preserve">
     <value>DataGridView1</value>
   </data>
+  <data name="HowToPlayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>567, 31</value>
+  </data>
   <data name="PauseButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 30</value>
+  </data>
+  <data name="HowToPlayButton.Text" xml:space="preserve">
+    <value>How to play</value>
   </data>
   <data name="ScoreLabel.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -189,6 +201,9 @@
   <data name="StatusLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="&gt;&gt;HowToPlayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
     <value>Label1</value>
   </data>
@@ -207,8 +222,14 @@
   <data name="StatusLabel.Text" xml:space="preserve">
     <value>N/A</value>
   </data>
+  <data name="&gt;&gt;HowToPlayButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="DataGridView1.Size" type="System.Drawing.Size, System.Drawing">
     <value>639, 321</value>
+  </data>
+  <data name="&gt;&gt;HowToPlayButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;StatusLabel.Parent" xml:space="preserve">
     <value>StatusPanel</value>
@@ -216,8 +237,11 @@
   <data name="&gt;&gt;PauseButton.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
+  <data name="HowToPlayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 23</value>
+  </data>
   <data name="&gt;&gt;DataGridView1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
     <value>StatusLabel</value>
@@ -226,7 +250,7 @@
     <value>20, 60</value>
   </data>
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="StatusLabel.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -242,6 +266,9 @@
   </data>
   <data name="Label1.Text" xml:space="preserve">
     <value>Score:</value>
+  </data>
+  <data name="&gt;&gt;HowToPlayButton.Name" xml:space="preserve">
+    <value>HowToPlayButton</value>
   </data>
   <data name="PauseButton.Text" xml:space="preserve">
     <value>Pause</value>
@@ -263,6 +290,9 @@
   </data>
   <data name="&gt;&gt;ScoreLabel.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;TutorialTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusPanel.Parent" xml:space="preserve">
     <value>GroupBox1</value>
@@ -491,16 +521,19 @@
   <data name="&gt;&gt;StatusPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
-  </metadata>
   <metadata name="TimeManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>163, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="StatusResetTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="TutorialTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>290, 17</value>
   </metadata>
 </root>

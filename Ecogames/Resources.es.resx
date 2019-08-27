@@ -352,4 +352,36 @@ Si estás probando un conjunto de traducciones, puede que no quieras que el leng
   <data name="Settings_General_Outdated" xml:space="preserve">
     <value>(editado)</value>
   </data>
+  <data name="Tutorial_General_ActivityRestartRequest" xml:space="preserve">
+    <value>Después de mostrar el tutorial, vas a perder tus cambios, ¿querés continuar de todos modos?</value>
+  </data>
+  <data name="Tutorial_Play_Crossword_DataGridView" xml:space="preserve">
+    <value>Hacé un doble clic en las celdas blancas, después, escribí una letra.</value>
+  </data>
+  <data name="Tutorial_Play_Crossword_DataGridView_TryRight" xml:space="preserve">
+    <value>Si es la correcta, se volverá verde.</value>
+  </data>
+  <data name="Tutorial_Play_Crossword_DataGridView_TryWrong" xml:space="preserve">
+    <value>Si te equivocas, se volverá roja.</value>
+  </data>
+  <data name="Tutorial_Play_Crossword_Score" xml:space="preserve">
+    <value>Tu puntaje va a subir {0} puntos cada vez que contestes bien.</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Controls_Right" xml:space="preserve">
+    <value>Escribir una letra, va a revelar cada ocurrencia.</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Controls_Right_Final" xml:space="preserve">
+    <value>Si descubrís todas, ¡vas a ganar!</value>
+  </data>
+  <data name="Tutorial_Play_Hangman_Controls_Wrong" xml:space="preserve">
+    <value>Si no coincide, no obtenés puntos.</value>
+  </data>
+  <data name="Tutorial_Play_QuestionOpen_AnswerTextBox" xml:space="preserve">
+    <value>Y acá, podrás escribir tu respuesta.
+
+Cuando hayas terminado, hacé clic en "Verificar". Si la verficación automática está activada, el sistema va a determinar y mostrar tu puntaje rápidamente, si no, tendrás que esperar a que tu profesor pueda revisarla.</value>
+  </data>
+  <data name="Tutorial_Play_Question_QuestionTextBox" xml:space="preserve">
+    <value>Acá, vas a ver la pregunta.</value>
+  </data>
 </root>

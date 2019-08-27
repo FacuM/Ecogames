@@ -11,7 +11,7 @@ Public Class Play_ActivityType_Question_Open
     Dim RemainingSeconds As Integer
     Dim ClockMode As Boolean = True
     Dim WarnEmptyAnswer As Boolean = True
-
+    Dim ShowingTutorial As Boolean
 
     Public Sub LoadActivity()
         UseWaitCursor = True
@@ -206,6 +206,72 @@ Public Class Play_ActivityType_Question_Open
             End If
         Else
             TimeManager.Enabled = False
+        End If
+    End Sub
+
+    Private Sub HowToPlayButton_Click(sender As Object, e As EventArgs) Handles HowToPlayButton.Click
+        Dim HasChanges As Boolean = Not String.IsNullOrEmpty(AnswerTextBox.Text)
+
+        Dim Proceed As Boolean = True
+
+        If HasChanges Then
+            TimeManager.Enabled = False
+            Hide()
+
+            If MessageBox.Show(My.Resources.Tutorial_General_ActivityRestartRequest, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+                Proceed = False
+            End If
+
+            Show()
+            TimeManager.Enabled = True
+        End If
+
+        If Proceed Then
+            ShowingTutorial = True
+            TimeManager.Enabled = False
+
+            AnswerTextBox.ReadOnly = True
+
+            HowToPlayButton.Enabled = False
+
+            MessagesIndex = 0
+
+            QuestionTextBox.Text = Messages(0)
+
+            MessagesIndex += 1
+
+            VerifyButton.Enabled = False
+            PauseButton.Enabled = False
+
+            StatusLabel.Text = String.Empty
+
+            TutorialTimer.Enabled = True
+        End If
+    End Sub
+
+    Private StatusBackup As String
+    Private Messages As String() = {My.Resources.Tutorial_Play_Question_QuestionTextBox, My.Resources.Tutorial_Play_QuestionOpen_AnswerTextBox}
+    Private Sub TutorialTimer_Tick(sender As Object, e As EventArgs) Handles TutorialTimer.Tick
+        If MessagesIndex < Messages.Length Then
+
+            Select Case MessagesIndex
+                Case 1
+                    AnswerTextBox.Text = Messages(MessagesIndex)
+                    TutorialTimer.Interval = TutorialTimer.Interval * 2
+            End Select
+
+            MessagesIndex += 1
+        Else
+            TutorialTimer.Enabled = False
+            HowToPlayButton.Enabled = True
+
+            VerifyButton.Enabled = True
+            PauseButton.Enabled = True
+
+            TutorialTimer.Interval = CInt(Math.Round(TutorialTimer.Interval / 2))
+
+            LoadActivity()
+            ' AnswerTextBox.ReadOnly = False - left due to legibility reasons, this is handled by LoadActivity().
         End If
     End Sub
 End Class

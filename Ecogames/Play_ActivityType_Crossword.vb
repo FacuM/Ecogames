@@ -5,6 +5,7 @@
 Public Class Play_ActivityType_Crossword
     Dim ColumnMaxIndex As Integer = -1
     Dim CrosswordMaxTimePerRow As Integer = 0
+    Dim ShowingTutorial As Boolean
 
     Private Sub WipeDatagridView()
         DataGridView1.Columns.Clear()
@@ -169,6 +170,8 @@ Public Class Play_ActivityType_Crossword
 
             RemainingSeconds = CrosswordMaxTimePerRow
         End If
+
+        ShowingTutorial = False
     End Sub
 
     Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
@@ -276,9 +279,20 @@ Public Class Play_ActivityType_Crossword
     End Sub
 
     Private Sub Play_ActivityType_Crossword_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        ' Stop the countdown but hide the window too, so that the
+        ' user can't take advantage of the pause (in case that
+        ' PreventClose is True).
+        TimeManager.Enabled = False
+        Hide()
+
         If Score < MaxScore And PreventClose Then
             If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
                 e.Cancel = True
+
+                ' If the user doesn't want to cancel the game,
+                ' revert the behavior exposed above.
+                Show()
+                TimeManager.Enabled = True
             End If
         End If
     End Sub
@@ -290,7 +304,7 @@ Public Class Play_ActivityType_Crossword
 
     Private Sub TimeManager_Tick(sender As Object, e As EventArgs) Handles TimeManager.Tick
         RemainingSeconds -= 1
-        If Not StatusResetTimer.Enabled Then
+        If Not StatusResetTimer.Enabled And Not ShowingTutorial Then
             If RemainingSeconds > 0 Then
                 If RemainingSeconds = 1 Then
                     StatusLabel.Text = String.Format(My.Resources.Play_General_RemainingSeconds_Singular, RemainingSeconds)
@@ -334,5 +348,139 @@ Public Class Play_ActivityType_Crossword
         MessageBox.Show(My.Resources.Play_General_Paused, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
         Show()
         TimeManager.Enabled = True
+    End Sub
+
+    Private ReferencesList As List(Of String) = New List(Of String)
+    Private Sub HowToPlayButton_Click(sender As Object, e As EventArgs) Handles HowToPlayButton.Click
+        Dim HasChanges As Boolean = False
+
+        For Each Row As DataGridViewRow In DataGridView1.Rows
+            For Each Cell As DataGridViewCell In Row.Cells
+                If Cell.Style.BackColor = My.Settings.UserRepOk Then
+                    HasChanges = True
+                    Exit For
+                End If
+            Next
+        Next
+
+        Dim Proceed As Boolean = True
+
+        If HasChanges Then
+            TimeManager.Enabled = False
+            Hide()
+
+            If MessageBox.Show(My.Resources.Tutorial_General_ActivityRestartRequest, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+                Proceed = False
+            End If
+
+            Show()
+            TimeManager.Enabled = True
+        End If
+
+        If Proceed Then
+            ShowingTutorial = True
+            TimeManager.Enabled = False
+
+            For Each Row As DataGridViewRow In DataGridView1.Rows
+                ReferencesList.Add(Row.Cells(ColumnMaxIndex).Value.ToString)
+                Row.Cells(ColumnMaxIndex).Value = String.Empty
+            Next
+
+            HowToPlayButton.Enabled = False
+            PauseButton.Enabled = False
+
+            DataGridView1.ReadOnly = True
+
+
+            MessagesIndex = 0
+            StatusLabel.Text = Messages(MessagesIndex)
+            MessagesIndex += 1
+
+            TutorialTimer.Enabled = True
+        End If
+    End Sub
+
+    Private Messages As String() = {My.Resources.Tutorial_Play_Crossword_DataGridView, My.Resources.Tutorial_Play_Crossword_DataGridView_TryWrong, My.Resources.Tutorial_Play_Crossword_DataGridView_TryRight, String.Format(My.Resources.Tutorial_Play_Crossword_Score, DefaultScoreMultiplier)}
+    Private Sub TutorialTimer_Tick(sender As Object, e As EventArgs) Handles TutorialTimer.Tick
+        If MessagesIndex < Messages.Length Then
+            StatusLabel.Text = Messages(MessagesIndex)
+
+            Dim X As Integer = -1
+            Dim Y As Integer = -1
+
+            Select Case MessagesIndex
+                Case 1
+                    For Each Row As DataGridViewRow In DataGridView1.Rows
+                        For Each Cell As DataGridViewCell In Row.Cells
+                            If Cell.Style.BackColor = Color.White Then
+                                X = Cell.ColumnIndex
+                                Y = Cell.RowIndex
+                                Exit For
+                            End If
+                        Next
+                    Next
+
+                    If X < 0 Then
+                        X = CInt(ColumnMaxIndex / 2)
+                    End If
+
+                    If Y < 0 Then
+                        Y = CInt((DataGridView1.Rows.Count - 1) / 2)
+                    End If
+
+                    DataGridView1.Rows(Y).Cells(X).Style.BackColor = My.Settings.UserRepWrong
+
+                Case 2
+                    For Each Row As DataGridViewRow In DataGridView1.Rows
+                        For Each Cell As DataGridViewCell In Row.Cells
+                            If Cell.Style.BackColor = Color.White Then
+                                X = Cell.ColumnIndex
+                                Y = Cell.RowIndex
+                                Exit For
+                            End If
+                        Next
+                    Next
+
+                    If X < 0 Then
+                        X = CInt(ColumnMaxIndex / 2)
+                    End If
+
+                    If Y < 0 Then
+                        Y = CInt((DataGridView1.Rows.Count - 1) / 2)
+                    End If
+
+                    DataGridView1.Rows(Y).Cells(X).Style.BackColor = My.Settings.UserRepOk
+                Case 3
+                    For Each Row As DataGridViewRow In DataGridView1.Rows
+                        For Each Cell As DataGridViewCell In Row.Cells
+                            If Cell.Style.BackColor = Color.White Then
+                                X = Cell.ColumnIndex
+                                Y = Cell.RowIndex
+                                Exit For
+                            End If
+                        Next
+                    Next
+
+                    If X < 0 Then
+                        X = CInt(ColumnMaxIndex / 2)
+                    End If
+
+                    If Y < 0 Then
+                        Y = CInt((DataGridView1.Rows.Count - 1) / 2)
+                    End If
+
+                    DataGridView1.Rows(Y).Cells(X).Style.BackColor = Color.White
+                    ScoreLabel.Text = DefaultScoreMultiplier & "/" & MaxScore
+                Case Else
+
+            End Select
+
+            MessagesIndex += 1
+        Else
+            TutorialTimer.Enabled = False
+            HowToPlayButton.Enabled = True
+
+            LoadActivity()
+        End If
     End Sub
 End Class

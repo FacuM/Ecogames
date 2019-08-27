@@ -15,6 +15,7 @@ Public Class Play_ActivityType_Hangman
     Dim RemainingAttempts As Integer
     Dim RemainingSeconds As Integer
     Dim ClockMode As Boolean = True
+    Dim ShowingTutorial As Boolean
 
     Public Sub LoadActivity()
         UseWaitCursor = True
@@ -74,7 +75,7 @@ Public Class Play_ActivityType_Hangman
     End Sub
 
     Dim DoKeyPressEvent As Boolean = True
-    Private Sub Play_ActivityType_Hangman_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub Play_ActivityType_Hangman_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
         If DoKeyPressEvent Then
             If Integer.TryParse(e.KeyChar, Nothing) Then
 #If DEBUG Then
@@ -214,7 +215,7 @@ Public Class Play_ActivityType_Hangman
         End If
     End Sub
 
-    Private Sub Play_ActivityType_Hangman_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub Play_ActivityType_Hangman_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If PreventClose Then
             If MessageBox.Show(My.Resources.Play_General_IncompleteActivityWarn, My.Resources.General_Info_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
                 e.Cancel = True
@@ -223,6 +224,81 @@ Public Class Play_ActivityType_Hangman
             End If
         Else
             TimeManager.Enabled = False
+        End If
+    End Sub
+
+    Private Sub HowToPlayButton_Click(sender As Object, e As EventArgs) Handles HowToPlayButton.Click
+        Dim HasChanges As Boolean = False
+
+        Dim AvailableSpacesCount As Integer = 0
+        For Each Character As Char In HangmanWordTextBox.Text.ToCharArray
+            If Character = HangmanSeparator Then
+                AvailableSpacesCount += 1
+            End If
+        Next
+
+        If Not AvailableSpacesCount = HangmanWordTextBox.Text.Length Or Score > 0 Then
+            HasChanges = True
+        End If
+
+        Dim Proceed As Boolean = True
+
+        If HasChanges Then
+            TimeManager.Enabled = False
+            Hide()
+
+            If MessageBox.Show(My.Resources.Tutorial_General_ActivityRestartRequest, My.Resources.General_Warn_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+                Proceed = False
+            End If
+
+            Show()
+            TimeManager.Enabled = True
+        End If
+
+        If Proceed Then
+            ShowingTutorial = True
+            TimeManager.Enabled = False
+
+            DoKeyPressEvent = False
+
+            HowToPlayButton.Enabled = False
+
+            MessagesIndex = 0
+            StatusLabel.Text = Messages(MessagesIndex)
+
+            StatusBackup = HangmanWordTextBox.Text
+
+            HangmanWordTextBox.Text = My.Resources.Tutorial_Play_Hangman_Word_Right
+            ScoreLabel.Text = HangmanScorePerLetter & "/" & MaxScore
+
+            MessagesIndex += 1
+
+            TutorialTimer.Enabled = True
+        End If
+    End Sub
+
+    Private StatusBackup As String
+    Private Messages As String() = {My.Resources.Tutorial_Play_Hangman_Controls_Right, My.Resources.Tutorial_Play_Hangman_Controls_Right_Final, My.Resources.Tutorial_Play_Hangman_Controls_Wrong}
+    Private Sub TutorialTimer_Tick(sender As Object, e As EventArgs) Handles TutorialTimer.Tick
+        If MessagesIndex < Messages.Length Then
+            StatusLabel.Text = Messages(MessagesIndex)
+
+            Select Case MessagesIndex
+                Case 1
+                    HangmanWordTextBox.Text = My.Resources.Tutorial_Play_Hangman_Word_Right_Final
+                    ScoreLabel.Text = MaxScore & "/" & MaxScore
+                Case 2
+                    HangmanWordTextBox.Text = StatusBackup
+                    ScoreLabel.Text = 0 & "/" & MaxScore
+            End Select
+
+            MessagesIndex += 1
+        Else
+            TutorialTimer.Enabled = False
+            HowToPlayButton.Enabled = True
+
+            LoadActivity()
+            ' DoKeyPressEvent = True - left due to legibility reasons, this is handled by LoadActivity().
         End If
     End Sub
 End Class

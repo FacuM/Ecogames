@@ -34,6 +34,8 @@ Partial Class Play_ActivityType_Crossword
         Me.ScoreLabel = New MetroFramework.Controls.MetroLabel()
         Me.StatusResetTimer = New System.Windows.Forms.Timer(Me.components)
         Me.TimeManager = New System.Windows.Forms.Timer(Me.components)
+        Me.HowToPlayButton = New System.Windows.Forms.Button()
+        Me.TutorialTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.StatusPanel.SuspendLayout()
@@ -110,10 +112,21 @@ Partial Class Play_ActivityType_Crossword
         '
         Me.TimeManager.Interval = 1000
         '
+        'HowToPlayButton
+        '
+        resources.ApplyResources(Me.HowToPlayButton, "HowToPlayButton")
+        Me.HowToPlayButton.Name = "HowToPlayButton"
+        Me.HowToPlayButton.UseVisualStyleBackColor = True
+        '
+        'TutorialTimer
+        '
+        Me.TutorialTimer.Interval = 5000
+        '
         'Play_ActivityType_Crossword
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.HowToPlayButton)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
@@ -136,4 +149,6 @@ Partial Class Play_ActivityType_Crossword
     Friend WithEvents StatusResetTimer As Timer
     Friend WithEvents TimeManager As Timer
     Friend WithEvents PauseButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents HowToPlayButton As Button
+    Friend WithEvents TutorialTimer As Timer
 End Class

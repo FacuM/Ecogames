@@ -70,6 +70,7 @@ Module General
         "yours",
         "'s"
     }
+
     ' Local
     Private Const MinimumPasswordLength As Integer = 8
     Private Const MinimumSimpleLength As Integer = 1
@@ -81,6 +82,7 @@ Module General
     ' Global
     Public CurrentActivityIndex As Integer = -1
     Public CurrentActivityTypeId As Integer = -1 ' Only used for play mode.
+    Public MessagesIndex As Integer = 0
 
     Public RecoveryMode As Boolean = False
     Public PreventClose As Boolean = True

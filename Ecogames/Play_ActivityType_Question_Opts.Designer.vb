@@ -33,6 +33,8 @@ Partial Class Play_ActivityType_Question_Opts
         Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
         Me.TimeManager = New System.Windows.Forms.Timer(Me.components)
         Me.PauseButton = New MetroFramework.Controls.MetroButton()
+        Me.HowToPlayButton = New System.Windows.Forms.Button()
+        Me.TutorialTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -126,10 +128,21 @@ Partial Class Play_ActivityType_Question_Opts
         Me.PauseButton.Name = "PauseButton"
         Me.PauseButton.UseSelectable = True
         '
+        'HowToPlayButton
+        '
+        resources.ApplyResources(Me.HowToPlayButton, "HowToPlayButton")
+        Me.HowToPlayButton.Name = "HowToPlayButton"
+        Me.HowToPlayButton.UseVisualStyleBackColor = True
+        '
+        'TutorialTimer
+        '
+        Me.TutorialTimer.Interval = 5000
+        '
         'Play_ActivityType_Question_Opts
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.HowToPlayButton)
         Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.AnswersListBox)
@@ -155,4 +168,6 @@ Partial Class Play_ActivityType_Question_Opts
     Friend WithEvents StatusLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents TimeManager As Timer
     Friend WithEvents PauseButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents HowToPlayButton As Button
+    Friend WithEvents TutorialTimer As Timer
 End Class
