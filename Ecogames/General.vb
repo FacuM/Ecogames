@@ -236,6 +236,18 @@ Module General
         End If
         LoadLanguage()
 
+        For Each Line As String In My.Settings.Activities
+#If DEBUG Then
+            LogD(TAG, "Testing activity string: " & Line)
+#End If
+            Dim SplittableContent As String() = Line.Split(SemicolonChar)
+
+            If Not (SplittableContent.Length > 3 And Integer.TryParse(SplittableContent(0), Nothing) And Integer.TryParse(SplittableContent(3), Nothing)) Then
+                Return False
+                Exit For
+            End If
+        Next
+
         Return True ' Everything is fine.
     End Function
 
