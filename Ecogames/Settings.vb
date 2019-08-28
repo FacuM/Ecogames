@@ -73,8 +73,9 @@ Public Class Settings
 #If DEBUG Then
         LogD(Me, "Updating selected activity (""" & Original(1) & """)...")
 #End If
-        If Original(1) <> SettingsActivityName.Text Or Original(2) <> SettingsActivityDescription.Text Then
-            My.Settings.Activities(ActivityListBox.SelectedIndex) = Original(0) & SemicolonChar & SettingsActivityName.Text & SemicolonChar & SettingsActivityDescription.Text & SemicolonChar & Original(3)
+        Dim NewDescription As String = SettingsActivityDescription.Text.Replace(SemicolonChar, SemicolonAlternativeString)
+        If Original(1) <> SettingsActivityName.Text Or Original(2) <> NewDescription Then
+            My.Settings.Activities(ActivityListBox.SelectedIndex) = Original(0) & SemicolonChar & SettingsActivityName.Text & SemicolonChar & NewDescription & SemicolonChar & Original(3)
             If Not ActivityListBox.Items(ActivityListBox.SelectedIndex).ToString.Contains(My.Resources.Settings_General_Outdated) Then
                 ActivityListBox.Items(ActivityListBox.SelectedIndex) = ActivityListBox.Items(ActivityListBox.SelectedIndex).ToString & SpaceChar & My.Resources.Settings_General_Outdated
                 RefreshButton.Visible = True
@@ -111,7 +112,7 @@ Public Class Settings
     End Sub
 
     Private Sub SettingsActivityDescription_TextChanged(sender As Object, e As EventArgs) Handles SettingsActivityDescription.TextChanged
-        If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 2) Then
+        If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 1) Then
             CheckForModifications()
         End If
     End Sub
@@ -177,7 +178,7 @@ Public Class Settings
         If ActivityListBox.SelectedIndex > -1 And ActivityListBox.SelectedIndex < (ActivityListBox.Items.Count - 1) Then
             Dim Activity As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar)
 
-            SettingsActivityDescription.Text = Activity(2)
+            SettingsActivityDescription.Text = Activity(2).Replace(SemicolonAlternativeString, SemicolonChar)
             SettingsActivityName.Text = Activity(1)
 
             Dim ParsedActivityType As Integer = -1

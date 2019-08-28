@@ -66,7 +66,7 @@ Public Class Play_Activities
         If ActivityListBox.SelectedIndex > -1 Then
             Dim Activity As String() = My.Settings.Activities(ActivityListBox.SelectedIndex).Split(SemicolonChar)
 
-            SettingsActivityDescription.Text = Activity(2)
+            SettingsActivityDescription.Text = Activity(2).Replace(SemicolonAlternativeString, SemicolonChar)
             SettingsActivityName.Text = Activity(1)
 
             Dim ParsedActivityType As Integer = -1
