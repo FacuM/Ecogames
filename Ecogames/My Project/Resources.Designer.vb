@@ -883,6 +883,78 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Recovery mode enabled, wiping data....
+        '''</summary>
+        Friend ReadOnly Property Startup_General_RecoveryMode() As String
+            Get
+                Return ResourceManager.GetString("Startup_General_RecoveryMode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Starting the background worker....
+        '''</summary>
+        Friend ReadOnly Property Startup_SplashScreen_BackgroundWorker() As String
+            Get
+                Return ResourceManager.GetString("Startup_SplashScreen_BackgroundWorker", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Populating the first run form....
+        '''</summary>
+        Friend ReadOnly Property Startup_SplashScreen_FirstRun() As String
+            Get
+                Return ResourceManager.GetString("Startup_SplashScreen_FirstRun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Populating the notification area....
+        '''</summary>
+        Friend ReadOnly Property Startup_SplashScreen_NotifyIcon() As String
+            Get
+                Return ResourceManager.GetString("Startup_SplashScreen_NotifyIcon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Done! Waiting for the next screen....
+        '''</summary>
+        Friend ReadOnly Property Startup_SplashScreen_Ready() As String
+            Get
+                Return ResourceManager.GetString("Startup_SplashScreen_Ready", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Running the self-test....
+        '''</summary>
+        Friend ReadOnly Property Startup_SplashScreen_SelfTest() As String
+            Get
+                Return ResourceManager.GetString("Startup_SplashScreen_SelfTest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Populating the settings form....
+        '''</summary>
+        Friend ReadOnly Property Startup_SplashScreen_SettingsPopulation() As String
+            Get
+                Return ResourceManager.GetString("Startup_SplashScreen_SettingsPopulation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Updating activities data....
+        '''</summary>
+        Friend ReadOnly Property Startup_SplashScreen_SettingsUpdate() As String
+            Get
+                Return ResourceManager.GetString("Startup_SplashScreen_SettingsUpdate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to After showing the tutorial, your changes wil be lost, do you want to continue anyways?.
         '''</summary>
         Friend ReadOnly Property Tutorial_General_ActivityRestartRequest() As String

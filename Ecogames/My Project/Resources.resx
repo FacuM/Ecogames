@@ -22831,4 +22831,28 @@ Once you're done, click "Verify". If automatic verification is enabled, the syst
   <data name="Tutorial_Play_Question_QuestionTextBox" xml:space="preserve">
     <value>Here, you'll see the question.</value>
   </data>
+  <data name="Startup_General_RecoveryMode" xml:space="preserve">
+    <value>Recovery mode enabled, wiping data...</value>
+  </data>
+  <data name="Startup_SplashScreen_BackgroundWorker" xml:space="preserve">
+    <value>Starting the background worker...</value>
+  </data>
+  <data name="Startup_SplashScreen_FirstRun" xml:space="preserve">
+    <value>Populating the first run form...</value>
+  </data>
+  <data name="Startup_SplashScreen_NotifyIcon" xml:space="preserve">
+    <value>Populating the notification area...</value>
+  </data>
+  <data name="Startup_SplashScreen_Ready" xml:space="preserve">
+    <value>Done! Waiting for the next screen...</value>
+  </data>
+  <data name="Startup_SplashScreen_SelfTest" xml:space="preserve">
+    <value>Running the self-test...</value>
+  </data>
+  <data name="Startup_SplashScreen_SettingsPopulation" xml:space="preserve">
+    <value>Populating the settings form...</value>
+  </data>
+  <data name="Startup_SplashScreen_SettingsUpdate" xml:space="preserve">
+    <value>Updating activities data...</value>
+  </data>
 </root>

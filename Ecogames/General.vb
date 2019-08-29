@@ -131,6 +131,7 @@ Module General
             My.Settings.SecurityWord = Nothing
             My.Settings.FirstRun = True
             SettingsSaver()
+            SplashScreen.CurrentOperationLabel.Text = My.Resources.Startup_General_RecoveryMode
         End If
 
         ' In order of appearance.
@@ -236,17 +237,19 @@ Module General
         End If
         LoadLanguage()
 
-        For Each Line As String In My.Settings.Activities
+        If My.Settings.Activities IsNot Nothing Then
+            For Each Line As String In My.Settings.Activities
 #If DEBUG Then
-            LogD(TAG, "Testing activity string: " & Line)
+                LogD(TAG, "Testing activity string: " & Line)
 #End If
-            Dim SplittableContent As String() = Line.Split(SemicolonChar)
+                Dim SplittableContent As String() = Line.Split(SemicolonChar)
 
-            If Not (SplittableContent.Length > 3 And Integer.TryParse(SplittableContent(0), Nothing) And Integer.TryParse(SplittableContent(3), Nothing)) Then
-                Return False
-                Exit For
-            End If
-        Next
+                If Not (SplittableContent.Length > 3 And Integer.TryParse(SplittableContent(0), Nothing) And Integer.TryParse(SplittableContent(3), Nothing)) Then
+                    Return False
+                    Exit For
+                End If
+            Next
+        End If
 
         Return True ' Everything is fine.
     End Function

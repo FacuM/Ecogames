@@ -384,4 +384,28 @@ Cuando hayas terminado, hacé clic en "Verificar". Si la verficación automátic
   <data name="Tutorial_Play_Question_QuestionTextBox" xml:space="preserve">
     <value>Acá, vas a ver la pregunta.</value>
   </data>
+  <data name="Startup_General_RecoveryMode" xml:space="preserve">
+    <value>Modo de recuperación habilitado, borrando datos...</value>
+  </data>
+  <data name="Startup_SplashScreen_BackgroundWorker" xml:space="preserve">
+    <value>Iniciando el trabajo en segundo plano...</value>
+  </data>
+  <data name="Startup_SplashScreen_FirstRun" xml:space="preserve">
+    <value>Populando el formulario de primer inicio...</value>
+  </data>
+  <data name="Startup_SplashScreen_NotifyIcon" xml:space="preserve">
+    <value>Populando el área de notificaciones...</value>
+  </data>
+  <data name="Startup_SplashScreen_Ready" xml:space="preserve">
+    <value>¡Listo! Esperando a la siguiente pantalla...</value>
+  </data>
+  <data name="Startup_SplashScreen_SelfTest" xml:space="preserve">
+    <value>Ejecutando el autodiagnóstico...</value>
+  </data>
+  <data name="Startup_SplashScreen_SettingsPopulation" xml:space="preserve">
+    <value>Populando el formulario de configuración...</value>
+  </data>
+  <data name="Startup_SplashScreen_SettingsUpdate" xml:space="preserve">
+    <value>Actualizando datos de las actividades...</value>
+  </data>
 </root>

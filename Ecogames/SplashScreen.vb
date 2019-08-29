@@ -21,7 +21,7 @@
     End Sub
 
     ' This method handles all supported click events across the form.
-    Private Sub Global_Click(sender As Object, e As EventArgs) Handles MainLayoutPanel.Click, Me.Click, ApplicationTitle.Click
+    Private Sub Global_Click(sender As Object, e As EventArgs) Handles MainLayoutPanel.Click, Me.Click
         LoadNextScreen()
     End Sub
 
@@ -49,28 +49,35 @@
         'Copyright info
         Copyright.Text = My.Application.Info.Copyright
 
+        CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_BackgroundWorker
         OperationsDeferrerTimer.Enabled = True
     End Sub
 
     Private Sub OperationsDeferrerTimer_Tick(sender As Object, e As EventArgs) Handles OperationsDeferrerTimer.Tick
         Ready = False
 
+        CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_SelfTest
         If SelfTest() Then ' the self test passes, keep going.
 #If DEBUG And DEBUG_CLEAN Then
             MessageBox.Show(My.Resources.Debug_CleanEnvStartup, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 #End If
+            CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_NotifyIcon
             PopulateNotifyIcon()
 
             If My.Settings.FirstRun Then
+                CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_FirstRun
                 FirstRun.Populate()
             End If
 
+            CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_SettingsPopulation
             Settings.Populate()
+            CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_SettingsUpdate
             Settings.UpdateActivities()
 
             SeparateThreadBusy = False
             Ready = True
 
+            CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_Ready
             ' We're done, lets fire up the timer.
             AnimationHolderTimer.Enabled = True
         Else ' after displaying the crash, shutdown.
