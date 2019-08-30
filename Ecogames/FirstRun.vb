@@ -1,5 +1,7 @@
 ﻿Public Class FirstRun
     Public Sub Populate()
+        LanguagePickerComboBox.Items.Clear()
+
         For i = 0 To LanguagesDescription.Length - 1
             LanguagePickerComboBox.Items.Add(LanguagesDescription(i))
         Next
