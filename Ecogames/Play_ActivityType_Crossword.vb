@@ -483,4 +483,10 @@ Public Class Play_ActivityType_Crossword
             LoadActivity()
         End If
     End Sub
+
+    Private Sub Play_ActivityType_Crossword_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        ' The X position is calculated by resting the current width of the whole form with the width of the button itself and any other
+        ' component that's docked in Fill mode within the form container.
+        HowToPlayButton.Location = New Point(Size.Width - HowToPlayButton.Size.Width - DataGridView1.Location.X, HowToPlayButton.Location.Y)
+    End Sub
 End Class

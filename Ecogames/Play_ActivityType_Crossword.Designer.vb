@@ -44,23 +44,23 @@ Partial Class Play_ActivityType_Crossword
         '
         'DataGridView1
         '
-        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
         Me.DataGridView1.Name = "DataGridView1"
         '
         'GroupBox1
         '
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.StatusPanel)
         Me.GroupBox1.Controls.Add(Me.ScorePanel)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
         'StatusPanel
         '
-        resources.ApplyResources(Me.StatusPanel, "StatusPanel")
         Me.StatusPanel.Controls.Add(Me.StatusLabel)
+        resources.ApplyResources(Me.StatusPanel, "StatusPanel")
         Me.StatusPanel.HorizontalScrollbarBarColor = False
         Me.StatusPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.StatusPanel.HorizontalScrollbarSize = 0
@@ -76,10 +76,10 @@ Partial Class Play_ActivityType_Crossword
         '
         'ScorePanel
         '
-        resources.ApplyResources(Me.ScorePanel, "ScorePanel")
         Me.ScorePanel.Controls.Add(Me.PauseButton)
         Me.ScorePanel.Controls.Add(Me.Label1)
         Me.ScorePanel.Controls.Add(Me.ScoreLabel)
+        resources.ApplyResources(Me.ScorePanel, "ScorePanel")
         Me.ScorePanel.HorizontalScrollbarBarColor = False
         Me.ScorePanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ScorePanel.HorizontalScrollbarSize = 0
