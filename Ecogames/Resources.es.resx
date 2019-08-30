@@ -408,4 +408,10 @@ Cuando hayas terminado, hacé clic en "Verificar". Si la verficación automátic
   <data name="Startup_SplashScreen_SettingsUpdate" xml:space="preserve">
     <value>Actualizando datos de las actividades...</value>
   </data>
+  <data name="Settings_General_DoneSaving" xml:space="preserve">
+    <value>¡Tus cambios fueron guardados!</value>
+  </data>
+  <data name="Settings_General_DoneSaving_Final" xml:space="preserve">
+    <value>Ya podés cerrar esta ventana.</value>
+  </data>
 </root>

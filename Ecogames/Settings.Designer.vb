@@ -22,10 +22,12 @@ Partial Class Settings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.ActivityListBox = New System.Windows.Forms.ListBox()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.StatusLabel = New MetroFramework.Controls.MetroLabel()
         Me.RefreshButton = New MetroFramework.Controls.MetroButton()
         Me.DeleteActivity = New MetroFramework.Controls.MetroButton()
         Me.ModifyActivity = New MetroFramework.Controls.MetroButton()
@@ -55,6 +57,7 @@ Partial Class Settings
         Me.Label1 = New MetroFramework.Controls.MetroLabel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.UserRepOkColorBtn = New MetroFramework.Controls.MetroButton()
+        Me.StatusTimer = New System.Windows.Forms.Timer(Me.components)
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
@@ -77,6 +80,7 @@ Partial Class Settings
         '
         'MetroTabPage1
         '
+        Me.MetroTabPage1.Controls.Add(Me.StatusLabel)
         Me.MetroTabPage1.Controls.Add(Me.RefreshButton)
         Me.MetroTabPage1.Controls.Add(Me.DeleteActivity)
         Me.MetroTabPage1.Controls.Add(Me.ModifyActivity)
@@ -90,12 +94,17 @@ Partial Class Settings
         Me.MetroTabPage1.Controls.Add(Me.ActivityListBox)
         Me.MetroTabPage1.HorizontalScrollbarBarColor = True
         Me.MetroTabPage1.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage1.HorizontalScrollbarSize = 10
+        Me.MetroTabPage1.HorizontalScrollbarSize = 12
         resources.ApplyResources(Me.MetroTabPage1, "MetroTabPage1")
         Me.MetroTabPage1.Name = "MetroTabPage1"
         Me.MetroTabPage1.VerticalScrollbarBarColor = True
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage1.VerticalScrollbarSize = 10
+        Me.MetroTabPage1.VerticalScrollbarSize = 13
+        '
+        'StatusLabel
+        '
+        resources.ApplyResources(Me.StatusLabel, "StatusLabel")
+        Me.StatusLabel.Name = "StatusLabel"
         '
         'RefreshButton
         '
@@ -129,6 +138,7 @@ Partial Class Settings
         Me.SettingsActivityName.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
         Me.SettingsActivityName.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode"), System.Windows.Forms.ImeMode)
         Me.SettingsActivityName.CustomButton.Location = CType(resources.GetObject("resource.Location"), System.Drawing.Point)
+        Me.SettingsActivityName.CustomButton.Margin = CType(resources.GetObject("resource.Margin"), System.Windows.Forms.Padding)
         Me.SettingsActivityName.CustomButton.Name = ""
         Me.SettingsActivityName.CustomButton.Size = CType(resources.GetObject("resource.Size"), System.Drawing.Size)
         Me.SettingsActivityName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -176,6 +186,7 @@ Partial Class Settings
         Me.SettingsActivityDescription.CustomButton.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
         Me.SettingsActivityDescription.CustomButton.ImeMode = CType(resources.GetObject("resource.ImeMode1"), System.Windows.Forms.ImeMode)
         Me.SettingsActivityDescription.CustomButton.Location = CType(resources.GetObject("resource.Location1"), System.Drawing.Point)
+        Me.SettingsActivityDescription.CustomButton.Margin = CType(resources.GetObject("resource.Margin1"), System.Windows.Forms.Padding)
         Me.SettingsActivityDescription.CustomButton.Name = ""
         Me.SettingsActivityDescription.CustomButton.Size = CType(resources.GetObject("resource.Size1"), System.Drawing.Size)
         Me.SettingsActivityDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -225,12 +236,12 @@ Partial Class Settings
         Me.MetroTabPage2.Controls.Add(Me.UserRepOkColorBtn)
         Me.MetroTabPage2.HorizontalScrollbarBarColor = True
         Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage2.HorizontalScrollbarSize = 10
+        Me.MetroTabPage2.HorizontalScrollbarSize = 12
         resources.ApplyResources(Me.MetroTabPage2, "MetroTabPage2")
         Me.MetroTabPage2.Name = "MetroTabPage2"
         Me.MetroTabPage2.VerticalScrollbarBarColor = True
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage2.VerticalScrollbarSize = 10
+        Me.MetroTabPage2.VerticalScrollbarSize = 13
         '
         'Label6
         '
@@ -334,6 +345,10 @@ Partial Class Settings
         Me.UserRepOkColorBtn.Name = "UserRepOkColorBtn"
         Me.UserRepOkColorBtn.UseSelectable = True
         '
+        'StatusTimer
+        '
+        Me.StatusTimer.Interval = 1500
+        '
         'Settings
         '
         resources.ApplyResources(Me, "$this")
@@ -382,4 +397,6 @@ Partial Class Settings
     Friend WithEvents Panel3 As Panel
     Friend WithEvents UserRepOkColorBtn As MetroFramework.Controls.MetroButton
     Friend WithEvents RefreshButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents StatusLabel As MetroFramework.Controls.MetroLabel
+    Friend WithEvents StatusTimer As Timer
 End Class

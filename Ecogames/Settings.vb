@@ -226,6 +226,8 @@ Public Class Settings
     End Sub
 
     Private Sub ModifyActivity_Click(sender As Object, e As EventArgs) Handles ModifyActivity.Click
+        UseWaitCursor = True
+
         If ActivityListBox.SelectedIndex > -1 Then
             CurrentActivityIndex = ActivityListBox.SelectedIndex
         End If
@@ -247,10 +249,15 @@ Public Class Settings
                 ActivityType_Question_Opts.PrepareModification()
                 ActivityType_Question_Opts.ShowDialog()
         End Select
+
+        StatusLabel.Visible = True
+        StatusTimer.Enabled = True
+
+        UseWaitCursor = False
     End Sub
 
     Private Sub AddActivity_Click(sender As Object, e As EventArgs) Handles AddActivity.Click
-        UseWaitCursor = False
+        UseWaitCursor = True
 
         Select Case SettingsActivityType.SelectedIndex
             Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
@@ -270,6 +277,9 @@ Public Class Settings
                 ActivityType_Question_Opts.PrepareNew()
                 ActivityType_Question_Opts.ShowDialog()
         End Select
+
+        StatusLabel.Visible = True
+        StatusTimer.Enabled = True
 
         UseWaitCursor = False
     End Sub
@@ -320,5 +330,19 @@ Public Class Settings
         UpdateActivities()
         ActivityListBox.SelectedIndex = PreviousIndex
         RefreshButton.Visible = False
+    End Sub
+
+    Dim MessageIndex As Integer = 0
+    Private Sub StatusTimer_Tick(sender As Object, e As EventArgs) Handles StatusTimer.Tick
+        Select Case MessageIndex
+            Case 0
+                StatusLabel.Text = My.Resources.Settings_General_DoneSaving
+            Case 1
+                StatusLabel.Text = My.Resources.Settings_General_DoneSaving_Final
+            Case Else
+                StatusTimer.Enabled = False
+                StatusLabel.Visible = False
+        End Select
+        MessageIndex += 1
     End Sub
 End Class

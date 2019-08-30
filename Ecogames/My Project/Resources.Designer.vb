@@ -820,6 +820,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Your changes have been saved!.
+        '''</summary>
+        Friend ReadOnly Property Settings_General_DoneSaving() As String
+            Get
+                Return ResourceManager.GetString("Settings_General_DoneSaving", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to You can now close this window..
+        '''</summary>
+        Friend ReadOnly Property Settings_General_DoneSaving_Final() As String
+            Get
+                Return ResourceManager.GetString("Settings_General_DoneSaving_Final", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to An internal error has occured..
         '''</summary>
         Friend ReadOnly Property Settings_General_Err() As String
