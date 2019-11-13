@@ -224,6 +224,9 @@ Public Class Play_ActivityType_Crossword
 
         If Score = MaxScore Then
             TimeManager.Enabled = False
+            StatusResetTimer.Enabled = False
+
+            PauseButton.Enabled = False
 
             My.Computer.Audio.Play(My.Resources.Perfect, AudioPlayMode.Background)
             MessageBox.Show(My.Resources.Play_General_PerfectScore, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)

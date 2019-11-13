@@ -1,6 +1,12 @@
 ﻿Imports System.Collections.Specialized
 
 Public Class Settings
+    Private Play_Activities As Play_Activities
+    Private ActivityType_Crossword As ActivityType_Crossword
+    Private ActivityType_Hangman As ActivityType_Hangman
+    Private ActivityType_Question_Open As ActivityType_Question_Open
+    Private ActivityType_Question_Opts As ActivityType_Question_Opts
+
     Public Sub Populate()
 #If DEBUG Then
         LogD(Me, "Preparing " & Name & " elements...")
@@ -98,7 +104,13 @@ Public Class Settings
 #If DEBUG Then
         LogD(Me, "Closed.")
 #End If
-        Play_Activities.Show()
+        If Me.Play_Activities IsNot Nothing Then
+            Me.Play_Activities.Dispose()
+        End If
+
+        Me.Play_Activities = New Play_Activities()
+
+        Me.Play_Activities.Show()
     End Sub
 
     Private Sub SettingsActivityType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SettingsActivityType.SelectedIndexChanged
@@ -233,21 +245,49 @@ Public Class Settings
         End If
         Select Case SettingsActivityType.SelectedIndex
             Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
-                ActivityType_Crossword.Text = SettingsActivityName.Text
-                ActivityType_Crossword.PrepareModification()
-                ActivityType_Crossword.ShowDialog()
+                If Me.ActivityType_Crossword IsNot Nothing Then
+                    Me.ActivityType_Crossword.Dispose()
+                End If
+
+                Me.ActivityType_Crossword = New ActivityType_Crossword With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Crossword.PrepareModification()
+                Me.ActivityType_Crossword.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
-                ActivityType_Hangman.Text = SettingsActivityName.Text
-                ActivityType_Hangman.PrepareModification()
-                ActivityType_Hangman.ShowDialog()
+                If Me.ActivityType_Hangman IsNot Nothing Then
+                    Me.ActivityType_Hangman.Dispose()
+                End If
+
+                Me.ActivityType_Hangman = New ActivityType_Hangman With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Hangman.PrepareModification()
+                Me.ActivityType_Hangman.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
-                ActivityType_Question_Open.Text = SettingsActivityName.Text
-                ActivityType_Question_Open.PrepareModification()
-                ActivityType_Question_Open.ShowDialog()
+                If Me.ActivityType_Question_Open IsNot Nothing Then
+                    Me.ActivityType_Question_Open.Dispose()
+                End If
+
+                Me.ActivityType_Question_Open = New ActivityType_Question_Open With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Question_Open.PrepareModification()
+                Me.ActivityType_Question_Open.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
-                ActivityType_Question_Opts.Text = SettingsActivityName.Text
-                ActivityType_Question_Opts.PrepareModification()
-                ActivityType_Question_Opts.ShowDialog()
+                If Me.ActivityType_Question_Opts IsNot Nothing Then
+                    Me.ActivityType_Question_Opts.Dispose()
+                End If
+
+                Me.ActivityType_Question_Opts = New ActivityType_Question_Opts With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Question_Opts.PrepareModification()
+                Me.ActivityType_Question_Opts.ShowDialog()
         End Select
 
         StatusLabel.Visible = True
@@ -261,21 +301,53 @@ Public Class Settings
 
         Select Case SettingsActivityType.SelectedIndex
             Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
-                ActivityType_Crossword.Text = SettingsActivityName.Text
-                ActivityType_Crossword.PrepareNew()
-                ActivityType_Crossword.ShowDialog()
+                If Me.ActivityType_Crossword IsNot Nothing Then
+                    Me.ActivityType_Crossword.Dispose()
+                End If
+
+                Me.ActivityType_Crossword = New ActivityType_Crossword With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Crossword.Text = SettingsActivityName.Text
+                Me.ActivityType_Crossword.PrepareNew()
+                Me.ActivityType_Crossword.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
-                ActivityType_Hangman.Text = SettingsActivityName.Text
-                ActivityType_Hangman.PrepareNew()
-                ActivityType_Hangman.ShowDialog()
+                If Me.ActivityType_Hangman IsNot Nothing Then
+                    Me.ActivityType_Hangman.Dispose()
+                End If
+
+                Me.ActivityType_Hangman = New ActivityType_Hangman With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Hangman.Text = SettingsActivityName.Text
+                Me.ActivityType_Hangman.PrepareNew()
+                Me.ActivityType_Hangman.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
-                ActivityType_Question_Open.Text = SettingsActivityName.Text
-                ActivityType_Question_Open.PrepareNew()
-                ActivityType_Question_Open.ShowDialog()
+                If Me.ActivityType_Question_Open IsNot Nothing Then
+                    Me.ActivityType_Question_Open.Dispose()
+                End If
+
+                Me.ActivityType_Question_Open = New ActivityType_Question_Open With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Question_Open.Text = SettingsActivityName.Text
+                Me.ActivityType_Question_Open.PrepareNew()
+                Me.ActivityType_Question_Open.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
-                ActivityType_Question_Opts.Text = SettingsActivityName.Text
-                ActivityType_Question_Opts.PrepareNew()
-                ActivityType_Question_Opts.ShowDialog()
+                If Me.ActivityType_Question_Opts IsNot Nothing Then
+                    Me.ActivityType_Question_Opts.Dispose()
+                End If
+
+                Me.ActivityType_Question_Opts = New ActivityType_Question_Opts With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.ActivityType_Question_Opts.Text = SettingsActivityName.Text
+                Me.ActivityType_Question_Opts.PrepareNew()
+                Me.ActivityType_Question_Opts.ShowDialog()
         End Select
 
         StatusLabel.Visible = True

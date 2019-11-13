@@ -1,4 +1,7 @@
 ﻿Public NotInheritable Class SplashScreen
+    Private FirstRun As FirstRun
+    Private Play_Activities As Play_Activities
+
     Public SeparateThreadBusy As Boolean = False
     Private Ready As Boolean = False
 
@@ -7,9 +10,10 @@
             UseWaitCursor = True
             Hide()
             If My.Settings.FirstRun Then
-                FirstRun.Show()
+                Me.FirstRun.Show()
             Else
-                Play_Activities.Show()
+                Me.Play_Activities = New Play_Activities()
+                Me.Play_Activities.Show()
             End If
             UseWaitCursor = False
             Close()
@@ -50,6 +54,7 @@
         Copyright.Text = My.Application.Info.Copyright
 
         CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_BackgroundWorker
+
         OperationsDeferrerTimer.Enabled = True
     End Sub
 
@@ -61,12 +66,14 @@
 #If DEBUG And DEBUG_CLEAN Then
             MessageBox.Show(My.Resources.Debug_CleanEnvStartup, My.Resources.General_Info_Title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 #End If
+
             CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_NotifyIcon
             PopulateNotifyIcon()
 
             If My.Settings.FirstRun Then
                 CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_FirstRun
-                FirstRun.Populate()
+                Me.FirstRun = New FirstRun()
+                Me.FirstRun.Populate()
             End If
 
             CurrentOperationLabel.Text = My.Resources.Startup_SplashScreen_SettingsPopulation

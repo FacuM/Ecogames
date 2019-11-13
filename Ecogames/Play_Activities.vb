@@ -1,6 +1,11 @@
 ﻿Imports System.Collections.Specialized
 
 Public Class Play_Activities
+    Private Play_ActivityType_Crossword As Play_ActivityType_Crossword
+    Private Play_ActivityType_Hangman As Play_ActivityType_Hangman
+    Private Play_ActivityType_Question_Open As Play_ActivityType_Question_Open
+    Private Play_ActivityType_Question_Opts As Play_ActivityType_Question_Opts
+
     Public Sub UpdateActivities()
 #If DEBUG Then
         LogD(Me, "Updating activities list...")
@@ -106,6 +111,12 @@ Public Class Play_Activities
     Private Sub Play_Activities_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If My.Computer.Keyboard.CtrlKeyDown And e.KeyCode = Keys.S Then
             Login.ShowDialog()
+
+            If Login.DialogResult = DialogResult.OK Then
+                Settings.Show()
+            End If
+
+            Close()
 #If ENABLE_MASTER_RESET Then
         Else
             If My.Computer.Keyboard.CtrlKeyDown And My.Computer.Keyboard.AltKeyDown And e.KeyCode = Keys.M Then
@@ -128,21 +139,52 @@ Public Class Play_Activities
 
         Select Case CurrentActivityTypeId
             Case Integer.Parse(My.Resources.ActivityType_Crossword_ID)
-                Play_ActivityType_Crossword.Text = SettingsActivityName.Text
-                Play_ActivityType_Crossword.LoadActivity()
-                Play_ActivityType_Crossword.ShowDialog()
+                If Me.Play_ActivityType_Crossword IsNot Nothing Then
+                    Me.Play_ActivityType_Crossword.Dispose()
+                End If
+
+                Me.Play_ActivityType_Crossword = New Play_ActivityType_Crossword With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.Play_ActivityType_Crossword.LoadActivity()
+                Me.Play_ActivityType_Crossword.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
-                Play_ActivityType_Hangman.Text = SettingsActivityName.Text
-                Play_ActivityType_Hangman.LoadActivity()
-                Play_ActivityType_Hangman.ShowDialog()
+                If Me.Play_ActivityType_Hangman IsNot Nothing Then
+                    Me.Play_ActivityType_Hangman.Dispose()
+                End If
+
+                Me.Play_ActivityType_Hangman = New Play_ActivityType_Hangman With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.Play_ActivityType_Hangman.Text = SettingsActivityName.Text
+                Me.Play_ActivityType_Hangman.LoadActivity()
+                Me.Play_ActivityType_Hangman.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
-                Play_ActivityType_Question_Open.Text = SettingsActivityName.Text
-                Play_ActivityType_Question_Open.LoadActivity()
-                Play_ActivityType_Question_Open.ShowDialog()
+                If Me.Play_ActivityType_Question_Open IsNot Nothing Then
+                    Me.Play_ActivityType_Question_Open.Dispose()
+                End If
+
+                Me.Play_ActivityType_Question_Open = New Play_ActivityType_Question_Open With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.Play_ActivityType_Question_Open.Text = SettingsActivityName.Text
+                Me.Play_ActivityType_Question_Open.LoadActivity()
+                Me.Play_ActivityType_Question_Open.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
-                Play_ActivityType_Question_Opts.Text = SettingsActivityName.Text
-                Play_ActivityType_Question_Opts.LoadActivity()
-                Play_ActivityType_Question_Opts.ShowDialog()
+                If Me.Play_ActivityType_Question_Opts IsNot Nothing Then
+                    Me.Play_ActivityType_Question_Opts.Dispose()
+                End If
+
+                Me.Play_ActivityType_Question_Opts = New Play_ActivityType_Question_Opts With {
+                    .Text = SettingsActivityName.Text
+                }
+
+                Me.Play_ActivityType_Question_Opts.Text = SettingsActivityName.Text
+                Me.Play_ActivityType_Question_Opts.LoadActivity()
+                Me.Play_ActivityType_Question_Opts.ShowDialog()
         End Select
 
         UseWaitCursor = False

@@ -1,5 +1,6 @@
 ﻿Public Class Login
     Dim RemainingAttempts As Integer = MaximumRecoveryAttempts
+    Public Result As DialogResult = Nothing
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
         If String.IsNullOrEmpty(PasswordTextBox.Text) Then
@@ -14,7 +15,7 @@
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         RecoveryMode = False
         Close()
-        Dispose()
+        Result = DialogResult.Abort
     End Sub
 
     Private Sub ContinueButton_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
@@ -40,10 +41,8 @@
                 Settings.Populate()
                 Settings.UpdateActivities()
                 Settings.Show()
+                Result = DialogResult.OK
                 Close()
-                If Play_Activities.Visible Then
-                    Play_Activities.Close()
-                End If
             Else
                 PasswordTextBox.Text = String.Empty
                 MessageBox.Show(My.Resources.Login_WrongPassword, My.Resources.General_Error_Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
