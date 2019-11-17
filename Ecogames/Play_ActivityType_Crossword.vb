@@ -331,6 +331,7 @@ Public Class Play_ActivityType_Crossword
                 PreventClose = False
                 DataGridView1.ReadOnly = True
                 TimeManager.Enabled = False
+                PauseButton.Enabled = False
 
                 StatusLabel.Text = My.Resources.Play_General_Timedout
 

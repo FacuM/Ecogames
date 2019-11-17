@@ -3,11 +3,19 @@
 ' ====================
 
 Public Class ActivityType_Hangman
+    Private ActivityName As String
+    Private ActivityDescription As String
+    Private ActivityType As Integer
+
     Dim Saved As Boolean = True
 
     Dim IsModifying As Boolean = False
 
-    Public Sub PrepareNew()
+    Public Sub PrepareNew(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
+
         HangmanScorePerLetter.Maximum = Integer.MaxValue
         HangmanScorePerLetter.Value = DefaultScoreMultiplier
         HangmanTimePerLetter.Minimum = HangmanMinimumSecondsPerCharacter
@@ -25,8 +33,12 @@ Public Class ActivityType_Hangman
 #End If
     End Sub
 
-    Public Sub PrepareModification()
+    Public Sub PrepareModification(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
         UseWaitCursor = True
+
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
 
         HangmanScorePerLetter.Maximum = Integer.MaxValue
         HangmanScorePerLetter.Value = DefaultScoreMultiplier
@@ -108,19 +120,18 @@ Public Class ActivityType_Hangman
         End If
 
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue
+            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue)
 #If DEBUG Then
-            LogD(Me, NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue)
+            LogD(Me, NewActivityID & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & HangmanWordTextBox.Text & SemicolonChar & HangmanScorePerLetter.Value & SemicolonChar & HangmanTimePerLetterValue & SemicolonChar & HangmanDefaultLetterAmountValue & SemicolonChar & HangmanMaxTryAmountValue)
 #End If
         End If
         SettingsSaver()
-        Settings.UpdateActivities()
         Saved = True
         Close()
     End Sub

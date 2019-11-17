@@ -1,4 +1,5 @@
 ﻿Public Class Login
+    Private Settings As Settings
     Dim RemainingAttempts As Integer = MaximumRecoveryAttempts
     Public Result As DialogResult = Nothing
 
@@ -37,10 +38,17 @@
         Else
             If PasswordTextBox.Text = My.Settings.UserPassword Then
                 Hide()
-                Settings = Nothing
-                Settings.Populate()
-                Settings.UpdateActivities()
-                Settings.Show()
+
+                If Me.Settings IsNot Nothing Then
+                    Me.Settings.Dispose()
+                End If
+
+                Me.Settings = New Settings()
+
+                Me.Settings.Populate()
+                Me.Settings.UpdateActivities()
+                Me.Settings.Show()
+
                 Result = DialogResult.OK
                 Close()
             Else

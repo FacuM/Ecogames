@@ -3,7 +3,15 @@
 ' ====================
 
 Public Class ActivityType_Question_Open
-    Public Sub PrepareNew()
+    Private ActivityName As String
+    Private ActivityDescription As String
+    Private ActivityType As Integer
+
+    Public Sub PrepareNew(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
+
         QuestionTextBox.Text = ""
         AnswerTextBox.Text = ""
         AutomaticEvaluationCheckBox.Checked = False
@@ -13,8 +21,12 @@ Public Class ActivityType_Question_Open
     End Sub
 
     Dim IsModifying As Boolean = False
-    Public Sub PrepareModification()
+    Public Sub PrepareModification(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
         UseWaitCursor = True
+
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
 
         IsModifying = True
 
@@ -60,21 +72,20 @@ Public Class ActivityType_Question_Open
         End If
 
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion
+            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion)
 #If DEBUG Then
-            LogD(Me, NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion)
+            LogD(Me, NewActivityID & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & AnswerTextBox.Text & SemicolonChar & AutomaticEvaluationCheckBox.Checked.ToString & SemicolonChar & TimePerQuestion)
 #End If
             CurrentActivityIndex = NewActivityID
         End If
         SettingsSaver()
         Saved = True
-        Settings.UpdateActivities()
         Close()
     End Sub
 

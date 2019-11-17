@@ -253,7 +253,7 @@ Public Class Settings
                     .Text = SettingsActivityName.Text
                 }
 
-                Me.ActivityType_Crossword.PrepareModification()
+                Me.ActivityType_Crossword.PrepareModification(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Crossword.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
                 If Me.ActivityType_Hangman IsNot Nothing Then
@@ -264,7 +264,7 @@ Public Class Settings
                     .Text = SettingsActivityName.Text
                 }
 
-                Me.ActivityType_Hangman.PrepareModification()
+                Me.ActivityType_Hangman.PrepareModification(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Hangman.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
                 If Me.ActivityType_Question_Open IsNot Nothing Then
@@ -275,7 +275,7 @@ Public Class Settings
                     .Text = SettingsActivityName.Text
                 }
 
-                Me.ActivityType_Question_Open.PrepareModification()
+                Me.ActivityType_Question_Open.PrepareModification(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Question_Open.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
                 If Me.ActivityType_Question_Opts IsNot Nothing Then
@@ -286,7 +286,7 @@ Public Class Settings
                     .Text = SettingsActivityName.Text
                 }
 
-                Me.ActivityType_Question_Opts.PrepareModification()
+                Me.ActivityType_Question_Opts.PrepareModification(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Question_Opts.ShowDialog()
         End Select
 
@@ -310,7 +310,7 @@ Public Class Settings
                 }
 
                 Me.ActivityType_Crossword.Text = SettingsActivityName.Text
-                Me.ActivityType_Crossword.PrepareNew()
+                Me.ActivityType_Crossword.PrepareNew(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Crossword.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Hangman_ID)
                 If Me.ActivityType_Hangman IsNot Nothing Then
@@ -322,7 +322,7 @@ Public Class Settings
                 }
 
                 Me.ActivityType_Hangman.Text = SettingsActivityName.Text
-                Me.ActivityType_Hangman.PrepareNew()
+                Me.ActivityType_Hangman.PrepareNew(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Hangman.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Open_ID)
                 If Me.ActivityType_Question_Open IsNot Nothing Then
@@ -334,7 +334,7 @@ Public Class Settings
                 }
 
                 Me.ActivityType_Question_Open.Text = SettingsActivityName.Text
-                Me.ActivityType_Question_Open.PrepareNew()
+                Me.ActivityType_Question_Open.PrepareNew(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Question_Open.ShowDialog()
             Case Integer.Parse(My.Resources.ActivityType_Question_Opts_ID)
                 If Me.ActivityType_Question_Opts IsNot Nothing Then
@@ -346,9 +346,11 @@ Public Class Settings
                 }
 
                 Me.ActivityType_Question_Opts.Text = SettingsActivityName.Text
-                Me.ActivityType_Question_Opts.PrepareNew()
+                Me.ActivityType_Question_Opts.PrepareNew(SettingsActivityName.Text, SettingsActivityDescription.Text, SettingsActivityType.SelectedIndex)
                 Me.ActivityType_Question_Opts.ShowDialog()
         End Select
+
+        UpdateActivities()
 
         StatusLabel.Visible = True
         StatusTimer.Enabled = True

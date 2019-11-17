@@ -1,4 +1,6 @@
 ﻿Public Class FirstRun
+    Private Settings As Settings
+
     Public Sub Populate()
         LanguagePickerComboBox.Items.Clear()
 
@@ -66,11 +68,19 @@
             My.Settings.UserPassword = PasswordVerifyTextBox.Text
             My.Settings.FirstRun = False
             SettingsSaver()
+
             Hide()
-            Settings = Nothing
-            Settings.Populate()
-            Settings.UpdateActivities()
-            Settings.Show()
+
+            If Me.Settings IsNot Nothing Then
+                Me.Settings.Dispose()
+            End If
+
+            Me.Settings = New Settings()
+
+            Me.Settings.Populate()
+            Me.Settings.UpdateActivities()
+            Me.Settings.Show()
+
             Close()
         End If
     End Sub

@@ -3,6 +3,10 @@
 ' ====================
 
 Public Class ActivityType_Crossword
+    Private ActivityName As String
+    Private ActivityDescription As String
+    Private ActivityType As Integer
+
     Dim ColumnMaxIndex As Integer = -1
 
     Dim Saved As Boolean = True
@@ -13,8 +17,12 @@ Public Class ActivityType_Crossword
         DataGridView1.Columns.Clear()
     End Sub
 
-    Public Sub PrepareNew()
+    Public Sub PrepareNew(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
         UseWaitCursor = True
+
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
 
         ' Initialize the Crossword configuration page.
         WipeDatagridView() ' Just in case, try to wipe it.
@@ -53,8 +61,12 @@ Public Class ActivityType_Crossword
         UseWaitCursor = False
     End Sub
 
-    Public Sub PrepareModification()
+    Public Sub PrepareModification(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
         UseWaitCursor = True
+
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
 
         DataGridView1.ReadOnly = True
         DataGridView1.Enabled = False
@@ -262,21 +274,20 @@ Public Class ActivityType_Crossword
         End If
 
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = Settings.ActivityListBox.SelectedIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString
+            My.Settings.Activities(CurrentActivityIndex) = Settings.ActivityListBox.SelectedIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & TimePerRow & SemicolonChar & ActivityString
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
 #If DEBUG Then
-            LogD(Me, GetNewID() & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
+            LogD(Me, GetNewID() & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & TimePerRow & SemicolonChar & ActivityString)
 #End If
         End If
 
         SettingsSaver()
         Saved = True
-        Settings.UpdateActivities()
         Close()
     End Sub
 

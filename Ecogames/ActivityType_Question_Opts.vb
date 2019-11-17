@@ -3,6 +3,10 @@
 ' ====================
 
 Public Class ActivityType_Question_Opts
+    Private ActivityName As String
+    Private ActivityDescription As String
+    Private ActivityType As Integer
+
     Dim Answers As List(Of String) = New List(Of String)
     Dim AnswersStatuses As List(Of Boolean) = New List(Of Boolean)
     Dim QuestionsOptsMaxTime As Integer = 0
@@ -31,8 +35,12 @@ Public Class ActivityType_Question_Opts
         AnswersListBox.SelectedIndex = PreviousIndex
     End Sub
 
-    Public Sub PrepareNew()
+    Public Sub PrepareNew(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
         UseWaitCursor = True
+
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
 
         MaxTimeNumericUpDown.Maximum = QuestionOptsMaximumMinutes
         MaxTimeNumericUpDown.Minimum = QuestionOptsMinimumMinutes
@@ -64,8 +72,12 @@ Public Class ActivityType_Question_Opts
     End Sub
 
     Dim IsModifying As Boolean = False
-    Public Sub PrepareModification()
+    Public Sub PrepareModification(ByVal ActivityName As String, ByVal ActivityDescription As String, ActivityType As Integer)
         UseWaitCursor = True
+
+        Me.ActivityName = ActivityName
+        Me.ActivityDescription = ActivityDescription
+        Me.ActivityType = ActivityType
 
         IsModifying = True
 
@@ -142,15 +154,15 @@ Public Class ActivityType_Question_Opts
             ActivityString &= Answers(i) & SemicolonChar & AnswersStatuses(i) & SemicolonChar & RowSplitter(0)
         Next
         If IsModifying Then
-            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString
+            My.Settings.Activities(CurrentActivityIndex) = CurrentActivityIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString
 #If DEBUG Then
-            LogD(Me, CurrentActivityIndex & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
+            LogD(Me, CurrentActivityIndex & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
 #End If
         Else
             Dim NewActivityID As Integer = GetNewID()
-            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
+            My.Settings.Activities.Add(NewActivityID & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
 #If DEBUG Then
-            LogD(Me, NewActivityID & SemicolonChar & Settings.SettingsActivityName.Text & SemicolonChar & Settings.SettingsActivityDescription.Text & SemicolonChar & Settings.SettingsActivityType.SelectedIndex & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
+            LogD(Me, NewActivityID & SemicolonChar & Me.ActivityName & SemicolonChar & Me.ActivityDescription & SemicolonChar & Me.ActivityType & SemicolonChar & QuestionTextBox.Text & SemicolonChar & MaxTime & SemicolonChar & ActivityString)
 #End If
             CurrentActivityIndex = NewActivityID
         End If
